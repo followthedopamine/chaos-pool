@@ -31,6 +31,7 @@ size = Vector2(56, 56)
 
 [node name="Level1" type="Node2D" parent="."]
 script = ExtResource("1_gd2oi")
+cue_balls = Array[int]([0, 1])
 
 [node name="Cue" type="Sprite2D" parent="Level1"]
 position = Vector2(158, 262)
@@ -199,6 +200,11 @@ texture = ExtResource("11_tskb3")
 offset_right = 355.0
 offset_bottom = 40.0
 
+[connection signal="balls_stopped" from="Level1" to="Level1/Cue" method="_on_balls_stopped"]
+[connection signal="balls_stopped" from="Level1" to="Level1/CueBall" method="_on_balls_stopped"]
+[connection signal="shoot" from="Level1/Cue" to="Level1" method="_on_cue_shoot"]
+[connection signal="shoot" from="Level1/Cue" to="Level1/CueBall" method="_on_cue_shoot"]
+[connection signal="body_entered" from="Level1/CueBall" to="Level1/CueBall" method="_on_body_entered"]
 [connection signal="body_entered" from="Level1/CueBall" to="Level1/Wall" method="_on_cue_ball_body_entered"]
 [connection signal="body_entered" from="Level1/Table/Pocket" to="Level1/Table/Pocket" method="_on_body_entered"]
 [connection signal="body_entered" from="Level1/Table/Pocket2" to="Level1/Table/Pocket2" method="_on_body_entered"]

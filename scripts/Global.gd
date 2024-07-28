@@ -1,3 +1,9 @@
 extends Node2D
 
-
+enum CUE_BALL_TYPES {
+	STANDARD,
+	EXPLOSIVE,
+	WORMHOLE,
+	PUSHER,
+	INFINITE
+}
