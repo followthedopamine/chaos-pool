@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://da1uht6nbhxv3"]
+[gd_scene load_steps=10 format=3 uid="uid://da1uht6nbhxv3"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_ey51p"]
 [ext_resource type="Texture2D" uid="uid://bolwmhijjevrc" path="res://images/placeholder/cue-ball-placeholder.png" id="1_fxqes"]
+[ext_resource type="Script" path="res://scenes/LevelGeneration.gd" id="1_gd2oi"]
 [ext_resource type="Texture2D" uid="uid://cboalvn3bq4qe" path="res://images/placeholder/cue-placeholder.png" id="1_myjyn"]
 [ext_resource type="Texture2D" uid="uid://ck555divyx1s3" path="res://images/placeholder/8-ball-placeholder.png" id="3_haiej"]
 [ext_resource type="Texture2D" uid="uid://jylqnm40kwsa" path="res://images/placeholder/table-placeholder.png" id="5_bdb22"]
@@ -13,49 +14,78 @@ bounce = 200.0
 radius = 24.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3v63n"]
-bounce = 5.0
+bounce = 200.0
 
 [node name="Main" type="Node2D"]
 
-[node name="Cue" type="Sprite2D" parent="."]
+[node name="Level1" type="Node2D" parent="."]
+script = ExtResource("1_gd2oi")
+
+[node name="Cue" type="Sprite2D" parent="Level1"]
 position = Vector2(158, 262)
 texture = ExtResource("1_myjyn")
 offset = Vector2(-100, 0)
 script = ExtResource("1_ey51p")
 
-[node name="CueBall" type="RigidBody2D" parent="."]
+[node name="CueBall" type="RigidBody2D" parent="Level1" groups=["balls"]]
 texture_filter = 1
 position = Vector2(534, 396)
 physics_material_override = SubResource("PhysicsMaterial_300ds")
 continuous_cd = 2
 linear_damp = 1.5
 
-[node name="CueBallSprite" type="Sprite2D" parent="CueBall"]
+[node name="CueBallSprite" type="Sprite2D" parent="Level1/CueBall"]
 texture = ExtResource("1_fxqes")
 
-[node name="CueBallCollision" type="CollisionShape2D" parent="CueBall"]
+[node name="CueBallCollision" type="CollisionShape2D" parent="Level1/CueBall"]
 shape = SubResource("CircleShape2D_c5b7w")
 
-[node name="8Ball" type="RigidBody2D" parent="."]
+[node name="Ball" type="RigidBody2D" parent="Level1" groups=["balls"]]
 position = Vector2(542, 256)
 physics_material_override = SubResource("PhysicsMaterial_3v63n")
 continuous_cd = 2
 linear_damp = 1.5
 
-[node name="8BallSprite" type="Sprite2D" parent="8Ball"]
+[node name="BallSprite" type="Sprite2D" parent="Level1/Ball"]
 texture_filter = 1
 texture = ExtResource("3_haiej")
 
-[node name="8BallCollision" type="CollisionShape2D" parent="8Ball"]
+[node name="BallCollision" type="CollisionShape2D" parent="Level1/Ball"]
 shape = SubResource("CircleShape2D_c5b7w")
 
-[node name="Table" type="StaticBody2D" parent="."]
+[node name="Ball2" type="RigidBody2D" parent="Level1" groups=["balls"]]
+position = Vector2(308, 168)
+physics_material_override = SubResource("PhysicsMaterial_3v63n")
+continuous_cd = 2
+linear_damp = 1.5
+
+[node name="BallSprite" type="Sprite2D" parent="Level1/Ball2"]
+texture_filter = 1
+texture = ExtResource("3_haiej")
+
+[node name="BallCollision" type="CollisionShape2D" parent="Level1/Ball2"]
+shape = SubResource("CircleShape2D_c5b7w")
+
+[node name="Ball3" type="RigidBody2D" parent="Level1" groups=["balls"]]
+position = Vector2(262, 429)
+physics_material_override = SubResource("PhysicsMaterial_3v63n")
+continuous_cd = 2
+linear_damp = 1.5
+
+[node name="BallSprite" type="Sprite2D" parent="Level1/Ball3"]
+texture_filter = 1
+texture = ExtResource("3_haiej")
+
+[node name="BallCollision" type="CollisionShape2D" parent="Level1/Ball3"]
+shape = SubResource("CircleShape2D_c5b7w")
+
+[node name="Table" type="StaticBody2D" parent="Level1"]
 z_index = -1
 
-[node name="TableCollision" type="CollisionPolygon2D" parent="Table"]
+[node name="TableCollision" type="CollisionPolygon2D" parent="Level1/Table"]
 polygon = PackedVector2Array(23, 55, 1085, 58, 1087, 614, 3, 610, 3, 53, -483, 59, -459, 1078, 1536, 1064, 1515, -330, -481, -326, -483, 64)
 
-[node name="TableSprite" type="Sprite2D" parent="Table"]
+[node name="TableSprite" type="Sprite2D" parent="Level1/Table"]
 position = Vector2(546, 333)
 scale = Vector2(11.25, 11.5833)
 texture = ExtResource("5_bdb22")

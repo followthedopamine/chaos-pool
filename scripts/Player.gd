@@ -2,9 +2,10 @@ extends Sprite2D
 
 const POWER_INCREMENT = 0.2 # Speed the power charges at
 const MAX_POWER = 20
+const BALL_MOVING_THRESHHOLD = 1
 
 @onready var cue_ball = $"../CueBall"
-@onready var debug_power = $"../DebugPower"
+@onready var debug_power = $"../../DebugPower"
 
 
 var balls_moving = false
@@ -32,13 +33,17 @@ func angle_cue():
 	look_at(get_global_mouse_position())
 
 func position_cue():
-	if !balls_moving:
-		global_position = cue_ball.global_position
+	global_position = cue_ball.global_position
 
-func _ready():
-	pass
+func check_balls_are_moving():
+	balls_moving = false
+	for ball:RigidBody2D in get_tree().get_nodes_in_group("balls"):
+		if ball.linear_velocity.length() >= BALL_MOVING_THRESHHOLD:
+			balls_moving = true
 
 func _process(delta):
-	position_cue()
-	angle_cue()
-	handle_input(delta)
+	check_balls_are_moving()
+	if !balls_moving:
+		position_cue()
+		angle_cue()
+		handle_input(delta)
