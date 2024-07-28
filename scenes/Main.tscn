@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://da1uht6nbhxv3"]
+
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_ey51p"]
+[ext_resource type="Texture2D" uid="uid://bolwmhijjevrc" path="res://images/placeholder/cue-ball-placeholder.png" id="1_fxqes"]
+[ext_resource type="Texture2D" uid="uid://cboalvn3bq4qe" path="res://images/placeholder/cue-placeholder.png" id="1_myjyn"]
+[ext_resource type="Texture2D" uid="uid://ck555divyx1s3" path="res://images/placeholder/8-ball-placeholder.png" id="3_haiej"]
+[ext_resource type="Texture2D" uid="uid://jylqnm40kwsa" path="res://images/placeholder/table-placeholder.png" id="5_bdb22"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_300ds"]
+bounce = 200.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5b7w"]
+radius = 24.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3v63n"]
+bounce = 5.0
+
+[node name="Main" type="Node2D"]
+
+[node name="Cue" type="Sprite2D" parent="."]
+position = Vector2(158, 262)
+texture = ExtResource("1_myjyn")
+offset = Vector2(-100, 0)
+script = ExtResource("1_ey51p")
+
+[node name="CueBall" type="RigidBody2D" parent="."]
+texture_filter = 1
+position = Vector2(534, 396)
+physics_material_override = SubResource("PhysicsMaterial_300ds")
+continuous_cd = 2
+linear_damp = 1.5
+
+[node name="CueBallSprite" type="Sprite2D" parent="CueBall"]
+texture = ExtResource("1_fxqes")
+
+[node name="CueBallCollision" type="CollisionShape2D" parent="CueBall"]
+shape = SubResource("CircleShape2D_c5b7w")
+
+[node name="8Ball" type="RigidBody2D" parent="."]
+position = Vector2(542, 256)
+physics_material_override = SubResource("PhysicsMaterial_3v63n")
+continuous_cd = 2
+linear_damp = 1.5
+
+[node name="8BallSprite" type="Sprite2D" parent="8Ball"]
+texture_filter = 1
+texture = ExtResource("3_haiej")
+
+[node name="8BallCollision" type="CollisionShape2D" parent="8Ball"]
+shape = SubResource("CircleShape2D_c5b7w")
+
+[node name="Table" type="StaticBody2D" parent="."]
+z_index = -1
+
+[node name="TableCollision" type="CollisionPolygon2D" parent="Table"]
+polygon = PackedVector2Array(23, 55, 1085, 58, 1087, 614, 3, 610, 3, 53, -483, 59, -459, 1078, 1536, 1064, 1515, -330, -481, -326, -483, 64)
+
+[node name="TableSprite" type="Sprite2D" parent="Table"]
+position = Vector2(546, 333)
+scale = Vector2(11.25, 11.5833)
+texture = ExtResource("5_bdb22")
+
+[node name="DebugPower" type="RichTextLabel" parent="."]
+offset_right = 355.0
+offset_bottom = 40.0
