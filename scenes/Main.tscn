@@ -1,8 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://da1uht6nbhxv3"]
+[gd_scene load_steps=22 format=3 uid="uid://da1uht6nbhxv3"]
 
-[ext_resource type="Script" path="res://scripts/Player.gd" id="1_ey51p"]
+[ext_resource type="Script" path="res://scripts/Cue.gd" id="1_ey51p"]
 [ext_resource type="Texture2D" uid="uid://bolwmhijjevrc" path="res://images/placeholder/cue-ball-placeholder.png" id="1_fxqes"]
-[ext_resource type="Script" path="res://scripts/LevelGeneration.gd" id="1_gd2oi"]
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_gd2oi"]
 [ext_resource type="Texture2D" uid="uid://cboalvn3bq4qe" path="res://images/placeholder/cue-placeholder.png" id="1_myjyn"]
 [ext_resource type="Texture2D" uid="uid://ck555divyx1s3" path="res://images/placeholder/8-ball-placeholder.png" id="3_haiej"]
 [ext_resource type="Script" path="res://scripts/CueBall.gd" id="4_hm7p1"]
@@ -10,8 +10,8 @@
 [ext_resource type="Script" path="res://scripts/Pocket.gd" id="7_o68k6"]
 [ext_resource type="Texture2D" uid="uid://b02xxchd8cl6w" path="res://images/placeholder/pocket-placeholder.png" id="7_ry3fd"]
 [ext_resource type="Texture2D" uid="uid://da0vkp4tr6iqu" path="res://images/placeholder/11-ball-placeholder.png" id="7_snk06"]
-[ext_resource type="Script" path="res://scenes/AnimateBallSprite.gd" id="8_acd1i"]
-[ext_resource type="Script" path="res://scenes/Wall.gd" id="10_d3hgh"]
+[ext_resource type="Script" path="res://scripts/AnimateBallSprite.gd" id="8_acd1i"]
+[ext_resource type="Script" path="res://scripts/Wall.gd" id="10_d3hgh"]
 [ext_resource type="Texture2D" uid="uid://c0hc7wlc4xrp5" path="res://images/placeholder/wall-placeholder.png" id="11_tskb3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_300ds"]
@@ -19,6 +19,9 @@ bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5b7w"]
 radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6omj"]
+radius = 177.406
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3v63n"]
 bounce = 1.0
@@ -65,6 +68,11 @@ texture = ExtResource("1_fxqes")
 
 [node name="CueBallCollision" type="CollisionShape2D" parent="Level1/CueBall"]
 shape = SubResource("CircleShape2D_c5b7w")
+
+[node name="CueBallAreaOfEffect" type="Area2D" parent="Level1/CueBall"]
+
+[node name="CueBallAreaOfEffectShape" type="CollisionShape2D" parent="Level1/CueBall/CueBallAreaOfEffect"]
+shape = SubResource("CircleShape2D_v6omj")
 
 [node name="Ball" type="RigidBody2D" parent="Level1" groups=["balls"]]
 position = Vector2(542, 256)
@@ -238,9 +246,11 @@ offset_bottom = 40.0
 [connection signal="balls_stopped" from="Level1" to="Level1" method="_on_balls_stopped"]
 [connection signal="balls_stopped" from="Level1" to="Level1/Cue" method="_on_balls_stopped"]
 [connection signal="balls_stopped" from="Level1" to="Level1/CueBall" method="_on_balls_stopped"]
+[connection signal="shoot" from="Level1/Cue" to="Level1" method="_on_cue_shoot"]
 [connection signal="shoot" from="Level1/Cue" to="Level1/CueBall" method="_on_cue_shoot"]
 [connection signal="body_entered" from="Level1/CueBall" to="Level1/CueBall" method="_on_body_entered"]
 [connection signal="body_entered" from="Level1/CueBall" to="Level1/Wall" method="_on_cue_ball_body_entered"]
+[connection signal="cue_ball_stopped" from="Level1/CueBall" to="Level1" method="_on_cue_ball_cue_ball_stopped"]
 [connection signal="body_entered" from="Level1/Table/Pocket" to="Level1/Table/Pocket" method="_on_body_entered"]
 [connection signal="body_entered" from="Level1/Table/Pocket2" to="Level1/Table/Pocket2" method="_on_body_entered"]
 [connection signal="body_entered" from="Level1/Table/Pocket3" to="Level1/Table/Pocket3" method="_on_body_entered"]

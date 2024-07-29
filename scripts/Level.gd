@@ -6,9 +6,10 @@ const BALL_8 = preload("res://images/placeholder/8-ball-placeholder.png")
 
 const BALL_TEXTURES = [BALL_1, BALL_2, BALL_8]
 
-const BALL_MOVING_THRESHHOLD = 1
+
 
 var prev_balls_moving = false
+var cue_ball_active = false
 
 signal balls_stopped
 
@@ -30,11 +31,19 @@ func fail_level():
 
 func _on_balls_stopped():
 	shot_counter += 1
+
+func _on_cue_shoot():
+	cue_ball_active = true
 	
+func _on_cue_ball_cue_ball_stopped():
+	cue_ball_active = false
+
 func check_balls_are_moving():
+	if cue_ball_active:
+		return
 	var balls_moving = false
 	for ball:RigidBody2D in get_tree().get_nodes_in_group("balls"):
-		if ball.linear_velocity.length() >= BALL_MOVING_THRESHHOLD:
+		if ball.linear_velocity.length() >= Global.BALL_MOVING_THRESHHOLD:
 			balls_moving = true
 	if balls_moving != prev_balls_moving:
 		prev_balls_moving = balls_moving
@@ -46,3 +55,8 @@ func check_balls_are_moving():
 
 func _physics_process(_delta):
 	check_balls_are_moving()
+
+
+
+
+
