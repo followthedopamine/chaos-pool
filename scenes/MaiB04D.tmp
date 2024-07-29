@@ -109,11 +109,11 @@ texture = ExtResource("3_haiej")
 shape = SubResource("CircleShape2D_c5b7w")
 
 [node name="Ball4" type="RigidBody2D" parent="Level1"]
-position = Vector2(601, 363)
+position = Vector2(352, 297)
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_3v63n")
 continuous_cd = 2
-linear_damp = 0.5
+linear_damp = 1.5
 
 [node name="BallMask" type="Sprite2D" parent="Level1/Ball4"]
 clip_children = 1
