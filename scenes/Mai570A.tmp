@@ -13,13 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://c0hc7wlc4xrp5" path="res://images/placeholder/wall-placeholder.png" id="11_tskb3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_300ds"]
-bounce = 1.0
+bounce = 200.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5b7w"]
 radius = 24.0
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3v63n"]
-bounce = 1.0
+bounce = 200.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tssy0"]
 radius = 28.0

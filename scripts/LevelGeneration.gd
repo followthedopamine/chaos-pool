@@ -25,11 +25,11 @@ func _ready():
 			ball.get_child(0).texture = BALL_TEXTURES[ball_counter % BALL_TEXTURES.size()]
 			ball_counter += 1
 
-func add_shot():
+func fail_level():
+	print("You lose")
+
+func _on_balls_stopped():
 	shot_counter += 1
-	
-func _on_cue_shoot():
-	add_shot()
 	
 func check_balls_are_moving():
 	var balls_moving = false
@@ -39,7 +39,10 @@ func check_balls_are_moving():
 	if balls_moving != prev_balls_moving:
 		prev_balls_moving = balls_moving
 		if balls_moving == false:
-			balls_stopped.emit()
-			
-func _physics_process(delta):
+			if shot_counter == cue_balls.size() - 1:
+				fail_level()
+			else:
+				balls_stopped.emit()
+
+func _physics_process(_delta):
 	check_balls_are_moving()
