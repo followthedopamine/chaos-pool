@@ -10,11 +10,11 @@ completedColumns:
 ## Backlog
 
 - [rewarded-ads](tasks/rewarded-ads.md)
+- [create-balls-from-scene](tasks/create-balls-from-scene.md)
 - [mtx](tasks/mtx.md)
 
 ## Todo
 
-- [create-balls-from-scene](tasks/create-balls-from-scene.md)
 - [show-shot-charge](tasks/show-shot-charge.md)
 - [pusher-ball](tasks/pusher-ball.md)
 - [win-condition](tasks/win-condition.md)

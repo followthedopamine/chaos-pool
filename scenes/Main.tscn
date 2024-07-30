@@ -49,7 +49,7 @@ size = Vector2(56, 56)
 
 [node name="Level1" type="Node2D" parent="."]
 script = ExtResource("1_myne5")
-cue_balls = Array[int]([1, 2, 2, 0, 4])
+cue_balls = Array[int]([3, 1, 2, 2, 0, 4])
 
 [node name="Cue" type="Sprite2D" parent="Level1"]
 position = Vector2(158, 262)

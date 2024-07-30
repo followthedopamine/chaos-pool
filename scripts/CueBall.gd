@@ -65,11 +65,19 @@ func suck():
 			if abs(ball.global_position - global_position).length() > SUCK_MIN_DISTANCE:
 				ball.apply_central_impulse(Vector2(global_position - ball.global_position))
 
+func push():
+	#print("Is sucking")
+	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
+		if ball != self:
+			ball.apply_central_impulse(Vector2(ball.global_position - global_position))
+
 func trigger_constant_effects():
 	#print("Is triggering constant effects")
 	match cue_ball_type:
 		Global.CUE_BALL_TYPES.WORMHOLE:
 			suck()
+		Global.CUE_BALL_TYPES.PUSHER:
+			push()
 
 func _on_balls_stopped():
 	call_deferred("load_cue_ball")
@@ -85,6 +93,8 @@ func load_cue_ball():
 		Global.CUE_BALL_TYPES.EXPLOSIVE:
 			load_standard_ball_physics()
 		Global.CUE_BALL_TYPES.WORMHOLE:
+			load_standard_ball_physics()
+		Global.CUE_BALL_TYPES.PUSHER:
 			load_standard_ball_physics()
 		Global.CUE_BALL_TYPES.INFINITE:
 			load_infinite_ball_physics()
