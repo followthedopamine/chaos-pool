@@ -25,11 +25,28 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
 
-      - name: Publish to Itch
-        uses: Ayowel/butler-to-itch@v1.0.0
+      - name: List contents of Web build directory (after export)
+        run: ls -l build/web
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
         with:
-          butler_key: ${{secrets.ITCHIO_TOKEN}}
-          itch_user: FollowTheDopmaine
-          itch_game: chaos-pool
-          version: ${{ github.ref_name }}
-          files: "${{ steps.export.outputs.archive_directory }}/Web.zip"
+          name: web
+          path: build/web
+
+      - name: Publish to itch.io
+              uses: manleydev/butler-publish-itchio-action@master
+              env:
+                BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
+                CHANNEL: web
+                ITCH_GAME: chaos-pool
+                ITCH_USER: FollowTheDopamine
+                PACKAGE: build/web
+      # - name: Publish to Itch
+      #   uses: Ayowel/butler-to-itch@v1.0.0
+      #   with:
+      #     butler_key: ${{secrets.ITCHIO_TOKEN}}
+      #     itch_user: FollowTheDopmaine
+      #     itch_game: chaos-pool
+      #     version: ${{ github.ref_name }}
+      #     files: "${{ steps.export.outputs.archive_directory }}/Web.zip"
