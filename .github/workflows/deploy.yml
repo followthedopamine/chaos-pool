@@ -24,7 +24,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: List contents of Web build directory (after export)
-        run: ls -l ./
+        run: ls -l /home/runner/.local/share/godot/archives/
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
