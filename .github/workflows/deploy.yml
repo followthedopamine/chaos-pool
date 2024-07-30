@@ -39,7 +39,7 @@ jobs:
           CHANNEL: web
           ITCH_GAME: chaos-pool
           ITCH_USER: FollowTheDopamine
-          PACKAGE: /home/runner/.local/share/godot/archives/Web.zip
+          PACKAGE: /home/runner/.local/share/godot/archives
 
       # Alternative publish action
       # - name: Publish to Itch
