@@ -17,7 +17,6 @@ completedColumns:
 - [create-balls-from-scene](tasks/create-balls-from-scene.md)
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
 - [show-shot-charge](tasks/show-shot-charge.md)
-- [wormhole-ball](tasks/wormhole-ball.md)
 - [pusher-ball](tasks/pusher-ball.md)
 - [display-available-cue-balls](tasks/display-available-cue-balls.md)
 - [win-condition](tasks/win-condition.md)
@@ -29,6 +28,8 @@ completedColumns:
 - [moving-pockets](tasks/moving-pockets.md)
 
 ## In Progress
+
+- [wormhole-ball](tasks/wormhole-ball.md)
 
 ## Done
 

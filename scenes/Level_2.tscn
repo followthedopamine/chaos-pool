@@ -1,0 +1,177 @@
+[gd_scene load_steps=15 format=3 uid="uid://dnoaxclof6ra2"]
+
+[ext_resource type="Script" path="res://scenes/Level.gd" id="1_68dvr"]
+[ext_resource type="Texture2D" uid="uid://cboalvn3bq4qe" path="res://images/placeholder/cue-placeholder.png" id="2_d1hjn"]
+[ext_resource type="Script" path="res://scenes/Cue.gd" id="3_0xvs0"]
+[ext_resource type="Texture2D" uid="uid://ck555divyx1s3" path="res://images/placeholder/8-ball-placeholder.png" id="4_oedi3"]
+[ext_resource type="Texture2D" uid="uid://jylqnm40kwsa" path="res://images/placeholder/table-placeholder.png" id="5_1jrwo"]
+[ext_resource type="Script" path="res://scripts/Pocket.gd" id="6_trpev"]
+[ext_resource type="Texture2D" uid="uid://b02xxchd8cl6w" path="res://images/placeholder/pocket-placeholder.png" id="7_oe1o5"]
+[ext_resource type="Script" path="res://scenes/CueBall.gd" id="8_8e4c4"]
+[ext_resource type="Texture2D" uid="uid://bolwmhijjevrc" path="res://images/placeholder/cue-ball-placeholder.png" id="9_wkbaq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3v63n"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5b7w"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tssy0"]
+radius = 28.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_300ds"]
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v6omj"]
+radius = 177.406
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_68dvr")
+cue_balls = Array[int]([2, 0])
+
+[node name="Cue" type="Sprite2D" parent="."]
+position = Vector2(158, 262)
+texture = ExtResource("2_d1hjn")
+offset = Vector2(-100, 0)
+script = ExtResource("3_0xvs0")
+
+[node name="Ball" type="RigidBody2D" parent="." groups=["balls"]]
+position = Vector2(542, 256)
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_3v63n")
+continuous_cd = 2
+linear_damp = 1.5
+
+[node name="BallSprite" type="Sprite2D" parent="Ball"]
+texture_filter = 1
+texture = ExtResource("4_oedi3")
+
+[node name="BallCollision" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("CircleShape2D_c5b7w")
+
+[node name="Ball2" type="RigidBody2D" parent="." groups=["balls"]]
+position = Vector2(308, 168)
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_3v63n")
+continuous_cd = 2
+linear_damp = 1.5
+
+[node name="BallSprite" type="Sprite2D" parent="Ball2"]
+texture_filter = 1
+texture = ExtResource("4_oedi3")
+
+[node name="BallCollision" type="CollisionShape2D" parent="Ball2"]
+shape = SubResource("CircleShape2D_c5b7w")
+
+[node name="Table" type="StaticBody2D" parent="."]
+z_index = -1
+collision_layer = 2
+
+[node name="TableCollision" type="CollisionPolygon2D" parent="Table"]
+polygon = PackedVector2Array(23, 55, 1085, 58, 1087, 614, 3, 610, 3, 53, -483, 59, -459, 1078, 1536, 1064, 1515, -330, -481, -326, -483, 64)
+
+[node name="TableSprite" type="Sprite2D" parent="Table"]
+position = Vector2(546, 333)
+scale = Vector2(11.25, 11.5833)
+texture = ExtResource("5_1jrwo")
+
+[node name="Pocket" type="Area2D" parent="Table"]
+position = Vector2(34, 87)
+collision_layer = 2
+script = ExtResource("6_trpev")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket"]
+texture = ExtResource("7_oe1o5")
+
+[node name="Pocket2" type="Area2D" parent="Table"]
+position = Vector2(534, 87)
+collision_layer = 2
+script = ExtResource("6_trpev")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket2"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket2"]
+texture = ExtResource("7_oe1o5")
+
+[node name="Pocket3" type="Area2D" parent="Table"]
+position = Vector2(1057, 87)
+collision_layer = 2
+script = ExtResource("6_trpev")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket3"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket3"]
+texture = ExtResource("7_oe1o5")
+
+[node name="Pocket4" type="Area2D" parent="Table"]
+position = Vector2(1057, 578)
+collision_layer = 2
+script = ExtResource("6_trpev")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket4"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket4"]
+texture = ExtResource("7_oe1o5")
+
+[node name="Pocket5" type="Area2D" parent="Table"]
+position = Vector2(540, 578)
+collision_layer = 2
+script = ExtResource("6_trpev")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket5"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket5"]
+texture = ExtResource("7_oe1o5")
+
+[node name="Pocket6" type="Area2D" parent="Table"]
+position = Vector2(35, 578)
+collision_layer = 2
+script = ExtResource("6_trpev")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket6"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket6"]
+texture = ExtResource("7_oe1o5")
+
+[node name="CueBall" type="RigidBody2D" parent="." groups=["balls"]]
+texture_filter = 1
+position = Vector2(534, 396)
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_300ds")
+continuous_cd = 2
+max_contacts_reported = 20
+contact_monitor = true
+linear_damp = 1.5
+script = ExtResource("8_8e4c4")
+
+[node name="CueBallSprite" type="Sprite2D" parent="CueBall"]
+texture = ExtResource("9_wkbaq")
+
+[node name="CueBallCollision" type="CollisionShape2D" parent="CueBall"]
+shape = SubResource("CircleShape2D_c5b7w")
+
+[node name="CueBallAreaOfEffect" type="Area2D" parent="CueBall"]
+
+[node name="CueBallAreaOfEffectShape" type="CollisionShape2D" parent="CueBall/CueBallAreaOfEffect"]
+shape = SubResource("CircleShape2D_v6omj")
+
+[connection signal="body_entered" from="Table/Pocket" to="Table/Pocket" method="_on_body_entered"]
+[connection signal="body_entered" from="Table/Pocket2" to="Table/Pocket2" method="_on_body_entered"]
+[connection signal="body_entered" from="Table/Pocket3" to="Table/Pocket3" method="_on_body_entered"]
+[connection signal="body_entered" from="Table/Pocket4" to="Table/Pocket4" method="_on_body_entered"]
+[connection signal="body_entered" from="Table/Pocket5" to="Table/Pocket5" method="_on_body_entered"]
+[connection signal="body_entered" from="Table/Pocket6" to="Table/Pocket6" method="_on_body_entered"]

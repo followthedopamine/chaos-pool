@@ -2,32 +2,39 @@ extends RigidBody2D
 
 const STANDARD_PLACEHOLDER = preload("res://images/placeholder/cue-ball-placeholder.png")
 const EXPLOSIVE_PLACEHOLDER = preload("res://images/placeholder/explosive-placeholder.png")
+const WORMHOLE_PLACEHOLDER = preload("res://images/placeholder/wormhole-placeholder.png")
 const INFINITE_PLACEHOLDER = preload("res://images/placeholder/infinite-placeholder.png")
 
-const CUE_BALL_SPRITES = [STANDARD_PLACEHOLDER, EXPLOSIVE_PLACEHOLDER, 0, 0, INFINITE_PLACEHOLDER]
+const CUE_BALL_SPRITES = [	
+							STANDARD_PLACEHOLDER, 
+							EXPLOSIVE_PLACEHOLDER, 
+							WORMHOLE_PLACEHOLDER, 
+							0, 
+							INFINITE_PLACEHOLDER
+						 ]
 
-const EXPLOSIVE_FORCE = 60
+const EXPLOSIVE_FORCE = 10
 const EXPLOSION_SCALE = 10
 
 var initial_position:Vector2
 var has_exploded = false
 
-var cue_ball_type = Global.CUE_BALL_TYPES.STANDARD
+
 @onready var cue_ball_sprite = $CueBallSprite
-
-
 @onready var level = $".."
+@onready var cue_ball_type = level.cue_balls[0]
 @onready var cue_ball_collision = $CueBallCollision
-
 @onready var initial_collision_scale = cue_ball_collision.scale
-
 @onready var cue_ball_area_of_effect = $CueBallAreaOfEffect
 
 
 signal cue_ball_stopped
 
+var cue_ball_active = false
+
 func _ready():
 	initial_position = global_position
+	load_cue_ball()
 
 func reset():
 	linear_velocity = Vector2.ZERO
@@ -40,8 +47,8 @@ func explode_ball():
 	has_exploded = true
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
+			#Probably needs to be normalized
 			ball.apply_central_impulse(Vector2(ball.global_position - global_position) * EXPLOSIVE_FORCE)
-	
 	
 func load_infinite_ball_physics():
 	linear_damp = 0
@@ -51,18 +58,32 @@ func load_standard_ball_physics():
 	linear_damp = 1.5
 	linear_damp_mode = RigidBody2D.DAMP_MODE_COMBINE
 
-func _on_body_entered(body):
+func _on_collision(body):
 	if body.is_in_group("balls"):
 		print(body)
 		if body != self:
-			linear_velocity = Vector2.ZERO
 			if cue_ball_type == Global.CUE_BALL_TYPES.EXPLOSIVE:
+				linear_velocity = Vector2.ZERO
 				explode_ball()
+				
+func suck():
+	#print("Is sucking")
+	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
+		if ball != self:
+			ball.apply_central_impulse(Vector2(global_position - ball.global_position))
+
+func trigger_constant_effects():
+	#print("Is triggering constant effects")
+	match cue_ball_type:
+		Global.CUE_BALL_TYPES.WORMHOLE:
+			suck()
 
 func _on_balls_stopped():
-	load_cue_ball()
+	call_deferred("load_cue_ball")
 
 func load_cue_ball():
+	#await get_tree().create_timer(0.1).timeout #Necessary to make sure signal isn't recieved before ball is moving
+	
 	cue_ball_type = level.cue_balls[level.shot_counter]
 	cue_ball_sprite.texture = CUE_BALL_SPRITES[cue_ball_type]
 	match cue_ball_type:
@@ -70,24 +91,36 @@ func load_cue_ball():
 			load_standard_ball_physics()
 		Global.CUE_BALL_TYPES.EXPLOSIVE:
 			load_standard_ball_physics()
+		Global.CUE_BALL_TYPES.WORMHOLE:
+			load_standard_ball_physics()
 		Global.CUE_BALL_TYPES.INFINITE:
 			load_infinite_ball_physics()
 		
 			
-func trigger_cue_ball_effects():
+func trigger_cue_ball_end_effects():
 	match cue_ball_type:
 		Global.CUE_BALL_TYPES.EXPLOSIVE:
 			explode_ball()
 			
-func check_cue_ball_moving():
+func check_cue_ball_still_moving():
 	if level.cue_ball_active:
+		print(linear_velocity.length())
 		if linear_velocity.length() <= Global.BALL_MOVING_THRESHHOLD:
-			trigger_cue_ball_effects()
+			trigger_cue_ball_end_effects()
 			print("Cue ball stopped moving")
+			#await get_tree().create_timer(0.1).timeout #Necessary to make sure signal isn't recieved before ball is moving
 			cue_ball_stopped.emit()
 
 func _physics_process(_delta):
-	check_cue_ball_moving()
+	#print(level.cue_ball_active)
+	check_cue_ball_still_moving()
+	
+	if level.cue_ball_active:
+		trigger_constant_effects()
+
+
+
+
 
 
 

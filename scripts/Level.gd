@@ -30,13 +30,16 @@ func fail_level():
 	print("You lose")
 
 func _on_balls_stopped():
-	shot_counter += 1
-
+	pass
+	
 func _on_cue_shoot():
 	cue_ball_active = true
 	
-func _on_cue_ball_cue_ball_stopped():
+func set_cue_ball_inactive():
 	cue_ball_active = false
+	
+func _on_cue_ball_stopped():
+	call_deferred("set_cue_ball_inactive")
 
 func check_balls_are_moving():
 	if cue_ball_active:
@@ -51,6 +54,7 @@ func check_balls_are_moving():
 			if shot_counter == cue_balls.size() - 1:
 				fail_level()
 			else:
+				shot_counter += 1
 				balls_stopped.emit()
 
 func _physics_process(_delta):
