@@ -1,17 +1,6 @@
 extends RigidBody2D
 
-const STANDARD_PLACEHOLDER = preload("res://images/placeholder/cue-ball-placeholder.png")
-const EXPLOSIVE_PLACEHOLDER = preload("res://images/placeholder/explosive-placeholder.png")
-const WORMHOLE_PLACEHOLDER = preload("res://images/placeholder/wormhole-placeholder.png")
-const INFINITE_PLACEHOLDER = preload("res://images/placeholder/infinite-placeholder.png")
 
-const CUE_BALL_SPRITES = [	
-							STANDARD_PLACEHOLDER, 
-							EXPLOSIVE_PLACEHOLDER, 
-							WORMHOLE_PLACEHOLDER, 
-							0, 
-							INFINITE_PLACEHOLDER
-						 ]
 
 const EXPLOSIVE_FORCE = 10
 const EXPLOSION_SCALE = 10
@@ -89,7 +78,7 @@ func load_cue_ball():
 	#await get_tree().create_timer(0.1).timeout #Necessary to make sure signal isn't recieved before ball is moving
 	
 	cue_ball_type = level.cue_balls[level.shot_counter]
-	cue_ball_sprite.texture = CUE_BALL_SPRITES[cue_ball_type]
+	cue_ball_sprite.texture = Global.CUE_BALL_SPRITES[cue_ball_type]
 	match cue_ball_type:
 		Global.CUE_BALL_TYPES.STANDARD:
 			load_standard_ball_physics()
