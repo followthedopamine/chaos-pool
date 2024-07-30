@@ -26,11 +26,11 @@ jobs:
       - name: List contents of Web build directory (after export)
         run: ls -l /home/runner/.local/share/godot/archives/
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: web
-          path: /home/runner/.local/share/godot/archives/Web.zip
+      # - name: Upload Artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: web
+      #     path: /home/runner/.local/share/godot/archives/Web.zip
 
       - name: Publish to itch.io
         uses: manleydev/butler-publish-itchio-action@master
