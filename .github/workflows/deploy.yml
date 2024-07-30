@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: web
-          path: ./
+          path: /home/runner/.local/share/godot/archives/Web.zip
 
       - name: Publish to itch.io
         uses: manleydev/butler-publish-itchio-action@master
@@ -39,7 +39,7 @@ jobs:
           CHANNEL: web
           ITCH_GAME: chaos-pool
           ITCH_USER: FollowTheDopamine
-          PACKAGE: ./
+          PACKAGE: /home/runner/.local/share/godot/archives/Web.zip
 
       # Alternative publish action
       # - name: Publish to Itch
