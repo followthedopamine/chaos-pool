@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://da1uht6nbhxv3"]
+[gd_scene load_steps=25 format=3 uid="uid://da1uht6nbhxv3"]
 
 [ext_resource type="Texture2D" uid="uid://bolwmhijjevrc" path="res://images/placeholder/cue-ball-placeholder.png" id="1_fxqes"]
 [ext_resource type="Texture2D" uid="uid://cboalvn3bq4qe" path="res://images/placeholder/cue-placeholder.png" id="1_myjyn"]
@@ -6,11 +6,14 @@
 [ext_resource type="Script" path="res://scripts/Cue.gd" id="3_865l6"]
 [ext_resource type="Texture2D" uid="uid://ck555divyx1s3" path="res://images/placeholder/8-ball-placeholder.png" id="3_haiej"]
 [ext_resource type="Script" path="res://scripts/CueBall.gd" id="4_4qqiu"]
-[ext_resource type="Texture2D" uid="uid://jylqnm40kwsa" path="res://images/placeholder/table-placeholder.png" id="5_bdb22"]
+[ext_resource type="Texture2D" uid="uid://bek0sinan74w6" path="res://images/sprites/Ball Lighting.png" id="6_emkc6"]
 [ext_resource type="Script" path="res://scripts/Pocket.gd" id="7_o68k6"]
+[ext_resource type="Script" path="res://scenes/BallShading.gd" id="7_owjex"]
 [ext_resource type="Texture2D" uid="uid://b02xxchd8cl6w" path="res://images/placeholder/pocket-placeholder.png" id="7_ry3fd"]
 [ext_resource type="Texture2D" uid="uid://da0vkp4tr6iqu" path="res://images/placeholder/11-ball-placeholder.png" id="7_s6uhy"]
+[ext_resource type="Texture2D" uid="uid://dhkyeyjxnw2hx" path="res://images/sprites/Ball.png" id="7_teru4"]
 [ext_resource type="Script" path="res://scripts/AnimateBallSprite.gd" id="8_utbpn"]
+[ext_resource type="Texture2D" uid="uid://byjqs1oig2s2u" path="res://images/sprites/Table.png" id="11_mg440"]
 [ext_resource type="Script" path="res://scripts/Wall.gd" id="12_26vrf"]
 [ext_resource type="Texture2D" uid="uid://c0hc7wlc4xrp5" path="res://images/placeholder/wall-placeholder.png" id="13_euh8w"]
 
@@ -18,7 +21,7 @@
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5b7w"]
-radius = 24.0
+radius = 7.07107
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6omj"]
 radius = 177.406
@@ -35,7 +38,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tssy0"]
-radius = 28.0
+radius = 9.84886
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ht6s"]
 size = Vector2(56, 56)
@@ -54,7 +57,7 @@ script = ExtResource("3_865l6")
 
 [node name="CueBall" type="RigidBody2D" parent="Level1" groups=["balls"]]
 texture_filter = 1
-position = Vector2(534, 396)
+position = Vector2(309, 220)
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_300ds")
 continuous_cd = 2
@@ -64,60 +67,92 @@ linear_damp = 1.5
 script = ExtResource("4_4qqiu")
 
 [node name="CueBallSprite" type="Sprite2D" parent="Level1/CueBall"]
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_fxqes")
+
+[node name="BallShading" type="Sprite2D" parent="Level1/CueBall"]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("6_emkc6")
+script = ExtResource("7_owjex")
 
 [node name="CueBallCollision" type="CollisionShape2D" parent="Level1/CueBall"]
 shape = SubResource("CircleShape2D_c5b7w")
 
 [node name="CueBallAreaOfEffect" type="Area2D" parent="Level1/CueBall"]
+scale = Vector2(0.3, 0.3)
 
 [node name="CueBallAreaOfEffectShape" type="CollisionShape2D" parent="Level1/CueBall/CueBallAreaOfEffect"]
 shape = SubResource("CircleShape2D_v6omj")
 
 [node name="Ball" type="RigidBody2D" parent="Level1" groups=["balls"]]
-position = Vector2(542, 256)
+texture_filter = 2
+position = Vector2(418, 181)
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_3v63n")
 continuous_cd = 2
 linear_damp = 1.5
 
 [node name="BallSprite" type="Sprite2D" parent="Level1/Ball"]
+z_index = 1
 texture_filter = 1
-texture = ExtResource("3_haiej")
+texture = ExtResource("7_teru4")
+
+[node name="BallShading" type="Sprite2D" parent="Level1/Ball"]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("6_emkc6")
+script = ExtResource("7_owjex")
 
 [node name="BallCollision" type="CollisionShape2D" parent="Level1/Ball"]
 shape = SubResource("CircleShape2D_c5b7w")
 
 [node name="Ball2" type="RigidBody2D" parent="Level1" groups=["balls"]]
-position = Vector2(308, 168)
+texture_filter = 2
+position = Vector2(175, 145)
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_3v63n")
 continuous_cd = 2
 linear_damp = 1.5
 
 [node name="BallSprite" type="Sprite2D" parent="Level1/Ball2"]
+z_index = 1
 texture_filter = 1
-texture = ExtResource("3_haiej")
+texture = ExtResource("7_teru4")
+
+[node name="BallShading" type="Sprite2D" parent="Level1/Ball2"]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("6_emkc6")
+script = ExtResource("7_owjex")
 
 [node name="BallCollision" type="CollisionShape2D" parent="Level1/Ball2"]
 shape = SubResource("CircleShape2D_c5b7w")
 
 [node name="Ball3" type="RigidBody2D" parent="Level1" groups=["balls"]]
-position = Vector2(262, 429)
+texture_filter = 2
+position = Vector2(186, 220)
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_3v63n")
 continuous_cd = 2
 linear_damp = 1.5
 
 [node name="BallSprite" type="Sprite2D" parent="Level1/Ball3"]
+z_index = 1
 texture_filter = 1
-texture = ExtResource("3_haiej")
+texture = ExtResource("7_teru4")
+
+[node name="BallShading" type="Sprite2D" parent="Level1/Ball3"]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("6_emkc6")
+script = ExtResource("7_owjex")
 
 [node name="BallCollision" type="CollisionShape2D" parent="Level1/Ball3"]
 shape = SubResource("CircleShape2D_c5b7w")
 
 [node name="Ball4" type="RigidBody2D" parent="Level1"]
-position = Vector2(601, 363)
+position = Vector2(1440, 389)
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_3v63n")
 continuous_cd = 2
@@ -146,15 +181,16 @@ z_index = -1
 collision_layer = 2
 
 [node name="TableCollision" type="CollisionPolygon2D" parent="Level1/Table"]
-polygon = PackedVector2Array(23, 55, 1085, 58, 1087, 614, 3, 610, 3, 53, -483, 59, -459, 1078, 1536, 1064, 1515, -330, -481, -326, -483, 64)
+scale = Vector2(0.55, 0.55)
+polygon = PackedVector2Array(197, 172, 184, 161, 183, 151, 168, 139, 155, 139, 142, 149, 138, 162, 141, 173, 149, 182, 162, 185, 172, 197, 172, 553, 160, 566, 148, 571, 139, 584, 143, 600, 159, 610, 180, 601, 184, 588, 197, 577, 552, 574, 552, 600, 592, 609, 594, 575, 955, 576, 968, 588, 971, 599, 983, 609, 1002, 609, 1013, 594, 1013, 577, 995, 565, 990, 564, 979, 552, 980, 196, 991, 184, 1004, 179, 1014, 162, 1005, 144, 981, 140, 968, 154, 967, 162, 955, 172, 597, 172, 594, 170, 593, 148, 582, 139, 563, 143, 557, 154, 558, 172, 197, 173, 166, -291, 1353, -278, 1389, 821, -282, 800, -278, -342, 167, -289)
 
 [node name="TableSprite" type="Sprite2D" parent="Level1/Table"]
-position = Vector2(546, 333)
-scale = Vector2(11.25, 11.5833)
-texture = ExtResource("5_bdb22")
+texture_filter = 1
+texture = ExtResource("11_mg440")
+offset = Vector2(320, 180)
 
 [node name="Pocket" type="Area2D" parent="Level1/Table"]
-position = Vector2(34, 87)
+position = Vector2(92, 92)
 collision_layer = 2
 script = ExtResource("7_o68k6")
 
@@ -163,10 +199,11 @@ z_index = 1
 shape = SubResource("CircleShape2D_tssy0")
 
 [node name="PocketSprite" type="Sprite2D" parent="Level1/Table/Pocket"]
+visible = false
 texture = ExtResource("7_ry3fd")
 
 [node name="Pocket2" type="Area2D" parent="Level1/Table"]
-position = Vector2(534, 87)
+position = Vector2(320, 87)
 collision_layer = 2
 script = ExtResource("7_o68k6")
 
@@ -175,10 +212,11 @@ z_index = 1
 shape = SubResource("CircleShape2D_tssy0")
 
 [node name="PocketSprite" type="Sprite2D" parent="Level1/Table/Pocket2"]
+visible = false
 texture = ExtResource("7_ry3fd")
 
 [node name="Pocket3" type="Area2D" parent="Level1/Table"]
-position = Vector2(1057, 87)
+position = Vector2(548, 92)
 collision_layer = 2
 script = ExtResource("7_o68k6")
 
@@ -187,10 +225,11 @@ z_index = 1
 shape = SubResource("CircleShape2D_tssy0")
 
 [node name="PocketSprite" type="Sprite2D" parent="Level1/Table/Pocket3"]
+visible = false
 texture = ExtResource("7_ry3fd")
 
 [node name="Pocket4" type="Area2D" parent="Level1/Table"]
-position = Vector2(1057, 578)
+position = Vector2(92, 324)
 collision_layer = 2
 script = ExtResource("7_o68k6")
 
@@ -199,10 +238,11 @@ z_index = 1
 shape = SubResource("CircleShape2D_tssy0")
 
 [node name="PocketSprite" type="Sprite2D" parent="Level1/Table/Pocket4"]
+visible = false
 texture = ExtResource("7_ry3fd")
 
 [node name="Pocket5" type="Area2D" parent="Level1/Table"]
-position = Vector2(540, 578)
+position = Vector2(320, 329)
 collision_layer = 2
 script = ExtResource("7_o68k6")
 
@@ -211,10 +251,11 @@ z_index = 1
 shape = SubResource("CircleShape2D_tssy0")
 
 [node name="PocketSprite" type="Sprite2D" parent="Level1/Table/Pocket5"]
+visible = false
 texture = ExtResource("7_ry3fd")
 
 [node name="Pocket6" type="Area2D" parent="Level1/Table"]
-position = Vector2(35, 578)
+position = Vector2(548, 324)
 collision_layer = 2
 script = ExtResource("7_o68k6")
 
@@ -223,6 +264,7 @@ z_index = 1
 shape = SubResource("CircleShape2D_tssy0")
 
 [node name="PocketSprite" type="Sprite2D" parent="Level1/Table/Pocket6"]
+visible = false
 texture = ExtResource("7_ry3fd")
 
 [node name="Wall" type="StaticBody2D" parent="Level1"]
@@ -242,6 +284,10 @@ texture = ExtResource("13_euh8w")
 [node name="DebugPower" type="RichTextLabel" parent="."]
 offset_right = 1000.0
 offset_bottom = 40.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(1.8, 1.8)
 
 [connection signal="balls_stopped" from="Level1" to="Level1" method="_on_balls_stopped"]
 [connection signal="balls_stopped" from="Level1" to="Level1/Cue" method="_on_balls_stopped"]

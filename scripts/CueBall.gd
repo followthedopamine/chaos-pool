@@ -15,6 +15,7 @@ const CUE_BALL_SPRITES = [
 
 const EXPLOSIVE_FORCE = 10
 const EXPLOSION_SCALE = 10
+const SUCK_MIN_DISTANCE = 30
 
 var initial_position:Vector2
 var has_exploded = false
@@ -48,6 +49,7 @@ func explode_ball():
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
 			#Probably needs to be normalized
+			
 			ball.apply_central_impulse(Vector2(ball.global_position - global_position) * EXPLOSIVE_FORCE)
 	
 func load_infinite_ball_physics():
@@ -70,10 +72,11 @@ func suck():
 	#print("Is sucking")
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
-			ball.apply_central_impulse(Vector2(global_position - ball.global_position))
+			if abs(ball.global_position - global_position).length() > SUCK_MIN_DISTANCE:
+				ball.apply_central_impulse(Vector2(global_position - ball.global_position))
 
 func trigger_constant_effects():
-	#print("Is triggering constant effects")
+	print("Is triggering constant effects")
 	match cue_ball_type:
 		Global.CUE_BALL_TYPES.WORMHOLE:
 			suck()

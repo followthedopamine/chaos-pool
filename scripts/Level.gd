@@ -1,8 +1,8 @@
 extends Node2D
 
-const BALL_1 = preload("res://images/placeholder/1-ball-placeholder.png")
-const BALL_2 = preload("res://images/placeholder/2-ball-placeholder.png")
-const BALL_8 = preload("res://images/placeholder/8-ball-placeholder.png")
+const BALL_1 = preload("res://images/sprites/Ball.png")
+const BALL_2 = preload("res://images/sprites/Ball.png")
+const BALL_8 = preload("res://images/sprites/Ball.png")
 
 const BALL_TEXTURES = [BALL_1, BALL_2, BALL_8]
 
