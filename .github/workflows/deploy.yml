@@ -32,4 +32,4 @@ jobs:
           itch_user: FollowTheDopmaine
           itch_game: chaos-pool
           version: ${{ github.ref_name }}
-          files: "${{ steps.export.outputs.archive_directory }}/mosaics-web.zip"
+          files: "${{ steps.export.outputs.archive_directory }}/Web.zip"
