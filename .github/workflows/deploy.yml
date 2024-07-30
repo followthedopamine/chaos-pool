@@ -24,13 +24,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: List contents of Web build directory (after export)
-        run: ls -l build/web
+        run: ls -l ./
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: web
-          path: build/web
+          path: ./
 
       - name: Publish to itch.io
         uses: manleydev/butler-publish-itchio-action@master
@@ -39,7 +39,7 @@ jobs:
           CHANNEL: web
           ITCH_GAME: chaos-pool
           ITCH_USER: FollowTheDopamine
-          PACKAGE: build/web
+          PACKAGE: ./
 
       # Alternative publish action
       # - name: Publish to Itch
