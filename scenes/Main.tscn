@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://da1uht6nbhxv3"]
+[gd_scene load_steps=26 format=3 uid="uid://da1uht6nbhxv3"]
 
 [ext_resource type="Texture2D" uid="uid://bolwmhijjevrc" path="res://images/placeholder/cue-ball-placeholder.png" id="1_fxqes"]
 [ext_resource type="Texture2D" uid="uid://cboalvn3bq4qe" path="res://images/placeholder/cue-placeholder.png" id="1_myjyn"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b02xxchd8cl6w" path="res://images/placeholder/pocket-placeholder.png" id="7_ry3fd"]
 [ext_resource type="Texture2D" uid="uid://da0vkp4tr6iqu" path="res://images/placeholder/11-ball-placeholder.png" id="7_s6uhy"]
 [ext_resource type="Texture2D" uid="uid://dhkyeyjxnw2hx" path="res://images/sprites/Ball.png" id="7_teru4"]
+[ext_resource type="Script" path="res://scripts/Ball.gd" id="8_qn74p"]
 [ext_resource type="Script" path="res://scripts/AnimateBallSprite.gd" id="8_utbpn"]
 [ext_resource type="Texture2D" uid="uid://byjqs1oig2s2u" path="res://images/sprites/Table.png" id="11_mg440"]
 [ext_resource type="Script" path="res://scripts/Wall.gd" id="12_26vrf"]
@@ -60,10 +61,10 @@ texture_filter = 1
 position = Vector2(309, 220)
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_300ds")
-continuous_cd = 2
+continuous_cd = 1
 max_contacts_reported = 20
 contact_monitor = true
-linear_damp = 1.5
+linear_damp = 0.5
 script = ExtResource("4_4qqiu")
 
 [node name="CueBallSprite" type="Sprite2D" parent="Level1/CueBall"]
@@ -89,9 +90,13 @@ shape = SubResource("CircleShape2D_v6omj")
 texture_filter = 2
 position = Vector2(418, 181)
 collision_mask = 7
+mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_3v63n")
-continuous_cd = 2
-linear_damp = 1.5
+continuous_cd = 1
+max_contacts_reported = 20
+contact_monitor = true
+linear_damp = 0.5
+script = ExtResource("8_qn74p")
 
 [node name="BallSprite" type="Sprite2D" parent="Level1/Ball"]
 z_index = 1
@@ -109,11 +114,15 @@ shape = SubResource("CircleShape2D_c5b7w")
 
 [node name="Ball2" type="RigidBody2D" parent="Level1" groups=["balls"]]
 texture_filter = 2
-position = Vector2(175, 145)
+position = Vector2(162, 156)
 collision_mask = 7
+mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_3v63n")
-continuous_cd = 2
-linear_damp = 1.5
+continuous_cd = 1
+max_contacts_reported = 20
+contact_monitor = true
+linear_damp = 0.5
+script = ExtResource("8_qn74p")
 
 [node name="BallSprite" type="Sprite2D" parent="Level1/Ball2"]
 z_index = 1
@@ -129,34 +138,14 @@ script = ExtResource("7_owjex")
 [node name="BallCollision" type="CollisionShape2D" parent="Level1/Ball2"]
 shape = SubResource("CircleShape2D_c5b7w")
 
-[node name="Ball3" type="RigidBody2D" parent="Level1" groups=["balls"]]
-texture_filter = 2
-position = Vector2(186, 220)
-collision_mask = 7
-physics_material_override = SubResource("PhysicsMaterial_3v63n")
-continuous_cd = 2
-linear_damp = 1.5
-
-[node name="BallSprite" type="Sprite2D" parent="Level1/Ball3"]
-z_index = 1
-texture_filter = 1
-texture = ExtResource("7_teru4")
-
-[node name="BallShading" type="Sprite2D" parent="Level1/Ball3"]
-z_index = 2
-texture_filter = 1
-texture = ExtResource("6_emkc6")
-script = ExtResource("7_owjex")
-
-[node name="BallCollision" type="CollisionShape2D" parent="Level1/Ball3"]
-shape = SubResource("CircleShape2D_c5b7w")
-
 [node name="Ball4" type="RigidBody2D" parent="Level1"]
 position = Vector2(1440, 389)
 collision_mask = 7
+mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_3v63n")
-continuous_cd = 2
+continuous_cd = 1
 linear_damp = 0.5
+script = ExtResource("8_qn74p")
 
 [node name="BallMask" type="Sprite2D" parent="Level1/Ball4"]
 clip_children = 1

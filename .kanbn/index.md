@@ -35,4 +35,5 @@ completedColumns:
 
 - [disconnect-cue-from-cue-ball-after-shot](tasks/disconnect-cue-from-cue-ball-after-shot.md)
 - [pockets](tasks/pockets.md)
+- [add-clacky-sound-to-balls](tasks/add-clacky-sound-to-balls.md)
 - [fix-bugs-in-explosion](tasks/fix-bugs-in-explosion.md)

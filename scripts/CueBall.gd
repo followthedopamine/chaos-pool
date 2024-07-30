@@ -19,6 +19,7 @@ const SUCK_MIN_DISTANCE = 30
 
 var initial_position:Vector2
 var has_exploded = false
+var prev_frame_velocity
 
 
 @onready var cue_ball_sprite = $CueBallSprite
@@ -62,7 +63,7 @@ func load_standard_ball_physics():
 
 func _on_collision(body):
 	if body.is_in_group("balls"):
-		print(body)
+		#print(body)
 		if body != self:
 			if cue_ball_type == Global.CUE_BALL_TYPES.EXPLOSIVE:
 				linear_velocity = Vector2.ZERO
@@ -76,7 +77,7 @@ func suck():
 				ball.apply_central_impulse(Vector2(global_position - ball.global_position))
 
 func trigger_constant_effects():
-	print("Is triggering constant effects")
+	#print("Is triggering constant effects")
 	match cue_ball_type:
 		Global.CUE_BALL_TYPES.WORMHOLE:
 			suck()
@@ -107,7 +108,7 @@ func trigger_cue_ball_end_effects():
 			
 func check_cue_ball_still_moving():
 	if level.cue_ball_active:
-		print(linear_velocity.length())
+		#print(linear_velocity.length())
 		if linear_velocity.length() <= Global.BALL_MOVING_THRESHHOLD:
 			trigger_cue_ball_end_effects()
 			print("Cue ball stopped moving")
@@ -116,6 +117,7 @@ func check_cue_ball_still_moving():
 
 func _physics_process(_delta):
 	#print(level.cue_ball_active)
+	prev_frame_velocity = linear_velocity
 	check_cue_ball_still_moving()
 	
 	if level.cue_ball_active:
