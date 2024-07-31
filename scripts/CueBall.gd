@@ -17,6 +17,8 @@ var prev_frame_velocity
 @onready var cue_ball_collision = $CueBallCollision
 @onready var initial_collision_scale = cue_ball_collision.scale
 @onready var cue_ball_area_of_effect = $CueBallAreaOfEffect
+@onready var cue_ball_animations = $CueBallAnimations
+
 
 
 signal cue_ball_stopped
@@ -36,6 +38,7 @@ func reset():
 
 func explode_ball():
 	has_exploded = true
+	cue_ball_animations.play("explosion")
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
 			#Probably needs to be normalized
@@ -87,6 +90,9 @@ func load_cue_ball():
 	
 	cue_ball_type = level.cue_balls[level.shot_counter]
 	cue_ball_sprite.texture = Global.CUE_BALL_SPRITES[cue_ball_type]
+	# [HFrames, Frame]
+	cue_ball_sprite.hframes = Global.CUE_BALL_SPRITE_INFO[cue_ball_type][0]
+	cue_ball_sprite.frame = Global.CUE_BALL_SPRITE_INFO[cue_ball_type][1]
 	match cue_ball_type:
 		Global.CUE_BALL_TYPES.STANDARD:
 			load_standard_ball_physics()

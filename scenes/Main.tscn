@@ -1,11 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://da1uht6nbhxv3"]
+[gd_scene load_steps=30 format=3 uid="uid://da1uht6nbhxv3"]
 
-[ext_resource type="Texture2D" uid="uid://bolwmhijjevrc" path="res://images/placeholder/cue-ball-placeholder.png" id="1_fxqes"]
 [ext_resource type="Texture2D" uid="uid://cboalvn3bq4qe" path="res://images/placeholder/cue-placeholder.png" id="1_myjyn"]
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_myne5"]
 [ext_resource type="Script" path="res://scripts/Cue.gd" id="3_865l6"]
 [ext_resource type="Texture2D" uid="uid://ck555divyx1s3" path="res://images/placeholder/8-ball-placeholder.png" id="3_haiej"]
 [ext_resource type="Script" path="res://scripts/CueBall.gd" id="4_4qqiu"]
+[ext_resource type="Texture2D" uid="uid://k8muokcpla5b" path="res://images/sprites/Ball Animations-Sheet.png" id="5_bunru"]
 [ext_resource type="Texture2D" uid="uid://bek0sinan74w6" path="res://images/sprites/Ball Lighting.png" id="6_emkc6"]
 [ext_resource type="Script" path="res://scripts/Pocket.gd" id="7_o68k6"]
 [ext_resource type="Script" path="res://scenes/BallShading.gd" id="7_owjex"]
@@ -27,6 +27,44 @@ radius = 7.07107
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v6omj"]
 radius = 177.406
+
+[sub_resource type="Animation" id="Animation_wcq56"]
+resource_name = "explosion"
+length = 0.4
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CueBallSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [3, 5, 7, 9, 11, 13, 15]
+}
+
+[sub_resource type="Animation" id="Animation_jgdp1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CueBallSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xaa6u"]
+_data = {
+"RESET": SubResource("Animation_jgdp1"),
+"explosion": SubResource("Animation_wcq56")
+}
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3v63n"]
 bounce = 1.0
@@ -69,23 +107,32 @@ linear_damp = 0.5
 script = ExtResource("4_4qqiu")
 
 [node name="CueBallSprite" type="Sprite2D" parent="Level1/CueBall"]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_fxqes")
+texture = ExtResource("5_bunru")
+hframes = 16
+frame = 1
 
 [node name="BallShading" type="Sprite2D" parent="Level1/CueBall"]
+visible = false
 z_index = 2
 texture_filter = 1
 texture = ExtResource("6_emkc6")
 script = ExtResource("7_owjex")
 
 [node name="CueBallCollision" type="CollisionShape2D" parent="Level1/CueBall"]
+visible = false
 shape = SubResource("CircleShape2D_c5b7w")
 
 [node name="CueBallAreaOfEffect" type="Area2D" parent="Level1/CueBall"]
+visible = false
 scale = Vector2(0.3, 0.3)
 
 [node name="CueBallAreaOfEffectShape" type="CollisionShape2D" parent="Level1/CueBall/CueBallAreaOfEffect"]
 shape = SubResource("CircleShape2D_v6omj")
+
+[node name="CueBallAnimations" type="AnimationPlayer" parent="Level1/CueBall"]
+libraries = {
+"": SubResource("AnimationLibrary_xaa6u")
+}
 
 [node name="Ball" type="RigidBody2D" parent="Level1" groups=["balls"]]
 texture_filter = 2
