@@ -91,8 +91,12 @@ func load_cue_ball():
 	cue_ball_type = level.cue_balls[level.shot_counter]
 	cue_ball_sprite.texture = Global.CUE_BALL_SPRITES[cue_ball_type]
 	# [HFrames, Frame]
-	cue_ball_sprite.hframes = Global.CUE_BALL_SPRITE_INFO[cue_ball_type][0]
-	cue_ball_sprite.frame = Global.CUE_BALL_SPRITE_INFO[cue_ball_type][1]
+	#cue_ball_sprite.hframes = Global.CUE_BALL_ANIMATION_INFO[cue_ball_type][0]
+	#cue_ball_sprite.frame = Global.CUE_BALL_ANIMATION_INFO[cue_ball_type][1]
+	# Reset after animation - TODO: This might be really bad
+	#Bro my balls aren't circle shaped
+	cue_ball_sprite.hframes = 1
+	cue_ball_sprite.frame = 0
 	match cue_ball_type:
 		Global.CUE_BALL_TYPES.STANDARD:
 			load_standard_ball_physics()
