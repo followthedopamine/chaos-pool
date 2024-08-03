@@ -55,7 +55,7 @@ func roll_with_velocity():
 	# Update the offset based on velocity
 	offset += Vector2(vel.x * roll_speed, vel.y * roll_speed)
 
-func move_ball(delta):
+func move_ball(_delta):
 	pass
 	#ball.linear_velocity = Vector2(50 -delta ,-20 + delta)
 

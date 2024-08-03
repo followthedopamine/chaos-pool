@@ -10,6 +10,7 @@ const BALL_TEXTURES = [BALL_1, BALL_2, BALL_8]
 
 var prev_balls_moving = false
 var cue_ball_active = false
+var balls_moving = false
 
 signal balls_stopped
 
@@ -28,9 +29,6 @@ func _ready():
 
 func fail_level():
 	print("You lose")
-
-func _on_balls_stopped():
-	pass
 	
 func _on_cue_shoot():
 	cue_ball_active = true
@@ -44,7 +42,7 @@ func _on_cue_ball_stopped():
 func check_balls_are_moving():
 	if cue_ball_active:
 		return
-	var balls_moving = false
+	balls_moving = false
 	for ball:RigidBody2D in get_tree().get_nodes_in_group("balls"):
 		if ball.linear_velocity.length() >= Global.BALL_MOVING_THRESHHOLD:
 			balls_moving = true

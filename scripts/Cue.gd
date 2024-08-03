@@ -41,10 +41,12 @@ func position_cue():
 	global_position = cue_ball.global_position
 
 func _on_balls_stopped():
+	# This breaks badly on loading scene from code
+	# Just using the level.balls_moving variable instead for now and it seems fine
 	balls_moving = false
 
 func _process(delta):
-	if !balls_moving:
+	if !level.balls_moving:
 		position_cue()
 		angle_cue()
 		handle_input(delta)

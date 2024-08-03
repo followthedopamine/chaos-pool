@@ -4,7 +4,7 @@ var sounds_to_free = []
 
 func create_sound_and_play(file, volume_db, parent):
 	var sound = AudioStreamPlayer2D.new()
-	add_child(sound)
+	parent.add_child(sound)
 	sound.stream = file
 	sound.volume_db = volume_db
 	sound.play()
