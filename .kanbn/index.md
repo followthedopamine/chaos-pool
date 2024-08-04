@@ -12,11 +12,12 @@ completedColumns:
 - [rewarded-ads](tasks/rewarded-ads.md)
 - [create-balls-from-scene](tasks/create-balls-from-scene.md)
 - [mtx](tasks/mtx.md)
+- [ball-that-creates-a-pocket](tasks/ball-that-creates-a-pocket.md)
+- [lucky-ball](tasks/lucky-ball.md)
 
 ## Todo
 
 - [show-shot-charge](tasks/show-shot-charge.md)
-- [pusher-ball](tasks/pusher-ball.md)
 - [win-condition](tasks/win-condition.md)
 - [lose-condition](tasks/lose-condition.md)
 - [bug-wall-disappears-without-being-hit](tasks/bug-wall-disappears-without-being-hit.md)
@@ -30,12 +31,13 @@ completedColumns:
 ## In Progress
 
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
-- [github-action-for-testing](tasks/github-action-for-testing.md)
 
 ## Done
 
 - [disconnect-cue-from-cue-ball-after-shot](tasks/disconnect-cue-from-cue-ball-after-shot.md)
 - [wormhole-ball](tasks/wormhole-ball.md)
+- [pusher-ball](tasks/pusher-ball.md)
+- [github-action-for-testing](tasks/github-action-for-testing.md)
 - [display-available-cue-balls](tasks/display-available-cue-balls.md)
 - [pockets](tasks/pockets.md)
 - [add-clacky-sound-to-balls](tasks/add-clacky-sound-to-balls.md)

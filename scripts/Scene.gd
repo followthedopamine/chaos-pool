@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var main_scene = $"../Main"
 const PERMANENT_SCENES = ["DebugPower", "Camera2D"]
-const LEVEL_1 = preload("res://scenes/Level_1.tscn")
+const LEVEL_1 = preload("res://scenes/Level_2.tscn")
 
 func load_level_1():
 	unload_scenes()
