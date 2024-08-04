@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dfxuyufo3wons"]
+[gd_scene load_steps=27 format=3 uid="uid://dfxuyufo3wons"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_ma1sx"]
 [ext_resource type="Texture2D" uid="uid://cboalvn3bq4qe" path="res://images/placeholder/cue-placeholder.png" id="2_lyujo"]
@@ -15,8 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://byjqs1oig2s2u" path="res://images/sprites/Table.png" id="13_3efm2"]
 [ext_resource type="Script" path="res://scripts/Pocket.gd" id="14_auuk0"]
 [ext_resource type="Texture2D" uid="uid://b02xxchd8cl6w" path="res://images/placeholder/pocket-placeholder.png" id="15_s8cfm"]
-[ext_resource type="Script" path="res://scripts/Glass.gd" id="16_47r0c"]
-[ext_resource type="Texture2D" uid="uid://c0hc7wlc4xrp5" path="res://images/placeholder/wall-placeholder.png" id="17_fkwj0"]
 [ext_resource type="Script" path="res://scripts/CueBallsDisplay.gd" id="18_o6o60"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_300ds"]
@@ -127,9 +125,6 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tssy0"]
 radius = 9.84886
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ht6s"]
-size = Vector2(56, 56)
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ma1sx")
@@ -348,20 +343,6 @@ shape = SubResource("CircleShape2D_tssy0")
 visible = false
 texture = ExtResource("15_s8cfm")
 
-[node name="Wall" type="StaticBody2D" parent="."]
-position = Vector2(1027, 123)
-rotation = 0.865805
-scale = Vector2(3.32, 0.44)
-collision_layer = 4
-script = ExtResource("16_47r0c")
-
-[node name="WallCollision" type="CollisionShape2D" parent="Wall"]
-z_index = 1
-shape = SubResource("RectangleShape2D_1ht6s")
-
-[node name="WallSprite" type="Sprite2D" parent="Wall"]
-texture = ExtResource("17_fkwj0")
-
 [node name="CueBallsDisplay" type="BoxContainer" parent="."]
 layout_direction = 3
 offset_left = -568.0
@@ -376,7 +357,6 @@ script = ExtResource("18_o6o60")
 [connection signal="shoot" from="Cue" to="." method="_on_cue_shoot"]
 [connection signal="shoot" from="Cue" to="CueBall" method="_on_shoot"]
 [connection signal="body_entered" from="CueBall" to="CueBall" method="_on_collision"]
-[connection signal="body_entered" from="CueBall" to="Wall" method="_on_cue_ball_body_entered"]
 [connection signal="cue_ball_stopped" from="CueBall" to="." method="_on_cue_ball_stopped"]
 [connection signal="body_entered" from="Table/Pocket" to="Table/Pocket" method="_on_body_entered"]
 [connection signal="body_entered" from="Table/Pocket2" to="Table/Pocket2" method="_on_body_entered"]

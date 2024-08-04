@@ -1,21 +1,119 @@
-[gd_scene load_steps=2 format=3 uid="uid://da1uht6nbhxv3"]
+[gd_scene load_steps=11 format=3 uid="uid://da1uht6nbhxv3"]
 
-[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_tihin"]
+[ext_resource type="Texture2D" uid="uid://dc8e2qebsigl7" path="res://images/ui/Level Select BG.png" id="1_5wpk4"]
+[ext_resource type="Texture2D" uid="uid://bcimvuynnuk3u" path="res://images/ui/Buttons-Sheet.png" id="2_1tcm4"]
+[ext_resource type="Texture2D" uid="uid://ccycrnff24khu" path="res://images/ui/Level Select Title.png" id="3_5rw78"]
+[ext_resource type="FontFile" uid="uid://kxe018a8ofnh" path="res://fonts/Magnolia Script.otf" id="3_ayx6d"]
+[ext_resource type="Script" path="res://scripts/LevelButton.gd" id="5_2ekl3"]
+
+[sub_resource type="GDScript" id="GDScript_sqvaf"]
+script/source = "extends TextureRect
+
+func _on_button_pressed():
+	Scene.load_level_1()
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52uoq"]
+bg_color = Color(0, 0, 0.141176, 0.807843)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bip4t"]
+atlas = ExtResource("2_1tcm4")
+region = Rect2(14, 20, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsljr"]
+atlas = ExtResource("2_1tcm4")
+region = Rect2(110, 20, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxdbs"]
+atlas = ExtResource("2_1tcm4")
+region = Rect2(206, 20, 68, 46)
 
 [node name="Main" type="Node2D"]
 
-[node name="MainMenu" type="Panel" parent="."]
-offset_right = 642.0
-offset_bottom = 362.0
-script = ExtResource("1_tihin")
+[node name="LevelSelect" type="TextureRect" parent="."]
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("1_5wpk4")
+script = SubResource("GDScript_sqvaf")
 
-[node name="Button" type="Button" parent="MainMenu"]
+[node name="Container" type="VBoxContainer" parent="LevelSelect"]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LevelSelectTitle" type="TextureRect" parent="LevelSelect/Container"]
+layout_mode = 2
+texture = ExtResource("3_5rw78")
+stretch_mode = 2
+
+[node name="Panel" type="Panel" parent="LevelSelect/Container"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_52uoq")
+
+[node name="BoxContainer" type="BoxContainer" parent="LevelSelect/Container/Panel"]
 layout_mode = 0
-offset_left = 230.0
-offset_top = 171.0
-offset_right = 409.0
-offset_bottom = 202.0
-text = "CLICK ME FOR LEVEL 1"
+offset_right = 400.0
+offset_bottom = 201.0
+alignment = 1
+vertical = true
+
+[node name="BoxContainer" type="BoxContainer" parent="LevelSelect/Container/Panel/BoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LevelButton" type="TextureButton" parent="LevelSelect/Container/Panel/BoxContainer/BoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_bip4t")
+texture_pressed = SubResource("AtlasTexture_vsljr")
+texture_disabled = SubResource("AtlasTexture_hxdbs")
+script = ExtResource("5_2ekl3")
+
+[node name="LevelButtonText" type="RichTextLabel" parent="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_ayx6d")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]1[/center]"
+fit_content = true
+
+[node name="LevelButton2" type="TextureButton" parent="LevelSelect/Container/Panel/BoxContainer/BoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_bip4t")
+texture_pressed = SubResource("AtlasTexture_vsljr")
+texture_disabled = SubResource("AtlasTexture_hxdbs")
+script = ExtResource("5_2ekl3")
+
+[node name="LevelButtonText" type="RichTextLabel" parent="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton2"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_ayx6d")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]2[/center]"
+fit_content = true
 
 [node name="DebugPower" type="RichTextLabel" parent="."]
 offset_right = 1000.0
@@ -25,4 +123,11 @@ offset_bottom = 40.0
 anchor_mode = 0
 zoom = Vector2(1.8, 1.8)
 
-[connection signal="pressed" from="MainMenu/Button" to="MainMenu" method="_on_button_pressed"]
+[connection signal="button_down" from="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton" to="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_button_down"]
+[connection signal="button_up" from="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton" to="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_button_up"]
+[connection signal="mouse_exited" from="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton" to="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton" to="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_pressed"]
+[connection signal="button_down" from="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_button_down"]
+[connection signal="button_up" from="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_button_up"]
+[connection signal="mouse_exited" from="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_mouse_exited"]
+[connection signal="pressed" from="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_pressed"]
