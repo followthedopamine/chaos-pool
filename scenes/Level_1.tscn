@@ -1,7 +1,7 @@
 [gd_scene load_steps=45 format=3 uid="uid://dfxuyufo3wons"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_ma1sx"]
-[ext_resource type="Texture2D" uid="uid://cboalvn3bq4qe" path="res://images/placeholder/cue-placeholder.png" id="2_lyujo"]
+[ext_resource type="Texture2D" uid="uid://c7ih72utikc6m" path="res://images/sprites/Cue.png" id="2_t6mi6"]
 [ext_resource type="Script" path="res://scripts/Cue.gd" id="3_oht3d"]
 [ext_resource type="Script" path="res://scripts/CueBall.gd" id="4_cq02i"]
 [ext_resource type="Texture2D" uid="uid://k8muokcpla5b" path="res://images/sprites/Ball Animations-Sheet.png" id="5_wl5kn"]
@@ -286,8 +286,8 @@ cue_balls = Array[int]([3, 3, 1, 2, 2, 0, 4])
 
 [node name="Cue" type="Sprite2D" parent="."]
 position = Vector2(158, 262)
-texture = ExtResource("2_lyujo")
-offset = Vector2(-100, 0)
+texture = ExtResource("2_t6mi6")
+offset = Vector2(-126, 0)
 script = ExtResource("3_oht3d")
 
 [node name="CueBall" type="RigidBody2D" parent="." groups=["balls"]]
@@ -434,19 +434,6 @@ texture_filter = 1
 texture = ExtResource("13_3efm2")
 offset = Vector2(320, 180)
 
-[node name="Pocket" type="Area2D" parent="Table"]
-position = Vector2(92, 92)
-collision_layer = 2
-script = ExtResource("14_auuk0")
-
-[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket"]
-z_index = 1
-shape = SubResource("CircleShape2D_tssy0")
-
-[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket"]
-visible = false
-texture = ExtResource("15_s8cfm")
-
 [node name="Pocket2" type="Area2D" parent="Table"]
 position = Vector2(320, 87)
 collision_layer = 2
@@ -512,6 +499,19 @@ shape = SubResource("CircleShape2D_tssy0")
 visible = false
 texture = ExtResource("15_s8cfm")
 
+[node name="Pocket" type="Area2D" parent="Table"]
+position = Vector2(92, 92)
+collision_layer = 2
+script = ExtResource("14_auuk0")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket"]
+visible = false
+texture = ExtResource("15_s8cfm")
+
 [node name="CueBallsDisplay" type="BoxContainer" parent="."]
 layout_direction = 3
 offset_left = -568.0
@@ -527,9 +527,9 @@ script = ExtResource("18_o6o60")
 [connection signal="shoot" from="Cue" to="CueBall" method="_on_shoot"]
 [connection signal="body_entered" from="CueBall" to="CueBall" method="_on_collision"]
 [connection signal="cue_ball_stopped" from="CueBall" to="." method="_on_cue_ball_stopped"]
-[connection signal="body_entered" from="Table/Pocket" to="Table/Pocket" method="_on_body_entered"]
 [connection signal="body_entered" from="Table/Pocket2" to="Table/Pocket2" method="_on_body_entered"]
 [connection signal="body_entered" from="Table/Pocket3" to="Table/Pocket3" method="_on_body_entered"]
 [connection signal="body_entered" from="Table/Pocket4" to="Table/Pocket4" method="_on_body_entered"]
 [connection signal="body_entered" from="Table/Pocket5" to="Table/Pocket5" method="_on_body_entered"]
 [connection signal="body_entered" from="Table/Pocket6" to="Table/Pocket6" method="_on_body_entered"]
+[connection signal="body_entered" from="Table/Pocket" to="Table/Pocket" method="_on_body_entered"]

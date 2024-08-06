@@ -28,15 +28,16 @@ completedColumns:
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [main-menu](tasks/main-menu.md)
 - [options-menu](tasks/options-menu.md)
+- [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
 
 ## In Progress
 
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
-- [ball-sinking-animation](tasks/ball-sinking-animation.md)
 
 ## Done
 
 - [bug-wall-disappears-without-being-hit](tasks/bug-wall-disappears-without-being-hit.md)
+- [ball-sinking-animation](tasks/ball-sinking-animation.md)
 - [level-select](tasks/level-select.md)
 - [metal-walls-that-can-t-be-broken](tasks/metal-walls-that-can-t-be-broken.md)
 - [disconnect-cue-from-cue-ball-after-shot](tasks/disconnect-cue-from-cue-ball-after-shot.md)
