@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0webhkjrv3kx"
-path="res://.godot/imported/Ball.png-765168702f0c43c8b282827916fe4b3b.ctex"
+uid="uid://deo8s4rfq2u6j"
+path="res://.godot/imported/Pusher-Ball.png-0d347697555c2b34a4cbd81aed92d587.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/sprites/Ball.png"
-dest_files=["res://.godot/imported/Ball.png-765168702f0c43c8b282827916fe4b3b.ctex"]
+source_file="res://images/sprites/Pusher-Ball.png"
+dest_files=["res://.godot/imported/Pusher-Ball.png-0d347697555c2b34a4cbd81aed92d587.ctex"]
 
 [params]
 

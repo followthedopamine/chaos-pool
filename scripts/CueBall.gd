@@ -5,6 +5,7 @@ extends RigidBody2D
 const EXPLOSIVE_FORCE = 10
 const EXPLOSION_SCALE = 10
 const SUCK_MIN_DISTANCE = 30
+const EXPLOSION_ANIMATION_DURATION = 0.4
 
 var initial_position:Vector2
 var has_exploded = false
@@ -18,12 +19,14 @@ var prev_frame_velocity
 @onready var initial_collision_scale = cue_ball_collision.scale
 @onready var cue_ball_area_of_effect = $CueBallAreaOfEffect
 @onready var cue_ball_animations = $CueBallAnimations
+@onready var wormhole_animated_sprite = $WormholeAnimatedSprite
+@onready var pusher_animated_sprite = $PusherAnimatedSprite
+
 
 
 
 signal cue_ball_stopped
 
-var cue_ball_active = false
 
 func _ready():
 	initial_position = global_position
@@ -36,15 +39,19 @@ func reset():
 	# I have no explanation for why this doesn't work without a timer.
 	# There will be an animation here so I don't think it matters.
 
+func hide_ball():
+	cue_ball_sprite.visible = false
+
 func explode_ball():
 	has_exploded = true
 	cue_ball_animations.play("explosion")
+	cue_ball_collision.disabled = true
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
 			#Probably needs to be normalized
-			
 			ball.apply_central_impulse(Vector2(ball.global_position - global_position) * EXPLOSIVE_FORCE)
 	
+
 func load_infinite_ball_physics():
 	linear_damp = 0
 	linear_damp_mode = RigidBody2D.DAMP_MODE_REPLACE
@@ -63,6 +70,7 @@ func _on_collision(body):
 				
 func suck():
 	#print("Is sucking")
+	wormhole_animated_sprite.visible = true
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
 			if abs(ball.global_position - global_position).length() > SUCK_MIN_DISTANCE:
@@ -70,6 +78,7 @@ func suck():
 
 func push():
 	#print("Is sucking")
+	pusher_animated_sprite.visible = true
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
 			ball.apply_central_impulse(Vector2(ball.global_position - global_position))
@@ -84,28 +93,23 @@ func trigger_constant_effects():
 
 func _on_balls_stopped():
 	call_deferred("load_cue_ball")
+	
+func reset_cue_ball():
+	cue_ball_sprite.hframes = 1
+	cue_ball_sprite.vframes = 1
+	cue_ball_sprite.frame = 0
+	load_standard_ball_physics()
+	cue_ball_sprite.visible = true
+	cue_ball_collision.disabled = false
+	wormhole_animated_sprite.visible = false
+	pusher_animated_sprite.visible = false
 
 func load_cue_ball():
-	#await get_tree().create_timer(0.1).timeout #Necessary to make sure signal isn't recieved before ball is moving
-	
 	cue_ball_type = level.cue_balls[level.shot_counter]
 	cue_ball_sprite.texture = Global.CUE_BALL_SPRITES[cue_ball_type]
-	# [HFrames, Frame]
-	#cue_ball_sprite.hframes = Global.CUE_BALL_ANIMATION_INFO[cue_ball_type][0]
-	#cue_ball_sprite.frame = Global.CUE_BALL_ANIMATION_INFO[cue_ball_type][1]
-	# Reset after animation - TODO: This might be really bad
-	#Bro my balls aren't circle shaped
-	cue_ball_sprite.hframes = 1
-	cue_ball_sprite.frame = 0
+	reset_cue_ball()
+	
 	match cue_ball_type:
-		Global.CUE_BALL_TYPES.STANDARD:
-			load_standard_ball_physics()
-		Global.CUE_BALL_TYPES.EXPLOSIVE:
-			load_standard_ball_physics()
-		Global.CUE_BALL_TYPES.WORMHOLE:
-			load_standard_ball_physics()
-		Global.CUE_BALL_TYPES.PUSHER:
-			load_standard_ball_physics()
 		Global.CUE_BALL_TYPES.INFINITE:
 			load_infinite_ball_physics()
 		
@@ -131,10 +135,4 @@ func _physics_process(_delta):
 	
 	if level.cue_ball_active:
 		trigger_constant_effects()
-
-
-
-
-
-
 

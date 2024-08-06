@@ -19,7 +19,7 @@ func handle_input(delta):
 		get_tree().reload_current_scene()
 	if Input.is_action_pressed("shoot"):
 		increase_power(delta)
-	if Input.is_action_just_released("shoot"):
+	if Input.is_action_just_released("shoot") and power > 0:
 		shoot_cue_ball()
 		
 func increase_power(delta):

@@ -23,10 +23,16 @@ completedColumns:
 - [lose-condition](tasks/lose-condition.md)
 - [levels-1-5](tasks/levels-1-5.md)
 - [locked-levels](tasks/locked-levels.md)
+- [scoring-system](tasks/scoring-system.md)
+- [stars-on-level-select](tasks/stars-on-level-select.md)
+- [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
+- [main-menu](tasks/main-menu.md)
+- [options-menu](tasks/options-menu.md)
 
 ## In Progress
 
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
+- [ball-sinking-animation](tasks/ball-sinking-animation.md)
 
 ## Done
 

@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://bek0sinan74w6" path="res://images/sprites/Ball Lighting.png" id="6_y62mu"]
 [ext_resource type="Script" path="res://scripts/BallShading.gd" id="7_fmdls"]
 [ext_resource type="Script" path="res://scripts/Ball.gd" id="8_4rcun"]
-[ext_resource type="Texture2D" uid="uid://dhkyeyjxnw2hx" path="res://images/sprites/Ball.png" id="9_6dmdo"]
 [ext_resource type="Texture2D" uid="uid://ck555divyx1s3" path="res://images/placeholder/8-ball-placeholder.png" id="10_r4exm"]
 [ext_resource type="Texture2D" uid="uid://da0vkp4tr6iqu" path="res://images/placeholder/11-ball-placeholder.png" id="11_35or5"]
 [ext_resource type="Script" path="res://scripts/AnimateBallSprite.gd" id="12_kb3eg"]
@@ -117,6 +116,9 @@ _data = {
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3v63n"]
 bounce = 1.0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ir13i"]
+load_path = "res://.godot/imported/Ball Animations-Sheet.png-7fa478d48b658cadfcdbdc6fe8e58416.ctex"
+
 [sub_resource type="Animation" id="Animation_vacbd"]
 resource_name = "scroll_texture"
 
@@ -196,7 +198,7 @@ script = ExtResource("8_4rcun")
 [node name="BallSprite" type="Sprite2D" parent="Ball"]
 z_index = 1
 texture_filter = 1
-texture = ExtResource("9_6dmdo")
+texture = SubResource("CompressedTexture2D_ir13i")
 
 [node name="BallShading" type="Sprite2D" parent="Ball"]
 z_index = 2
@@ -222,7 +224,7 @@ script = ExtResource("8_4rcun")
 [node name="BallSprite" type="Sprite2D" parent="Ball2"]
 z_index = 1
 texture_filter = 1
-texture = ExtResource("9_6dmdo")
+texture = SubResource("CompressedTexture2D_ir13i")
 
 [node name="BallShading" type="Sprite2D" parent="Ball2"]
 z_index = 2

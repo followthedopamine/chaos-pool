@@ -8,10 +8,10 @@ enum CUE_BALL_TYPES {
 	INFINITE
 }
 
-const STANDARD_PLACEHOLDER = preload("res://images/placeholder/cue-ball-placeholder.png")
+const STANDARD_PLACEHOLDER = preload("res://images/sprites/Cue-Ball.png")
 const EXPLOSIVE_SPRITE = preload("res://images/sprites/explosive-ball.png")
 const WORMHOLE_SPRITE = preload("res://images/sprites/wormhole-ball.png")
-const PUSHER_PLACEHOLDER = preload("res://images/placeholder/pusher-placeholder.png")
+const PUSHER_PLACEHOLDER = preload("res://images/sprites/Pusher-Ball.png")
 const INFINITE_PLACEHOLDER = preload("res://images/placeholder/infinite-placeholder.png")
 
 const CUE_BALL_SPRITES = [	
