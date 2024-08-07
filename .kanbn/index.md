@@ -19,23 +19,25 @@ completedColumns:
 ## Todo
 
 - [show-shot-charge](tasks/show-shot-charge.md)
-- [win-condition](tasks/win-condition.md)
 - [lose-condition](tasks/lose-condition.md)
 - [levels-1-5](tasks/levels-1-5.md)
 - [locked-levels](tasks/locked-levels.md)
-- [scoring-system](tasks/scoring-system.md)
 - [stars-on-level-select](tasks/stars-on-level-select.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [main-menu](tasks/main-menu.md)
 - [options-menu](tasks/options-menu.md)
 - [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
+- [level-timer](tasks/level-timer.md)
+- [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
 
 ## In Progress
 
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
+- [scoring-system](tasks/scoring-system.md)
 
 ## Done
 
+- [win-condition](tasks/win-condition.md)
 - [bug-wall-disappears-without-being-hit](tasks/bug-wall-disappears-without-being-hit.md)
 - [ball-sinking-animation](tasks/ball-sinking-animation.md)
 - [level-select](tasks/level-select.md)

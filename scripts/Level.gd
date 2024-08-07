@@ -18,9 +18,10 @@ signal balls_stopped
 @export var cue_balls:Array[Global.CUE_BALL_TYPES] = []
 
 var shot_counter = 0
+var ball_counter = 0
+
 
 func _ready():
-	var ball_counter = 0
 	for ball:RigidBody2D in get_tree().get_nodes_in_group("balls"):
 		if ball != cue_ball:
 			# NOTE: Sprite MUST be first child for this to work
@@ -29,6 +30,9 @@ func _ready():
 
 func fail_level():
 	print("You lose")
+	
+func succeed_level():
+	print("You win")
 	
 func _on_cue_shoot():
 	cue_ball_active = true
@@ -53,6 +57,8 @@ func check_balls_are_moving():
 				fail_level()
 			else:
 				shot_counter += 1
+				if ball_counter == 0:
+					succeed_level()
 				balls_stopped.emit()
 
 func _physics_process(_delta):

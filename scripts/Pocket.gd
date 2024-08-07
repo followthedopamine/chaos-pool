@@ -36,6 +36,7 @@ func _on_body_entered(body:RigidBody2D):
 		if body == cue_ball:
 			cue_ball.reset()
 		else:
+			level.ball_counter -= 1
 			body.queue_free()
 
 func _process(delta):
