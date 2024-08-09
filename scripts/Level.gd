@@ -33,6 +33,11 @@ func fail_level():
 	
 func succeed_level():
 	print("You win")
+	print("Star score: " + str(cue_balls.size() - shot_counter))
+	var star_score = cue_balls.size() - shot_counter
+	var level_number = int(self.name.substr(5))
+	print(level_number)
+	Save.save_stars(level_number - 1, star_score)
 	
 func _on_cue_shoot():
 	cue_ball_active = true

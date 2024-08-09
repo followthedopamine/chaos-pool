@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://da1uht6nbhxv3"]
+[gd_scene load_steps=12 format=3 uid="uid://da1uht6nbhxv3"]
 
 [ext_resource type="Texture2D" uid="uid://dc8e2qebsigl7" path="res://images/ui/Level Select BG.png" id="1_5wpk4"]
 [ext_resource type="Texture2D" uid="uid://bcimvuynnuk3u" path="res://images/ui/Buttons-Sheet.png" id="2_1tcm4"]
@@ -6,11 +6,9 @@
 [ext_resource type="FontFile" uid="uid://kxe018a8ofnh" path="res://fonts/Magnolia Script.otf" id="3_ayx6d"]
 [ext_resource type="Script" path="res://scripts/LevelButton.gd" id="5_2ekl3"]
 [ext_resource type="Script" path="res://scenes/LevelStars.gd" id="6_ch6og"]
-[ext_resource type="Texture2D" uid="uid://l2fb6nigeirc" path="res://images/ui/Stars Level Select-Sheet.png" id="7_bhhaj"]
 
 [sub_resource type="GDScript" id="GDScript_sqvaf"]
 script/source = "extends TextureRect
-
 
 func _on_button_pressed():
 	Scene.load_level_1()
@@ -38,10 +36,6 @@ region = Rect2(110, 20, 68, 46)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxdbs"]
 atlas = ExtResource("2_1tcm4")
 region = Rect2(206, 20, 68, 46)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qilly"]
-atlas = ExtResource("7_bhhaj")
-region = Rect2(306, 68, 60, 18)
 
 [node name="Main" type="Node2D"]
 
@@ -105,13 +99,14 @@ bbcode_enabled = true
 text = "[center]1[/center]"
 fit_content = true
 
-[node name="LevelStars" type="TextureRect" parent="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton"]
-offset_left = 3.0
-offset_top = -12.0
-offset_right = 63.0
-offset_bottom = 6.0
-mouse_filter = 2
-texture = SubResource("AtlasTexture_qilly")
+[node name="Level1Stars" type="RichTextLabel" parent="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -7.0
+offset_right = 57.0
+offset_bottom = 33.0
+theme_override_font_sizes/normal_font_size = 10
+text = "SCORE"
 script = ExtResource("6_ch6og")
 
 [node name="LevelButton2" type="TextureButton" parent="LevelSelect/Container/Panel/BoxContainer/BoxContainer"]
@@ -134,16 +129,6 @@ theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "[center]2[/center]"
 fit_content = true
-
-[node name="LevelStars" type="TextureRect" parent="LevelSelect/Container/Panel/BoxContainer/BoxContainer/LevelButton2"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = -12.0
-offset_right = 63.0
-offset_bottom = 6.0
-mouse_filter = 2
-texture = SubResource("AtlasTexture_qilly")
-script = ExtResource("6_ch6og")
 
 [node name="DebugPower" type="RichTextLabel" parent="."]
 offset_right = 1000.0

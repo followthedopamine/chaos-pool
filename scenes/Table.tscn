@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://bguhci6hl27rj"]
+
+[ext_resource type="Texture2D" uid="uid://byjqs1oig2s2u" path="res://images/sprites/Table.png" id="1_sldgj"]
+[ext_resource type="Script" path="res://scripts/Pocket.gd" id="2_21ct7"]
+[ext_resource type="Texture2D" uid="uid://b02xxchd8cl6w" path="res://images/placeholder/pocket-placeholder.png" id="3_vjwi4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tssy0"]
+radius = 9.84886
+
+[node name="Table" type="StaticBody2D"]
+z_index = -999
+collision_layer = 2
+
+[node name="TableCollision" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.55, 0.55)
+polygon = PackedVector2Array(197, 172, 184, 161, 183, 151, 168, 139, 155, 139, 142, 149, 138, 162, 141, 173, 149, 182, 162, 185, 172, 197, 172, 553, 160, 566, 148, 571, 139, 584, 143, 600, 159, 610, 180, 601, 184, 588, 197, 577, 552, 574, 552, 600, 592, 609, 594, 575, 955, 576, 968, 588, 971, 599, 983, 609, 1002, 609, 1013, 594, 1013, 577, 995, 565, 990, 564, 979, 552, 980, 196, 991, 184, 1004, 179, 1014, 162, 1005, 144, 981, 140, 968, 154, 967, 162, 955, 172, 597, 172, 594, 170, 593, 148, 582, 139, 563, 143, 557, 154, 558, 172, 197, 173, 166, -291, 1353, -278, 1389, 821, -282, 800, -278, -342, 167, -289)
+
+[node name="TableSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_sldgj")
+offset = Vector2(320, 180)
+
+[node name="Pocket2" type="Area2D" parent="."]
+position = Vector2(320, 87)
+collision_layer = 2
+script = ExtResource("2_21ct7")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Pocket2"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Pocket2"]
+visible = false
+texture = ExtResource("3_vjwi4")
+
+[node name="Pocket3" type="Area2D" parent="."]
+position = Vector2(548, 92)
+collision_layer = 2
+script = ExtResource("2_21ct7")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Pocket3"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Pocket3"]
+visible = false
+texture = ExtResource("3_vjwi4")
+
+[node name="Pocket4" type="Area2D" parent="."]
+position = Vector2(92, 324)
+collision_layer = 2
+script = ExtResource("2_21ct7")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Pocket4"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Pocket4"]
+visible = false
+texture = ExtResource("3_vjwi4")
+
+[node name="Pocket5" type="Area2D" parent="."]
+position = Vector2(320, 329)
+collision_layer = 2
+script = ExtResource("2_21ct7")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Pocket5"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Pocket5"]
+visible = false
+texture = ExtResource("3_vjwi4")
+
+[node name="Pocket6" type="Area2D" parent="."]
+position = Vector2(548, 324)
+collision_layer = 2
+script = ExtResource("2_21ct7")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Pocket6"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Pocket6"]
+visible = false
+texture = ExtResource("3_vjwi4")
+
+[node name="Pocket" type="Area2D" parent="."]
+position = Vector2(92, 92)
+collision_layer = 2
+script = ExtResource("2_21ct7")
+
+[node name="PocketCollision" type="CollisionShape2D" parent="Pocket"]
+z_index = 1
+shape = SubResource("CircleShape2D_tssy0")
+
+[node name="PocketSprite" type="Sprite2D" parent="Pocket"]
+visible = false
+texture = ExtResource("3_vjwi4")
+
+[connection signal="body_entered" from="Pocket2" to="Pocket2" method="_on_body_entered"]
+[connection signal="body_entered" from="Pocket3" to="Pocket3" method="_on_body_entered"]
+[connection signal="body_entered" from="Pocket4" to="Pocket4" method="_on_body_entered"]
+[connection signal="body_entered" from="Pocket5" to="Pocket5" method="_on_body_entered"]
+[connection signal="body_entered" from="Pocket6" to="Pocket6" method="_on_body_entered"]
+[connection signal="body_entered" from="Pocket" to="Pocket" method="_on_body_entered"]

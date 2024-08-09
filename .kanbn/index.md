@@ -29,6 +29,7 @@ completedColumns:
 - [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
 - [level-timer](tasks/level-timer.md)
 - [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
+- [redo-collision-physics](tasks/redo-collision-physics.md)
 
 ## In Progress
 

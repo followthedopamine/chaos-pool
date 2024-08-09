@@ -1,11 +1,19 @@
 ---
 created: 2024-08-06T19:08:15.731Z
-updated: 2024-08-06T21:07:41.770Z
+updated: 2024-08-07T00:06:43.164Z
 assigned: ""
-progress: 0
+progress: 1
 tags: []
-completed: 2024-08-06T21:07:40.836Z
-started: 2024-08-06T21:07:41.770Z
+started: 2024-08-07T00:00:00.000Z
+completed: 2024-08-07T00:00:00.000Z
 ---
 
 # Scoring system
+
+## Sub-tasks
+
+- [ ] Save star record to file
+- [ ] Get star record from file
+- [ ] Get remaining balls left and use it as star score
+- [ ] Display star record on level select
+- [ ] Display star score on level cleared screen

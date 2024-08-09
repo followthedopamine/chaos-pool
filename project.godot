@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://scripts/Global.gd"
 Sound="*res://scripts/Sound.gd"
 Scene="*res://scripts/Scene.gd"
+Save="*res://scripts/Save.gd"
 
 [display]
 

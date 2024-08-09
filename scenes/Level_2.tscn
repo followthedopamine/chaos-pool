@@ -1,134 +1,13 @@
-[gd_scene load_steps=31 format=3 uid="uid://f4uvjp4h6ncd"]
+[gd_scene load_steps=11 format=3 uid="uid://f4uvjp4h6ncd"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_a5qft"]
-[ext_resource type="Texture2D" uid="uid://cboalvn3bq4qe" path="res://images/placeholder/cue-placeholder.png" id="2_ifait"]
-[ext_resource type="Script" path="res://scripts/Cue.gd" id="3_116k0"]
-[ext_resource type="Script" path="res://scripts/CueBall.gd" id="4_h7rpk"]
-[ext_resource type="Texture2D" uid="uid://k8muokcpla5b" path="res://images/sprites/Ball Animations-Sheet.png" id="5_fj5fd"]
-[ext_resource type="Texture2D" uid="uid://bek0sinan74w6" path="res://images/sprites/Ball Lighting.png" id="6_y62mu"]
-[ext_resource type="Script" path="res://scripts/BallShading.gd" id="7_fmdls"]
-[ext_resource type="Script" path="res://scripts/Ball.gd" id="8_4rcun"]
-[ext_resource type="Texture2D" uid="uid://ck555divyx1s3" path="res://images/placeholder/8-ball-placeholder.png" id="10_r4exm"]
-[ext_resource type="Texture2D" uid="uid://da0vkp4tr6iqu" path="res://images/placeholder/11-ball-placeholder.png" id="11_35or5"]
-[ext_resource type="Script" path="res://scripts/AnimateBallSprite.gd" id="12_kb3eg"]
-[ext_resource type="Texture2D" uid="uid://byjqs1oig2s2u" path="res://images/sprites/Table.png" id="13_y3vgl"]
-[ext_resource type="Script" path="res://scripts/Pocket.gd" id="14_5uqdq"]
-[ext_resource type="Texture2D" uid="uid://b02xxchd8cl6w" path="res://images/placeholder/pocket-placeholder.png" id="15_cq0bb"]
+[ext_resource type="PackedScene" uid="uid://b36tv2qkejihp" path="res://scenes/Cue_ball.tscn" id="2_dwidy"]
+[ext_resource type="PackedScene" uid="uid://dv22eaqmagwj8" path="res://scenes/Ball.tscn" id="2_scnxk"]
+[ext_resource type="PackedScene" uid="uid://cwex4i70t8hjt" path="res://scenes/Cue.tscn" id="3_3p12d"]
+[ext_resource type="PackedScene" uid="uid://bguhci6hl27rj" path="res://scenes/Table.tscn" id="7_crmhv"]
 [ext_resource type="Script" path="res://scripts/Glass.gd" id="16_n31ak"]
 [ext_resource type="Texture2D" uid="uid://c0hc7wlc4xrp5" path="res://images/placeholder/wall-placeholder.png" id="17_ecrln"]
 [ext_resource type="Script" path="res://scripts/CueBallsDisplay.gd" id="18_bsnyr"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_300ds"]
-bounce = 1.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_c5b7w"]
-radius = 7.07107
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_v6omj"]
-radius = 177.406
-
-[sub_resource type="Animation" id="Animation_jgdp1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CueBallSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CueBallSprite:texture:load_path")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["res://.godot/imported/cue-ball-placeholder.png-eda5e49ad040cbe61c59e5ff8e94e512.ctex"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CueBallSprite:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-
-[sub_resource type="Animation" id="Animation_wcq56"]
-resource_name = "explosion"
-length = 0.4
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CueBallSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [1, 3, 5, 7, 9, 11, 13, 15]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CueBallSprite:texture:load_path")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["res://.godot/imported/Ball Animations-Sheet.png-7fa478d48b658cadfcdbdc6fe8e58416.ctex"]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CueBallSprite:hframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [16]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xaa6u"]
-_data = {
-"RESET": SubResource("Animation_jgdp1"),
-"explosion": SubResource("Animation_wcq56")
-}
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3v63n"]
-bounce = 1.0
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ir13i"]
-load_path = "res://.godot/imported/Ball Animations-Sheet.png-7fa478d48b658cadfcdbdc6fe8e58416.ctex"
-
-[sub_resource type="Animation" id="Animation_vacbd"]
-resource_name = "scroll_texture"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6mw7t"]
-_data = {
-"scroll_texture": SubResource("Animation_vacbd")
-}
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_tssy0"]
-radius = 9.84886
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nof4j"]
 size = Vector2(46, 4)
@@ -138,221 +17,16 @@ size = Vector2(56, 56)
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_a5qft")
-cue_balls = Array[int]([3, 1, 2, 2, 0, 4])
+cue_balls = Array[int]([0, 3, 1, 2, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0])
 
-[node name="Cue" type="Sprite2D" parent="."]
-position = Vector2(158, 262)
-texture = ExtResource("2_ifait")
-offset = Vector2(-100, 0)
-script = ExtResource("3_116k0")
+[node name="Ball" parent="." instance=ExtResource("2_scnxk")]
 
-[node name="CueBall" type="RigidBody2D" parent="." groups=["balls"]]
-texture_filter = 1
-position = Vector2(309, 220)
-collision_mask = 7
-physics_material_override = SubResource("PhysicsMaterial_300ds")
-continuous_cd = 1
-max_contacts_reported = 20
-contact_monitor = true
-linear_damp = 0.5
-script = ExtResource("4_h7rpk")
+[node name="Ball2" parent="." instance=ExtResource("2_scnxk")]
+position = Vector2(162, 152)
 
-[node name="CueBallSprite" type="Sprite2D" parent="CueBall"]
-texture = ExtResource("5_fj5fd")
+[node name="Cue" parent="." instance=ExtResource("3_3p12d")]
 
-[node name="BallShading" type="Sprite2D" parent="CueBall"]
-visible = false
-z_index = 2
-texture_filter = 1
-texture = ExtResource("6_y62mu")
-script = ExtResource("7_fmdls")
-
-[node name="CueBallCollision" type="CollisionShape2D" parent="CueBall"]
-visible = false
-shape = SubResource("CircleShape2D_c5b7w")
-
-[node name="CueBallAreaOfEffect" type="Area2D" parent="CueBall"]
-visible = false
-scale = Vector2(0.3, 0.3)
-
-[node name="CueBallAreaOfEffectShape" type="CollisionShape2D" parent="CueBall/CueBallAreaOfEffect"]
-shape = SubResource("CircleShape2D_v6omj")
-
-[node name="CueBallAnimations" type="AnimationPlayer" parent="CueBall"]
-libraries = {
-"": SubResource("AnimationLibrary_xaa6u")
-}
-
-[node name="Ball" type="RigidBody2D" parent="." groups=["balls"]]
-texture_filter = 2
-position = Vector2(418, 181)
-collision_mask = 7
-mass = 0.5
-physics_material_override = SubResource("PhysicsMaterial_3v63n")
-continuous_cd = 1
-max_contacts_reported = 20
-contact_monitor = true
-linear_damp = 0.5
-script = ExtResource("8_4rcun")
-
-[node name="BallSprite" type="Sprite2D" parent="Ball"]
-z_index = 1
-texture_filter = 1
-texture = SubResource("CompressedTexture2D_ir13i")
-
-[node name="BallShading" type="Sprite2D" parent="Ball"]
-z_index = 2
-texture_filter = 1
-texture = ExtResource("6_y62mu")
-script = ExtResource("7_fmdls")
-
-[node name="BallCollision" type="CollisionShape2D" parent="Ball"]
-shape = SubResource("CircleShape2D_c5b7w")
-
-[node name="Ball2" type="RigidBody2D" parent="." groups=["balls"]]
-texture_filter = 2
-position = Vector2(162, 156)
-collision_mask = 7
-mass = 0.5
-physics_material_override = SubResource("PhysicsMaterial_3v63n")
-continuous_cd = 1
-max_contacts_reported = 20
-contact_monitor = true
-linear_damp = 0.5
-script = ExtResource("8_4rcun")
-
-[node name="BallSprite" type="Sprite2D" parent="Ball2"]
-z_index = 1
-texture_filter = 1
-texture = SubResource("CompressedTexture2D_ir13i")
-
-[node name="BallShading" type="Sprite2D" parent="Ball2"]
-z_index = 2
-texture_filter = 1
-texture = ExtResource("6_y62mu")
-script = ExtResource("7_fmdls")
-
-[node name="BallCollision" type="CollisionShape2D" parent="Ball2"]
-shape = SubResource("CircleShape2D_c5b7w")
-
-[node name="Ball4" type="RigidBody2D" parent="."]
-position = Vector2(1440, 389)
-collision_mask = 7
-mass = 0.5
-physics_material_override = SubResource("PhysicsMaterial_3v63n")
-continuous_cd = 1
-linear_damp = 0.5
-script = ExtResource("8_4rcun")
-
-[node name="BallMask" type="Sprite2D" parent="Ball4"]
-clip_children = 1
-texture = ExtResource("10_r4exm")
-
-[node name="BallSprite" type="Sprite2D" parent="Ball4/BallMask"]
-texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("11_35or5")
-script = ExtResource("12_kb3eg")
-
-[node name="BallCollision" type="CollisionShape2D" parent="Ball4"]
-shape = SubResource("CircleShape2D_c5b7w")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ball4"]
-libraries = {
-"": SubResource("AnimationLibrary_6mw7t")
-}
-
-[node name="Table" type="StaticBody2D" parent="."]
-z_index = -1
-collision_layer = 2
-collision_mask = 5
-
-[node name="TableCollision" type="CollisionPolygon2D" parent="Table"]
-scale = Vector2(0.55, 0.55)
-polygon = PackedVector2Array(197, 172, 184, 161, 183, 151, 168, 139, 155, 139, 142, 149, 138, 162, 141, 173, 149, 182, 162, 185, 172, 197, 172, 553, 160, 566, 148, 571, 139, 584, 143, 600, 159, 610, 180, 601, 184, 588, 197, 577, 552, 574, 552, 600, 592, 609, 594, 575, 955, 576, 968, 588, 971, 599, 983, 609, 1002, 609, 1013, 594, 1013, 577, 995, 565, 990, 564, 979, 552, 980, 196, 991, 184, 1004, 179, 1014, 162, 1005, 144, 981, 140, 968, 154, 967, 162, 955, 172, 597, 172, 594, 170, 593, 148, 582, 139, 563, 143, 557, 154, 558, 172, 197, 173, 166, -291, 1353, -278, 1389, 821, -282, 800, -278, -342, 167, -289)
-
-[node name="TableSprite" type="Sprite2D" parent="Table"]
-texture_filter = 1
-texture = ExtResource("13_y3vgl")
-offset = Vector2(320, 180)
-
-[node name="Pocket" type="Area2D" parent="Table"]
-position = Vector2(92, 92)
-collision_layer = 2
-script = ExtResource("14_5uqdq")
-
-[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket"]
-z_index = 1
-shape = SubResource("CircleShape2D_tssy0")
-
-[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket"]
-visible = false
-texture = ExtResource("15_cq0bb")
-
-[node name="Pocket2" type="Area2D" parent="Table"]
-position = Vector2(320, 87)
-collision_layer = 2
-script = ExtResource("14_5uqdq")
-
-[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket2"]
-z_index = 1
-shape = SubResource("CircleShape2D_tssy0")
-
-[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket2"]
-visible = false
-texture = ExtResource("15_cq0bb")
-
-[node name="Pocket3" type="Area2D" parent="Table"]
-position = Vector2(548, 92)
-collision_layer = 2
-script = ExtResource("14_5uqdq")
-
-[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket3"]
-z_index = 1
-shape = SubResource("CircleShape2D_tssy0")
-
-[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket3"]
-visible = false
-texture = ExtResource("15_cq0bb")
-
-[node name="Pocket4" type="Area2D" parent="Table"]
-position = Vector2(92, 324)
-collision_layer = 2
-script = ExtResource("14_5uqdq")
-
-[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket4"]
-z_index = 1
-shape = SubResource("CircleShape2D_tssy0")
-
-[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket4"]
-visible = false
-texture = ExtResource("15_cq0bb")
-
-[node name="Pocket5" type="Area2D" parent="Table"]
-position = Vector2(320, 329)
-collision_layer = 2
-script = ExtResource("14_5uqdq")
-
-[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket5"]
-z_index = 1
-shape = SubResource("CircleShape2D_tssy0")
-
-[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket5"]
-visible = false
-texture = ExtResource("15_cq0bb")
-
-[node name="Pocket6" type="Area2D" parent="Table"]
-position = Vector2(548, 324)
-collision_layer = 2
-script = ExtResource("14_5uqdq")
-
-[node name="PocketCollision" type="CollisionShape2D" parent="Table/Pocket6"]
-z_index = 1
-shape = SubResource("CircleShape2D_tssy0")
-
-[node name="PocketSprite" type="Sprite2D" parent="Table/Pocket6"]
-visible = false
-texture = ExtResource("15_cq0bb")
+[node name="CueBall" parent="." instance=ExtResource("2_dwidy")]
 
 [node name="Wall" type="RigidBody2D" parent="."]
 position = Vector2(162, 130)
@@ -430,6 +104,8 @@ rotation = -0.637045
 scale = Vector2(0.165, 3.165)
 texture = ExtResource("17_ecrln")
 
+[node name="Table" parent="." instance=ExtResource("7_crmhv")]
+
 [node name="CueBallsDisplay" type="BoxContainer" parent="."]
 layout_direction = 3
 offset_left = -568.0
@@ -438,17 +114,5 @@ offset_right = -313.0
 offset_bottom = 64.0
 script = ExtResource("18_bsnyr")
 
-[connection signal="balls_stopped" from="." to="Cue" method="_on_balls_stopped"]
-[connection signal="balls_stopped" from="." to="CueBall" method="_on_balls_stopped"]
 [connection signal="balls_stopped" from="." to="CueBallsDisplay" method="_on_balls_stopped"]
-[connection signal="shoot" from="Cue" to="." method="_on_cue_shoot"]
-[connection signal="shoot" from="Cue" to="CueBall" method="_on_shoot"]
-[connection signal="body_entered" from="CueBall" to="CueBall" method="_on_collision"]
-[connection signal="cue_ball_stopped" from="CueBall" to="." method="_on_cue_ball_stopped"]
-[connection signal="body_entered" from="Table/Pocket" to="Table/Pocket" method="_on_body_entered"]
-[connection signal="body_entered" from="Table/Pocket2" to="Table/Pocket2" method="_on_body_entered"]
-[connection signal="body_entered" from="Table/Pocket3" to="Table/Pocket3" method="_on_body_entered"]
-[connection signal="body_entered" from="Table/Pocket4" to="Table/Pocket4" method="_on_body_entered"]
-[connection signal="body_entered" from="Table/Pocket5" to="Table/Pocket5" method="_on_body_entered"]
-[connection signal="body_entered" from="Table/Pocket6" to="Table/Pocket6" method="_on_body_entered"]
 [connection signal="body_entered" from="Glass" to="Glass" method="_on_body_entered"]

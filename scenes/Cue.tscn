@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwex4i70t8hjt"]
+
+[ext_resource type="Texture2D" uid="uid://c7ih72utikc6m" path="res://images/sprites/Cue.png" id="1_4lhk5"]
+[ext_resource type="Script" path="res://scripts/Cue.gd" id="2_c0mjj"]
+
+[node name="Cue" type="Sprite2D"]
+position = Vector2(158, 262)
+texture = ExtResource("1_4lhk5")
+offset = Vector2(-126, 0)
+script = ExtResource("2_c0mjj")
