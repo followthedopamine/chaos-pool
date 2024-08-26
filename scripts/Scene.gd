@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var main_scene = $"../Main"
-const PERMANENT_SCENES = ["DebugPower", "Camera2D"]
+const PERMANENT_SCENES = ["DebugPower", "Camera2D", "LevelEnd"]
 
 const LEVELS = [preload("res://scenes/Level_1.tscn"),preload("res://scenes/Level_2.tscn")]
 

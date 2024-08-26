@@ -34,11 +34,11 @@ completedColumns:
 ## In Progress
 
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
-- [scoring-system](tasks/scoring-system.md)
+- [win-condition](tasks/win-condition.md)
 
 ## Done
 
-- [win-condition](tasks/win-condition.md)
+- [scoring-system](tasks/scoring-system.md)
 - [bug-wall-disappears-without-being-hit](tasks/bug-wall-disappears-without-being-hit.md)
 - [ball-sinking-animation](tasks/ball-sinking-animation.md)
 - [level-select](tasks/level-select.md)

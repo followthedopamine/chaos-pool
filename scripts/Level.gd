@@ -17,6 +17,8 @@ signal balls_stopped
 @onready var cue_ball = $CueBall
 @export var cue_balls:Array[Global.CUE_BALL_TYPES] = []
 
+@onready var level_end = $"../LevelEnd"
+
 var shot_counter = 0
 var ball_counter = 0
 
@@ -30,6 +32,7 @@ func _ready():
 
 func fail_level():
 	print("You lose")
+	level_end.show_loss_screen()
 	
 func succeed_level():
 	print("You win")
@@ -38,6 +41,7 @@ func succeed_level():
 	var level_number = int(self.name.substr(5))
 	print(level_number)
 	Save.save_stars(level_number - 1, star_score)
+	level_end.show_win_screen(star_score)	
 	
 func _on_cue_shoot():
 	cue_ball_active = true

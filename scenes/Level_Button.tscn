@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://bcu0dl8c1lfuj"]
+
+[ext_resource type="Texture2D" uid="uid://bcimvuynnuk3u" path="res://images/ui/Buttons-Sheet.png" id="1_p1vtn"]
+[ext_resource type="Script" path="res://scripts/LevelButton.gd" id="2_q7mua"]
+[ext_resource type="FontFile" uid="uid://kxe018a8ofnh" path="res://fonts/Magnolia Script.otf" id="3_wi74n"]
+[ext_resource type="Texture2D" uid="uid://l2fb6nigeirc" path="res://images/ui/Stars Level Select-Sheet.png" id="4_6yrut"]
+[ext_resource type="Script" path="res://scripts/LevelStars.gd" id="5_qbsp0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bip4t"]
+atlas = ExtResource("1_p1vtn")
+region = Rect2(14, 20, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsljr"]
+atlas = ExtResource("1_p1vtn")
+region = Rect2(110, 20, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxdbs"]
+atlas = ExtResource("1_p1vtn")
+region = Rect2(206, 20, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qilly"]
+atlas = ExtResource("4_6yrut")
+region = Rect2(306, 68, 60, 18)
+
+[node name="LevelButton" type="TextureButton"]
+texture_normal = SubResource("AtlasTexture_bip4t")
+texture_pressed = SubResource("AtlasTexture_vsljr")
+texture_disabled = SubResource("AtlasTexture_hxdbs")
+script = ExtResource("2_q7mua")
+
+[node name="LevelButtonText" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_wi74n")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]1[/center]"
+fit_content = true
+
+[node name="LevelStars" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -12.0
+offset_right = 63.0
+offset_bottom = 6.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_qilly")
+script = ExtResource("5_qbsp0")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
