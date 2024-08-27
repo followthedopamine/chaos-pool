@@ -107,3 +107,8 @@ alignment = 1
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_n0ye6")
 texture_pressed = SubResource("AtlasTexture_4pkql")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/AdButton" to="." method="_on_ad_button_pressed"]

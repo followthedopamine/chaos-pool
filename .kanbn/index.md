@@ -30,6 +30,7 @@ completedColumns:
 - [level-timer](tasks/level-timer.md)
 - [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
 - [redo-collision-physics](tasks/redo-collision-physics.md)
+- [level-progression-locked-levels](tasks/level-progression-locked-levels.md)
 
 ## In Progress
 

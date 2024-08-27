@@ -31,3 +31,22 @@ func show_loss_screen():
 	self.visible = true
 	level_finish_texture.texture = LEVEL_FAILED
 	ad_button.visible = true
+	
+func hide_end_screen():
+	self.visible = false
+
+func _on_menu_button_pressed():
+	Scene.load_main_menu()
+
+func _on_replay_button_pressed():
+	hide_end_screen()
+	Scene.reload_current_level()
+
+
+func _on_next_level_button_pressed():
+	hide_end_screen()
+	Scene.load_next_level()
+
+
+func _on_ad_button_pressed():
+	pass # TODO
