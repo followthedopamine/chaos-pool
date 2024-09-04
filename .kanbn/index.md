@@ -21,7 +21,7 @@ completedColumns:
 - [show-shot-charge](tasks/show-shot-charge.md)
 - [lose-condition](tasks/lose-condition.md)
 - [levels-1-5](tasks/levels-1-5.md)
-- [locked-levels](tasks/locked-levels.md)
+- [bug-cue-ball-doesn-t-reappear-after-sinking](tasks/bug-cue-ball-doesn-t-reappear-after-sinking.md)
 - [stars-on-level-select](tasks/stars-on-level-select.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [main-menu](tasks/main-menu.md)
@@ -31,15 +31,20 @@ completedColumns:
 - [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
 - [redo-collision-physics](tasks/redo-collision-physics.md)
 - [level-progression-locked-levels](tasks/level-progression-locked-levels.md)
+- [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
+- [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
 
 ## In Progress
 
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
-- [win-condition](tasks/win-condition.md)
+- [locked-levels](tasks/locked-levels.md)
+- [locked-levels-on-level-select](tasks/locked-levels-on-level-select.md)
 
 ## Done
 
 - [scoring-system](tasks/scoring-system.md)
+- [bug-number-appears-on-top-of-lock-in-locked-buttons](tasks/bug-number-appears-on-top-of-lock-in-locked-buttons.md)
+- [win-condition](tasks/win-condition.md)
 - [bug-wall-disappears-without-being-hit](tasks/bug-wall-disappears-without-being-hit.md)
 - [ball-sinking-animation](tasks/ball-sinking-animation.md)
 - [level-select](tasks/level-select.md)
