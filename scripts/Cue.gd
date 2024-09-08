@@ -3,10 +3,20 @@ extends Sprite2D
 const POWER_INCREMENT = 0.2 # Speed the power charges at
 const MAX_POWER = 20
 
+const MAX_SHOT_CHARGE_Y = 37
+const MIN_SHOT_CHARGE_Y = -35
+
+const DEFAULT_CUE_X_OFFSET = -126
+const MAX_CUE_X_OFFSET = -180
+
 
 @onready var cue_ball = $"../CueBall"
-@onready var debug_power = $"../../DebugPower"
 @onready var level = $".."
+
+@onready var shot_charge = $ShotChargeMask/ShotCharge
+@onready var shot_charge_mask = $ShotChargeMask
+
+
 
 
 var balls_moving = false
@@ -22,14 +32,26 @@ func handle_input(delta):
 	if Input.is_action_just_released("shoot") and power > 0:
 		shoot_cue_ball()
 		
+func update_charge_display():
+	# value/value total * 100
+	if power != 0:
+		shot_charge_mask.visible = true
+		var percentage = power/MAX_POWER * 2
+		shot_charge.position.y = min((percentage * MAX_SHOT_CHARGE_Y) - abs(MIN_SHOT_CHARGE_Y), MAX_SHOT_CHARGE_Y)
+		
+func hide_shot_charge():
+	await get_tree().create_timer(0.5).timeout
+	shot_charge_mask.visible = false
+		
 func increase_power(delta):
-	debug_power.text = "Power: " + str(power)
 	if power < MAX_POWER:
 		power = power + POWER_INCREMENT - delta
+	update_charge_display()
 		
 func shoot_cue_ball():
 	cue_ball.apply_central_impulse(power * (get_global_mouse_position() - global_position))
 	power = 0
+	hide_shot_charge()
 	await get_tree().create_timer(0.1).timeout #Necessary to make sure signal isn't recieved before ball is moving
 	shoot.emit()
 	balls_moving = true

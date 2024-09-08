@@ -18,11 +18,9 @@ completedColumns:
 
 ## Todo
 
-- [show-shot-charge](tasks/show-shot-charge.md)
 - [lose-condition](tasks/lose-condition.md)
 - [levels-1-5](tasks/levels-1-5.md)
 - [bug-cue-ball-doesn-t-reappear-after-sinking](tasks/bug-cue-ball-doesn-t-reappear-after-sinking.md)
-- [stars-on-level-select](tasks/stars-on-level-select.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [main-menu](tasks/main-menu.md)
 - [options-menu](tasks/options-menu.md)
@@ -30,19 +28,22 @@ completedColumns:
 - [level-timer](tasks/level-timer.md)
 - [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
 - [redo-collision-physics](tasks/redo-collision-physics.md)
-- [level-progression-locked-levels](tasks/level-progression-locked-levels.md)
 - [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
 - [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
+- [bug-pocket-sometimes-crashes-on-queue-freeing-the-ball](tasks/bug-pocket-sometimes-crashes-on-queue-freeing-the-ball.md)
 
 ## In Progress
 
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
 - [locked-levels](tasks/locked-levels.md)
-- [locked-levels-on-level-select](tasks/locked-levels-on-level-select.md)
+- [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 
 ## Done
 
 - [scoring-system](tasks/scoring-system.md)
+- [show-shot-charge](tasks/show-shot-charge.md)
+- [locked-levels-on-level-select](tasks/locked-levels-on-level-select.md)
+- [stars-on-level-select](tasks/stars-on-level-select.md)
 - [bug-number-appears-on-top-of-lock-in-locked-buttons](tasks/bug-number-appears-on-top-of-lock-in-locked-buttons.md)
 - [win-condition](tasks/win-condition.md)
 - [bug-wall-disappears-without-being-hit](tasks/bug-wall-disappears-without-being-hit.md)
@@ -50,6 +51,7 @@ completedColumns:
 - [level-select](tasks/level-select.md)
 - [metal-walls-that-can-t-be-broken](tasks/metal-walls-that-can-t-be-broken.md)
 - [disconnect-cue-from-cue-ball-after-shot](tasks/disconnect-cue-from-cue-ball-after-shot.md)
+- [level-progression-locked-levels](tasks/level-progression-locked-levels.md)
 - [glass-trapped-balls](tasks/glass-trapped-balls.md)
 - [wormhole-ball](tasks/wormhole-ball.md)
 - [pusher-ball](tasks/pusher-ball.md)

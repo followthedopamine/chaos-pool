@@ -189,10 +189,6 @@ texture = ExtResource("8_ksyt3")
 [node name="LevelEnd" parent="." instance=ExtResource("8_agxvw")]
 visible = false
 
-[node name="DebugPower" type="RichTextLabel" parent="."]
-offset_right = 1000.0
-offset_bottom = 40.0
-
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 zoom = Vector2(1.8, 1.8)
