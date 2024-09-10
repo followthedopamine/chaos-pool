@@ -14,11 +14,11 @@ func play_sinking_animation(delta):
 	# Disable wormhole effect
 	
 	ball_sinking.position = position
-	ball_sinking_sprite.modulate.a -= FADE_OUT_SPEED * delta
-	if ball_sinking_sprite.scale > Vector2.ZERO:
-		ball_sinking_sprite.scale -= Vector2(SHRINK_SPEED, SHRINK_SPEED) * delta
+	ball_sinking.modulate.a -= FADE_OUT_SPEED * delta
+	if ball_sinking.scale > Vector2.ZERO:
+		ball_sinking.scale -= Vector2(SHRINK_SPEED, SHRINK_SPEED) * delta
 	else:
-		ball_sinking_sprite.scale = Vector2.ZERO
+		ball_sinking.scale = Vector2.ZERO
 		
 func _on_body_entered(body:RigidBody2D):
 	if body.is_in_group("balls"):

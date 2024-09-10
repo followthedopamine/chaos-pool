@@ -25,7 +25,6 @@ completedColumns:
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [main-menu](tasks/main-menu.md)
 - [options-menu](tasks/options-menu.md)
-- [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
 - [level-timer](tasks/level-timer.md)
 - [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
 - [redo-collision-physics](tasks/redo-collision-physics.md)
@@ -34,6 +33,8 @@ completedColumns:
 - [bug-pocket-sometimes-crashes-on-queue-freeing-the-ball](tasks/bug-pocket-sometimes-crashes-on-queue-freeing-the-ball.md)
 
 ## In Progress
+
+- [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
 
 ## Done
 

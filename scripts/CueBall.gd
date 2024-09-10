@@ -22,7 +22,7 @@ var prev_frame_velocity
 @onready var wormhole_animated_sprite = $WormholeAnimatedSprite
 @onready var pusher_animated_sprite = $PusherAnimatedSprite
 
-@onready var initial_alpha = cue_ball_sprite.modulate.a
+@onready var initial_alpha = modulate.a
 
 
 
@@ -100,8 +100,8 @@ func reset_cue_ball():
 	cue_ball_sprite.hframes = 1
 	cue_ball_sprite.vframes = 1
 	cue_ball_sprite.frame = 0
-	cue_ball_sprite.scale = Vector2.ONE
-	cue_ball_sprite.modulate.a = initial_alpha
+	scale = Vector2.ONE
+	modulate.a = initial_alpha
 	load_standard_ball_physics()
 	cue_ball_sprite.visible = true
 	cue_ball_collision.disabled = false
