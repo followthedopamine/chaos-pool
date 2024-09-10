@@ -18,9 +18,10 @@ completedColumns:
 
 ## Todo
 
+- [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
 - [lose-condition](tasks/lose-condition.md)
 - [levels-1-5](tasks/levels-1-5.md)
-- [bug-cue-ball-doesn-t-reappear-after-sinking](tasks/bug-cue-ball-doesn-t-reappear-after-sinking.md)
+- [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [main-menu](tasks/main-menu.md)
 - [options-menu](tasks/options-menu.md)
@@ -34,13 +35,11 @@ completedColumns:
 
 ## In Progress
 
-- [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
-- [locked-levels](tasks/locked-levels.md)
-- [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
-
 ## Done
 
+- [bug-cue-ball-doesn-t-reappear-after-sinking](tasks/bug-cue-ball-doesn-t-reappear-after-sinking.md)
 - [scoring-system](tasks/scoring-system.md)
+- [locked-levels](tasks/locked-levels.md)
 - [show-shot-charge](tasks/show-shot-charge.md)
 - [locked-levels-on-level-select](tasks/locked-levels-on-level-select.md)
 - [stars-on-level-select](tasks/stars-on-level-select.md)

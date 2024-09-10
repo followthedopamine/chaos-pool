@@ -22,6 +22,7 @@ var prev_frame_velocity
 @onready var wormhole_animated_sprite = $WormholeAnimatedSprite
 @onready var pusher_animated_sprite = $PusherAnimatedSprite
 
+@onready var initial_alpha = cue_ball_sprite.modulate.a
 
 
 
@@ -36,6 +37,7 @@ func reset():
 	linear_velocity = Vector2.ZERO
 	#await get_tree().create_timer(0.1).timeout
 	global_position = initial_position
+	reset_cue_ball()
 	# I have no explanation for why this doesn't work without a timer.
 	# There will be an animation here so I don't think it matters.
 
@@ -99,17 +101,18 @@ func reset_cue_ball():
 	cue_ball_sprite.vframes = 1
 	cue_ball_sprite.frame = 0
 	cue_ball_sprite.scale = Vector2.ONE
-	cue_ball_sprite.modulate.a = 1
+	cue_ball_sprite.modulate.a = initial_alpha
 	load_standard_ball_physics()
 	cue_ball_sprite.visible = true
 	cue_ball_collision.disabled = false
 	wormhole_animated_sprite.visible = false
 	pusher_animated_sprite.visible = false
+	print("This is all working")
 
 func load_cue_ball():
+	reset_cue_ball()
 	cue_ball_type = level.cue_balls[level.shot_counter]
 	cue_ball_sprite.texture = Global.CUE_BALL_SPRITES[cue_ball_type]
-	reset_cue_ball()
 	
 	match cue_ball_type:
 		Global.CUE_BALL_TYPES.INFINITE:
