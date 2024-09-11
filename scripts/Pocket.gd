@@ -29,7 +29,6 @@ func _on_body_entered(body:RigidBody2D):
 		ball_sinking = body
 		# Only works if sprite is child 0
 		ball_sinking_sprite = ball_sinking.get_child(0)
-		print(ball_sinking_sprite.modulate.a)
 		
 		await get_tree().create_timer(0.4).timeout
 		ball_sinking = false

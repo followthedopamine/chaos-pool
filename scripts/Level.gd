@@ -39,7 +39,6 @@ func succeed_level():
 	print("Star score: " + str(cue_balls.size() - shot_counter))
 	var star_score = cue_balls.size() - shot_counter
 	var level_number = int(self.name.substr(5))
-	print(level_number)
 	Save.save_stars(level_number - 1, star_score)
 	level_end.show_win_screen(star_score)	
 	
@@ -68,6 +67,7 @@ func check_balls_are_moving():
 				shot_counter += 1
 				if ball_counter == 0:
 					succeed_level()
+				print("Balls stopped")
 				balls_stopped.emit()
 
 func _physics_process(_delta):

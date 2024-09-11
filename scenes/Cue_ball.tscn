@@ -9,7 +9,7 @@
 bounce = 1.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ir13i"]
-load_path = "res://.godot/imported/Ball Animations-Sheet.png-7fa478d48b658cadfcdbdc6fe8e58416.ctex"
+load_path = "res://.godot/imported/Cue-Ball.png-183659f03320b0f09cea6a2f7c8ee170.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5b7w"]
 radius = 7.07107
@@ -41,7 +41,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": ["res://.godot/imported/cue-ball-placeholder.png-eda5e49ad040cbe61c59e5ff8e94e512.ctex"]
+"values": ["res://.godot/imported/Cue-Ball.png-183659f03320b0f09cea6a2f7c8ee170.ctex"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -50,6 +50,18 @@ tracks/2/path = NodePath("CueBallSprite:hframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CueBallSprite:vframes")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -267,8 +279,6 @@ script = ExtResource("1_vfq5q")
 
 [node name="CueBallSprite" type="Sprite2D" parent="."]
 texture = SubResource("CompressedTexture2D_ir13i")
-hframes = 8
-vframes = 3
 
 [node name="BallShading" type="Sprite2D" parent="."]
 visible = false

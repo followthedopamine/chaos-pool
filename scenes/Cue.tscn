@@ -1,10 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwex4i70t8hjt"]
+[gd_scene load_steps=4 format=3 uid="uid://bv3o2m1rpr8yt"]
 
-[ext_resource type="Texture2D" uid="uid://c7ih72utikc6m" path="res://images/sprites/Cue.png" id="1_4lhk5"]
-[ext_resource type="Script" path="res://scripts/Cue.gd" id="2_c0mjj"]
+[ext_resource type="Texture2D" uid="uid://c7ih72utikc6m" path="res://images/sprites/Cue.png" id="1_g5s8c"]
+[ext_resource type="Script" path="res://scripts/Cue.gd" id="2_b3n77"]
+[ext_resource type="Texture2D" uid="uid://cgrg3s5r6nmqv" path="res://images/sprites/Shot Charge.png" id="3_miycl"]
 
 [node name="Cue" type="Sprite2D"]
 position = Vector2(158, 262)
-texture = ExtResource("1_4lhk5")
+texture = ExtResource("1_g5s8c")
 offset = Vector2(-126, 0)
-script = ExtResource("2_c0mjj")
+script = ExtResource("2_b3n77")
+
+[node name="ShotChargeMask" type="Sprite2D" parent="."]
+visible = false
+clip_children = 1
+position = Vector2(-90, -10)
+rotation = -1.57079
+texture = ExtResource("3_miycl")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 12, 75)
+
+[node name="ShotCharge" type="Sprite2D" parent="ShotChargeMask"]
+position = Vector2(5.99992, -35)
+texture = ExtResource("3_miycl")
+region_enabled = true
+region_rect = Rect2(0, 0, 12, 75)
+
+[node name="ShotChargeContainer" type="Sprite2D" parent="ShotChargeMask"]
+position = Vector2(6.00008, 37)
+texture = ExtResource("3_miycl")
+region_enabled = true
+region_rect = Rect2(32, 0, 12, 75)

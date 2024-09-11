@@ -11,11 +11,11 @@ func _ready():
 
 func play_clack(volume):
 	var volume_db = min(VOLUME_OFFSET + volume * VOLUME_COEFFICIENT, 0)
-	print(volume_db)
+	#print(volume_db)
 	Sound.create_sound_and_play(LOUD_CLACK, volume_db, self)
 
 func _on_body_entered(body):
-	print("Should clack")
+	#print("Should clack")
 	if body.is_in_group("balls"):
 		if body != self:
 			play_clack(body.prev_frame_velocity.length())

@@ -30,6 +30,7 @@ signal cue_ball_stopped
 
 
 func _ready():
+	level.balls_stopped.connect(_on_balls_stopped)
 	initial_position = global_position
 	load_cue_ball()
 
@@ -124,16 +125,16 @@ func trigger_cue_ball_end_effects():
 			explode_ball()
 			
 func attempt_next_ball():
-	if !level.cue_ball_active and !level.balls_moving:
-		load_cue_ball()
+	print("Attempt next ball is being called")
+	load_cue_ball()
+	print("What")
 			
 func check_cue_ball_still_moving():
 	if level.cue_ball_active:
 		if linear_velocity.length() <= Global.BALL_MOVING_THRESHHOLD:
 			trigger_cue_ball_end_effects()
-			print("Cue ball stopped moving")
+			#print("Cue ball stopped moving")
 			level.cue_ball_active = false
-			attempt_next_ball()
 			
 func _on_balls_stopped():
 	attempt_next_ball()

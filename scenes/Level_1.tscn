@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfxuyufo3wons"]
+[gd_scene load_steps=15 format=3 uid="uid://dfxuyufo3wons"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_ma1sx"]
-[ext_resource type="PackedScene" uid="uid://cwex4i70t8hjt" path="res://scenes/Cue.tscn" id="2_qi5rn"]
-[ext_resource type="Texture2D" uid="uid://cgrg3s5r6nmqv" path="res://images/sprites/Shot Charge.png" id="3_o8c87"]
+[ext_resource type="PackedScene" uid="uid://bv3o2m1rpr8yt" path="res://scenes/Cue.tscn" id="2_qi5rn"]
 [ext_resource type="PackedScene" uid="uid://dv22eaqmagwj8" path="res://scenes/Ball.tscn" id="4_dcpa8"]
 [ext_resource type="PackedScene" uid="uid://b36tv2qkejihp" path="res://scenes/Cue_ball.tscn" id="4_n1pbe"]
 [ext_resource type="Script" path="res://scripts/Ball.gd" id="8_471e8"]
@@ -28,38 +27,17 @@ _data = {
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ma1sx")
-cue_balls = Array[int]([0, 0, 0, 0, 3, 3, 1, 2, 2, 0, 4])
+cue_balls = Array[int]([0, 1, 0])
 
 [node name="Cue" parent="." instance=ExtResource("2_qi5rn")]
-
-[node name="ShotChargeMask" type="Sprite2D" parent="Cue"]
-visible = false
-clip_children = 1
-position = Vector2(-90, -10)
-rotation = -1.57079
-texture = ExtResource("3_o8c87")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 12, 75)
-
-[node name="ShotCharge" type="Sprite2D" parent="Cue/ShotChargeMask"]
-position = Vector2(5.99992, -35)
-texture = ExtResource("3_o8c87")
-region_enabled = true
-region_rect = Rect2(0, 0, 12, 75)
-
-[node name="ShotChargeContainer" type="Sprite2D" parent="Cue/ShotChargeMask"]
-position = Vector2(6.00008, 37)
-texture = ExtResource("3_o8c87")
-region_enabled = true
-region_rect = Rect2(32, 0, 12, 75)
-
-[node name="CueBall" parent="." instance=ExtResource("4_n1pbe")]
 
 [node name="Ball" parent="." instance=ExtResource("4_dcpa8")]
 
 [node name="Ball2" parent="." instance=ExtResource("4_dcpa8")]
 position = Vector2(327, 110)
+
+[node name="CueBall" parent="." instance=ExtResource("4_n1pbe")]
+position = Vector2(391, 210)
 
 [node name="Ball4" type="RigidBody2D" parent="."]
 position = Vector2(1440, 389)
@@ -98,5 +76,4 @@ offset_right = -313.0
 offset_bottom = 64.0
 script = ExtResource("18_o6o60")
 
-[connection signal="balls_stopped" from="." to="CueBall" method="_on_balls_stopped"]
 [connection signal="balls_stopped" from="." to="CueBallsDisplay" method="_on_balls_stopped"]
