@@ -29,15 +29,17 @@ completedColumns:
 - [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
 - [redo-collision-physics](tasks/redo-collision-physics.md)
 - [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
-- [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
 - [bug-pocket-sometimes-crashes-on-queue-freeing-the-ball](tasks/bug-pocket-sometimes-crashes-on-queue-freeing-the-ball.md)
 
 ## In Progress
 
-- [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
+- [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
+- [bug-cue-ball-type-not-changing](tasks/bug-cue-ball-type-not-changing.md)
+- [bug-cue-ball-has-rotational-velocity-on-reset](tasks/bug-cue-ball-has-rotational-velocity-on-reset.md)
 
 ## Done
 
+- [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
 - [bug-cue-ball-doesn-t-reappear-after-sinking](tasks/bug-cue-ball-doesn-t-reappear-after-sinking.md)
 - [scoring-system](tasks/scoring-system.md)
 - [locked-levels](tasks/locked-levels.md)

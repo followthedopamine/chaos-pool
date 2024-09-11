@@ -98,4 +98,5 @@ offset_right = -313.0
 offset_bottom = 64.0
 script = ExtResource("18_o6o60")
 
+[connection signal="balls_stopped" from="." to="CueBall" method="_on_balls_stopped"]
 [connection signal="balls_stopped" from="." to="CueBallsDisplay" method="_on_balls_stopped"]

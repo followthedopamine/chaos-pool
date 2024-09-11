@@ -37,7 +37,7 @@ func reset():
 	linear_velocity = Vector2.ZERO
 	#await get_tree().create_timer(0.1).timeout
 	global_position = initial_position
-	reset_cue_ball()
+	load_cue_ball()
 	# I have no explanation for why this doesn't work without a timer.
 	# There will be an animation here so I don't think it matters.
 
@@ -92,9 +92,6 @@ func trigger_constant_effects():
 			suck()
 		Global.CUE_BALL_TYPES.PUSHER:
 			push()
-
-func _on_balls_stopped():
-	call_deferred("load_cue_ball")
 	
 func reset_cue_ball():
 	cue_ball_sprite.hframes = 1
@@ -107,13 +104,14 @@ func reset_cue_ball():
 	cue_ball_collision.disabled = false
 	wormhole_animated_sprite.visible = false
 	pusher_animated_sprite.visible = false
-	print("This is all working")
 
 func load_cue_ball():
+	print("New cue ball loaded")
 	reset_cue_ball()
 	cue_ball_type = level.cue_balls[level.shot_counter]
 	cue_ball_sprite.texture = Global.CUE_BALL_SPRITES[cue_ball_type]
 	
+	print("Cue ball type: " + str(cue_ball_type))
 	match cue_ball_type:
 		Global.CUE_BALL_TYPES.INFINITE:
 			load_infinite_ball_physics()
@@ -124,15 +122,21 @@ func trigger_cue_ball_end_effects():
 		Global.CUE_BALL_TYPES.EXPLOSIVE:
 			explode_ball()
 			
+func attempt_next_ball():
+	if !level.cue_ball_active and !level.balls_moving:
+		load_cue_ball()
+			
 func check_cue_ball_still_moving():
 	if level.cue_ball_active:
-		#print(linear_velocity.length())
 		if linear_velocity.length() <= Global.BALL_MOVING_THRESHHOLD:
 			trigger_cue_ball_end_effects()
 			print("Cue ball stopped moving")
-			#await get_tree().create_timer(0.1).timeout #Necessary to make sure signal isn't recieved before ball is moving
-			cue_ball_stopped.emit()
-
+			level.cue_ball_active = false
+			attempt_next_ball()
+			
+func _on_balls_stopped():
+	attempt_next_ball()
+			
 func _physics_process(_delta):
 	#print(level.cue_ball_active)
 	prev_frame_velocity = linear_velocity
@@ -140,4 +144,7 @@ func _physics_process(_delta):
 	
 	if level.cue_ball_active:
 		trigger_constant_effects()
+
+
+
 

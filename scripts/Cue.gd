@@ -55,6 +55,7 @@ func shoot_cue_ball():
 	await get_tree().create_timer(0.1).timeout #Necessary to make sure signal isn't recieved before ball is moving
 	shoot.emit()
 	balls_moving = true
+	level.cue_ball_active = true
 
 func angle_cue():
 	look_at(get_global_mouse_position())
