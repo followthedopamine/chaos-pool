@@ -29,7 +29,7 @@ completedColumns:
 - [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
 - [redo-collision-physics](tasks/redo-collision-physics.md)
 - [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
-- [bug-pocket-sometimes-crashes-on-queue-freeing-the-ball](tasks/bug-pocket-sometimes-crashes-on-queue-freeing-the-ball.md)
+- [bug-level-fails-if-you-win-on-the-last-ball](tasks/bug-level-fails-if-you-win-on-the-last-ball.md)
 
 ## In Progress
 
@@ -42,6 +42,7 @@ completedColumns:
 - [bug-cue-ball-has-rotational-velocity-on-reset](tasks/bug-cue-ball-has-rotational-velocity-on-reset.md)
 - [bug-cue-ball-type-not-changing](tasks/bug-cue-ball-type-not-changing.md)
 - [bug-cue-ball-doesn-t-reappear-after-sinking](tasks/bug-cue-ball-doesn-t-reappear-after-sinking.md)
+- [bug-pocket-sometimes-crashes-on-queue-freeing-the-ball](tasks/bug-pocket-sometimes-crashes-on-queue-freeing-the-ball.md)
 - [scoring-system](tasks/scoring-system.md)
 - [locked-levels](tasks/locked-levels.md)
 - [show-shot-charge](tasks/show-shot-charge.md)

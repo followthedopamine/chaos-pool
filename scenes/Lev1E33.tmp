@@ -32,15 +32,12 @@ cue_balls = Array[int]([0, 1, 0])
 [node name="Cue" parent="." instance=ExtResource("2_qi5rn")]
 
 [node name="Ball" parent="." instance=ExtResource("4_dcpa8")]
-continuous_cd = 2
 
 [node name="Ball2" parent="." instance=ExtResource("4_dcpa8")]
 position = Vector2(327, 110)
-continuous_cd = 2
 
 [node name="CueBall" parent="." instance=ExtResource("4_n1pbe")]
 position = Vector2(391, 210)
-continuous_cd = 2
 
 [node name="Ball4" type="RigidBody2D" parent="."]
 position = Vector2(1440, 389)

@@ -21,6 +21,7 @@ Global="*res://scripts/Global.gd"
 Sound="*res://scripts/Sound.gd"
 Scene="*res://scripts/Scene.gd"
 Save="*res://scripts/Save.gd"
+Collisions="*res://scripts/Collisions.gd"
 
 [display]
 
@@ -47,6 +48,7 @@ shoot={
 
 [physics]
 
+common/physics_ticks_per_second=600
 2d/default_gravity_vector=Vector2(0, 0)
 2d/default_linear_damp=2.0
 

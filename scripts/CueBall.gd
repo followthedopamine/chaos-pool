@@ -131,9 +131,7 @@ func trigger_cue_ball_end_effects():
 			explode_ball()
 			
 func attempt_next_ball():
-	print("Attempt next ball is being called")
 	load_cue_ball()
-	print("What")
 			
 func check_cue_ball_still_moving():
 	if level.cue_ball_active:

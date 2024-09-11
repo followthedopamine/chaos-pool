@@ -26,6 +26,7 @@ var level_ended = false
 
 
 func _ready():
+	Collisions.get_balls()
 	for ball:RigidBody2D in get_tree().get_nodes_in_group("balls"):
 		if ball != cue_ball:
 			# NOTE: Sprite MUST be first child for this to work
