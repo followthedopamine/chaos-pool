@@ -99,6 +99,7 @@ func reset_cue_ball():
 	cue_ball_sprite.frame = 0
 	scale = Vector2.ONE
 	modulate.a = initial_alpha
+	angular_velocity = 0
 	load_standard_ball_physics()
 	cue_ball_sprite.visible = true
 	cue_ball_collision.disabled = false
