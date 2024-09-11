@@ -36,7 +36,7 @@ func _on_body_entered(body:RigidBody2D):
 			cue_ball.reset()
 		else:
 			level.ball_counter -= 1
-			body.call_deferred("queue_free")
+			body.queue_free()
 
 func _process(delta):
 	if ball_sinking:

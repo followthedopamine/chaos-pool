@@ -13,6 +13,7 @@ var prev_frame_velocity
 
 
 @onready var cue_ball_sprite = $CueBallSprite
+@onready var explosion_sprite = $ExplosionSprite
 @onready var level = $".."
 @onready var cue_ball_type = level.cue_balls[0]
 @onready var cue_ball_collision = $CueBallCollision
@@ -43,12 +44,17 @@ func reset():
 	# There will be an animation here so I don't think it matters.
 
 func hide_ball():
-	cue_ball_sprite.visible = false
+	explosion_sprite.visible = false
+	
+func disable_collision():
+	cue_ball_collision.disabled = true
 
 func explode_ball():
 	has_exploded = true
+	explosion_sprite.visible = true
+	cue_ball_sprite.visible = false
 	cue_ball_animations.play("explosion")
-	cue_ball_collision.disabled = true
+	call_deferred("disable_collision")
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
 			#Probably needs to be normalized
