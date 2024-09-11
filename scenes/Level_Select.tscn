@@ -1,0 +1,193 @@
+[gd_scene load_steps=16 format=3 uid="uid://b3ao6r52hrujx"]
+
+[ext_resource type="Texture2D" uid="uid://dc8e2qebsigl7" path="res://images/ui/Level Select BG.png" id="1_4etcp"]
+[ext_resource type="Texture2D" uid="uid://ccycrnff24khu" path="res://images/ui/Level Select Title.png" id="2_id123"]
+[ext_resource type="Texture2D" uid="uid://bcimvuynnuk3u" path="res://images/ui/Buttons-Sheet.png" id="3_p03cj"]
+[ext_resource type="Script" path="res://scripts/LevelButton.gd" id="4_gjhpl"]
+[ext_resource type="FontFile" uid="uid://kxe018a8ofnh" path="res://fonts/Magnolia Script.otf" id="5_bi5r0"]
+[ext_resource type="Texture2D" uid="uid://l2fb6nigeirc" path="res://images/ui/Stars Level Select-Sheet.png" id="6_rnerr"]
+[ext_resource type="Script" path="res://scripts/LevelStars.gd" id="7_nexjr"]
+[ext_resource type="Texture2D" uid="uid://qelatvadhdlj" path="res://images/ui/Button Lock.png" id="8_mdejp"]
+
+[sub_resource type="GDScript" id="GDScript_sqvaf"]
+script/source = "extends TextureRect
+
+@onready var button_container = $Container/Panel/BoxContainer/BoxContainer
+signal button_disabled
+
+func lock_levels():
+	var count = 0
+	for button in button_container.get_children():
+		if count == 0:
+			count += 1
+			continue
+		if Save.stars[count - 1] == 0:
+			button.disabled = true
+			button.get_child(2).visible = true #IMPORTANT: This is what displays the lock
+		count += 1
+		
+func _on_button_pressed():
+	Scene.load_level_1()
+
+func _ready():
+	Save.load_stars()
+	print(Save.stars)
+	lock_levels()
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52uoq"]
+bg_color = Color(0, 0, 0.141176, 0.807843)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bip4t"]
+atlas = ExtResource("3_p03cj")
+region = Rect2(14, 20, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsljr"]
+atlas = ExtResource("3_p03cj")
+region = Rect2(110, 20, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxdbs"]
+atlas = ExtResource("3_p03cj")
+region = Rect2(206, 20, 68, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qilly"]
+atlas = ExtResource("6_rnerr")
+region = Rect2(306, 68, 60, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtv03"]
+atlas = ExtResource("6_rnerr")
+region = Rect2(306, 68, 60, 18)
+
+[node name="LevelSelect" type="TextureRect"]
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("1_4etcp")
+script = SubResource("GDScript_sqvaf")
+
+[node name="Container" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(640, 360)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="LevelSelectTitle" type="TextureRect" parent="Container"]
+layout_mode = 2
+texture = ExtResource("2_id123")
+stretch_mode = 2
+
+[node name="Panel" type="Panel" parent="Container"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_52uoq")
+
+[node name="BoxContainer" type="BoxContainer" parent="Container/Panel"]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 201.0
+alignment = 1
+vertical = true
+
+[node name="BoxContainer" type="BoxContainer" parent="Container/Panel/BoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="LevelButton" type="TextureButton" parent="Container/Panel/BoxContainer/BoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_bip4t")
+texture_pressed = SubResource("AtlasTexture_vsljr")
+texture_disabled = SubResource("AtlasTexture_hxdbs")
+script = ExtResource("4_gjhpl")
+
+[node name="LevelButtonText" type="RichTextLabel" parent="Container/Panel/BoxContainer/BoxContainer/LevelButton"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_bi5r0")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]1[/center]"
+fit_content = true
+
+[node name="LevelStars" type="TextureRect" parent="Container/Panel/BoxContainer/BoxContainer/LevelButton"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -12.0
+offset_right = 63.0
+offset_bottom = 6.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_qilly")
+script = ExtResource("7_nexjr")
+
+[node name="Lock" type="TextureRect" parent="Container/Panel/BoxContainer/BoxContainer/LevelButton"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = -14.0
+offset_top = -16.0
+offset_right = 82.0
+offset_bottom = 80.0
+texture = ExtResource("8_mdejp")
+
+[node name="LevelButton2" type="TextureButton" parent="Container/Panel/BoxContainer/BoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_bip4t")
+texture_pressed = SubResource("AtlasTexture_vsljr")
+texture_disabled = SubResource("AtlasTexture_hxdbs")
+script = ExtResource("4_gjhpl")
+
+[node name="LevelButtonText" type="RichTextLabel" parent="Container/Panel/BoxContainer/BoxContainer/LevelButton2"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_bi5r0")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]2[/center]"
+fit_content = true
+
+[node name="LevelStars" type="TextureRect" parent="Container/Panel/BoxContainer/BoxContainer/LevelButton2"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -12.0
+offset_right = 63.0
+offset_bottom = 6.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_rtv03")
+script = ExtResource("7_nexjr")
+
+[node name="Lock" type="TextureRect" parent="Container/Panel/BoxContainer/BoxContainer/LevelButton2"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = -14.0
+offset_top = -16.0
+offset_right = 82.0
+offset_bottom = 80.0
+texture = ExtResource("8_mdejp")
+
+[connection signal="button_down" from="Container/Panel/BoxContainer/BoxContainer/LevelButton" to="Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_button_down"]
+[connection signal="button_up" from="Container/Panel/BoxContainer/BoxContainer/LevelButton" to="Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_button_up"]
+[connection signal="mouse_exited" from="Container/Panel/BoxContainer/BoxContainer/LevelButton" to="Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Container/Panel/BoxContainer/BoxContainer/LevelButton" to="Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_pressed"]
+[connection signal="button_down" from="Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_button_down"]
+[connection signal="button_up" from="Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_button_up"]
+[connection signal="mouse_exited" from="Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_pressed"]

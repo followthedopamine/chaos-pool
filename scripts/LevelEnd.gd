@@ -46,6 +46,7 @@ func hide_end_screen():
 	self.visible = false
 
 func _on_menu_button_pressed():
+	hide_end_screen()
 	Scene.load_main_menu()
 
 func _on_replay_button_pressed():

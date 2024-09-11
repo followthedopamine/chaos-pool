@@ -3,12 +3,17 @@ extends Node2D
 @onready var main_scene = $"../Main"
 const PERMANENT_SCENES = ["DebugPower", "Camera2D", "LevelEnd"]
 
-const LEVELS = [preload("res://scenes/Level_1.tscn"),preload("res://scenes/Level_2.tscn")]
+const LEVEL_SELECT = preload("res://scenes/Level_Select.tscn")
+
+const LEVELS = [preload("res://scenes/Level_1.tscn"),
+				preload("res://scenes/Level_2.tscn")]
 
 var current_level = 0
 
 func load_main_menu():
-	get_tree().reload_current_scene()
+	unload_scenes()
+	var scene_instance = LEVEL_SELECT.instantiate()
+	main_scene.add_child(scene_instance)
 	
 func reload_current_level():
 	load_level_by_index(current_level)
