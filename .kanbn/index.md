@@ -33,12 +33,11 @@ completedColumns:
 
 ## In Progress
 
-- [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
-- [bug-cue-moves-on-level-end-screen](tasks/bug-cue-moves-on-level-end-screen.md)
-
 ## Done
 
+- [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
 - [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
+- [bug-cue-moves-on-level-end-screen](tasks/bug-cue-moves-on-level-end-screen.md)
 - [bug-ball-display-shows-all-explosion-sprites-on-restart](tasks/bug-ball-display-shows-all-explosion-sprites-on-restart.md)
 - [bug-cue-ball-has-rotational-velocity-on-reset](tasks/bug-cue-ball-has-rotational-velocity-on-reset.md)
 - [bug-cue-ball-type-not-changing](tasks/bug-cue-ball-type-not-changing.md)

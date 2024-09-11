@@ -69,7 +69,7 @@ func _on_balls_stopped():
 	balls_moving = false
 
 func _process(delta):
-	if !level.balls_moving:
+	if !level.balls_moving and !level.level_ended:
 		position_cue()
 		angle_cue()
 		handle_input(delta)
