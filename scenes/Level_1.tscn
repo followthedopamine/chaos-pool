@@ -1,29 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfxuyufo3wons"]
+[gd_scene load_steps=7 format=3 uid="uid://dfxuyufo3wons"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_ma1sx"]
 [ext_resource type="PackedScene" uid="uid://bv3o2m1rpr8yt" path="res://scenes/Cue.tscn" id="2_qi5rn"]
 [ext_resource type="PackedScene" uid="uid://dv22eaqmagwj8" path="res://scenes/Ball.tscn" id="4_dcpa8"]
 [ext_resource type="PackedScene" uid="uid://b36tv2qkejihp" path="res://scenes/Cue_ball.tscn" id="4_n1pbe"]
-[ext_resource type="Script" path="res://scripts/Ball.gd" id="8_471e8"]
 [ext_resource type="PackedScene" uid="uid://bguhci6hl27rj" path="res://scenes/Table.tscn" id="9_hrqj1"]
-[ext_resource type="Texture2D" uid="uid://ck555divyx1s3" path="res://images/placeholder/8-ball-placeholder.png" id="10_meudp"]
-[ext_resource type="Texture2D" uid="uid://da0vkp4tr6iqu" path="res://images/placeholder/11-ball-placeholder.png" id="11_0qpim"]
-[ext_resource type="Script" path="res://scripts/AnimateBallSprite.gd" id="12_1kaq0"]
 [ext_resource type="Script" path="res://scripts/CueBallsDisplay.gd" id="18_o6o60"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3v63n"]
-bounce = 1.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_c5b7w"]
-radius = 7.07107
-
-[sub_resource type="Animation" id="Animation_vacbd"]
-resource_name = "scroll_texture"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6mw7t"]
-_data = {
-"scroll_texture": SubResource("Animation_vacbd")
-}
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ma1sx")
@@ -41,33 +23,6 @@ continuous_cd = 2
 [node name="CueBall" parent="." instance=ExtResource("4_n1pbe")]
 position = Vector2(391, 210)
 continuous_cd = 2
-
-[node name="Ball4" type="RigidBody2D" parent="."]
-position = Vector2(1440, 389)
-collision_mask = 7
-mass = 0.5
-physics_material_override = SubResource("PhysicsMaterial_3v63n")
-continuous_cd = 1
-linear_damp = 0.5
-script = ExtResource("8_471e8")
-
-[node name="BallMask" type="Sprite2D" parent="Ball4"]
-clip_children = 1
-texture = ExtResource("10_meudp")
-
-[node name="BallSprite" type="Sprite2D" parent="Ball4/BallMask"]
-texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("11_0qpim")
-script = ExtResource("12_1kaq0")
-
-[node name="BallCollision" type="CollisionShape2D" parent="Ball4"]
-shape = SubResource("CircleShape2D_c5b7w")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ball4"]
-libraries = {
-"": SubResource("AnimationLibrary_6mw7t")
-}
 
 [node name="Table" parent="." instance=ExtResource("9_hrqj1")]
 

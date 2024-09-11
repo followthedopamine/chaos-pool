@@ -22,16 +22,24 @@ signal balls_stopped
 var shot_counter = 0
 var ball_counter = 0
 
+var balls = []
+
 var level_ended = false
 
 
 func _ready():
-	Collisions.get_balls()
+	print("Ball count on ready: " + str(ball_counter))
+	#Collisions.get_balls()
+	setup_level()
+	
+func setup_level():
 	for ball:RigidBody2D in get_tree().get_nodes_in_group("balls"):
-		if ball != cue_ball:
-			# NOTE: Sprite MUST be first child for this to work
-			ball.get_child(0).texture = BALL_TEXTURES[ball_counter % BALL_TEXTURES.size()]
-			ball_counter += 1
+		if is_instance_valid(ball) and !ball.is_queued_for_deletion():
+			if ball.get_parent() == self:
+				if ball != cue_ball:
+					# NOTE: Sprite MUST be first child for this to work
+					ball.get_child(0).texture = BALL_TEXTURES[ball_counter % BALL_TEXTURES.size()]
+					ball_counter += 1
 
 func fail_level():
 	print("You lose")
@@ -42,7 +50,7 @@ func succeed_level():
 	print("You win")
 	print("Star score: " + str(cue_balls.size() - shot_counter))
 	var star_score = cue_balls.size() - shot_counter
-	var level_number = int(self.name.substr(5))
+	var level_number = Scene.current_level #int(self.name.substr(5))
 	Save.save_stars(level_number - 1, star_score)
 	level_end.show_win_screen(star_score)	
 	level_ended = true
@@ -66,14 +74,16 @@ func check_balls_are_moving():
 	if balls_moving != prev_balls_moving:
 		prev_balls_moving = balls_moving
 		if balls_moving == false:
+			print("Ball counter: " + str(ball_counter))
+			if ball_counter == 0:
+				succeed_level()
+				return
 			if shot_counter == cue_balls.size() - 1:
 				fail_level()
-			else:
-				shot_counter += 1
-				if ball_counter == 0:
-					succeed_level()
-				print("Balls stopped")
-				balls_stopped.emit()
+				return
+			shot_counter += 1
+			print("Balls stopped")
+			balls_stopped.emit()
 
 func _physics_process(_delta):
 	check_balls_are_moving()
