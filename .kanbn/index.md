@@ -29,7 +29,6 @@ completedColumns:
 - [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
 - [redo-collision-physics](tasks/redo-collision-physics.md)
 - [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
-- [rolling-balls](tasks/rolling-balls.md)
 
 ## In Progress
 
@@ -38,6 +37,7 @@ completedColumns:
 ## Done
 
 - [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
+- [rolling-balls](tasks/rolling-balls.md)
 - [bug-level-fails-if-you-win-on-the-last-ball](tasks/bug-level-fails-if-you-win-on-the-last-ball.md)
 - [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
 - [bug-cue-moves-on-level-end-screen](tasks/bug-cue-moves-on-level-end-screen.md)

@@ -35,7 +35,7 @@ func _ready():
 func setup_level():
 	for ball:RigidBody2D in get_tree().get_nodes_in_group("balls"):
 		if is_instance_valid(ball) and !ball.is_queued_for_deletion():
-			if ball.get_parent() == self:
+			if ball.get_parent() == self: # Without this when you restart the level you'll get an incorrect ball count because the old level scene will still be in the tree
 				if ball != cue_ball:
 					# NOTE: Sprite MUST be first child for this to work
 					ball.get_child(0).texture = BALL_TEXTURES[ball_counter % BALL_TEXTURES.size()]

@@ -15,6 +15,7 @@ radius = 7.07107
 
 [node name="Ball" type="RigidBody2D" groups=["balls"]]
 texture_filter = 2
+position = Vector2(418, 181)
 collision_mask = 7
 mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_3v63n")
@@ -28,7 +29,6 @@ script = ExtResource("1_r7uxs")
 clip_children = 1
 texture_filter = 1
 texture = ExtResource("2_bpjag")
-script = ExtResource("4_dynig")
 
 [node name="BallSprite" type="Sprite2D" parent="BallMask"]
 texture_filter = 1
@@ -37,7 +37,7 @@ script = ExtResource("4_gmilb")
 
 [node name="BallShading" type="Sprite2D" parent="."]
 z_index = 2
-texture_filter = 3
+texture_filter = 1
 texture = ExtResource("3_wh1ho")
 script = ExtResource("4_dynig")
 

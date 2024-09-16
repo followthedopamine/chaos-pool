@@ -9,8 +9,9 @@ var roll_speed = 0.01
 var initial_offset = offset
 
 func _ready():
-	ball.apply_central_impulse(Vector2(1500,0))
+	#ball.apply_central_impulse(Vector2(1500,0))
 	#offset = Vector2(17, 0)
+	pass
 
 func roll_right(delta):
 	if offset.x > 24:
@@ -60,8 +61,10 @@ func move_ball(_delta):
 	#ball.linear_velocity = Vector2(50 -delta ,-20 + delta)
 
 func _process(delta):
-	move_ball(delta)
+	#move_ball(delta)
 	roll_with_velocity()
 	#roll_up(delta)
 	#roll_right(delta)
 	
+func _physics_process(_delta):
+	rotation = ball.rotation
