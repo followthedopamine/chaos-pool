@@ -15,20 +15,21 @@ completedColumns:
 - [ball-that-creates-a-pocket](tasks/ball-that-creates-a-pocket.md)
 - [lucky-ball](tasks/lucky-ball.md)
 - [moving-pockets](tasks/moving-pockets.md)
+- [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
+- [achievements](tasks/achievements.md)
 
 ## Todo
 
-- [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
-- [lose-condition](tasks/lose-condition.md)
 - [levels-1-5](tasks/levels-1-5.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [main-menu](tasks/main-menu.md)
 - [options-menu](tasks/options-menu.md)
 - [level-timer](tasks/level-timer.md)
-- [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
-- [redo-collision-physics](tasks/redo-collision-physics.md)
 - [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
+- [bug-possibly-something-weird-still-going-on-with-ball-counter](tasks/bug-possibly-something-weird-still-going-on-with-ball-counter.md)
+- [sounds-for-powered-balls](tasks/sounds-for-powered-balls.md)
+- [powered-balls-should-interact-with-walls](tasks/powered-balls-should-interact-with-walls.md)
 
 ## In Progress
 
@@ -38,10 +39,13 @@ completedColumns:
 
 - [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
 - [rolling-balls](tasks/rolling-balls.md)
+- [lose-condition](tasks/lose-condition.md)
 - [bug-level-fails-if-you-win-on-the-last-ball](tasks/bug-level-fails-if-you-win-on-the-last-ball.md)
 - [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
 - [bug-cue-moves-on-level-end-screen](tasks/bug-cue-moves-on-level-end-screen.md)
 - [bug-ball-display-shows-all-explosion-sprites-on-restart](tasks/bug-ball-display-shows-all-explosion-sprites-on-restart.md)
+- [redo-collision-physics](tasks/redo-collision-physics.md)
+- [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
 - [bug-cue-ball-has-rotational-velocity-on-reset](tasks/bug-cue-ball-has-rotational-velocity-on-reset.md)
 - [bug-cue-ball-type-not-changing](tasks/bug-cue-ball-type-not-changing.md)
 - [bug-cue-ball-doesn-t-reappear-after-sinking](tasks/bug-cue-ball-doesn-t-reappear-after-sinking.md)

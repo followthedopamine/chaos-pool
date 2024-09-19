@@ -20,7 +20,7 @@ func play_sinking_animation(delta):
 	else:
 		ball_sinking.scale = Vector2.ZERO
 		
-func _on_body_entered(body):
+func _on_body_entered(body:RigidBody2D):
 	if body.is_in_group("balls"):
 		if body == cue_ball:
 			level.set_cue_ball_inactive()
@@ -36,6 +36,7 @@ func _on_body_entered(body):
 			cue_ball.reset()
 		else:
 			level.ball_counter -= 1
+			body.set_collision_layer_value(1, false)
 			if is_instance_valid(body):
 				body.queue_free()
 
