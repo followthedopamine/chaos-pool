@@ -48,7 +48,8 @@ shoot={
 
 [physics]
 
-common/physics_ticks_per_second=600
+common/physics_ticks_per_second=300
+common/max_physics_steps_per_frame=40
 2d/default_gravity_vector=Vector2(0, 0)
 2d/default_linear_damp=2.0
 

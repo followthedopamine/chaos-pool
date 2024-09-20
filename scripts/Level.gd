@@ -27,6 +27,7 @@ var balls = []
 var level_ended = false
 
 
+
 func _ready():
 	print("Ball count on ready: " + str(ball_counter))
 	#Collisions.get_balls()
