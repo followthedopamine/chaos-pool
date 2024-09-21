@@ -25,7 +25,6 @@ completedColumns:
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [main-menu](tasks/main-menu.md)
 - [options-menu](tasks/options-menu.md)
-- [level-timer](tasks/level-timer.md)
 - [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
 - [bug-possibly-something-weird-still-going-on-with-ball-counter](tasks/bug-possibly-something-weird-still-going-on-with-ball-counter.md)
 - [sounds-for-powered-balls](tasks/sounds-for-powered-balls.md)
@@ -34,10 +33,12 @@ completedColumns:
 ## In Progress
 
 - [bug-balls-can-collide-with-balls-immediately-after-they-are-sunk](tasks/bug-balls-can-collide-with-balls-immediately-after-they-are-sunk.md)
+- [bug-game-still-crashes-on-freeing-the-balls](tasks/bug-game-still-crashes-on-freeing-the-balls.md)
 
 ## Done
 
 - [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
+- [level-timer](tasks/level-timer.md)
 - [rolling-balls](tasks/rolling-balls.md)
 - [lose-condition](tasks/lose-condition.md)
 - [bug-level-fails-if-you-win-on-the-last-ball](tasks/bug-level-fails-if-you-win-on-the-last-ball.md)

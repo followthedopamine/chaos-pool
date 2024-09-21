@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dwam8qve7q2or"]
+[gd_scene load_steps=20 format=3 uid="uid://dwam8qve7q2or"]
 
 [ext_resource type="Script" path="res://scripts/LevelEnd.gd" id="1_o4t2j"]
 [ext_resource type="Texture2D" uid="uid://btf4c065nm757" path="res://images/ui/level-cleared/Level Cleared.png" id="1_ura5o"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmnw4mf4wxej4" path="res://images/ui/level-cleared/Replay Button-Sheet.png" id="4_486dc"]
 [ext_resource type="Texture2D" uid="uid://bvprdb0pki4qj" path="res://images/ui/level-cleared/Next Level Button-Sheet.png" id="5_56f7j"]
 [ext_resource type="Texture2D" uid="uid://jfkoq1gm2xp6" path="res://images/ui/level-cleared/Ad-Sheet.png" id="6_2rd6r"]
+[ext_resource type="PackedScene" uid="uid://c20co81484jkb" path="res://scenes/Time.tscn" id="8_5e5dp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxrt2"]
 bg_color = Color(0.0117647, 0.0509804, 0.00784314, 0.807843)
@@ -99,16 +100,23 @@ texture_normal = SubResource("AtlasTexture_b6sa6")
 texture_pressed = SubResource("AtlasTexture_rfshn")
 texture_disabled = SubResource("AtlasTexture_mori0")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+[node name="AdContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="AdButton" type="TextureButton" parent="VBoxContainer/HBoxContainer3"]
+[node name="AdButton" type="TextureButton" parent="VBoxContainer/AdContainer"]
 layout_mode = 2
 texture_normal = SubResource("AtlasTexture_n0ye6")
 texture_pressed = SubResource("AtlasTexture_4pkql")
 
+[node name="TimeContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Time" parent="VBoxContainer/TimeContainer" instance=ExtResource("8_5e5dp")]
+layout_mode = 2
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/ReplayButton" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_next_level_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer3/AdButton" to="." method="_on_ad_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/AdContainer/AdButton" to="." method="_on_ad_button_pressed"]

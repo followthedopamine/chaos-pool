@@ -9,6 +9,7 @@ const LEVELS = [preload("res://scenes/Level_1.tscn"),
 				preload("res://scenes/Level_2.tscn")]
 
 var current_level = 0
+var current_level_script
 
 func load_main_menu():
 	unload_scenes()

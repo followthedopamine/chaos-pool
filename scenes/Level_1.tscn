@@ -1,20 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfxuyufo3wons"]
+[gd_scene load_steps=8 format=3 uid="uid://dfxuyufo3wons"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_ma1sx"]
 [ext_resource type="PackedScene" uid="uid://bv3o2m1rpr8yt" path="res://scenes/Cue.tscn" id="2_qi5rn"]
 [ext_resource type="PackedScene" uid="uid://dv22eaqmagwj8" path="res://scenes/Ball.tscn" id="4_dcpa8"]
 [ext_resource type="PackedScene" uid="uid://b36tv2qkejihp" path="res://scenes/Cue_ball.tscn" id="4_n1pbe"]
-[ext_resource type="Script" path="res://scenes/LevelTimer.gd" id="7_aofbm"]
-[ext_resource type="Texture2D" uid="uid://bvxu1436twgnh" path="res://images/ui/Time.png" id="8_7cync"]
-[ext_resource type="Texture2D" uid="uid://bc4g45x4t12q3" path="res://images/ui/numbers/0-number.png" id="9_a5tow"]
+[ext_resource type="PackedScene" uid="uid://c20co81484jkb" path="res://scenes/Time.tscn" id="7_guamy"]
 [ext_resource type="PackedScene" uid="uid://bguhci6hl27rj" path="res://scenes/Table.tscn" id="9_hrqj1"]
-[ext_resource type="Texture2D" uid="uid://bviv2vrmht6e1" path="res://images/ui/numbers/colon-number.png" id="10_0nx6h"]
-[ext_resource type="Texture2D" uid="uid://cy50gdvybejix" path="res://images/ui/numbers/dot-number.png" id="11_t427n"]
 [ext_resource type="Script" path="res://scripts/CueBallsDisplay.gd" id="18_o6o60"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ma1sx")
-cue_balls = Array[int]([0, 1, 0])
+cue_balls = Array[int]([0, 1, 0, 0, 0, 0, 0, 0])
 
 [node name="Cue" parent="." instance=ExtResource("2_qi5rn")]
 
@@ -40,59 +36,6 @@ offset_right = -313.0
 offset_bottom = 64.0
 script = ExtResource("18_o6o60")
 
-[node name="Time" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("7_aofbm")
-
-[node name="TimeText" type="TextureRect" parent="Time"]
-offset_left = 54.0
-offset_top = 34.0
-offset_right = 111.0
-offset_bottom = 57.0
-texture = ExtResource("8_7cync")
-
-[node name="TimerHBoxContainer" type="HBoxContainer" parent="Time"]
-offset_left = 116.0
-offset_top = 35.0
-offset_right = 228.0
-offset_bottom = 58.0
-theme_override_constants/separation = -1
-
-[node name="Digit 1" type="TextureRect" parent="Time/TimerHBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_a5tow")
-
-[node name="Digit 2" type="TextureRect" parent="Time/TimerHBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_a5tow")
-
-[node name="Colon" type="TextureRect" parent="Time/TimerHBoxContainer"]
-layout_mode = 2
-texture = ExtResource("10_0nx6h")
-
-[node name="Digit 3" type="TextureRect" parent="Time/TimerHBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_a5tow")
-
-[node name="Digit 4" type="TextureRect" parent="Time/TimerHBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_a5tow")
-
-[node name="Dot" type="TextureRect" parent="Time/TimerHBoxContainer"]
-layout_mode = 2
-texture = ExtResource("11_t427n")
-
-[node name="Digit 5" type="TextureRect" parent="Time/TimerHBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_a5tow")
-stretch_mode = 2
-
-[node name="Digit 6" type="TextureRect" parent="Time/TimerHBoxContainer"]
-layout_mode = 2
-texture = ExtResource("9_a5tow")
-stretch_mode = 2
+[node name="Time" parent="." instance=ExtResource("7_guamy")]
 
 [connection signal="balls_stopped" from="." to="CueBallsDisplay" method="_on_balls_stopped"]

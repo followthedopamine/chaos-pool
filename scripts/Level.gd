@@ -14,6 +14,8 @@ var balls_moving = false
 
 signal balls_stopped
 
+
+
 @onready var cue_ball = $CueBall
 @export var cue_balls:Array[Global.CUE_BALL_TYPES] = []
 
@@ -31,6 +33,7 @@ var level_ended = false
 func _ready():
 	print("Ball count on ready: " + str(ball_counter))
 	#Collisions.get_balls()
+	Scene.current_level_script = self
 	setup_level()
 	
 func setup_level():

@@ -19,6 +19,8 @@ const _9 = preload("res://images/ui/numbers/9-number.png")
 @onready var digit_6 = $"TimerHBoxContainer/Digit 6"
 
 
+
+
 var time_elapsed = 0.0
 
 var is_paused = false
@@ -65,9 +67,14 @@ func update_numbers():
 		count += 1
 		var digit = get_digit_variable(count)
 		digit.texture = get_number_variable(char)
+		
+func is_level_ended():
+	if is_instance_valid(Scene.current_level_script):
+		if !Scene.current_level_script.level_ended:
+			return false
+	return true
 
 func _process(delta):
-	if !is_paused:
+	if !is_paused and !is_level_ended():
 		time_elapsed += delta
 		update_numbers()
-	pass

@@ -7,6 +7,8 @@ const LEVEL_FAILED = preload("res://images/ui/level-cleared/Level Failed.png")
 @onready var ad_button = $VBoxContainer/HBoxContainer3/AdButton
 @onready var stars_texture = $VBoxContainer/HBoxContainer2/StarsTexture
 @onready var next_level_button = $VBoxContainer/HBoxContainer/NextLevelButton
+@onready var ad_container = $VBoxContainer/AdContainer
+@onready var time_container = $VBoxContainer/TimeContainer
 
 
 const STARS_ATLAS = Rect2(0, 0, 160, 39)
@@ -32,13 +34,16 @@ func show_win_screen(stars):
 										STARS_ATLAS.position.y,
 										STARS_ATLAS.size.x, 
 										STARS_ATLAS.size.y)
-	ad_button.visible = false
+	ad_container.visible = false
+	time_container.visible = true
+	
 	
 func show_loss_screen():
 	print("Display loss screen")
 	self.visible = true
 	level_finish_texture.texture = LEVEL_FAILED
-	ad_button.visible = true
+	ad_container.visible = true
+	time_container.visible = false
 	if is_next_level_locked(Scene.current_level):
 		next_level_button.disabled = true
 	
