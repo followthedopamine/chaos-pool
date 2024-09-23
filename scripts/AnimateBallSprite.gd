@@ -60,7 +60,7 @@ func move_ball(_delta):
 	pass
 	#ball.linear_velocity = Vector2(50 -delta ,-20 + delta)
 
-func _process(delta):
+func _process(_delta):
 	#move_ball(delta)
 	roll_with_velocity()
 	#roll_up(delta)

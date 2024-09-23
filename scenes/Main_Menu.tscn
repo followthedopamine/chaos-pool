@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://t5p7ngld6w1v"]
+
+[ext_resource type="Texture2D" uid="uid://dvocpu31ud8mb" path="res://images/ui/Main Menu New.png" id="1_pmgf0"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="2_sjrjt"]
+[ext_resource type="Texture2D" uid="uid://bc4g45x4t12q3" path="res://images/ui/numbers/0-number.png" id="3_qn1s6"]
+[ext_resource type="Texture2D" uid="uid://caiwkt2s7o8qh" path="res://images/ui/numbers/1-number.png" id="4_ddquj"]
+[ext_resource type="Texture2D" uid="uid://c2hc2lltjj4nv" path="res://images/ui/numbers/3-number.png" id="5_obu70"]
+
+[node name="MainMenu" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_pmgf0")
+script = ExtResource("2_sjrjt")
+
+[node name="StartButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 197.0
+offset_right = 117.0
+offset_bottom = 237.0
+texture_normal = ExtResource("3_qn1s6")
+
+[node name="SettingsButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 246.0
+offset_right = 138.0
+offset_bottom = 286.0
+texture_normal = ExtResource("4_ddquj")
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 297.0
+offset_right = 108.0
+offset_bottom = 337.0
+texture_normal = ExtResource("5_obu70")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

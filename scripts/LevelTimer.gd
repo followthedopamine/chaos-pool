@@ -63,10 +63,10 @@ func update_numbers():
 	var milliseconds = fmod(time_elapsed, 1) * 100
 	var time_string = "%02d%02d%02d" % [minutes, seconds, milliseconds]
 	var count = 0
-	for char in time_string:
+	for time_char in time_string:
 		count += 1
 		var digit = get_digit_variable(count)
-		digit.texture = get_number_variable(char)
+		digit.texture = get_number_variable(time_char)
 		
 func is_level_ended():
 	if is_instance_valid(Scene.current_level_script):

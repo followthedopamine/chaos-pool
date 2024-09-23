@@ -24,16 +24,17 @@ completedColumns:
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [main-menu](tasks/main-menu.md)
-- [options-menu](tasks/options-menu.md)
 - [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
 - [bug-possibly-something-weird-still-going-on-with-ball-counter](tasks/bug-possibly-something-weird-still-going-on-with-ball-counter.md)
 - [sounds-for-powered-balls](tasks/sounds-for-powered-balls.md)
 - [powered-balls-should-interact-with-walls](tasks/powered-balls-should-interact-with-walls.md)
+- [correction-need-a-home-icon-button-for-level-select-instead-of-a-menu-icon](tasks/correction-need-a-home-icon-button-for-level-select-instead-of-a-menu-icon.md)
 
 ## In Progress
 
 - [bug-balls-can-collide-with-balls-immediately-after-they-are-sunk](tasks/bug-balls-can-collide-with-balls-immediately-after-they-are-sunk.md)
-- [bug-game-still-crashes-on-freeing-the-balls](tasks/bug-game-still-crashes-on-freeing-the-balls.md)
+- [options-menu](tasks/options-menu.md)
+- [bug-game-still-crashes-on-freeing-the-balls-try-catch](tasks/bug-game-still-crashes-on-freeing-the-balls-try-catch.md)
 
 ## Done
 

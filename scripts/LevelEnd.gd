@@ -4,7 +4,6 @@ const LEVEL_CLEARED = preload("res://images/ui/level-cleared/Level Cleared.png")
 const LEVEL_FAILED = preload("res://images/ui/level-cleared/Level Failed.png")
 
 @onready var level_finish_texture = $VBoxContainer/LevelFinishTexture
-@onready var ad_button = $VBoxContainer/HBoxContainer3/AdButton
 @onready var stars_texture = $VBoxContainer/HBoxContainer2/StarsTexture
 @onready var next_level_button = $VBoxContainer/HBoxContainer/NextLevelButton
 @onready var ad_container = $VBoxContainer/AdContainer

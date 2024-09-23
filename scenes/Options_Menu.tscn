@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1cgybdlf1n4o"]
+
+[ext_resource type="Script" path="res://scripts/OptionsMenu.gd" id="1_0dwde"]
+[ext_resource type="Texture2D" uid="uid://deo8s4rfq2u6j" path="res://images/sprites/Pusher-Ball.png" id="2_3edb7"]
+[ext_resource type="Texture2D" uid="uid://ycopwuva3pex" path="res://images/sprites/wormhole-ball.png" id="3_jvsaj"]
+[ext_resource type="Texture2D" uid="uid://bfj47qjg6tgiu" path="res://images/ui/numbers/9-number.png" id="4_bych2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kly5a"]
+bg_color = Color(0, 0, 0, 0.854902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnd6o"]
+content_margin_top = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5i2f"]
+bg_color = Color(1, 0.17282, 0.768304, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg0n2"]
+bg_color = Color(0.568216, 0.521492, 1, 1)
+
+[node name="OptionsMenu" type="PanelContainer"]
+visible = false
+offset_right = 640.0
+offset_bottom = 361.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kly5a")
+script = ExtResource("1_0dwde")
+
+[node name="CloseOptionsButton" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("2_3edb7")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Header" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(62.865, 23.355)
+layout_mode = 2
+mouse_filter = 1
+text = "Options"
+
+[node name="SFXControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SFXLabel" type="Label" parent="HBoxContainer/VBoxContainer/SFXControls"]
+custom_minimum_size = Vector2(62.865, 23.355)
+layout_mode = 2
+text = "SFX"
+
+[node name="ToggleSFXButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/SFXControls"]
+layout_mode = 2
+texture_normal = ExtResource("3_jvsaj")
+
+[node name="SFXSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/SFXControls"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_bych2")
+theme_override_styles/slider = SubResource("StyleBoxFlat_xnd6o")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v5i2f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mg0n2")
+
+[node name="MusicControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="HBoxContainer/VBoxContainer/MusicControls"]
+custom_minimum_size = Vector2(62.865, 23.355)
+layout_mode = 2
+text = "Music
+"
+
+[node name="ToggleMusicButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/MusicControls"]
+layout_mode = 2
+texture_normal = ExtResource("3_jvsaj")
+
+[node name="MusicSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/MusicControls"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_icons/grabber = ExtResource("4_bych2")
+theme_override_styles/slider = SubResource("StyleBoxFlat_xnd6o")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v5i2f")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mg0n2")
+
+[node name="LevelControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HomeButton" type="Button" parent="HBoxContainer/VBoxContainer/LevelControls"]
+layout_mode = 2
+text = "Home"
+
+[node name="RestartButton" type="Button" parent="HBoxContainer/VBoxContainer/LevelControls"]
+layout_mode = 2
+text = "Restart"
+
+[connection signal="pressed" from="CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LevelControls/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LevelControls/RestartButton" to="." method="_on_restart_button_pressed"]
