@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1cgybdlf1n4o"]
+[gd_scene load_steps=11 format=3 uid="uid://b1cgybdlf1n4o"]
 
 [ext_resource type="Script" path="res://scripts/OptionsMenu.gd" id="1_0dwde"]
 [ext_resource type="Texture2D" uid="uid://deo8s4rfq2u6j" path="res://images/sprites/Pusher-Ball.png" id="2_3edb7"]
 [ext_resource type="Texture2D" uid="uid://ycopwuva3pex" path="res://images/sprites/wormhole-ball.png" id="3_jvsaj"]
+[ext_resource type="Texture2D" uid="uid://bfo8pgfkgofo8" path="res://images/sprites/explosive-ball.png" id="4_5ba1u"]
 [ext_resource type="Texture2D" uid="uid://bfj47qjg6tgiu" path="res://images/ui/numbers/9-number.png" id="4_bych2"]
+[ext_resource type="Texture2D" uid="uid://bo0va54ttiwkq" path="res://images/sprites/Cue-Ball.png" id="4_ryya3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kly5a"]
 bg_color = Color(0, 0, 0, 0.854902)
@@ -21,6 +23,7 @@ bg_color = Color(0.568216, 0.521492, 1, 1)
 visible = false
 offset_right = 640.0
 offset_bottom = 361.0
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_kly5a")
 script = ExtResource("1_0dwde")
 
@@ -36,6 +39,7 @@ alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Header" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(62.865, 23.355)
@@ -45,6 +49,7 @@ text = "Options"
 
 [node name="SFXControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="SFXLabel" type="Label" parent="HBoxContainer/VBoxContainer/SFXControls"]
 custom_minimum_size = Vector2(62.865, 23.355)
@@ -53,7 +58,10 @@ text = "SFX"
 
 [node name="ToggleSFXButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/SFXControls"]
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("3_jvsaj")
+texture_pressed = ExtResource("4_5ba1u")
+texture_hover = ExtResource("4_ryya3")
 
 [node name="SFXSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/SFXControls"]
 custom_minimum_size = Vector2(200, 0)
@@ -65,6 +73,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mg0n2")
 
 [node name="MusicControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="MusicLabel" type="Label" parent="HBoxContainer/VBoxContainer/MusicControls"]
 custom_minimum_size = Vector2(62.865, 23.355)
@@ -74,7 +83,10 @@ text = "Music
 
 [node name="ToggleMusicButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/MusicControls"]
 layout_mode = 2
+toggle_mode = true
 texture_normal = ExtResource("3_jvsaj")
+texture_pressed = ExtResource("4_5ba1u")
+texture_hover = ExtResource("4_ryya3")
 
 [node name="MusicSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/MusicControls"]
 custom_minimum_size = Vector2(200, 0)
@@ -96,5 +108,9 @@ layout_mode = 2
 text = "Restart"
 
 [connection signal="pressed" from="CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/SFXControls/ToggleSFXButton" to="." method="_on_toggle_sfx_button_toggled"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/SFXControls/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="HBoxContainer/VBoxContainer/MusicControls/ToggleMusicButton" to="." method="_on_toggle_music_button_toggled"]
+[connection signal="value_changed" from="HBoxContainer/VBoxContainer/MusicControls/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/LevelControls/HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/LevelControls/RestartButton" to="." method="_on_restart_button_pressed"]

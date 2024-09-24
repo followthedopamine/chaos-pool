@@ -22,6 +22,7 @@ Sound="*res://scripts/Sound.gd"
 Scene="*res://scripts/Scene.gd"
 Save="*res://scripts/Save.gd"
 Collisions="*res://scripts/Collisions.gd"
+Config="*res://scripts/Config.gd"
 
 [display]
 

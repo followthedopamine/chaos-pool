@@ -15,5 +15,3 @@ func load_stars():
 		stars = file.get_var()
 	else:
 		print("No data saved")
-		
-

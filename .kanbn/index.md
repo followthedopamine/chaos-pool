@@ -35,6 +35,7 @@ completedColumns:
 - [bug-balls-can-collide-with-balls-immediately-after-they-are-sunk](tasks/bug-balls-can-collide-with-balls-immediately-after-they-are-sunk.md)
 - [options-menu](tasks/options-menu.md)
 - [bug-game-still-crashes-on-freeing-the-balls-try-catch](tasks/bug-game-still-crashes-on-freeing-the-balls-try-catch.md)
+- [bug-doesn-t-display-the-correct-amount-of-stars-on-level-won](tasks/bug-doesn-t-display-the-correct-amount-of-stars-on-level-won.md)
 
 ## Done
 
