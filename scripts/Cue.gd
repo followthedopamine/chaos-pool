@@ -13,6 +13,11 @@ const MAX_CUE_X_OFFSET = -180
 @onready var cue_ball = $"../CueBall"
 @onready var level = $".."
 
+@onready var options_menu = $"../../OptionsMenu"
+@onready var level_menu_button = $"../../LevelMenuButton"
+
+
+
 @onready var shot_charge = $ShotChargeMask/ShotCharge
 @onready var shot_charge_mask = $ShotChargeMask
 
@@ -67,9 +72,15 @@ func _on_balls_stopped():
 	# This breaks badly on loading scene from code
 	# Just using the level.balls_moving variable instead for now and it seems fine
 	balls_moving = false
+	
+func check_if_player_is_pressing_menu():
+	var rect = level_menu_button.get_global_rect()
+	if rect.has_point(get_global_mouse_position()):
+		return true
+	return false
 
 func _process(delta):
-	if !level.balls_moving and !level.level_ended:
+	if !level.balls_moving and !level.level_ended and !options_menu.visible and !check_if_player_is_pressing_menu():
 		position_cue()
 		angle_cue()
 		handle_input(delta)

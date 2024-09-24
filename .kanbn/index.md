@@ -17,6 +17,7 @@ completedColumns:
 - [moving-pockets](tasks/moving-pockets.md)
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
 - [achievements](tasks/achievements.md)
+- [ball-that-follows-the-player-s-cursor-finger](tasks/ball-that-follows-the-player-s-cursor-finger.md)
 
 ## Todo
 

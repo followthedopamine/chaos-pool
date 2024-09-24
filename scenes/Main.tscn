@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://da1uht6nbhxv3"]
+[gd_scene load_steps=7 format=3 uid="uid://da1uht6nbhxv3"]
 
 [ext_resource type="PackedScene" uid="uid://t5p7ngld6w1v" path="res://scenes/Main_Menu.tscn" id="1_kkx2b"]
 [ext_resource type="PackedScene" uid="uid://b1cgybdlf1n4o" path="res://scenes/Options_Menu.tscn" id="3_mbaoq"]
+[ext_resource type="Texture2D" uid="uid://bguei2u46h8mg" path="res://images/ui/Menu Button-Sheet.png" id="4_i1y6o"]
 [ext_resource type="PackedScene" uid="uid://dwam8qve7q2or" path="res://scenes/Level_end.tscn" id="8_agxvw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4e1a"]
+atlas = ExtResource("4_i1y6o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34hnb"]
+atlas = ExtResource("4_i1y6o")
+region = Rect2(64, 0, 64, 64)
 
 [node name="Main" type="Node2D"]
 
@@ -16,3 +25,15 @@ anchor_mode = 0
 zoom = Vector2(1.8, 1.8)
 
 [node name="OptionsMenu" parent="." instance=ExtResource("3_mbaoq")]
+z_index = 1000
+
+[node name="LevelMenuButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 574.0
+offset_top = -8.0
+offset_right = 702.0
+offset_bottom = 56.0
+texture_normal = SubResource("AtlasTexture_d4e1a")
+texture_pressed = SubResource("AtlasTexture_34hnb")
+
+[connection signal="pressed" from="LevelMenuButton" to="OptionsMenu" method="_on_level_menu_button_pressed"]

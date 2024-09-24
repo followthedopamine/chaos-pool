@@ -6,7 +6,9 @@ extends PanelContainer
 @onready var toggle_sfx_button = $HBoxContainer/VBoxContainer/SFXControls/ToggleSFXButton
 @onready var toggle_music_button = $HBoxContainer/VBoxContainer/MusicControls/ToggleMusicButton
 
+@onready var level_menu_button = $"../LevelMenuButton"
 
+var from_level = false
 
 var music_volume = 75
 var sfx_volume = 75
@@ -14,6 +16,17 @@ var sfx_volume = 75
 
 func _ready():
 	set_volume_sliders()
+	
+func show_from_main_menu():
+	self.visible = true
+	level_controls.visible = false
+	from_level = false
+	
+func show_from_level():
+	self.visible = true
+	level_controls.visible = true
+	level_menu_button.visible = false
+	from_level = true
 
 func set_volume_sliders():
 	if !Sound.music_muted:
@@ -41,9 +54,7 @@ func _on_music_slider_value_changed(value):
 func _on_sfx_slider_value_changed(value):
 	Sound.change_volume("SFX", value)
 	
-func show_from_main_menu():
-	self.visible = true
-	level_controls.visible = false
+
 	
 func _on_close_options_button_pressed():
 	hide_options_and_save()
@@ -57,8 +68,10 @@ func _on_restart_button_pressed():
 	Scene.reload_current_level()
 
 func hide_options_and_save():
+	if from_level:
+		level_menu_button.visible = true
 	self.visible = false
 	Config.save_options()
 
-
-
+func _on_level_menu_button_pressed():
+	show_from_level()
