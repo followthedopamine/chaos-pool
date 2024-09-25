@@ -36,4 +36,7 @@ offset_bottom = 56.0
 texture_normal = SubResource("AtlasTexture_d4e1a")
 texture_pressed = SubResource("AtlasTexture_34hnb")
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
 [connection signal="pressed" from="LevelMenuButton" to="OptionsMenu" method="_on_level_menu_button_pressed"]

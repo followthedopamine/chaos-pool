@@ -30,6 +30,7 @@ completedColumns:
 - [sounds-for-powered-balls](tasks/sounds-for-powered-balls.md)
 - [powered-balls-should-interact-with-walls](tasks/powered-balls-should-interact-with-walls.md)
 - [correction-need-a-home-icon-button-for-level-select-instead-of-a-menu-icon](tasks/correction-need-a-home-icon-button-for-level-select-instead-of-a-menu-icon.md)
+- [all-ball-textures](tasks/all-ball-textures.md)
 
 ## In Progress
 

@@ -4,7 +4,7 @@ extends Node2D
 @onready var level_menu_button = $"../Main/LevelMenuButton"
 
 
-const PERMANENT_SCENES = ["Camera2D", "LevelEnd", "OptionsMenu", "LevelMenuButton"]
+const PERMANENT_SCENES = ["Camera2D", "Music", "LevelEnd", "OptionsMenu", "LevelMenuButton"]
 
 const MAIN_MENU = preload("res://scenes/Main_Menu.tscn")
 const LEVEL_SELECT = preload("res://scenes/Level_Select.tscn")
