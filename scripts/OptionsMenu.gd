@@ -15,6 +15,7 @@ var sfx_volume = 75
 
 
 func _ready():
+	self.visible = false
 	set_volume_sliders()
 	
 func show_from_main_menu():
