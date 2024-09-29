@@ -26,6 +26,7 @@ func load_main_menu():
 	hide_level_menu_button()
 	var scene_instance = MAIN_MENU.instantiate()
 	main_scene.add_child(scene_instance)
+	Sound.change_track(0)
 
 func load_level_select():
 	unload_scenes()
@@ -54,6 +55,7 @@ func load_level_by_index(index):
 	var scene_instance = LEVELS[index].instantiate()
 	main_scene.add_child(scene_instance)
 	current_level = index
+	Sound.change_track(current_level + 1)
 
 func unload_scenes():
 	for child in main_scene.get_children():

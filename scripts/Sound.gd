@@ -8,6 +8,20 @@ var sfx_volume = 75
 var music_muted = false
 var sfx_muted = false
 
+@onready var music = $"../Main/Music"
+
+const MUSIC_TRACKS = [preload("res://sounds/music/Electro_Breaks_Loop.mp3"),
+preload("res://sounds/music/Hovercraft_Two_Point_Oh.mp3"),
+preload("res://sounds/music/Mighty_Fine_DnB_Platforming_Completed.mp3"),
+preload("res://sounds/music/Nightclub_loop.mp3"),
+preload("res://sounds/music/Space _Trap.mp3"),
+preload("res://sounds/music/Waypoint_K.mp3")]
+
+func change_track(track_number):
+	print("Changing music tracks")
+	music.stream = MUSIC_TRACKS[track_number]
+	music.play()
+
 func toggle_mute(bus_name):
 	match bus_name:
 		"Music":

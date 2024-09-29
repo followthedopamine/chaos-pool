@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://da1uht6nbhxv3"]
+[gd_scene load_steps=8 format=3 uid="uid://da1uht6nbhxv3"]
 
 [ext_resource type="PackedScene" uid="uid://t5p7ngld6w1v" path="res://scenes/Main_Menu.tscn" id="1_kkx2b"]
 [ext_resource type="PackedScene" uid="uid://b1cgybdlf1n4o" path="res://scenes/Options_Menu.tscn" id="3_mbaoq"]
 [ext_resource type="Texture2D" uid="uid://bguei2u46h8mg" path="res://images/ui/Menu Button-Sheet.png" id="4_i1y6o"]
+[ext_resource type="AudioStream" uid="uid://dfipmsj6xdru3" path="res://sounds/music/Electro_Breaks_Loop.mp3" id="5_ckj5h"]
 [ext_resource type="PackedScene" uid="uid://dwam8qve7q2or" path="res://scenes/Level_end.tscn" id="8_agxvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4e1a"]
@@ -37,6 +38,9 @@ texture_normal = SubResource("AtlasTexture_d4e1a")
 texture_pressed = SubResource("AtlasTexture_34hnb")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ckj5h")
+volume_db = -12.0
+autoplay = true
 bus = &"Music"
 
 [connection signal="pressed" from="LevelMenuButton" to="OptionsMenu" method="_on_level_menu_button_pressed"]

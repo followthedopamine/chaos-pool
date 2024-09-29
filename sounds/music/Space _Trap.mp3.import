@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bl5ebsqxr0if2"
+path="res://.godot/imported/Space _Trap.mp3-7d0b5224c72996285771ad5c988ad2b5.mp3str"
+
+[deps]
+
+source_file="res://sounds/music/Space _Trap.mp3"
+dest_files=["res://.godot/imported/Space _Trap.mp3-7d0b5224c72996285771ad5c988ad2b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
