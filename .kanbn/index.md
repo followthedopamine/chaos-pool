@@ -31,6 +31,9 @@ completedColumns:
 - [powered-balls-should-interact-with-walls](tasks/powered-balls-should-interact-with-walls.md)
 - [correction-need-a-home-icon-button-for-level-select-instead-of-a-menu-icon](tasks/correction-need-a-home-icon-button-for-level-select-instead-of-a-menu-icon.md)
 - [all-ball-textures](tasks/all-ball-textures.md)
+- [bug-when-you-move-the-slider-out-from-muted-it-should-unmute](tasks/bug-when-you-move-the-slider-out-from-muted-it-should-unmute.md)
+- [sounds-when-balls-collide-with-objects](tasks/sounds-when-balls-collide-with-objects.md)
+- [bug-ball-might-be-able-to-collide-with-respawned-cue-ball-after-cue-ball-is-sunk](tasks/bug-ball-might-be-able-to-collide-with-respawned-cue-ball-after-cue-ball-is-sunk.md)
 
 ## In Progress
 

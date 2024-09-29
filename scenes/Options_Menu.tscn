@@ -1,26 +1,88 @@
-[gd_scene load_steps=11 format=3 uid="uid://b1cgybdlf1n4o"]
+[gd_scene load_steps=24 format=3 uid="uid://b1cgybdlf1n4o"]
 
 [ext_resource type="Script" path="res://scripts/OptionsMenu.gd" id="1_0dwde"]
-[ext_resource type="Texture2D" uid="uid://deo8s4rfq2u6j" path="res://images/sprites/Pusher-Ball.png" id="2_3edb7"]
-[ext_resource type="Texture2D" uid="uid://ycopwuva3pex" path="res://images/sprites/wormhole-ball.png" id="3_jvsaj"]
-[ext_resource type="Texture2D" uid="uid://bfo8pgfkgofo8" path="res://images/sprites/explosive-ball.png" id="4_5ba1u"]
-[ext_resource type="Texture2D" uid="uid://bfj47qjg6tgiu" path="res://images/ui/numbers/9-number.png" id="4_bych2"]
-[ext_resource type="Texture2D" uid="uid://bo0va54ttiwkq" path="res://images/sprites/Cue-Ball.png" id="4_ryya3"]
+[ext_resource type="Texture2D" uid="uid://crawhyyk28vy7" path="res://images/ui/pause-menu/Return Button-Sheet.png" id="2_50pxg"]
+[ext_resource type="Texture2D" uid="uid://bbqlcx55y7mrr" path="res://images/ui/pause-menu/Mute Sound-Sheet.png" id="3_wnh5e"]
+[ext_resource type="Texture2D" uid="uid://6780mfff6cy" path="res://images/ui/pause-menu/Sound Slider Knob.png" id="5_5cpmr"]
+[ext_resource type="Texture2D" uid="uid://c7747vfnnggod" path="res://images/ui/pause-menu/Mute Music-Sheet.png" id="6_atved"]
+[ext_resource type="Texture2D" uid="uid://c0o7fo7njvn7j" path="res://images/ui/pause-menu/Music Slider Knob.png" id="7_5crbw"]
+[ext_resource type="Texture2D" uid="uid://b14hypmwtcb31" path="res://images/ui/pause-menu/Home Button-Sheet.png" id="7_ax65y"]
+[ext_resource type="Texture2D" uid="uid://40o7x582tynt" path="res://images/ui/pause-menu/Restart Button-Sheet.png" id="8_bjgem"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kly5a"]
 bg_color = Color(0, 0, 0, 0.854902)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4sp3"]
+atlas = ExtResource("2_50pxg")
+region = Rect2(32, 32, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18a4i"]
+atlas = ExtResource("2_50pxg")
+region = Rect2(128, 34, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wi51l"]
+atlas = ExtResource("3_wnh5e")
+region = Rect2(3, 0, 26, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eifuc"]
+atlas = ExtResource("3_wnh5e")
+region = Rect2(35, 0, 26, 32)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnd6o"]
-content_margin_top = 10.0
+content_margin_top = 6.0
+bg_color = Color(0.658824, 0.419608, 0.313726, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5i2f"]
-bg_color = Color(1, 0.17282, 0.768304, 1)
+bg_color = Color(0.472718, 0.287036, 0.204416, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdk3s"]
+bg_color = Color(0.47451, 0.286275, 0.203922, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swa5t"]
+atlas = ExtResource("6_atved")
+region = Rect2(3, 0, 26, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et4nd"]
+atlas = ExtResource("6_atved")
+region = Rect2(35, 0, 26, 32)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg0n2"]
-bg_color = Color(0.568216, 0.521492, 1, 1)
+bg_color = Color(0.47451, 0.286275, 0.203922, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s51s4"]
+atlas = ExtResource("7_ax65y")
+region = Rect2(0, 0, 97, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03qle"]
+atlas = ExtResource("7_ax65y")
+region = Rect2(177, 0, 97, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfb57"]
+atlas = ExtResource("8_bjgem")
+region = Rect2(0, 0, 177, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi7ff"]
+atlas = ExtResource("8_bjgem")
+region = Rect2(177, 0, 177, 41)
 
 [node name="OptionsMenu" type="PanelContainer"]
-visible = false
 offset_right = 640.0
 offset_bottom = 361.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kly5a")
@@ -29,7 +91,8 @@ script = ExtResource("1_0dwde")
 [node name="CloseOptionsButton" type="TextureButton" parent="."]
 layout_mode = 2
 size_flags_horizontal = 8
-texture_normal = ExtResource("2_3edb7")
+texture_normal = SubResource("AtlasTexture_m4sp3")
+texture_pressed = SubResource("AtlasTexture_18a4i")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -39,8 +102,10 @@ alignment = 1
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
+alignment = 1
 
 [node name="Header" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(62.865, 23.355)
 layout_mode = 2
 mouse_filter = 1
@@ -51,6 +116,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="SFXLabel" type="Label" parent="HBoxContainer/VBoxContainer/SFXControls"]
+visible = false
 custom_minimum_size = Vector2(62.865, 23.355)
 layout_mode = 2
 text = "SFX"
@@ -58,23 +124,24 @@ text = "SFX"
 [node name="ToggleSFXButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/SFXControls"]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("3_jvsaj")
-texture_pressed = ExtResource("4_5ba1u")
-texture_hover = ExtResource("4_ryya3")
+texture_normal = SubResource("AtlasTexture_wi51l")
+texture_pressed = SubResource("AtlasTexture_eifuc")
 
 [node name="SFXSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/SFXControls"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(245, 0)
 layout_mode = 2
-theme_override_icons/grabber = ExtResource("4_bych2")
+theme_override_icons/grabber = ExtResource("5_5cpmr")
+theme_override_icons/grabber_highlight = ExtResource("5_5cpmr")
 theme_override_styles/slider = SubResource("StyleBoxFlat_xnd6o")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v5i2f")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mg0n2")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_rdk3s")
 
 [node name="MusicControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
 
 [node name="MusicLabel" type="Label" parent="HBoxContainer/VBoxContainer/MusicControls"]
+visible = false
 custom_minimum_size = Vector2(62.865, 23.355)
 layout_mode = 2
 text = "Music
@@ -83,14 +150,14 @@ text = "Music
 [node name="ToggleMusicButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/MusicControls"]
 layout_mode = 2
 toggle_mode = true
-texture_normal = ExtResource("3_jvsaj")
-texture_pressed = ExtResource("4_5ba1u")
-texture_hover = ExtResource("4_ryya3")
+texture_normal = SubResource("AtlasTexture_swa5t")
+texture_pressed = SubResource("AtlasTexture_et4nd")
 
 [node name="MusicSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/MusicControls"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(245, 0)
 layout_mode = 2
-theme_override_icons/grabber = ExtResource("4_bych2")
+theme_override_icons/grabber = ExtResource("7_5crbw")
+theme_override_icons/grabber_highlight = ExtResource("7_5crbw")
 theme_override_styles/slider = SubResource("StyleBoxFlat_xnd6o")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v5i2f")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mg0n2")
@@ -98,13 +165,15 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mg0n2")
 [node name="LevelControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="HomeButton" type="Button" parent="HBoxContainer/VBoxContainer/LevelControls"]
+[node name="HomeButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/LevelControls"]
 layout_mode = 2
-text = "Home"
+texture_normal = SubResource("AtlasTexture_s51s4")
+texture_pressed = SubResource("AtlasTexture_03qle")
 
-[node name="RestartButton" type="Button" parent="HBoxContainer/VBoxContainer/LevelControls"]
+[node name="RestartButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/LevelControls"]
 layout_mode = 2
-text = "Restart"
+texture_normal = SubResource("AtlasTexture_hfb57")
+texture_pressed = SubResource("AtlasTexture_fi7ff")
 
 [connection signal="pressed" from="CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
 [connection signal="toggled" from="HBoxContainer/VBoxContainer/SFXControls/ToggleSFXButton" to="." method="_on_toggle_sfx_button_toggled"]

@@ -2,17 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://t5p7ngld6w1v" path="res://scenes/Main_Menu.tscn" id="1_kkx2b"]
 [ext_resource type="PackedScene" uid="uid://b1cgybdlf1n4o" path="res://scenes/Options_Menu.tscn" id="3_mbaoq"]
-[ext_resource type="Texture2D" uid="uid://bguei2u46h8mg" path="res://images/ui/Menu Button-Sheet.png" id="4_i1y6o"]
+[ext_resource type="Texture2D" uid="uid://ktm46s7jjvlq" path="res://images/ui/pause-menu/Pause Button-Sheet.png" id="4_opeua"]
 [ext_resource type="AudioStream" uid="uid://dfipmsj6xdru3" path="res://sounds/music/Electro_Breaks_Loop.mp3" id="5_ckj5h"]
 [ext_resource type="PackedScene" uid="uid://dwam8qve7q2or" path="res://scenes/Level_end.tscn" id="8_agxvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4e1a"]
-atlas = ExtResource("4_i1y6o")
-region = Rect2(0, 0, 64, 64)
+atlas = ExtResource("4_opeua")
+region = Rect2(32, 32, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_34hnb"]
-atlas = ExtResource("4_i1y6o")
-region = Rect2(64, 0, 64, 64)
+atlas = ExtResource("4_opeua")
+region = Rect2(128, 32, 32, 36)
 
 [node name="Main" type="Node2D"]
 
@@ -30,10 +30,9 @@ z_index = 1000
 
 [node name="LevelMenuButton" type="TextureButton" parent="."]
 visible = false
-offset_left = 574.0
-offset_top = -8.0
-offset_right = 702.0
-offset_bottom = 56.0
+offset_left = 607.0
+offset_right = 639.0
+offset_bottom = 35.0
 texture_normal = SubResource("AtlasTexture_d4e1a")
 texture_pressed = SubResource("AtlasTexture_34hnb")
 
