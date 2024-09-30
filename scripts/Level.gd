@@ -27,6 +27,7 @@ var ball_counter = 0
 var balls = []
 
 var level_ended = false
+var level_reset = false
 
 
 
@@ -90,7 +91,8 @@ func check_balls_are_moving():
 			balls_stopped.emit()
 
 func _physics_process(_delta):
-	check_balls_are_moving()
+	if !level_reset:
+		check_balls_are_moving()
 
 
 

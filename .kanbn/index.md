@@ -33,19 +33,17 @@ completedColumns:
 - [all-ball-textures](tasks/all-ball-textures.md)
 - [bug-when-you-move-the-slider-out-from-muted-it-should-unmute](tasks/bug-when-you-move-the-slider-out-from-muted-it-should-unmute.md)
 - [sounds-when-balls-collide-with-objects](tasks/sounds-when-balls-collide-with-objects.md)
-- [bug-ball-might-be-able-to-collide-with-respawned-cue-ball-after-cue-ball-is-sunk](tasks/bug-ball-might-be-able-to-collide-with-respawned-cue-ball-after-cue-ball-is-sunk.md)
 - [bug-sometimes-level-doesn-t-end-on-all-balls-sunk](tasks/bug-sometimes-level-doesn-t-end-on-all-balls-sunk.md)
-- [bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling](tasks/bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling.md)
 
 ## In Progress
 
-- [bug-balls-can-collide-with-balls-immediately-after-they-are-sunk](tasks/bug-balls-can-collide-with-balls-immediately-after-they-are-sunk.md)
-- [options-menu](tasks/options-menu.md)
-- [bug-game-still-crashes-on-freeing-the-balls-try-catch](tasks/bug-game-still-crashes-on-freeing-the-balls-try-catch.md)
-- [bug-doesn-t-display-the-correct-amount-of-stars-on-level-won](tasks/bug-doesn-t-display-the-correct-amount-of-stars-on-level-won.md)
-
 ## Done
 
+- [bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling](tasks/bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling.md)
+- [options-menu](tasks/options-menu.md)
+- [bug-doesn-t-display-the-correct-amount-of-stars-on-level-won](tasks/bug-doesn-t-display-the-correct-amount-of-stars-on-level-won.md)
+- [bug-game-still-crashes-on-freeing-the-balls-try-catch](tasks/bug-game-still-crashes-on-freeing-the-balls-try-catch.md)
+- [bug-balls-can-collide-with-balls-immediately-after-they-are-sunk](tasks/bug-balls-can-collide-with-balls-immediately-after-they-are-sunk.md)
 - [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
 - [level-timer](tasks/level-timer.md)
 - [rolling-balls](tasks/rolling-balls.md)
@@ -54,6 +52,7 @@ completedColumns:
 - [bug-level-fails-if-you-win-on-the-last-ball](tasks/bug-level-fails-if-you-win-on-the-last-ball.md)
 - [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
 - [bug-cue-moves-on-level-end-screen](tasks/bug-cue-moves-on-level-end-screen.md)
+- [bug-ball-might-be-able-to-collide-with-respawned-cue-ball-after-cue-ball-is-sunk](tasks/bug-ball-might-be-able-to-collide-with-respawned-cue-ball-after-cue-ball-is-sunk.md)
 - [bug-ball-display-shows-all-explosion-sprites-on-restart](tasks/bug-ball-display-shows-all-explosion-sprites-on-restart.md)
 - [redo-collision-physics](tasks/redo-collision-physics.md)
 - [redo-the-collision-physics](tasks/redo-the-collision-physics.md)
