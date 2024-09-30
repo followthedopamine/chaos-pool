@@ -36,8 +36,7 @@ func _on_body_entered(body:RigidBody2D):
 			cue_ball.reset()
 		else:
 			level.ball_counter -= 1
-			body.set_collision_layer_value(1, false)
-			if is_instance_valid(body):
+			if is_instance_valid(body) and !body.is_queued_for_deletion():
 				body.queue_free()
 
 func _process(delta):

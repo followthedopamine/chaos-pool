@@ -17,7 +17,6 @@ const STARS_XS = [
 	160,
 	320,
 	480,
-	540,
 ]
 
 func is_next_level_locked(current_level):
@@ -29,7 +28,8 @@ func is_next_level_locked(current_level):
 func show_win_screen(stars):
 	self.visible = true
 	level_finish_texture.texture = LEVEL_CLEARED
-	stars_texture.texture.region = Rect2(STARS_XS[min(stars,STARS_XS.size() - 1)], 
+	var number_of_stars = min(stars,STARS_XS.size() - 1)
+	stars_texture.texture.region = Rect2(STARS_XS[number_of_stars], 
 										STARS_ATLAS.position.y,
 										STARS_ATLAS.size.x, 
 										STARS_ATLAS.size.y)

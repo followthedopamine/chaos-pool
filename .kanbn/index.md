@@ -34,6 +34,8 @@ completedColumns:
 - [bug-when-you-move-the-slider-out-from-muted-it-should-unmute](tasks/bug-when-you-move-the-slider-out-from-muted-it-should-unmute.md)
 - [sounds-when-balls-collide-with-objects](tasks/sounds-when-balls-collide-with-objects.md)
 - [bug-ball-might-be-able-to-collide-with-respawned-cue-ball-after-cue-ball-is-sunk](tasks/bug-ball-might-be-able-to-collide-with-respawned-cue-ball-after-cue-ball-is-sunk.md)
+- [bug-sometimes-level-doesn-t-end-on-all-balls-sunk](tasks/bug-sometimes-level-doesn-t-end-on-all-balls-sunk.md)
+- [bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling](tasks/bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling.md)
 
 ## In Progress
 
@@ -41,13 +43,13 @@ completedColumns:
 - [options-menu](tasks/options-menu.md)
 - [bug-game-still-crashes-on-freeing-the-balls-try-catch](tasks/bug-game-still-crashes-on-freeing-the-balls-try-catch.md)
 - [bug-doesn-t-display-the-correct-amount-of-stars-on-level-won](tasks/bug-doesn-t-display-the-correct-amount-of-stars-on-level-won.md)
-- [bug-got-a-level-cleared-that-displayed-2-2-stars](tasks/bug-got-a-level-cleared-that-displayed-2-2-stars.md)
 
 ## Done
 
 - [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
 - [level-timer](tasks/level-timer.md)
 - [rolling-balls](tasks/rolling-balls.md)
+- [bug-got-a-level-cleared-that-displayed-2-2-stars](tasks/bug-got-a-level-cleared-that-displayed-2-2-stars.md)
 - [lose-condition](tasks/lose-condition.md)
 - [bug-level-fails-if-you-win-on-the-last-ball](tasks/bug-level-fails-if-you-win-on-the-last-ball.md)
 - [bug-ball-shading-doesn-t-fade-out-on-sink](tasks/bug-ball-shading-doesn-t-fade-out-on-sink.md)
