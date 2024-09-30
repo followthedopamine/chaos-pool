@@ -43,6 +43,10 @@ func show_loss_screen():
 	level_finish_texture.texture = LEVEL_FAILED
 	ad_container.visible = true
 	time_container.visible = false
+	stars_texture.texture.region = Rect2(STARS_XS[0], 
+										STARS_ATLAS.position.y,
+										STARS_ATLAS.size.x, 
+										STARS_ATLAS.size.y)
 	if is_next_level_locked(Scene.current_level):
 		next_level_button.disabled = true
 	
