@@ -38,9 +38,9 @@ completedColumns:
 
 ## Done
 
+- [bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling](tasks/bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling.md)
 - [main-menu](tasks/main-menu.md)
 - [bug-cue-keeps-moving-after-level-reset](tasks/bug-cue-keeps-moving-after-level-reset.md)
-- [bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling](tasks/bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling.md)
 - [options-menu](tasks/options-menu.md)
 - [bug-doesn-t-display-the-correct-amount-of-stars-on-level-won](tasks/bug-doesn-t-display-the-correct-amount-of-stars-on-level-won.md)
 - [bug-game-still-crashes-on-freeing-the-balls-try-catch](tasks/bug-game-still-crashes-on-freeing-the-balls-try-catch.md)

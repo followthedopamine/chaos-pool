@@ -36,6 +36,8 @@ func load_level_select():
 	
 func reload_current_level():
 	show_level_menu_button()
+	unload_scenes()
+	await get_tree().create_timer(0.05).timeout
 	load_level_by_index(current_level)
 	current_level_script.level_reset = true
 	

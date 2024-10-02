@@ -67,7 +67,7 @@ func set_cue_ball_inactive():
 	cue_ball_active = false
 	
 func _on_cue_ball_stopped():
-	call_deferred("set_cue_ball_inactive")
+	call_deferred("set_cue_ball_inactive") # Might not need to defer this anymore
 
 func check_balls_are_moving():
 	if cue_ball_active:
