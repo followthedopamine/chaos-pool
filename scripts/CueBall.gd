@@ -25,6 +25,7 @@ var prev_frame_velocity
 
 @onready var initial_alpha = modulate.a
 
+const BALL_HITS_WALL_SOUND = preload("res://sounds/BallHitsWall.mp3")
 
 
 signal cue_ball_stopped
@@ -58,6 +59,7 @@ func explode_ball():
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
 			#Probably needs to be normalized
+			print(ball.name)
 			ball.apply_central_impulse(Vector2(ball.global_position - global_position) * EXPLOSIVE_FORCE)
 	
 
@@ -70,6 +72,9 @@ func load_standard_ball_physics():
 	linear_damp_mode = RigidBody2D.DAMP_MODE_COMBINE
 
 func _on_collision(body):
+	if body.name == "Table":
+		var volume = min(-60 + 0.13 * prev_frame_velocity.length(), 0)
+		Sound.create_sound_and_play(BALL_HITS_WALL_SOUND, volume, body)
 	if body.is_in_group("balls"):
 		#print(body)
 		if body != self:
@@ -130,9 +135,6 @@ func trigger_cue_ball_end_effects():
 		Global.CUE_BALL_TYPES.EXPLOSIVE:
 			explode_ball()
 			
-func attempt_next_ball():
-	load_cue_ball()
-			
 func check_cue_ball_still_moving():
 	if level.cue_ball_active:
 		if linear_velocity.length() <= Global.BALL_MOVING_THRESHHOLD:
@@ -141,7 +143,7 @@ func check_cue_ball_still_moving():
 			level.cue_ball_active = false
 			
 func _on_balls_stopped():
-	attempt_next_ball()
+	load_cue_ball()
 			
 func _physics_process(_delta):
 	#print(level.cue_ball_active)

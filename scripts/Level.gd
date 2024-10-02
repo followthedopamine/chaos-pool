@@ -91,9 +91,8 @@ func check_balls_are_moving():
 			balls_stopped.emit()
 
 func _physics_process(_delta):
-	if !level_reset:
-		check_balls_are_moving()
-
+	check_balls_are_moving()
+	
 
 
 

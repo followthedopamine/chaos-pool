@@ -24,12 +24,9 @@ completedColumns:
 - [levels-1-5](tasks/levels-1-5.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
-- [main-menu](tasks/main-menu.md)
-- [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
 - [bug-possibly-something-weird-still-going-on-with-ball-counter](tasks/bug-possibly-something-weird-still-going-on-with-ball-counter.md)
 - [sounds-for-powered-balls](tasks/sounds-for-powered-balls.md)
 - [powered-balls-should-interact-with-walls](tasks/powered-balls-should-interact-with-walls.md)
-- [correction-need-a-home-icon-button-for-level-select-instead-of-a-menu-icon](tasks/correction-need-a-home-icon-button-for-level-select-instead-of-a-menu-icon.md)
 - [all-ball-textures](tasks/all-ball-textures.md)
 - [bug-when-you-move-the-slider-out-from-muted-it-should-unmute](tasks/bug-when-you-move-the-slider-out-from-muted-it-should-unmute.md)
 - [sounds-when-balls-collide-with-objects](tasks/sounds-when-balls-collide-with-objects.md)
@@ -37,13 +34,18 @@ completedColumns:
 
 ## In Progress
 
+- [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
+
 ## Done
 
+- [main-menu](tasks/main-menu.md)
+- [bug-cue-keeps-moving-after-level-reset](tasks/bug-cue-keeps-moving-after-level-reset.md)
 - [bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling](tasks/bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling.md)
 - [options-menu](tasks/options-menu.md)
 - [bug-doesn-t-display-the-correct-amount-of-stars-on-level-won](tasks/bug-doesn-t-display-the-correct-amount-of-stars-on-level-won.md)
 - [bug-game-still-crashes-on-freeing-the-balls-try-catch](tasks/bug-game-still-crashes-on-freeing-the-balls-try-catch.md)
 - [bug-balls-can-collide-with-balls-immediately-after-they-are-sunk](tasks/bug-balls-can-collide-with-balls-immediately-after-they-are-sunk.md)
+- [correction-need-a-home-icon-button-for-level-select-instead-of-a-menu-icon](tasks/correction-need-a-home-icon-button-for-level-select-instead-of-a-menu-icon.md)
 - [bug-end-screen-doesn-t-show-after-restarting-level](tasks/bug-end-screen-doesn-t-show-after-restarting-level.md)
 - [level-timer](tasks/level-timer.md)
 - [rolling-balls](tasks/rolling-balls.md)

@@ -21,6 +21,8 @@ const MAX_CUE_X_OFFSET = -180
 @onready var shot_charge = $ShotChargeMask/ShotCharge
 @onready var shot_charge_mask = $ShotChargeMask
 
+const SHOT_SOUND = preload("res://sounds/Shot.mp3")
+const SHOT_MIN_VOLUME = 3
 
 
 
@@ -57,8 +59,9 @@ func shoot_cue_ball():
 	cue_ball.apply_central_impulse(power * (get_global_mouse_position() - global_position))
 	power = 0
 	hide_shot_charge()
+	Sound.create_sound_and_play(SHOT_SOUND, SHOT_MIN_VOLUME + power,self)
 	await get_tree().create_timer(0.1).timeout #Necessary to make sure signal isn't recieved before ball is moving
-	shoot.emit()
+	#shoot.emit()
 	balls_moving = true
 	level.cue_ball_active = true
 
