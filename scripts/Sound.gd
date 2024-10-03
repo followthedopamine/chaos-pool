@@ -17,6 +17,9 @@ preload("res://sounds/music/Nightclub_loop.mp3"),
 preload("res://sounds/music/Space _Trap.mp3"),
 preload("res://sounds/music/Waypoint_K.mp3")]
 
+const BALL_HITS_TABLE_SOUND = preload("res://sounds/BallHitsWall.mp3")
+const BALL_HITS_WOOD_SOUND = preload("res://sounds/Wood.mp3")
+
 func change_track(track_number):
 	print("Changing music tracks")
 	music.stream = MUSIC_TRACKS[track_number]
@@ -67,6 +70,16 @@ func create_sound_and_play(file, volume_db, parent):
 	sound.volume_db = volume_db
 	sound.play()
 	sounds_to_free.append(sound)
+	
+func ball_collision_sound(prev_frame_velocity, body):
+	if body.name == "Table":
+		var volume = min(-60 + 0.13 * prev_frame_velocity.length(), 0)
+		Sound.create_sound_and_play(BALL_HITS_TABLE_SOUND, volume, body)
+	
+	if "Wall" in body.name:
+		var volume = min(-60 + 0.13 * prev_frame_velocity.length(), 0)
+		Sound.create_sound_and_play(BALL_HITS_WOOD_SOUND, volume, body)
+		
 
 func _process(_delta):
 	var updated_sounds_to_free = []

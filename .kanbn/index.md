@@ -31,6 +31,8 @@ completedColumns:
 - [bug-when-you-move-the-slider-out-from-muted-it-should-unmute](tasks/bug-when-you-move-the-slider-out-from-muted-it-should-unmute.md)
 - [sounds-when-balls-collide-with-objects](tasks/sounds-when-balls-collide-with-objects.md)
 - [bug-sometimes-level-doesn-t-end-on-all-balls-sunk](tasks/bug-sometimes-level-doesn-t-end-on-all-balls-sunk.md)
+- [bug-sound-rapidly-repeats-on-ball-sunk](tasks/bug-sound-rapidly-repeats-on-ball-sunk.md)
+- [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
 
 ## In Progress
 

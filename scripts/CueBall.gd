@@ -25,7 +25,6 @@ var prev_frame_velocity
 
 @onready var initial_alpha = modulate.a
 
-const BALL_HITS_WALL_SOUND = preload("res://sounds/BallHitsWall.mp3")
 
 
 signal cue_ball_stopped
@@ -38,11 +37,8 @@ func _ready():
 
 func reset():
 	linear_velocity = Vector2.ZERO
-	#await get_tree().create_timer(0.1).timeout
 	global_position = initial_position
 	load_cue_ball()
-	# I have no explanation for why this doesn't work without a timer.
-	# There will be an animation here so I don't think it matters.
 
 func hide_ball():
 	explosion_sprite.visible = false
@@ -72,9 +68,8 @@ func load_standard_ball_physics():
 	linear_damp_mode = RigidBody2D.DAMP_MODE_COMBINE
 
 func _on_collision(body):
-	if body.name == "Table":
-		var volume = min(-60 + 0.13 * prev_frame_velocity.length(), 0)
-		Sound.create_sound_and_play(BALL_HITS_WALL_SOUND, volume, body)
+	Sound.ball_collision_sound(prev_frame_velocity, body)
+		
 	if body.is_in_group("balls"):
 		#print(body)
 		if body != self:
@@ -136,11 +131,10 @@ func trigger_cue_ball_end_effects():
 			explode_ball()
 			
 func check_cue_ball_still_moving():
-	if level.cue_ball_active:
-		if linear_velocity.length() <= Global.BALL_MOVING_THRESHHOLD:
-			trigger_cue_ball_end_effects()
-			#print("Cue ball stopped moving")
-			level.cue_ball_active = false
+	if linear_velocity.length() <= Global.BALL_MOVING_THRESHHOLD:
+		trigger_cue_ball_end_effects()
+		#print("Cue ball stopped moving")
+		level.cue_ball_active = false
 			
 func _on_balls_stopped():
 	load_cue_ball()
@@ -148,9 +142,9 @@ func _on_balls_stopped():
 func _physics_process(_delta):
 	#print(level.cue_ball_active)
 	prev_frame_velocity = linear_velocity
-	check_cue_ball_still_moving()
 	
 	if level.cue_ball_active:
+		check_cue_ball_still_moving()
 		trigger_constant_effects()
 
 
