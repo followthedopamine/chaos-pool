@@ -18,12 +18,13 @@ completedColumns:
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
 - [achievements](tasks/achievements.md)
 - [ball-that-follows-the-player-s-cursor-finger](tasks/ball-that-follows-the-player-s-cursor-finger.md)
+- [split-cue-ball](tasks/split-cue-ball.md)
 
 ## Todo
 
 - [levels-1-5](tasks/levels-1-5.md)
-- [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
+- [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [bug-possibly-something-weird-still-going-on-with-ball-counter](tasks/bug-possibly-something-weird-still-going-on-with-ball-counter.md)
 - [sounds-for-powered-balls](tasks/sounds-for-powered-balls.md)
 - [powered-balls-should-interact-with-walls](tasks/powered-balls-should-interact-with-walls.md)
@@ -36,10 +37,10 @@ completedColumns:
 
 ## In Progress
 
-- [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
-
 ## Done
 
+- [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
+- [fade-out-loop-on-finish](tasks/fade-out-loop-on-finish.md)
 - [bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling](tasks/bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling.md)
 - [main-menu](tasks/main-menu.md)
 - [bug-cue-keeps-moving-after-level-reset](tasks/bug-cue-keeps-moving-after-level-reset.md)

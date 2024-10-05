@@ -1,6 +1,8 @@
 extends Node
 
 var sounds_to_free = []
+var loops = []
+var fade_out = []
 
 var music_volume = 75
 var sfx_volume = 75
@@ -19,6 +21,14 @@ preload("res://sounds/music/Waypoint_K.mp3")]
 
 const BALL_HITS_TABLE_SOUND = preload("res://sounds/BallHitsWall.mp3")
 const BALL_HITS_WOOD_SOUND = preload("res://sounds/Wood.mp3")
+
+const RETRO_CHARGE_13 = preload("res://sounds/Retro Charge 13.wav")
+const RETRO_EXPLOSION_SHORT_15 = preload("res://sounds/Retro Explosion Short 15.wav")
+const RETRO_MAGIC_11 = preload("res://sounds/Retro Magic 11.wav")
+
+const FADE_OUT_SPEED = 2
+const FADE_OUT_DESTROY_THRESHHOLD = -50
+
 
 func change_track(track_number):
 	print("Changing music tracks")
@@ -71,6 +81,20 @@ func create_sound_and_play(file, volume_db, parent):
 	sound.play()
 	sounds_to_free.append(sound)
 	
+func create_sound_and_loop(file, volume_db, parent):
+	var sound = AudioStreamPlayer2D.new()
+	parent.add_child(sound)
+	sound.bus = "SFX"
+	sound.stream = file
+	sound.volume_db = volume_db
+	sound.play()
+	loops.append(sound)
+	
+func end_all_loops():
+	for sound in loops:
+		fade_out.append(sound)
+	loops = []
+	
 func ball_collision_sound(prev_frame_velocity, body):
 	if body.name == "Table":
 		var volume = min(-60 + 0.13 * prev_frame_velocity.length(), 0)
@@ -79,9 +103,17 @@ func ball_collision_sound(prev_frame_velocity, body):
 	if "Wall" in body.name:
 		var volume = min(-60 + 0.13 * prev_frame_velocity.length(), 0)
 		Sound.create_sound_and_play(BALL_HITS_WOOD_SOUND, volume, body)
-		
 
-func _process(_delta):
+func explosion(parent):
+	create_sound_and_play(RETRO_EXPLOSION_SHORT_15, -8, parent)
+
+func suck(parent):
+	create_sound_and_loop(RETRO_CHARGE_13, -8, parent)
+
+func push(parent):
+	create_sound_and_loop(RETRO_MAGIC_11, -8, parent)
+
+func free_sounds():
 	var updated_sounds_to_free = []
 	for sound in sounds_to_free:
 		if is_instance_valid(sound):
@@ -91,3 +123,21 @@ func _process(_delta):
 		else:
 			updated_sounds_to_free.append(sound)
 	sounds_to_free = updated_sounds_to_free
+	
+func loop_sounds():
+	for sound in loops:
+		if !sound.playing:
+			sound.play()
+			
+func fade_out_sounds(delta):
+	for sound in fade_out:
+		if sound.volume_db <= FADE_OUT_DESTROY_THRESHHOLD:
+			sound.stop()
+			sound.queue_free()
+		else:
+			sound.volume_db -= FADE_OUT_SPEED * delta
+		
+func _process(delta):
+	free_sounds()
+	loop_sounds()
+	fade_out_sounds(delta)

@@ -51,6 +51,7 @@ func explode_ball():
 	explosion_sprite.visible = true
 	cue_ball_sprite.visible = false
 	cue_ball_animations.play("explosion")
+	Sound.explosion(self)
 	call_deferred("disable_collision")
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
@@ -79,7 +80,9 @@ func _on_collision(body):
 				
 func suck():
 	#print("Is sucking")
-	wormhole_animated_sprite.visible = true
+	if !wormhole_animated_sprite.visible:
+		Sound.suck(self)
+		wormhole_animated_sprite.visible = true
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
 			if abs(ball.global_position - global_position).length() > SUCK_MIN_DISTANCE:
@@ -87,7 +90,9 @@ func suck():
 
 func push():
 	#print("Is sucking")
-	pusher_animated_sprite.visible = true
+	if !pusher_animated_sprite.visible:
+		pusher_animated_sprite.visible = true
+		Sound.push(self)
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
 			ball.apply_central_impulse(Vector2(ball.global_position - global_position))
@@ -112,6 +117,7 @@ func reset_cue_ball():
 	cue_ball_collision.disabled = false
 	wormhole_animated_sprite.visible = false
 	pusher_animated_sprite.visible = false
+	Sound.end_all_loops()
 
 func load_cue_ball():
 	print("New cue ball loaded")
