@@ -25,21 +25,22 @@ completedColumns:
 - [levels-1-5](tasks/levels-1-5.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
-- [bug-possibly-something-weird-still-going-on-with-ball-counter](tasks/bug-possibly-something-weird-still-going-on-with-ball-counter.md)
-- [sounds-for-powered-balls](tasks/sounds-for-powered-balls.md)
-- [powered-balls-should-interact-with-walls](tasks/powered-balls-should-interact-with-walls.md)
 - [all-ball-textures](tasks/all-ball-textures.md)
-- [bug-when-you-move-the-slider-out-from-muted-it-should-unmute](tasks/bug-when-you-move-the-slider-out-from-muted-it-should-unmute.md)
 - [sounds-when-balls-collide-with-objects](tasks/sounds-when-balls-collide-with-objects.md)
 - [bug-sometimes-level-doesn-t-end-on-all-balls-sunk](tasks/bug-sometimes-level-doesn-t-end-on-all-balls-sunk.md)
 - [bug-sound-rapidly-repeats-on-ball-sunk](tasks/bug-sound-rapidly-repeats-on-ball-sunk.md)
 - [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
+- [bug-definitely-something-weird-still-going-on-with-ball-counter](tasks/bug-definitely-something-weird-still-going-on-with-ball-counter.md)
 
 ## In Progress
+
+- [sounds-for-powered-balls](tasks/sounds-for-powered-balls.md)
+- [powered-balls-should-interact-with-walls](tasks/powered-balls-should-interact-with-walls.md)
 
 ## Done
 
 - [sounds-when-colliding-with-non-ball-objects](tasks/sounds-when-colliding-with-non-ball-objects.md)
+- [bug-when-you-move-the-slider-out-from-muted-it-should-unmute](tasks/bug-when-you-move-the-slider-out-from-muted-it-should-unmute.md)
 - [fade-out-loop-on-finish](tasks/fade-out-loop-on-finish.md)
 - [bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling](tasks/bug-sometimes-you-restart-level-and-have-the-wrong-ball-first-probably-when-ball-is-still-rolling.md)
 - [main-menu](tasks/main-menu.md)

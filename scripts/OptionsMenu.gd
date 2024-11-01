@@ -51,10 +51,18 @@ func _on_toggle_music_button_toggled(toggled_on):
 	
 func _on_music_slider_value_changed(value):
 	Sound.change_volume("Music", value)
+	if value > 0:
+		toggle_music_button.button_pressed = false
+	else:
+		toggle_music_button.button_pressed = true
+		
 	
 func _on_sfx_slider_value_changed(value):
 	Sound.change_volume("SFX", value)
-	
+	if value > 0:
+		toggle_sfx_button.button_pressed = false
+	else:
+		toggle_sfx_button.button_pressed = true
 
 	
 func _on_close_options_button_pressed():
