@@ -32,6 +32,8 @@ completedColumns:
 - [bug-definitely-something-weird-still-going-on-with-ball-counter](tasks/bug-definitely-something-weird-still-going-on-with-ball-counter.md)
 - [bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully](tasks/bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
+- [bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars](tasks/bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars.md)
+- [bug-cue-moves-after-shooting-but-only-sometimes](tasks/bug-cue-moves-after-shooting-but-only-sometimes.md)
 
 ## In Progress
 

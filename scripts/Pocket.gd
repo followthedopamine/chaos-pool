@@ -35,7 +35,7 @@ func _on_body_entered(body:RigidBody2D):
 		if body == cue_ball:
 			cue_ball.reset()
 		else:
-			level.ball_counter -= 1
+			level.ball_destroyed(body)
 			if is_instance_valid(body) and !body.is_queued_for_deletion():
 				body.queue_free()
 
