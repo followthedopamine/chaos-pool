@@ -1,6 +1,7 @@
 extends Sprite2D
 
 const POWER_INCREMENT = 0.2 # Speed the power charges at
+const MIN_POWER = 0
 const MAX_POWER = 20
 
 const MAX_SHOT_CHARGE_Y = 37
@@ -24,7 +25,7 @@ const MAX_CUE_X_OFFSET = -180
 const SHOT_SOUND = preload("res://sounds/Shot.mp3")
 const SHOT_MIN_VOLUME = 3
 
-
+var power_is_increasing = true
 
 var balls_moving = false
 var power = 0
@@ -35,7 +36,7 @@ func handle_input(delta):
 	if Input.is_action_just_pressed("reset"):
 		get_tree().reload_current_scene()
 	if Input.is_action_pressed("shoot"):
-		increase_power(delta)
+		update_power(delta)
 	if Input.is_action_just_released("shoot") and power > 0:
 		shoot_cue_ball()
 		
@@ -50,9 +51,18 @@ func hide_shot_charge():
 	await get_tree().create_timer(0.5).timeout
 	shot_charge_mask.visible = false
 		
-func increase_power(delta):
-	if power < MAX_POWER:
-		power = power + POWER_INCREMENT - delta
+func update_power(delta):
+	if power >= MAX_POWER:
+		power_is_increasing = false
+	if power <= MIN_POWER:
+		power_is_increasing = true
+		
+	if power_is_increasing:
+		if power < MAX_POWER:
+			power = power + POWER_INCREMENT - delta
+	else:
+		if power > MIN_POWER:
+			power = power - POWER_INCREMENT + delta
 	update_charge_display()
 		
 func shoot_cue_ball():
