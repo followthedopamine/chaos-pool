@@ -12,6 +12,8 @@ var has_exploded = false
 var prev_frame_velocity
 var frames_below_threshold := 0
 
+var is_sinking = false
+
 
 @onready var cue_ball_sprite = $CueBallSprite
 @onready var explosion_sprite = $ExplosionSprite
@@ -33,7 +35,7 @@ func _ready():
 	initial_position = global_position
 	load_cue_ball()
 
-func reset():
+func respawn_cue_ball():
 	linear_velocity = Vector2.ZERO
 	global_position = initial_position
 	load_cue_ball()

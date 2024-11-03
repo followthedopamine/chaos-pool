@@ -96,6 +96,8 @@ func can_handle_input() -> bool:
 		return false
 	if check_if_player_is_pressing_menu():
 		return false
+	if cue_ball.is_sinking:
+		return false
 	return true
 
 func _process(delta):
