@@ -5,21 +5,21 @@ extends Area2D
 var ball_sinking
 var ball_sinking_sprite: Sprite2D
 const FADE_OUT_SPEED = 7
-const SHRINK_SPEED = 0.6
+const SHRINK_SPEED = 6
 
 # TODO: Script is set up in a way that only one ball can sink at a time
 
 func play_sinking_animation(delta):
 	# Disable wormhole effect
-	if ball_sinking:
-		ball_sinking.position = position
-		ball_sinking.linear_velocity = Vector2.ZERO
-		ball_sinking.modulate.a -= FADE_OUT_SPEED * delta
-		if ball_sinking.scale > Vector2.ZERO:
-			ball_sinking.scale -= Vector2(SHRINK_SPEED, SHRINK_SPEED) * delta
-		else:
-			ball_sinking.scale = Vector2.ZERO
-			safely_destroy_ball(ball_sinking)
+	ball_sinking.position = position
+	ball_sinking.linear_velocity = Vector2.ZERO
+	ball_sinking.modulate.a -= FADE_OUT_SPEED * delta
+	if ball_sinking_sprite.scale > Vector2.ZERO:
+		var shrink_amount = Vector2(SHRINK_SPEED, SHRINK_SPEED) * delta
+		ball_sinking_sprite.scale -= shrink_amount
+	else:
+		ball_sinking_sprite.scale = Vector2.ZERO
+		safely_destroy_ball(ball_sinking)
 
 func _on_body_entered(body: RigidBody2D):
 	if body.is_in_group("balls"):
@@ -34,7 +34,7 @@ func _on_body_entered(body: RigidBody2D):
 			cue_ball.is_sinking = false
 			level.cue_ball_active = false
 			cue_ball.respawn_cue_ball()
-		ball_sinking = false
+		#ball_sinking = false
 		
 func sink_cue_ball():
 	cue_ball.wormhole_animated_sprite.visible = false
@@ -46,6 +46,7 @@ func safely_destroy_ball(body: RigidBody2D):
 		if body != cue_ball:
 			level.ball_destroyed(body)
 		body.queue_free()
+		ball_sinking = null
 
 func _process(delta):
 	if ball_sinking:

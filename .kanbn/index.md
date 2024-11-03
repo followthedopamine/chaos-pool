@@ -36,10 +36,9 @@ completedColumns:
 
 ## In Progress
 
-- [bug-level-doesn-t-end-on-sinking-all-balls](tasks/bug-level-doesn-t-end-on-sinking-all-balls.md)
-
 ## Done
 
+- [bug-level-doesn-t-end-on-sinking-all-balls](tasks/bug-level-doesn-t-end-on-sinking-all-balls.md)
 - [bug-sinking-cue-ball-doesn-t-respawn](tasks/bug-sinking-cue-ball-doesn-t-respawn.md)
 - [sounds-when-balls-collide-with-objects](tasks/sounds-when-balls-collide-with-objects.md)
 - [powered-balls-should-interact-with-walls](tasks/powered-balls-should-interact-with-walls.md)
