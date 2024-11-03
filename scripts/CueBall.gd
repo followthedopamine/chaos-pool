@@ -36,6 +36,7 @@ func _ready():
 	load_cue_ball()
 
 func respawn_cue_ball():
+	print("Respawning cue ball")
 	linear_velocity = Vector2.ZERO
 	global_position = initial_position
 	load_cue_ball()
@@ -106,10 +107,11 @@ func trigger_constant_effects():
 			push()
 	
 func reset_cue_ball():
+	frames_below_threshold = 0
 	cue_ball_sprite.hframes = 1
 	cue_ball_sprite.vframes = 1
 	cue_ball_sprite.frame = 0
-	scale = Vector2.ONE
+	cue_ball_sprite.scale = Vector2.ONE
 	modulate.a = initial_alpha
 	angular_velocity = 0
 	load_standard_ball_physics()
@@ -120,7 +122,6 @@ func reset_cue_ball():
 	Sound.end_all_loops()
 
 func load_cue_ball():
-	frames_below_threshold = 0
 	print("New cue ball loaded")
 	reset_cue_ball()
 	cue_ball_type = level.cue_balls[level.shot_counter]

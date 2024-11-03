@@ -13,5 +13,6 @@ func load_stars():
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)
 		stars = file.get_var()
+		print("Stars saved on file: " + str(stars))
 	else:
 		print("No data saved")

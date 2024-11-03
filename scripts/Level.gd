@@ -62,7 +62,7 @@ func succeed_level():
 	var star_score = cue_balls.size() - shot_counter
 	print("Star score: ", star_score)
 	var level_number = Scene.current_level
-	Save.save_stars(level_number - 1, star_score)
+	Save.save_stars(level_number, star_score)
 	level_end.show_win_screen(star_score)	
 	level_ended = true
 	
@@ -87,6 +87,7 @@ func check_if_balls_are_moving():
 		prev_balls_moving = balls_moving
 		if !balls_moving:
 			handle_balls_stopped()
+	
 			
 func handle_balls_stopped():
 	if active_balls.is_empty():

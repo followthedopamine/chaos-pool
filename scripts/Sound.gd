@@ -125,17 +125,22 @@ func free_sounds():
 	sounds_to_free = updated_sounds_to_free
 	
 func loop_sounds():
-	for sound in loops:
-		if !sound.playing:
+	for i in range(loops.size()):
+		var sound = loops[i]
+		if is_instance_valid(sound) and !sound.playing:
 			sound.play()
 			
 func fade_out_sounds(delta):
+	var active_fade_out = []
 	for sound in fade_out:
-		if sound.volume_db <= FADE_OUT_DESTROY_THRESHHOLD:
-			sound.stop()
-			sound.queue_free()
-		else:
-			sound.volume_db -= FADE_OUT_SPEED * delta
+		if is_instance_valid(sound):
+			if sound.volume_db <= FADE_OUT_DESTROY_THRESHHOLD:
+				sound.stop()
+				sound.queue_free()
+			else:
+				sound.volume_db -= FADE_OUT_SPEED * delta
+				active_fade_out.append(sound)  # Keep valid sounds
+	fade_out = active_fade_out  # Update the list to only include valid sounds
 		
 func _process(delta):
 	free_sounds()

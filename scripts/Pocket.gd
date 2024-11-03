@@ -34,6 +34,10 @@ func _on_body_entered(body: RigidBody2D):
 			cue_ball.is_sinking = false
 			level.cue_ball_active = false
 			cue_ball.respawn_cue_ball()
+			# This handles an edge case where you sink the cue ball
+			# and no other balls are moving (pretty hacky)
+			if !level.balls_moving:
+				level.handle_balls_stopped()
 		#ball_sinking = false
 		
 func sink_cue_ball():
@@ -45,7 +49,7 @@ func safely_destroy_ball(body: RigidBody2D):
 	if is_instance_valid(body) and !body.is_queued_for_deletion():
 		if body != cue_ball:
 			level.ball_destroyed(body)
-		body.queue_free()
+			body.queue_free()
 		ball_sinking = null
 
 func _process(delta):
