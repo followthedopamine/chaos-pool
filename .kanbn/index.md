@@ -34,6 +34,9 @@ completedColumns:
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
 - [bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars](tasks/bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars.md)
 - [bug-cue-moves-after-shooting-but-only-sometimes](tasks/bug-cue-moves-after-shooting-but-only-sometimes.md)
+- [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
+- [maybe-instead-of-destroying-the-balls-immediately-we-just-move-them-away-and-clean-them-up-later](tasks/maybe-instead-of-destroying-the-balls-immediately-we-just-move-them-away-and-clean-them-up-later.md)
+- [bug-sinking-cue-ball-doesn-t-respawn](tasks/bug-sinking-cue-ball-doesn-t-respawn.md)
 
 ## In Progress
 

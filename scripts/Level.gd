@@ -25,7 +25,6 @@ func _ready():
 	
 func setup_level():
 	active_balls.clear()  # Clear the tracking array
-	
 	for ball: RigidBody2D in get_tree().get_nodes_in_group("balls"):
 		if is_instance_valid(ball) and !ball.is_queued_for_deletion():
 			if ball.get_parent() == self and ball != cue_ball:
@@ -66,36 +65,37 @@ func succeed_level():
 	level_end.show_win_screen(star_score)	
 	level_ended = true
 	
-func on_cue_shoot():
-	cue_ball_active = true
-	
 func set_cue_ball_inactive():
 	cue_ball_active = false
 	
 func on_cue_ball_stopped():
 	call_deferred("set_cue_ball_inactive")
 
-func check_balls_are_moving():
+func check_if_balls_are_moving():
 	if cue_ball_active or level_ended:
 		return
 		
 	balls_moving = false
 	for ball in active_balls:
-		if is_instance_valid(ball) and ball.linear_velocity.length() >= Global.BALL_MOVING_THRESHHOLD:
-			balls_moving = true
-			break
+		if is_instance_valid(ball):
+			if ball.linear_velocity.length() >= Global.BALL_MOVING_THRESHHOLD:
+				balls_moving = true
+				break
 			
 	if balls_moving != prev_balls_moving:
 		prev_balls_moving = balls_moving
 		if !balls_moving:
-			if active_balls.is_empty():
-				succeed_level()
-			elif shot_counter == cue_balls.size() - 1:
-				fail_level()
-			else:
-				shot_counter += 1
-				print("Balls stopped. Remaining balls: ", active_balls.size())
-				balls_stopped.emit()
+			handle_balls_stopped()
+			
+func handle_balls_stopped():
+	if active_balls.is_empty():
+		succeed_level()
+	elif shot_counter == cue_balls.size() - 1:
+		fail_level()
+	else:
+		shot_counter += 1
+		balls_stopped.emit()
+		print("Balls stopped. Remaining balls: ", active_balls.size())
 
 func _physics_process(_delta):
-	check_balls_are_moving()
+	check_if_balls_are_moving()

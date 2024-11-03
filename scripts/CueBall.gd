@@ -10,6 +10,7 @@ const EXPLOSION_ANIMATION_DURATION = 0.4
 var initial_position:Vector2
 var has_exploded = false
 var prev_frame_velocity
+var frames_below_threshold := 0
 
 
 @onready var cue_ball_sprite = $CueBallSprite
@@ -25,9 +26,6 @@ var prev_frame_velocity
 
 @onready var initial_alpha = modulate.a
 
-
-
-signal cue_ball_stopped
 
 
 func _ready():
@@ -120,6 +118,7 @@ func reset_cue_ball():
 	Sound.end_all_loops()
 
 func load_cue_ball():
+	frames_below_threshold = 0
 	print("New cue ball loaded")
 	reset_cue_ball()
 	cue_ball_type = level.cue_balls[level.shot_counter]
@@ -137,10 +136,16 @@ func trigger_cue_ball_end_effects():
 			explode_ball()
 			
 func check_cue_ball_still_moving():
+	# Needs to check if cue ball is not moving for 2 frames because
+	# ball might be moving very slowly frame 1 and speed up frame 2
 	if linear_velocity.length() <= Global.BALL_MOVING_THRESHHOLD:
-		trigger_cue_ball_end_effects()
-		#print("Cue ball stopped moving")
-		level.cue_ball_active = false
+		frames_below_threshold += 1
+		print(frames_below_threshold)
+		if frames_below_threshold >= 2:
+			trigger_cue_ball_end_effects()
+			level.cue_ball_active = false
+	else:
+		frames_below_threshold = 0
 			
 func _on_balls_stopped():
 	load_cue_ball()
