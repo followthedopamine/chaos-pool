@@ -29,13 +29,16 @@ completedColumns:
 - [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
+- [cue-ball-texture-shading](tasks/cue-ball-texture-shading.md)
+- [bug-the-collision-on-the-table-is-pretty-awful](tasks/bug-the-collision-on-the-table-is-pretty-awful.md)
+- [shading-for-the-cooler-coloured-balls](tasks/shading-for-the-cooler-coloured-balls.md)
 
 ## In Progress
 
-- [all-ball-textures](tasks/all-ball-textures.md)
-
 ## Done
 
+- [bug-timer-doesn-t-work-on-level-2](tasks/bug-timer-doesn-t-work-on-level-2.md)
+- [all-ball-textures](tasks/all-ball-textures.md)
 - [bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully](tasks/bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully.md)
 - [bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars](tasks/bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars.md)
 - [bug-level-doesn-t-end-on-sinking-all-balls](tasks/bug-level-doesn-t-end-on-sinking-all-balls.md)

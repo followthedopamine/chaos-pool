@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://f4uvjp4h6ncd"]
+[gd_scene load_steps=12 format=3 uid="uid://f4uvjp4h6ncd"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_a5qft"]
 [ext_resource type="PackedScene" uid="uid://b36tv2qkejihp" path="res://scenes/Cue_ball.tscn" id="2_dwidy"]
 [ext_resource type="PackedScene" uid="uid://dv22eaqmagwj8" path="res://scenes/Ball.tscn" id="2_scnxk"]
 [ext_resource type="PackedScene" uid="uid://bv3o2m1rpr8yt" path="res://scenes/Cue.tscn" id="3_3p12d"]
 [ext_resource type="PackedScene" uid="uid://bguhci6hl27rj" path="res://scenes/Table.tscn" id="7_crmhv"]
+[ext_resource type="PackedScene" uid="uid://c20co81484jkb" path="res://scenes/Time.tscn" id="9_lvxkc"]
 [ext_resource type="Script" path="res://scripts/Glass.gd" id="16_n31ak"]
 [ext_resource type="Texture2D" uid="uid://c0hc7wlc4xrp5" path="res://images/placeholder/wall-placeholder.png" id="17_ecrln"]
 [ext_resource type="Script" path="res://scripts/CueBallsDisplay.gd" id="18_bsnyr"]
@@ -113,6 +114,8 @@ offset_top = 48.0
 offset_right = -313.0
 offset_bottom = 64.0
 script = ExtResource("18_bsnyr")
+
+[node name="Time" parent="." instance=ExtResource("9_lvxkc")]
 
 [connection signal="balls_stopped" from="." to="CueBallsDisplay" method="_on_balls_stopped"]
 [connection signal="body_entered" from="Glass" to="Glass" method="_on_body_entered"]
