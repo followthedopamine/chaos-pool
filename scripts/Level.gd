@@ -1,23 +1,48 @@
 extends Node2D
-
-const BALL_1 = preload("res://images/sprites/Ball.png")
-const BALL_2 = preload("res://images/sprites/Ball.png")
-const BALL_8 = preload("res://images/sprites/Ball.png")
-const BALL_TEXTURES = [BALL_1, BALL_2, BALL_8]
-
+const BALL_1_TEXTURE = preload("res://images/sprites/1-ball-texture.png")
+const BALL_2_TEXTURE = preload("res://images/sprites/2-ball-texture.png")
+const BALL_3_TEXTURE = preload("res://images/sprites/3-ball-texture.png")
+const BALL_4_TEXTURE = preload("res://images/sprites/4-ball-texture.png")
+const BALL_5_TEXTURE = preload("res://images/sprites/5-ball-texture.png")
+const BALL_6_TEXTURE = preload("res://images/sprites/6-ball-texture.png")
+const BALL_7_TEXTURE = preload("res://images/sprites/7-ball-texture.png")
+const BALL_8_TEXTURE = preload("res://images/sprites/8-ball-texture.png")
+const BALL_9_TEXTURE = preload("res://images/sprites/9-ball-texture.png")
+const BALL_10_TEXTURE = preload("res://images/sprites/10-ball-texture.png")
+const BALL_11_TEXTURE = preload("res://images/sprites/11-ball-texture.png")
+const BALL_12_TEXTURE = preload("res://images/sprites/12-ball-texture.png")
+const BALL_13_TEXTURE = preload("res://images/sprites/13-ball-texture.png")
+const BALL_14_TEXTURE = preload("res://images/sprites/14-ball-texture.png")
+const BALL_15_TEXTURE = preload("res://images/sprites/15-ball-texture.png")
+const BALL_TEXTURES = [
+	BALL_1_TEXTURE,
+	BALL_2_TEXTURE,
+	BALL_3_TEXTURE,
+	BALL_4_TEXTURE,
+	BALL_5_TEXTURE,
+	BALL_6_TEXTURE,
+	BALL_7_TEXTURE,
+	BALL_8_TEXTURE,
+	BALL_9_TEXTURE,
+	BALL_10_TEXTURE,
+	BALL_11_TEXTURE,
+	BALL_12_TEXTURE,
+	BALL_13_TEXTURE,
+	BALL_14_TEXTURE,
+	BALL_15_TEXTURE
+]
 var prev_balls_moving = false
 var cue_ball_active = false
 var balls_moving = false
 signal balls_stopped
-
 @onready var cue_ball = $CueBall
 @export var cue_balls:Array[Global.CUE_BALL_TYPES] = []
 @onready var level_end = $"../LevelEnd"
-
 var shot_counter = 0
 var active_balls = []  # Track currently active balls
 var level_ended = false
 var level_reset = false
+var available_textures = []  # Track available textures
 
 func _ready():
 	Scene.current_level_script = self
@@ -25,15 +50,21 @@ func _ready():
 	
 func setup_level():
 	active_balls.clear()  # Clear the tracking array
+	available_textures = BALL_TEXTURES.duplicate()  # Reset available textures
+	randomize()  # Initialize random number generator
+	
 	for ball: RigidBody2D in get_tree().get_nodes_in_group("balls"):
 		if is_instance_valid(ball) and !ball.is_queued_for_deletion():
 			if ball.get_parent() == self and ball != cue_ball:
 				# Add ball to tracking array
 				active_balls.append(ball)
-				# Set ball texture
-				var ball_sprite = ball.get_child(0)
-				if ball_sprite:
-					ball_sprite.texture = BALL_TEXTURES[active_balls.size() - 1 % BALL_TEXTURES.size()]
+				# Get random texture from available ones
+				var ball_sprite = ball.get_child(0).get_child(0)
+				if ball_sprite and available_textures.size() > 0:
+					var random_index = randi() % available_textures.size()
+					ball_sprite.texture = available_textures[random_index]
+					# Remove used texture from available ones
+					available_textures.remove_at(random_index)
 	
 	print("Initial ball count: ", active_balls.size())
 

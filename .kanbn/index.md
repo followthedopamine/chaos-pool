@@ -25,19 +25,18 @@ completedColumns:
 - [levels-1-5](tasks/levels-1-5.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
-- [all-ball-textures](tasks/all-ball-textures.md)
 - [bug-sound-rapidly-repeats-on-ball-sunk](tasks/bug-sound-rapidly-repeats-on-ball-sunk.md)
 - [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
-- [maybe-instead-of-destroying-the-balls-immediately-we-just-move-them-away-and-clean-them-up-later](tasks/maybe-instead-of-destroying-the-balls-immediately-we-just-move-them-away-and-clean-them-up-later.md)
 
 ## In Progress
 
-- [bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully](tasks/bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully.md)
+- [all-ball-textures](tasks/all-ball-textures.md)
 
 ## Done
 
+- [bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully](tasks/bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully.md)
 - [bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars](tasks/bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars.md)
 - [bug-level-doesn-t-end-on-sinking-all-balls](tasks/bug-level-doesn-t-end-on-sinking-all-balls.md)
 - [bug-sinking-cue-ball-doesn-t-respawn](tasks/bug-sinking-cue-ball-doesn-t-respawn.md)
