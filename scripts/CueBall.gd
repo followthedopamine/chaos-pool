@@ -107,6 +107,7 @@ func trigger_constant_effects():
 			push()
 	
 func reset_cue_ball():
+	freeze = false
 	frames_below_threshold = 0
 	cue_ball_sprite.hframes = 1
 	cue_ball_sprite.vframes = 1

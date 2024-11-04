@@ -1,18 +1,33 @@
 extends Area2D
-
 @onready var cue_ball = $"../../CueBall"
 @onready var level = $"../.."
 var ball_sinking
 var ball_sinking_sprite: Sprite2D
-const FADE_OUT_SPEED = 7
-const SHRINK_SPEED = 6
+const FADE_OUT_SPEED = 12
+const SHRINK_SPEED = 10
+const BALL_SPEED = 150
 
-# TODO: Script is set up in a way that only one ball can sink at a time
+func does_ball_need_to_move():
+	var distance_from_pocket = abs(ball_sinking.position - position)
+	if(distance_from_pocket.length() > 2):
+		return true
+	return false
+
+func move_ball_to_pocket_center(delta):
+	if(does_ball_need_to_move()):
+		var direction = position - ball_sinking.position
+		var movement = direction.normalized() * delta * BALL_SPEED
+		# Don't move further than the remaining distance
+		if movement.length() > direction.length():
+			ball_sinking.position = position
+		else:
+			ball_sinking.position += movement  
+	else:
+		ball_sinking.position = position
 
 func play_sinking_animation(delta):
-	# Disable wormhole effect
-	ball_sinking.position = position
-	ball_sinking.linear_velocity = Vector2.ZERO
+	if(does_ball_need_to_move()):
+		return
 	ball_sinking.modulate.a -= FADE_OUT_SPEED * delta
 	if ball_sinking_sprite.scale > Vector2.ZERO:
 		var shrink_amount = Vector2(SHRINK_SPEED, SHRINK_SPEED) * delta
@@ -26,20 +41,13 @@ func _on_body_entered(body: RigidBody2D):
 		if body == cue_ball:
 			sink_cue_ball()
 		ball_sinking = body
-		# Only works if sprite is child 0
 		ball_sinking_sprite = ball_sinking.get_child(0)
-
-		await get_tree().create_timer(0.4).timeout
-		if body == cue_ball:
-			cue_ball.is_sinking = false
-			level.cue_ball_active = false
-			cue_ball.respawn_cue_ball()
-			# This handles an edge case where you sink the cue ball
-			# and no other balls are moving (pretty hacky)
-			if !level.balls_moving:
-				level.handle_balls_stopped()
-		#ball_sinking = false
+		ball_sinking.set_deferred("linear_velocity", Vector2.ZERO)
+		ball_sinking.set_deferred("angular_velocity", 0)
+		ball_sinking.set_deferred("freeze", true)
 		
+		
+
 func sink_cue_ball():
 	cue_ball.wormhole_animated_sprite.visible = false
 	cue_ball.pusher_animated_sprite.visible = false
@@ -47,11 +55,18 @@ func sink_cue_ball():
 
 func safely_destroy_ball(body: RigidBody2D):
 	if is_instance_valid(body) and !body.is_queued_for_deletion():
-		if body != cue_ball:
+		if body == cue_ball:
+			cue_ball.is_sinking = false
+			level.cue_ball_active = false
+			cue_ball.respawn_cue_ball()
+			if !level.balls_moving:
+				level.handle_balls_stopped()
+		else:
 			level.ball_destroyed(body)
 			body.queue_free()
 		ball_sinking = null
 
 func _process(delta):
 	if ball_sinking:
+		move_ball_to_pocket_center(delta)
 		play_sinking_animation(delta)
