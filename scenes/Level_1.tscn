@@ -1,12 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfxuyufo3wons"]
+[gd_scene load_steps=6 format=3 uid="uid://dfxuyufo3wons"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_ma1sx"]
 [ext_resource type="PackedScene" uid="uid://bv3o2m1rpr8yt" path="res://scenes/Cue.tscn" id="2_qi5rn"]
 [ext_resource type="PackedScene" uid="uid://dv22eaqmagwj8" path="res://scenes/Ball.tscn" id="4_dcpa8"]
 [ext_resource type="PackedScene" uid="uid://b36tv2qkejihp" path="res://scenes/Cue_ball.tscn" id="4_n1pbe"]
-[ext_resource type="PackedScene" uid="uid://c20co81484jkb" path="res://scenes/Time.tscn" id="7_guamy"]
 [ext_resource type="PackedScene" uid="uid://bguhci6hl27rj" path="res://scenes/Table.tscn" id="9_hrqj1"]
-[ext_resource type="Script" path="res://scripts/CueBallsDisplay.gd" id="18_o6o60"]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_ma1sx")
@@ -27,15 +25,3 @@ position = Vector2(391, 210)
 continuous_cd = 2
 
 [node name="Table" parent="." instance=ExtResource("9_hrqj1")]
-
-[node name="CueBallsDisplay" type="BoxContainer" parent="."]
-layout_direction = 3
-offset_left = -568.0
-offset_top = 48.0
-offset_right = -313.0
-offset_bottom = 64.0
-script = ExtResource("18_o6o60")
-
-[node name="Time" parent="." instance=ExtResource("7_guamy")]
-
-[connection signal="balls_stopped" from="." to="CueBallsDisplay" method="_on_balls_stopped"]

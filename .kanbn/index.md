@@ -19,26 +19,33 @@ completedColumns:
 - [achievements](tasks/achievements.md)
 - [ball-that-follows-the-player-s-cursor-finger](tasks/ball-that-follows-the-player-s-cursor-finger.md)
 - [split-cue-ball](tasks/split-cue-ball.md)
+- [sound-for-balls-being-pocketed](tasks/sound-for-balls-being-pocketed.md)
 
 ## Todo
 
 - [levels-1-5](tasks/levels-1-5.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
-- [bug-sound-rapidly-repeats-on-ball-sunk](tasks/bug-sound-rapidly-repeats-on-ball-sunk.md)
 - [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
 - [cue-ball-texture-shading](tasks/cue-ball-texture-shading.md)
 - [bug-the-collision-on-the-table-is-pretty-awful](tasks/bug-the-collision-on-the-table-is-pretty-awful.md)
 - [shading-for-the-cooler-coloured-balls](tasks/shading-for-the-cooler-coloured-balls.md)
+- [textures-for-obstacles](tasks/textures-for-obstacles.md)
+- [bug-cue-still-can-be-moved-very-infrequently-immediately-after-taking-a-shot-low-powered-shots](tasks/bug-cue-still-can-be-moved-very-infrequently-immediately-after-taking-a-shot-low-powered-shots.md)
 
 ## In Progress
 
 ## Done
 
+- [bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display](tasks/bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display.md)
+- [time-and-cue-ball-display-should-be-spawned-in-by-level-script-for-simpler-level-creation](tasks/time-and-cue-ball-display-should-be-spawned-in-by-level-script-for-simpler-level-creation.md)
+- [bug-timer-at-end-of-level-displays-the-wrong-time-if-you-don-t-win-on-first-playthrough](tasks/bug-timer-at-end-of-level-displays-the-wrong-time-if-you-don-t-win-on-first-playthrough.md)
+- [bug-timer-doesn-t-display-the-same-time-as-paused-in-game-time](tasks/bug-timer-doesn-t-display-the-same-time-as-paused-in-game-time.md)
 - [bug-timer-doesn-t-work-on-level-2](tasks/bug-timer-doesn-t-work-on-level-2.md)
 - [all-ball-textures](tasks/all-ball-textures.md)
+- [bug-sound-rapidly-repeats-on-ball-sunk](tasks/bug-sound-rapidly-repeats-on-ball-sunk.md)
 - [bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully](tasks/bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully.md)
 - [bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars](tasks/bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars.md)
 - [bug-level-doesn-t-end-on-sinking-all-balls](tasks/bug-level-doesn-t-end-on-sinking-all-balls.md)

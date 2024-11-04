@@ -31,6 +31,12 @@ const BALL_TEXTURES = [
 	BALL_14_TEXTURE,
 	BALL_15_TEXTURE
 ]
+
+const TIME = preload("res://scenes/Time.tscn")
+const CUE_BALLS_DISPLAY = preload("res://scenes/Cue_Balls_Display.tscn")
+
+var time = null
+
 var prev_balls_moving = false
 var cue_ball_active = false
 var balls_moving = false
@@ -48,7 +54,15 @@ func _ready():
 	Scene.current_level_script = self
 	setup_level()
 	
+func instantiate_level_scenes():
+	time = TIME.instantiate()
+	add_child(time)
+	level_end.level_timer = time
+	var cue_balls_display = CUE_BALLS_DISPLAY.instantiate()
+	add_child(cue_balls_display)
+	
 func setup_level():
+	instantiate_level_scenes()
 	active_balls.clear()  # Clear the tracking array
 	available_textures = BALL_TEXTURES.duplicate()  # Reset available textures
 	randomize()  # Initialize random number generator

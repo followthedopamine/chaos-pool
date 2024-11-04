@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmnw4mf4wxej4" path="res://images/ui/level-cleared/Replay Button-Sheet.png" id="4_486dc"]
 [ext_resource type="Texture2D" uid="uid://bvprdb0pki4qj" path="res://images/ui/level-cleared/Next Level Button-Sheet.png" id="5_56f7j"]
 [ext_resource type="Texture2D" uid="uid://jfkoq1gm2xp6" path="res://images/ui/level-cleared/Ad-Sheet.png" id="6_2rd6r"]
-[ext_resource type="PackedScene" uid="uid://c20co81484jkb" path="res://scenes/Time.tscn" id="8_5e5dp"]
+[ext_resource type="PackedScene" uid="uid://h02e1k5ypoef" path="res://scenes/StaticTimeDisplay.tscn" id="8_ca4y2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxrt2"]
 bg_color = Color(0.0117647, 0.0509804, 0.00784314, 0.807843)
@@ -113,7 +113,7 @@ texture_pressed = SubResource("AtlasTexture_4pkql")
 layout_mode = 2
 alignment = 1
 
-[node name="Time" parent="VBoxContainer/TimeContainer" instance=ExtResource("8_5e5dp")]
+[node name="StaticTimeDisplay" parent="VBoxContainer/TimeContainer" instance=ExtResource("8_ca4y2")]
 layout_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

@@ -8,7 +8,9 @@ const LEVEL_FAILED = preload("res://images/ui/level-cleared/Level Failed.png")
 @onready var next_level_button = $VBoxContainer/HBoxContainer/NextLevelButton
 @onready var ad_container = $VBoxContainer/AdContainer
 @onready var time_container = $VBoxContainer/TimeContainer
+@onready var static_time_display = $VBoxContainer/TimeContainer/StaticTimeDisplay
 
+var level_timer = null
 
 const STARS_ATLAS = Rect2(0, 0, 160, 39)
 
@@ -35,7 +37,8 @@ func show_win_screen(stars):
 										STARS_ATLAS.size.y)
 	ad_container.visible = false
 	time_container.visible = true
-	
+	static_time_display.time_elapsed = level_timer.time_elapsed
+	static_time_display.update_numbers()
 	
 func show_loss_screen():
 	print("Display loss screen")

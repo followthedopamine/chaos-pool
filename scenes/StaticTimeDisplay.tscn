@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://h02e1k5ypoef"]
+
+[ext_resource type="Script" path="res://scripts/LevelTimer.gd" id="1_niulm"]
+[ext_resource type="Texture2D" uid="uid://bvxu1436twgnh" path="res://images/ui/Time.png" id="2_akfpu"]
+[ext_resource type="Texture2D" uid="uid://bc4g45x4t12q3" path="res://images/ui/numbers/0-number.png" id="3_7fgh6"]
+[ext_resource type="Texture2D" uid="uid://bviv2vrmht6e1" path="res://images/ui/numbers/colon-number.png" id="4_a8mcx"]
+[ext_resource type="Texture2D" uid="uid://cy50gdvybejix" path="res://images/ui/numbers/dot-number.png" id="5_yke5r"]
+
+[node name="StaticTimeDisplay" type="HBoxContainer"]
+offset_right = 174.14
+script = ExtResource("1_niulm")
+
+[node name="TimeText" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_akfpu")
+
+[node name="TimerHBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="Digit 1" type="TextureRect" parent="TimerHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7fgh6")
+
+[node name="Digit 2" type="TextureRect" parent="TimerHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7fgh6")
+
+[node name="Colon" type="TextureRect" parent="TimerHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_a8mcx")
+
+[node name="Digit 3" type="TextureRect" parent="TimerHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7fgh6")
+
+[node name="Digit 4" type="TextureRect" parent="TimerHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7fgh6")
+
+[node name="Dot" type="TextureRect" parent="TimerHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_yke5r")
+
+[node name="Digit 5" type="TextureRect" parent="TimerHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7fgh6")
+stretch_mode = 2
+
+[node name="Digit 6" type="TextureRect" parent="TimerHBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_7fgh6")
+stretch_mode = 2

@@ -16,6 +16,7 @@ func remove_first_ball():
 	get_child(0).queue_free()
 
 func _ready():
+	level.balls_stopped.connect(_on_balls_stopped)
 	create_ball_texture_rects()
 
 func _on_balls_stopped():
