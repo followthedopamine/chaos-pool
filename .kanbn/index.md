@@ -20,6 +20,7 @@ completedColumns:
 - [ball-that-follows-the-player-s-cursor-finger](tasks/ball-that-follows-the-player-s-cursor-finger.md)
 - [split-cue-ball](tasks/split-cue-ball.md)
 - [sound-for-balls-being-pocketed](tasks/sound-for-balls-being-pocketed.md)
+- [save-player-s-best-time](tasks/save-player-s-best-time.md)
 
 ## Todo
 
@@ -33,7 +34,9 @@ completedColumns:
 - [bug-the-collision-on-the-table-is-pretty-awful](tasks/bug-the-collision-on-the-table-is-pretty-awful.md)
 - [shading-for-the-cooler-coloured-balls](tasks/shading-for-the-cooler-coloured-balls.md)
 - [textures-for-obstacles](tasks/textures-for-obstacles.md)
-- [bug-cue-still-can-be-moved-very-infrequently-immediately-after-taking-a-shot-low-powered-shots](tasks/bug-cue-still-can-be-moved-very-infrequently-immediately-after-taking-a-shot-low-powered-shots.md)
+- [bug-cue-still-can-be-moved-very-infrequently-immediately-after-taking-a-shot](tasks/bug-cue-still-can-be-moved-very-infrequently-immediately-after-taking-a-shot.md)
+- [bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity](tasks/bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity.md)
+- [bug-somehow-balls-still-not-getting-counted-correctly-on-destruction](tasks/bug-somehow-balls-still-not-getting-counted-correctly-on-destruction.md)
 
 ## In Progress
 
@@ -48,6 +51,7 @@ completedColumns:
 - [bug-sound-rapidly-repeats-on-ball-sunk](tasks/bug-sound-rapidly-repeats-on-ball-sunk.md)
 - [bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully](tasks/bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully.md)
 - [bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars](tasks/bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars.md)
+- [bug-glass-instantly-breaks-on-level-start](tasks/bug-glass-instantly-breaks-on-level-start.md)
 - [bug-level-doesn-t-end-on-sinking-all-balls](tasks/bug-level-doesn-t-end-on-sinking-all-balls.md)
 - [bug-sinking-cue-ball-doesn-t-respawn](tasks/bug-sinking-cue-ball-doesn-t-respawn.md)
 - [sounds-when-balls-collide-with-objects](tasks/sounds-when-balls-collide-with-objects.md)

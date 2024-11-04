@@ -19,6 +19,7 @@ script = ExtResource("1_a5qft")
 cue_balls = Array[int]([0, 3, 1, 2, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0])
 
 [node name="Ball" parent="." instance=ExtResource("2_scnxk")]
+position = Vector2(483, 196)
 
 [node name="Ball2" parent="." instance=ExtResource("2_scnxk")]
 position = Vector2(162, 152)
@@ -26,6 +27,7 @@ position = Vector2(162, 152)
 [node name="Cue" parent="." instance=ExtResource("3_3p12d")]
 
 [node name="CueBall" parent="." instance=ExtResource("2_dwidy")]
+position = Vector2(271, 246)
 
 [node name="Wall" type="RigidBody2D" parent="."]
 position = Vector2(162, 130)
@@ -88,6 +90,7 @@ shape = SubResource("RectangleShape2D_nof4j")
 [node name="Glass" type="RigidBody2D" parent="."]
 position = Vector2(380, 174)
 collision_layer = 4
+collision_mask = 5
 max_contacts_reported = 20
 contact_monitor = true
 script = ExtResource("16_n31ak")

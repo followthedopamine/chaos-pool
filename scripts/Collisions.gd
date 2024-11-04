@@ -19,4 +19,3 @@ func _on_ball_collision(body):
 			print(motion.get_normal())
 			var impulse = motion.get_normal() * motion.get_collider_velocity()
 			print(impulse)
-			#body.apply_central_impulse(impulse)

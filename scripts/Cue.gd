@@ -10,23 +10,20 @@ const MIN_SHOT_CHARGE_Y = -35
 const DEFAULT_CUE_X_OFFSET = -126
 const MAX_CUE_X_OFFSET = -180
 
-
-@onready var cue_ball = $"../CueBall"
-@onready var level = $".."
-
-@onready var options_menu = $"../../OptionsMenu"
-@onready var level_menu_button = $"../../LevelMenuButton"
-
-
-
-@onready var shot_charge = $ShotChargeMask/ShotCharge
-@onready var shot_charge_mask = $ShotChargeMask
-
 const SHOT_SOUND = preload("res://sounds/Shot.mp3")
 const SHOT_MIN_VOLUME = 3
 
-var power_is_increasing = true
+const MINIMUM_TIME_BETWEEN_SHOTS = 0.2
+const TIME_TO_HIDE_SHOT_CHARGE = 0.5
 
+@onready var cue_ball = $"../CueBall"
+@onready var level = $".."
+@onready var options_menu = $"../../OptionsMenu"
+@onready var level_menu_button = $"../../LevelMenuButton"
+@onready var shot_charge = $ShotChargeMask/ShotCharge
+@onready var shot_charge_mask = $ShotChargeMask
+
+var power_is_increasing = true
 var power = 0
 
 signal shoot
@@ -36,18 +33,20 @@ func handle_input(delta):
 		get_tree().reload_current_scene()
 	if Input.is_action_pressed("shoot"):
 		update_power(delta)
-	if Input.is_action_just_released("shoot") and power > 0:
+	if Input.is_action_just_released("shoot"):
 		shoot_cue_ball()
+
+func get_player_target():
+	return get_global_mouse_position()
 		
 func update_charge_display():
-	# value/value total * 100
 	if power != 0:
 		shot_charge_mask.visible = true
 		var percentage = power/MAX_POWER * 2
 		shot_charge.position.y = min((percentage * MAX_SHOT_CHARGE_Y) - abs(MIN_SHOT_CHARGE_Y), MAX_SHOT_CHARGE_Y)
 		
 func hide_shot_charge():
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(TIME_TO_HIDE_SHOT_CHARGE).timeout
 	shot_charge_mask.visible = false
 		
 func update_power(delta):
@@ -65,23 +64,22 @@ func update_power(delta):
 	update_charge_display()
 		
 func shoot_cue_ball():
-	cue_ball.apply_central_impulse(power * (get_global_mouse_position() - global_position))
-	power = 0
+	cue_ball.apply_central_impulse(power * (get_player_target() - global_position))
+	power = MIN_POWER
 	hide_shot_charge()
 	Sound.create_sound_and_play(SHOT_SOUND, SHOT_MIN_VOLUME + power,self)
-	#await get_tree().create_timer(0.1).timeout #Necessary to make sure signal isn't recieved before ball is moving
-	##shoot.emit()
 	level.cue_ball_active = true
+	await get_tree().create_timer(MINIMUM_TIME_BETWEEN_SHOTS).timeout
 
 func angle_cue():
-	look_at(get_global_mouse_position())
+	look_at(get_player_target())
 
 func position_cue():
 	global_position = cue_ball.global_position
 	
 func check_if_player_is_pressing_menu():
 	var rect = level_menu_button.get_global_rect()
-	if rect.has_point(get_global_mouse_position()):
+	if rect.has_point(get_player_target()):
 		return true
 	return false
 	
