@@ -41,6 +41,7 @@ completedColumns:
 ## In Progress
 
 - [bug-shot-counter-doesn-t-always-increase](tasks/bug-shot-counter-doesn-t-always-increase.md)
+- [redo-shot-counter-balls-stopping-from-scratch](tasks/redo-shot-counter-balls-stopping-from-scratch.md)
 
 ## Done
 

@@ -19,7 +19,7 @@ func move_ball_to_pocket_center(delta, ball):
 		var ball_velocity = get_ball_speed_toward_pocket(ball)
 		var direction = position - ball.position
 		var movement = direction.normalized() * delta * BALL_SPEED * ball_velocity
-		print(ball_velocity)
+		#print(ball_velocity)
 		# Don't move further than the remaining distance
 		if movement.length() > direction.length():
 			ball.position = position

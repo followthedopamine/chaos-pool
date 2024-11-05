@@ -57,7 +57,7 @@ func explode_ball():
 	for ball:RigidBody2D in cue_ball_area_of_effect.get_overlapping_bodies():
 		if ball != self:
 			#Probably needs to be normalized
-			print(ball.name)
+			#print(ball.name)
 			ball.apply_central_impulse(Vector2(ball.global_position - global_position) * EXPLOSIVE_FORCE)
 	
 
@@ -144,7 +144,7 @@ func check_cue_ball_still_moving():
 	# ball might be moving very slowly frame 1 and speed up frame 2
 	if linear_velocity.length() <= Global.BALL_MOVING_THRESHHOLD:
 		frames_below_threshold += 1
-		print(frames_below_threshold)
+		#print(frames_below_threshold)
 		if frames_below_threshold >= 2:
 			trigger_cue_ball_end_effects()
 			level.cue_ball_active = false

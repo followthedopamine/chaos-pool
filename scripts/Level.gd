@@ -94,7 +94,7 @@ func setup_level():
 
 func ball_destroyed(ball: RigidBody2D):
 	var ball_index = active_balls.find(ball)
-	print(ball_index)
+	#print(ball_index)
 	if ball_index != -1:  # Ball was found in array
 		active_balls.remove_at(ball_index)
 		print("Ball destroyed. Remaining balls: ", active_balls.size())
