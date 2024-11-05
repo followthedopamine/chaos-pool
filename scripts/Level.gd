@@ -34,6 +34,7 @@ const BALL_TEXTURES = [
 
 const TIME = preload("res://scenes/Time.tscn")
 const CUE_BALLS_DISPLAY = preload("res://scenes/Cue_Balls_Display.tscn")
+const TABLE_BACKGROUND = preload("res://scenes/Table_Background.tscn")
 
 var time = null
 
@@ -60,6 +61,8 @@ func instantiate_level_scenes():
 	level_end.level_timer = time
 	var cue_balls_display = CUE_BALLS_DISPLAY.instantiate()
 	add_child(cue_balls_display)
+	var table_background = TABLE_BACKGROUND.instantiate()
+	add_child(table_background)
 	
 func setup_level():
 	instantiate_level_scenes()

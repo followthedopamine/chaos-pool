@@ -77,6 +77,7 @@ func shoot_cue_ball():
 	hide_shot_charge()
 	Sound.create_sound_and_play(SHOT_SOUND, SHOT_MIN_VOLUME + power,self)
 	level.cue_ball_active = true
+	# Fixes a bug where cue ball would instantly become inactive 
 	cue_ball.frames_below_threshold = 0
 	await get_tree().create_timer(MINIMUM_TIME_BETWEEN_SHOTS).timeout
 

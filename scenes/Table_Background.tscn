@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://3gigj3gv2776"]
+
+[ext_resource type="Texture2D" uid="uid://6cc0n4yt1ux0" path="res://images/ui/Table Background.png" id="1_i31ea"]
+
+[node name="TableBackground" type="Node2D"]
+
+[node name="TableBackgroundSprite" type="Sprite2D" parent="."]
+z_index = -999
+texture = ExtResource("1_i31ea")
+centered = false

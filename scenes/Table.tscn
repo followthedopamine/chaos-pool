@@ -8,7 +8,7 @@
 radius = 9.84886
 
 [node name="Table" type="StaticBody2D"]
-z_index = -999
+z_index = -888
 collision_layer = 2
 
 [node name="TableCollision" type="CollisionPolygon2D" parent="."]

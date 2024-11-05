@@ -41,6 +41,7 @@ completedColumns:
 
 ## Done
 
+- [add-the-background](tasks/add-the-background.md)
 - [bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display](tasks/bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display.md)
 - [time-and-cue-ball-display-should-be-spawned-in-by-level-script-for-simpler-level-creation](tasks/time-and-cue-ball-display-should-be-spawned-in-by-level-script-for-simpler-level-creation.md)
 - [bug-timer-at-end-of-level-displays-the-wrong-time-if-you-don-t-win-on-first-playthrough](tasks/bug-timer-at-end-of-level-displays-the-wrong-time-if-you-don-t-win-on-first-playthrough.md)
