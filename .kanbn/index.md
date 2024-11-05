@@ -35,6 +35,9 @@ completedColumns:
 - [shading-for-the-cooler-coloured-balls](tasks/shading-for-the-cooler-coloured-balls.md)
 - [textures-for-obstacles](tasks/textures-for-obstacles.md)
 - [bug-somehow-balls-still-not-getting-counted-correctly-on-destruction](tasks/bug-somehow-balls-still-not-getting-counted-correctly-on-destruction.md)
+- [texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved](tasks/texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved.md)
+- [bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file](tasks/bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file.md)
+- [adding-new-levels-sucks](tasks/adding-new-levels-sucks.md)
 
 ## In Progress
 

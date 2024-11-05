@@ -1,7 +1,7 @@
 extends Node2D
 
 var save_path = "user://level_data.save"
-var stars = [0,0] # Needs to be the length of the amount of levels (fill(0)?)
+var stars = [0,0,0] # Needs to be the length of the amount of levels (fill(0)?)
 
 func save_stars(index, number_of_stars):
 	if number_of_stars > stars[index]:

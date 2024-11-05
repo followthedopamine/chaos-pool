@@ -183,6 +183,47 @@ offset_right = 82.0
 offset_bottom = 80.0
 texture = ExtResource("8_mdejp")
 
+[node name="LevelButton3" type="TextureButton" parent="Container/Panel/BoxContainer/BoxContainer"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_bip4t")
+texture_pressed = SubResource("AtlasTexture_vsljr")
+texture_disabled = SubResource("AtlasTexture_hxdbs")
+script = ExtResource("4_gjhpl")
+
+[node name="LevelButtonText" type="RichTextLabel" parent="Container/Panel/BoxContainer/BoxContainer/LevelButton3"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 2.0
+offset_right = 54.0
+offset_bottom = 45.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_bi5r0")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[center]3[/center]"
+fit_content = true
+
+[node name="LevelStars" type="TextureRect" parent="Container/Panel/BoxContainer/BoxContainer/LevelButton3"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -12.0
+offset_right = 63.0
+offset_bottom = 6.0
+mouse_filter = 2
+texture = SubResource("AtlasTexture_rtv03")
+script = ExtResource("7_nexjr")
+
+[node name="Lock" type="TextureRect" parent="Container/Panel/BoxContainer/BoxContainer/LevelButton3"]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = -14.0
+offset_top = -16.0
+offset_right = 82.0
+offset_bottom = 80.0
+texture = ExtResource("8_mdejp")
+
 [connection signal="button_down" from="Container/Panel/BoxContainer/BoxContainer/LevelButton" to="Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_button_down"]
 [connection signal="button_up" from="Container/Panel/BoxContainer/BoxContainer/LevelButton" to="Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_button_up"]
 [connection signal="mouse_exited" from="Container/Panel/BoxContainer/BoxContainer/LevelButton" to="Container/Panel/BoxContainer/BoxContainer/LevelButton" method="_on_mouse_exited"]
@@ -191,3 +232,7 @@ texture = ExtResource("8_mdejp")
 [connection signal="button_up" from="Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_button_up"]
 [connection signal="mouse_exited" from="Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_mouse_exited"]
 [connection signal="pressed" from="Container/Panel/BoxContainer/BoxContainer/LevelButton2" to="Container/Panel/BoxContainer/BoxContainer/LevelButton2" method="_on_pressed"]
+[connection signal="button_down" from="Container/Panel/BoxContainer/BoxContainer/LevelButton3" to="Container/Panel/BoxContainer/BoxContainer/LevelButton3" method="_on_button_down"]
+[connection signal="button_up" from="Container/Panel/BoxContainer/BoxContainer/LevelButton3" to="Container/Panel/BoxContainer/BoxContainer/LevelButton3" method="_on_button_up"]
+[connection signal="mouse_exited" from="Container/Panel/BoxContainer/BoxContainer/LevelButton3" to="Container/Panel/BoxContainer/BoxContainer/LevelButton3" method="_on_mouse_exited"]
+[connection signal="pressed" from="Container/Panel/BoxContainer/BoxContainer/LevelButton3" to="Container/Panel/BoxContainer/BoxContainer/LevelButton3" method="_on_pressed"]
