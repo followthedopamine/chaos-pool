@@ -34,13 +34,13 @@ completedColumns:
 - [bug-the-collision-on-the-table-is-pretty-awful](tasks/bug-the-collision-on-the-table-is-pretty-awful.md)
 - [shading-for-the-cooler-coloured-balls](tasks/shading-for-the-cooler-coloured-balls.md)
 - [textures-for-obstacles](tasks/textures-for-obstacles.md)
-- [bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity](tasks/bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity.md)
 - [bug-somehow-balls-still-not-getting-counted-correctly-on-destruction](tasks/bug-somehow-balls-still-not-getting-counted-correctly-on-destruction.md)
 
 ## In Progress
 
 ## Done
 
+- [bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity](tasks/bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity.md)
 - [add-the-background](tasks/add-the-background.md)
 - [bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display](tasks/bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display.md)
 - [time-and-cue-ball-display-should-be-spawned-in-by-level-script-for-simpler-level-creation](tasks/time-and-cue-ball-display-should-be-spawned-in-by-level-script-for-simpler-level-creation.md)

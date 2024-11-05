@@ -116,7 +116,7 @@ func push(parent):
 func free_sounds():
 	var updated_sounds_to_free = []
 	for sound in sounds_to_free:
-		if is_instance_valid(sound):
+		if !is_instance_valid(sound):
 			continue
 		if !sound.playing:
 			sound.queue_free()

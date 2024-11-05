@@ -3,9 +3,10 @@ extends Area2D
 @onready var level = $"../.."
 var ball_sinking
 var ball_sinking_sprite: Sprite2D
+var ball_velocity: float
 const FADE_OUT_SPEED = 12
 const SHRINK_SPEED = 10
-const BALL_SPEED = 150
+const BALL_SPEED = 2
 
 func does_ball_need_to_move():
 	var distance_from_pocket = abs(ball_sinking.position - position)
@@ -15,8 +16,9 @@ func does_ball_need_to_move():
 
 func move_ball_to_pocket_center(delta):
 	if(does_ball_need_to_move()):
+		
 		var direction = position - ball_sinking.position
-		var movement = direction.normalized() * delta * BALL_SPEED
+		var movement = direction.normalized() * delta * BALL_SPEED * ball_velocity
 		# Don't move further than the remaining distance
 		if movement.length() > direction.length():
 			ball_sinking.position = position
@@ -35,6 +37,14 @@ func play_sinking_animation(delta):
 	else:
 		ball_sinking_sprite.scale = Vector2.ZERO
 		safely_destroy_ball(ball_sinking)
+		
+func get_ball_speed_toward_pocket(ball):
+	var direction = (global_position - ball.global_position).normalized()
+   
+   # Get the dot product of velocity and direction
+   # This gives you the magnitude of velocity in the direction of the area
+	var speed_toward = ball.linear_velocity.dot(direction)
+	return speed_toward
 
 func _on_body_entered(body: RigidBody2D):
 	if body.is_in_group("balls"):
@@ -42,6 +52,8 @@ func _on_body_entered(body: RigidBody2D):
 			sink_cue_ball()
 		ball_sinking = body
 		ball_sinking_sprite = ball_sinking.get_child(0)
+		
+		ball_velocity = get_ball_speed_toward_pocket(body)
 		ball_sinking.set_deferred("linear_velocity", Vector2.ZERO)
 		ball_sinking.set_deferred("angular_velocity", 0)
 		ball_sinking.set_deferred("freeze", true)
