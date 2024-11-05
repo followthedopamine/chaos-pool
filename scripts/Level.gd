@@ -32,6 +32,9 @@ const BALL_TEXTURES = [
 	BALL_15_TEXTURE
 ]
 
+const BALL_LIGHTING_2 = preload("res://images/sprites/Ball_Lighting_2.png")
+const COOL_BALLS = [5,7,1,9,3,11,13]
+
 const TIME = preload("res://scenes/Time.tscn")
 const CUE_BALLS_DISPLAY = preload("res://scenes/Cue_Balls_Display.tscn")
 const TABLE_BACKGROUND = preload("res://scenes/Table_Background.tscn")
@@ -79,6 +82,10 @@ func setup_level():
 				var ball_sprite = ball.get_child(0).get_child(0)
 				if ball_sprite and available_textures.size() > 0:
 					var random_index = randi() % available_textures.size()
+					var original_index = BALL_TEXTURES.find(available_textures[random_index])
+					if original_index in COOL_BALLS:
+						var ball_shading = ball.get_child(1)
+						ball_shading.texture = BALL_LIGHTING_2
 					ball_sprite.texture = available_textures[random_index]
 					# Remove used texture from available ones
 					available_textures.remove_at(random_index)
