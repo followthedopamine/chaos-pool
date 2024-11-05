@@ -1,6 +1,6 @@
 extends Sprite2D
 
-const POWER_INCREMENT = 0.2 # Speed the power charges at
+const POWER_INCREMENT = 0.075 # Speed the power charges at
 const MIN_POWER = POWER_INCREMENT
 const MAX_POWER = 20
 
@@ -26,7 +26,14 @@ const TIME_TO_HIDE_SHOT_CHARGE = 0.5
 var power_is_increasing = true
 var power = 0
 
+var level_is_loading = true
+
 signal shoot
+
+func _ready():
+	# Don't start handling input immediately or shot will fire from menu click
+	await get_tree().create_timer(0.05).timeout
+	level_is_loading = false
 
 func handle_input(delta):
 	if Input.is_action_just_pressed("reset"):
@@ -64,11 +71,13 @@ func update_power(delta):
 	update_charge_display()
 		
 func shoot_cue_ball():
+	print("Fired shot " + str(level.shot_counter))
 	cue_ball.apply_central_impulse(power * (get_player_target() - global_position))
 	power = MIN_POWER
 	hide_shot_charge()
 	Sound.create_sound_and_play(SHOT_SOUND, SHOT_MIN_VOLUME + power,self)
 	level.cue_ball_active = true
+	cue_ball.frames_below_threshold = 0
 	await get_tree().create_timer(MINIMUM_TIME_BETWEEN_SHOTS).timeout
 
 func angle_cue():
@@ -84,6 +93,8 @@ func check_if_player_is_pressing_menu():
 	return false
 	
 func can_handle_input() -> bool:
+	if level_is_loading:
+		return false
 	if level.cue_ball_active:
 		return false
 	if level.balls_moving: 
@@ -98,7 +109,7 @@ func can_handle_input() -> bool:
 		return false
 	return true
 
-func _process(delta):
+func _physics_process(delta):
 	if can_handle_input():
 		position_cue()
 		angle_cue()
