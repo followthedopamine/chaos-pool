@@ -1,42 +1,46 @@
 extends Area2D
 @onready var cue_ball = $"../../CueBall"
 @onready var level = $"../.."
-var ball_sinking
-var ball_sinking_sprite: Sprite2D
-var ball_velocity: float
-const FADE_OUT_SPEED = 12
-const SHRINK_SPEED = 10
+var balls_sinking = []
+#var ball_sinking_sprite: Sprite2D
+#var ball_velocity: float
+const FADE_OUT_SPEED = 6
+const SHRINK_SPEED = 5
 const BALL_SPEED = 2
 
-func does_ball_need_to_move():
-	var distance_from_pocket = abs(ball_sinking.position - position)
+func does_ball_need_to_move(ball):
+	var distance_from_pocket = abs(ball.position - position)
 	if(distance_from_pocket.length() > 2):
 		return true
 	return false
 
-func move_ball_to_pocket_center(delta):
-	if(does_ball_need_to_move()):
-		
-		var direction = position - ball_sinking.position
+func move_ball_to_pocket_center(delta, ball):
+	if(does_ball_need_to_move(ball)):
+		var ball_velocity = get_ball_speed_toward_pocket(ball)
+		var direction = position - ball.position
 		var movement = direction.normalized() * delta * BALL_SPEED * ball_velocity
+		print(ball_velocity)
 		# Don't move further than the remaining distance
 		if movement.length() > direction.length():
-			ball_sinking.position = position
+			ball.position = position
 		else:
-			ball_sinking.position += movement  
+			ball.position += movement
+		if abs(position - ball.position).length() > 40:
+			ball.position = position
 	else:
-		ball_sinking.position = position
+		ball.position = position
 
-func play_sinking_animation(delta):
-	if(does_ball_need_to_move()):
+func play_sinking_animation(delta, ball):
+	var ball_sinking_sprite = ball.get_child(0)
+	if(does_ball_need_to_move(ball)):
 		return
-	ball_sinking.modulate.a -= FADE_OUT_SPEED * delta
+	ball.modulate.a -= FADE_OUT_SPEED * delta
 	if ball_sinking_sprite.scale > Vector2.ZERO:
 		var shrink_amount = Vector2(SHRINK_SPEED, SHRINK_SPEED) * delta
 		ball_sinking_sprite.scale -= shrink_amount
 	else:
 		ball_sinking_sprite.scale = Vector2.ZERO
-		safely_destroy_ball(ball_sinking)
+		safely_destroy_ball(ball)
 		
 func get_ball_speed_toward_pocket(ball):
 	var direction = (global_position - ball.global_position).normalized()
@@ -50,13 +54,11 @@ func _on_body_entered(body: RigidBody2D):
 	if body.is_in_group("balls"):
 		if body == cue_ball:
 			sink_cue_ball()
-		ball_sinking = body
-		ball_sinking_sprite = ball_sinking.get_child(0)
+		balls_sinking.append(body)
 		
-		ball_velocity = get_ball_speed_toward_pocket(body)
-		ball_sinking.set_deferred("linear_velocity", Vector2.ZERO)
-		ball_sinking.set_deferred("angular_velocity", 0)
-		ball_sinking.set_deferred("freeze", true)
+		#body.set_deferred("linear_velocity", Vector2.ZERO)
+		#body.set_deferred("angular_velocity", 0)
+		body.set_deferred("freeze", true)
 		
 		
 
@@ -76,9 +78,11 @@ func safely_destroy_ball(body: RigidBody2D):
 		else:
 			level.ball_destroyed(body)
 			body.queue_free()
-		ball_sinking = null
+		var ball_index = balls_sinking.find(body)
+		balls_sinking.remove_at(ball_index)
 
 func _process(delta):
-	if ball_sinking:
-		move_ball_to_pocket_center(delta)
-		play_sinking_animation(delta)
+	if !balls_sinking.size() == 0:
+		for ball in balls_sinking:
+			move_ball_to_pocket_center(delta, ball)
+			play_sinking_animation(delta, ball)

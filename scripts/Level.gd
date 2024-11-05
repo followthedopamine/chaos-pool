@@ -131,8 +131,9 @@ var balls_stopped_frames = 0
 const BALLS_STOPPED_THRESHOLD = 3
 
 func check_if_balls_are_moving():
-	if balls_stopped_frames <= BALLS_STOPPED_THRESHOLD:
-		print("Balls stopped: " + str(balls_stopped_frames))
+	if balls_stopped_frames != 0:
+		if balls_stopped_frames <= BALLS_STOPPED_THRESHOLD:
+			print("Balls stopped: " + str(balls_stopped_frames))
 	if cue_ball_active or level_ended:
 		return
 
