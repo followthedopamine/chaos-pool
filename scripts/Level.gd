@@ -127,21 +127,33 @@ func set_cue_ball_inactive():
 func on_cue_ball_stopped():
 	call_deferred("set_cue_ball_inactive")
 
+var balls_stopped_frames = 0
+const BALLS_STOPPED_THRESHOLD = 3
+
 func check_if_balls_are_moving():
+	if balls_stopped_frames <= BALLS_STOPPED_THRESHOLD:
+		print("Balls stopped: " + str(balls_stopped_frames))
 	if cue_ball_active or level_ended:
 		return
-		
+
 	balls_moving = false
 	for ball in active_balls:
-		if is_instance_valid(ball):
-			if ball.linear_velocity.length() >= Global.BALL_MOVING_THRESHHOLD:
-				balls_moving = true
-				break
-			
-	if balls_moving != prev_balls_moving:
-		prev_balls_moving = balls_moving
-		if !balls_moving:
-			handle_balls_stopped()
+		if is_instance_valid(ball) and ball.linear_velocity.length() >= Global.BALL_MOVING_THRESHHOLD:
+			balls_moving = true
+			break
+
+	if balls_moving:
+		balls_stopped_frames = 0
+	else:
+		balls_stopped_frames += 1
+
+	if balls_stopped_frames >= BALLS_STOPPED_THRESHOLD:
+		if balls_moving != prev_balls_moving:
+			prev_balls_moving = balls_moving
+			if !balls_moving:
+				handle_balls_stopped()
+	else:
+		prev_balls_moving = true
 	
 			
 func handle_balls_stopped():

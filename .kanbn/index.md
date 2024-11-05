@@ -32,7 +32,6 @@ completedColumns:
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
 - [cue-ball-texture-shading](tasks/cue-ball-texture-shading.md)
 - [bug-the-collision-on-the-table-is-pretty-awful](tasks/bug-the-collision-on-the-table-is-pretty-awful.md)
-- [shading-for-the-cooler-coloured-balls](tasks/shading-for-the-cooler-coloured-balls.md)
 - [textures-for-obstacles](tasks/textures-for-obstacles.md)
 - [bug-somehow-balls-still-not-getting-counted-correctly-on-destruction](tasks/bug-somehow-balls-still-not-getting-counted-correctly-on-destruction.md)
 - [texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved](tasks/texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved.md)
@@ -40,6 +39,10 @@ completedColumns:
 - [adding-new-levels-sucks](tasks/adding-new-levels-sucks.md)
 
 ## In Progress
+
+- [bug-shot-counter-doesn-t-always-increase](tasks/bug-shot-counter-doesn-t-always-increase.md)
+- [bug-can-t-sink-multiple-balls-at-once](tasks/bug-can-t-sink-multiple-balls-at-once.md)
+- [bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls](tasks/bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls.md)
 
 ## Done
 
@@ -51,6 +54,7 @@ completedColumns:
 - [bug-timer-doesn-t-display-the-same-time-as-paused-in-game-time](tasks/bug-timer-doesn-t-display-the-same-time-as-paused-in-game-time.md)
 - [bug-timer-doesn-t-work-on-level-2](tasks/bug-timer-doesn-t-work-on-level-2.md)
 - [all-ball-textures](tasks/all-ball-textures.md)
+- [shading-for-the-cooler-coloured-balls](tasks/shading-for-the-cooler-coloured-balls.md)
 - [bug-sound-rapidly-repeats-on-ball-sunk](tasks/bug-sound-rapidly-repeats-on-ball-sunk.md)
 - [bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully](tasks/bug-ball-teleports-into-the-pocket-instead-of-animating-gracefully.md)
 - [bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars](tasks/bug-level-2-locked-after-beating-level-1-and-level-1-0-stars-level-2-3-stars.md)
