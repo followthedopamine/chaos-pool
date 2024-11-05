@@ -37,7 +37,6 @@ completedColumns:
 - [texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved](tasks/texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved.md)
 - [bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file](tasks/bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file.md)
 - [adding-new-levels-sucks](tasks/adding-new-levels-sucks.md)
-- [bug-sound-gets-very-loud-with-lots-of-balls-clacking](tasks/bug-sound-gets-very-loud-with-lots-of-balls-clacking.md)
 
 ## In Progress
 
@@ -46,6 +45,7 @@ completedColumns:
 ## Done
 
 - [bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity](tasks/bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity.md)
+- [bug-sound-gets-very-loud-with-lots-of-balls-clacking](tasks/bug-sound-gets-very-loud-with-lots-of-balls-clacking.md)
 - [bug-can-t-sink-multiple-balls-at-once](tasks/bug-can-t-sink-multiple-balls-at-once.md)
 - [bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls](tasks/bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls.md)
 - [add-the-background](tasks/add-the-background.md)

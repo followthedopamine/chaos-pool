@@ -77,16 +77,24 @@ func create_sound_and_play(file, volume_db, parent):
 	parent.add_child(sound)
 	sound.bus = "SFX"
 	sound.stream = file
-	sound.volume_db = volume_db
+	
+	# Apply volume normalization
+	var normalized_volume = linear_to_db(sfx_volume / 100.0 * clamp(1.0 - len(sounds_to_free) / 10.0, 0.1, 1.0))
+	sound.volume_db = volume_db + normalized_volume
+	
 	sound.play()
 	sounds_to_free.append(sound)
-	
+
 func create_sound_and_loop(file, volume_db, parent):
 	var sound = AudioStreamPlayer2D.new()
 	parent.add_child(sound)
 	sound.bus = "SFX"
 	sound.stream = file
-	sound.volume_db = volume_db
+	
+	# Apply volume normalization
+	var normalized_volume = linear_to_db(sfx_volume / 100.0 * clamp(1.0 - len(loops) / 5.0, 0.1, 1.0))
+	sound.volume_db = volume_db + normalized_volume
+	
 	sound.play()
 	loops.append(sound)
 	
