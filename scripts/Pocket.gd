@@ -8,6 +8,7 @@ const FADE_OUT_SPEED = 6
 const SHRINK_SPEED = 5
 const BALL_SPEED = 2
 
+
 func does_ball_need_to_move(ball):
 	var distance_from_pocket = abs(ball.position - position)
 	if(distance_from_pocket.length() > 2):
@@ -16,7 +17,9 @@ func does_ball_need_to_move(ball):
 
 func move_ball_to_pocket_center(delta, ball):
 	if(does_ball_need_to_move(ball)):
-		var ball_velocity = get_ball_speed_toward_pocket(ball)
+		# A min ball velocity means ball should never take absurdly long time
+		# to enter pocket
+		var ball_velocity = max(get_ball_speed_toward_pocket(ball), 0.5)
 		var direction = position - ball.position
 		var movement = direction.normalized() * delta * BALL_SPEED * ball_velocity
 		#print(ball_velocity)

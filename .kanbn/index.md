@@ -35,7 +35,6 @@ completedColumns:
 - [bug-the-collision-on-the-table-is-pretty-awful](tasks/bug-the-collision-on-the-table-is-pretty-awful.md)
 - [textures-for-obstacles](tasks/textures-for-obstacles.md)
 - [bug-somehow-balls-still-not-getting-counted-correctly-on-destruction](tasks/bug-somehow-balls-still-not-getting-counted-correctly-on-destruction.md)
-- [bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket](tasks/bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket.md)
 
 ## In Progress
 
@@ -51,6 +50,7 @@ completedColumns:
 - [bug-sometimes-new-ball-is-immediately-loaded-might-be-when-cue-ball-is-sunk](tasks/bug-sometimes-new-ball-is-immediately-loaded-might-be-when-cue-ball-is-sunk.md)
 - [bug-ball-respawns-too-fast-when-sunk](tasks/bug-ball-respawns-too-fast-when-sunk.md)
 - [bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls](tasks/bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls.md)
+- [bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket](tasks/bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket.md)
 - [add-the-background](tasks/add-the-background.md)
 - [bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display](tasks/bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display.md)
 - [texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved](tasks/texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved.md)
