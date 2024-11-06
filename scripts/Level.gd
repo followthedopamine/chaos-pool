@@ -40,7 +40,8 @@ const CUE_BALLS_DISPLAY = preload("res://scenes/Cue_Balls_Display.tscn")
 const TABLE_BACKGROUND = preload("res://scenes/Table_Background.tscn")
 
 var time = null
-
+var balls_stopped_frames = 0
+const BALLS_STOPPED_THRESHOLD = 3
 var prev_balls_moving = false
 var cue_ball_active = false
 var balls_moving = false
@@ -127,35 +128,25 @@ func set_cue_ball_inactive():
 func on_cue_ball_stopped():
 	call_deferred("set_cue_ball_inactive")
 
-var balls_stopped_frames = 0
-const BALLS_STOPPED_THRESHOLD = 3
+
 
 func check_if_balls_are_moving():
-	if balls_stopped_frames != 0:
-		if balls_stopped_frames <= BALLS_STOPPED_THRESHOLD:
-			print("Balls stopped: " + str(balls_stopped_frames))
-	if cue_ball_active or level_ended:
-		return
-
-	balls_moving = false
-	for ball in active_balls:
-		if is_instance_valid(ball) and ball.linear_velocity.length() >= Global.BALL_MOVING_THRESHHOLD:
-			balls_moving = true
-			break
-
-	if balls_moving:
-		balls_stopped_frames = 0
-	else:
-		balls_stopped_frames += 1
-
-	if balls_stopped_frames >= BALLS_STOPPED_THRESHOLD:
-		if balls_moving != prev_balls_moving:
-			prev_balls_moving = balls_moving
-			if !balls_moving:
-				handle_balls_stopped()
-	else:
-		prev_balls_moving = true
+	if cue_ball_active:
+		return true
 	
+	for ball in active_balls:
+		if ball.linear_velocity.length() > Global.BALL_MOVING_THRESHHOLD:
+			balls_stopped_frames = 0
+			prev_balls_moving = true
+			return true
+	
+	if balls_stopped_frames >= BALLS_STOPPED_THRESHOLD:
+		if prev_balls_moving == true:
+			prev_balls_moving = false
+			handle_balls_stopped()
+		return false
+		
+	balls_stopped_frames += 1
 			
 func handle_balls_stopped():
 	if active_balls.is_empty():
@@ -164,6 +155,7 @@ func handle_balls_stopped():
 		fail_level()
 	else:
 		shot_counter += 1
+		cue_ball.load_cue_ball()
 		balls_stopped.emit()
 		print("Balls stopped. Remaining balls: ", active_balls.size())
 

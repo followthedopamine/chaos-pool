@@ -72,9 +72,9 @@ func safely_destroy_ball(body: RigidBody2D):
 		if body == cue_ball:
 			cue_ball.is_sinking = false
 			level.cue_ball_active = false
-			cue_ball.respawn_cue_ball()
-			if !level.balls_moving:
-				level.handle_balls_stopped()
+			cue_ball.needs_respawn = true
+			#if !level.balls_moving:
+				#level.handle_balls_stopped()
 		else:
 			level.ball_destroyed(body)
 			body.queue_free()

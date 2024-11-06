@@ -14,6 +14,8 @@ var frames_below_threshold := 0
 
 var is_sinking = false
 
+var needs_respawn = false
+
 
 @onready var cue_ball_sprite = $CueBallSprite
 @onready var explosion_sprite = $ExplosionSprite
@@ -39,7 +41,7 @@ func respawn_cue_ball():
 	print("Respawning cue ball")
 	linear_velocity = Vector2.ZERO
 	global_position = initial_position
-	load_cue_ball()
+	needs_respawn = false 
 
 func hide_ball():
 	explosion_sprite.visible = false
@@ -107,6 +109,8 @@ func trigger_constant_effects():
 			push()
 	
 func reset_cue_ball():
+	if needs_respawn:
+		respawn_cue_ball()
 	freeze = false
 	frames_below_threshold = 0
 	cue_ball_sprite.hframes = 1
@@ -152,7 +156,8 @@ func check_cue_ball_still_moving():
 		frames_below_threshold = 0
 			
 func _on_balls_stopped():
-	load_cue_ball()
+	#load_cue_ball()
+	pass
 			
 func _physics_process(_delta):
 	#print(level.cue_ball_active)

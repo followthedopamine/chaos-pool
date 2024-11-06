@@ -26,6 +26,7 @@ completedColumns:
 
 - [levels-1-5](tasks/levels-1-5.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
+- [bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded](tasks/bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
@@ -37,17 +38,19 @@ completedColumns:
 - [texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved](tasks/texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved.md)
 - [bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file](tasks/bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file.md)
 - [adding-new-levels-sucks](tasks/adding-new-levels-sucks.md)
+- [bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket](tasks/bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket.md)
 
 ## In Progress
 
-- [bug-shot-counter-doesn-t-always-increase](tasks/bug-shot-counter-doesn-t-always-increase.md)
-- [redo-shot-counter-balls-stopping-from-scratch](tasks/redo-shot-counter-balls-stopping-from-scratch.md)
-
 ## Done
 
+- [bug-shot-counter-doesn-t-always-increase](tasks/bug-shot-counter-doesn-t-always-increase.md)
 - [bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity](tasks/bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity.md)
+- [redo-shot-counter-balls-stopping-from-scratch](tasks/redo-shot-counter-balls-stopping-from-scratch.md)
 - [bug-sound-gets-very-loud-with-lots-of-balls-clacking](tasks/bug-sound-gets-very-loud-with-lots-of-balls-clacking.md)
 - [bug-can-t-sink-multiple-balls-at-once](tasks/bug-can-t-sink-multiple-balls-at-once.md)
+- [bug-sometimes-new-ball-is-immediately-loaded-might-be-when-cue-ball-is-sunk](tasks/bug-sometimes-new-ball-is-immediately-loaded-might-be-when-cue-ball-is-sunk.md)
+- [bug-ball-respawns-too-fast-when-sunk](tasks/bug-ball-respawns-too-fast-when-sunk.md)
 - [bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls](tasks/bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls.md)
 - [add-the-background](tasks/add-the-background.md)
 - [bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display](tasks/bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display.md)

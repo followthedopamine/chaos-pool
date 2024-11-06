@@ -27,6 +27,7 @@ var power_is_increasing = true
 var power = 0
 
 var level_is_loading = true
+var last_shot = -1
 
 signal shoot
 
@@ -79,6 +80,9 @@ func shoot_cue_ball():
 	level.cue_ball_active = true
 	# Fixes a bug where cue ball would instantly become inactive 
 	cue_ball.frames_below_threshold = 0
+	level.balls_stopped_frames = 0
+	level.prev_balls_moving = true
+	last_shot = level.shot_counter
 	await get_tree().create_timer(MINIMUM_TIME_BETWEEN_SHOTS).timeout
 
 func angle_cue():
@@ -94,6 +98,8 @@ func check_if_player_is_pressing_menu():
 	return false
 	
 func can_handle_input() -> bool:
+	if last_shot == level.shot_counter:
+		return false
 	if level_is_loading:
 		return false
 	if level.cue_ball_active:
