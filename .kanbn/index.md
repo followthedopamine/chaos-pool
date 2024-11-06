@@ -35,15 +35,14 @@ completedColumns:
 - [bug-the-collision-on-the-table-is-pretty-awful](tasks/bug-the-collision-on-the-table-is-pretty-awful.md)
 - [textures-for-obstacles](tasks/textures-for-obstacles.md)
 - [bug-somehow-balls-still-not-getting-counted-correctly-on-destruction](tasks/bug-somehow-balls-still-not-getting-counted-correctly-on-destruction.md)
-- [texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved](tasks/texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved.md)
-- [bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file](tasks/bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file.md)
-- [adding-new-levels-sucks](tasks/adding-new-levels-sucks.md)
 - [bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket](tasks/bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket.md)
 
 ## In Progress
 
 ## Done
 
+- [adding-new-levels-sucks](tasks/adding-new-levels-sucks.md)
+- [bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file](tasks/bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file.md)
 - [bug-shot-counter-doesn-t-always-increase](tasks/bug-shot-counter-doesn-t-always-increase.md)
 - [bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity](tasks/bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity.md)
 - [redo-shot-counter-balls-stopping-from-scratch](tasks/redo-shot-counter-balls-stopping-from-scratch.md)
@@ -54,6 +53,7 @@ completedColumns:
 - [bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls](tasks/bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls.md)
 - [add-the-background](tasks/add-the-background.md)
 - [bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display](tasks/bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display.md)
+- [texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved](tasks/texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved.md)
 - [time-and-cue-ball-display-should-be-spawned-in-by-level-script-for-simpler-level-creation](tasks/time-and-cue-ball-display-should-be-spawned-in-by-level-script-for-simpler-level-creation.md)
 - [bug-timer-at-end-of-level-displays-the-wrong-time-if-you-don-t-win-on-first-playthrough](tasks/bug-timer-at-end-of-level-displays-the-wrong-time-if-you-don-t-win-on-first-playthrough.md)
 - [bug-timer-doesn-t-display-the-same-time-as-paused-in-game-time](tasks/bug-timer-doesn-t-display-the-same-time-as-paused-in-game-time.md)

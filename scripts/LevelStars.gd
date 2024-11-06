@@ -8,6 +8,9 @@ const DEFAULT_REGION = [18, 68, 60, 18]
 func get_stars():
 	var index = int(level_button_text.text) - 1
 	var number_of_stars = min(Save.stars[index], STAR_REGIONS.size() - 1) 
+	var new_atlas = AtlasTexture.new()
+	new_atlas.atlas = texture.atlas
+	texture = new_atlas
 	self.texture.region = Rect2(STAR_REGIONS[number_of_stars], DEFAULT_REGION[1], DEFAULT_REGION[2], DEFAULT_REGION[3])
 	# This is working correctly except if you copy the level button
 	# it always takes the last level's stars in list ecause it's overwriting 

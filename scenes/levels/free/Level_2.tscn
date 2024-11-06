@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://f4uvjp4h6ncd"]
 
-[ext_resource type="Script" path="res://scripts/Level.gd" id="1_a5qft"]
-[ext_resource type="PackedScene" uid="uid://b36tv2qkejihp" path="res://scenes/Cue_ball.tscn" id="2_dwidy"]
-[ext_resource type="PackedScene" uid="uid://dv22eaqmagwj8" path="res://scenes/Ball.tscn" id="2_scnxk"]
-[ext_resource type="PackedScene" uid="uid://bv3o2m1rpr8yt" path="res://scenes/Cue.tscn" id="3_3p12d"]
-[ext_resource type="PackedScene" uid="uid://bguhci6hl27rj" path="res://scenes/Table.tscn" id="7_crmhv"]
-[ext_resource type="Script" path="res://scripts/Glass.gd" id="16_n31ak"]
-[ext_resource type="Texture2D" uid="uid://c0hc7wlc4xrp5" path="res://images/placeholder/wall-placeholder.png" id="17_ecrln"]
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_cbpwi"]
+[ext_resource type="PackedScene" uid="uid://dv22eaqmagwj8" path="res://scenes/Ball.tscn" id="2_vt27j"]
+[ext_resource type="PackedScene" uid="uid://bv3o2m1rpr8yt" path="res://scenes/Cue.tscn" id="3_ddnpw"]
+[ext_resource type="PackedScene" uid="uid://b36tv2qkejihp" path="res://scenes/Cue_ball.tscn" id="4_6hxg3"]
+[ext_resource type="Texture2D" uid="uid://c0hc7wlc4xrp5" path="res://images/placeholder/wall-placeholder.png" id="5_ky4nm"]
+[ext_resource type="Script" path="res://scripts/Glass.gd" id="6_ccsmi"]
+[ext_resource type="PackedScene" uid="uid://bguhci6hl27rj" path="res://scenes/Table.tscn" id="7_u7s2f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nof4j"]
 size = Vector2(46, 4)
@@ -15,18 +15,18 @@ size = Vector2(46, 4)
 size = Vector2(56, 56)
 
 [node name="Level2" type="Node2D"]
-script = ExtResource("1_a5qft")
+script = ExtResource("1_cbpwi")
 cue_balls = Array[int]([0, 3, 1, 2, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0])
 
-[node name="Ball" parent="." instance=ExtResource("2_scnxk")]
+[node name="Ball" parent="." instance=ExtResource("2_vt27j")]
 position = Vector2(483, 196)
 
-[node name="Ball2" parent="." instance=ExtResource("2_scnxk")]
+[node name="Ball2" parent="." instance=ExtResource("2_vt27j")]
 position = Vector2(162, 152)
 
-[node name="Cue" parent="." instance=ExtResource("3_3p12d")]
+[node name="Cue" parent="." instance=ExtResource("3_ddnpw")]
 
-[node name="CueBall" parent="." instance=ExtResource("2_dwidy")]
+[node name="CueBall" parent="." instance=ExtResource("4_6hxg3")]
 position = Vector2(271, 246)
 
 [node name="Wall" type="RigidBody2D" parent="."]
@@ -38,7 +38,7 @@ angular_damp = 10.0
 
 [node name="WallSprite" type="Sprite2D" parent="Wall"]
 scale = Vector2(0.804635, 0.0618307)
-texture = ExtResource("17_ecrln")
+texture = ExtResource("5_ky4nm")
 
 [node name="WallCollision" type="CollisionShape2D" parent="Wall"]
 shape = SubResource("RectangleShape2D_nof4j")
@@ -52,7 +52,7 @@ angular_damp = 10.0
 
 [node name="WallSprite" type="Sprite2D" parent="Wall4"]
 scale = Vector2(0.804635, 0.0618307)
-texture = ExtResource("17_ecrln")
+texture = ExtResource("5_ky4nm")
 
 [node name="WallCollision" type="CollisionShape2D" parent="Wall4"]
 shape = SubResource("RectangleShape2D_nof4j")
@@ -67,7 +67,7 @@ angular_damp = 10.0
 
 [node name="WallSprite" type="Sprite2D" parent="Wall2"]
 scale = Vector2(0.804635, 0.0618307)
-texture = ExtResource("17_ecrln")
+texture = ExtResource("5_ky4nm")
 
 [node name="WallCollision" type="CollisionShape2D" parent="Wall2"]
 shape = SubResource("RectangleShape2D_nof4j")
@@ -82,7 +82,7 @@ angular_damp = 10.0
 
 [node name="WallSprite" type="Sprite2D" parent="Wall3"]
 scale = Vector2(0.804635, 0.0618307)
-texture = ExtResource("17_ecrln")
+texture = ExtResource("5_ky4nm")
 
 [node name="WallCollision" type="CollisionShape2D" parent="Wall3"]
 shape = SubResource("RectangleShape2D_nof4j")
@@ -93,7 +93,7 @@ collision_layer = 4
 collision_mask = 5
 max_contacts_reported = 20
 contact_monitor = true
-script = ExtResource("16_n31ak")
+script = ExtResource("6_ccsmi")
 
 [node name="GlassCollision" type="CollisionShape2D" parent="Glass"]
 z_index = 1
@@ -104,8 +104,8 @@ shape = SubResource("RectangleShape2D_1ht6s")
 [node name="GlassSprite" type="Sprite2D" parent="Glass"]
 rotation = -0.637045
 scale = Vector2(0.165, 3.165)
-texture = ExtResource("17_ecrln")
+texture = ExtResource("5_ky4nm")
 
-[node name="Table" parent="." instance=ExtResource("7_crmhv")]
+[node name="Table" parent="." instance=ExtResource("7_u7s2f")]
 
 [connection signal="body_entered" from="Glass" to="Glass" method="_on_body_entered"]

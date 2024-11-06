@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgujcky8havb7"]
+
+[ext_resource type="Script" path="res://scripts/Level.gd" id="1_66s1f"]
+[ext_resource type="PackedScene" uid="uid://dv22eaqmagwj8" path="res://scenes/Ball.tscn" id="2_ew51g"]
+[ext_resource type="PackedScene" uid="uid://bv3o2m1rpr8yt" path="res://scenes/Cue.tscn" id="3_bs16p"]
+[ext_resource type="PackedScene" uid="uid://b36tv2qkejihp" path="res://scenes/Cue_ball.tscn" id="4_x4ch4"]
+[ext_resource type="PackedScene" uid="uid://bguhci6hl27rj" path="res://scenes/Table.tscn" id="5_hre0k"]
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_66s1f")
+cue_balls = Array[int]([0, 3, 1, 2, 2, 0, 4, 0, 0, 0, 0, 0, 0, 0])
+
+[node name="Ball" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(194, 215)
+
+[node name="Ball2" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(162, 152)
+
+[node name="Ball3" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(194, 199)
+
+[node name="Ball4" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(193, 183)
+
+[node name="Ball5" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(193, 168)
+
+[node name="Ball6" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(191, 151)
+
+[node name="Ball7" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(178, 210)
+
+[node name="Ball8" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(178, 195)
+
+[node name="Ball9" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(178, 180)
+
+[node name="Ball10" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(177, 166)
+
+[node name="Ball11" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(177, 152)
+
+[node name="Ball12" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(162, 208)
+
+[node name="Ball13" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(162, 194)
+
+[node name="Ball14" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(162, 180)
+
+[node name="Ball15" parent="." instance=ExtResource("2_ew51g")]
+position = Vector2(162, 166)
+
+[node name="Cue" parent="." instance=ExtResource("3_bs16p")]
+
+[node name="CueBall" parent="." instance=ExtResource("4_x4ch4")]
+position = Vector2(271, 246)
+
+[node name="Table" parent="." instance=ExtResource("5_hre0k")]
