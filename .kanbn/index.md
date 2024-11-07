@@ -25,8 +25,6 @@ completedColumns:
 
 ## Todo
 
-- [levels-1-5](tasks/levels-1-5.md)
-- [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
@@ -37,8 +35,12 @@ completedColumns:
 
 ## In Progress
 
+- [levels-1-5](tasks/levels-1-5.md)
+- [sounds-for-different-walls](tasks/sounds-for-different-walls.md)
+
 ## Done
 
+- [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [textures-for-obstacles](tasks/textures-for-obstacles.md)
 - [cue-ball-texture-shading](tasks/cue-ball-texture-shading.md)
 - [adding-new-levels-sucks](tasks/adding-new-levels-sucks.md)

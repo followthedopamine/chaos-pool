@@ -21,6 +21,8 @@ preload("res://sounds/music/Waypoint_K.mp3")]
 
 const BALL_HITS_TABLE_SOUND = preload("res://sounds/BallHitsWall.mp3")
 const BALL_HITS_WOOD_SOUND = preload("res://sounds/Wood.mp3")
+const BALL_HITS_METAL_SOUND = preload("res://sounds/Retro Jump Simple A 01.wav")
+const BALL_HITS_GLASS_SOUND = preload("res://sounds/Retro FootStep Mud 01.wav")
 
 const RETRO_CHARGE_13 = preload("res://sounds/Retro Charge 13.wav")
 const RETRO_EXPLOSION_SHORT_15 = preload("res://sounds/Retro Explosion Short 15.wav")
@@ -108,9 +110,17 @@ func ball_collision_sound(prev_frame_velocity, body):
 		var volume = min(-60 + 0.13 * prev_frame_velocity.length(), 0)
 		Sound.create_sound_and_play(BALL_HITS_TABLE_SOUND, volume, body)
 	
-	if "Wall" in body.name:
+	if "Wood" in body.name:
 		var volume = min(-60 + 0.13 * prev_frame_velocity.length(), 0)
 		Sound.create_sound_and_play(BALL_HITS_WOOD_SOUND, volume, body)
+		
+	if "Glass" in body.name:
+		var volume = min(-60 + 0.13 * prev_frame_velocity.length(), 0)
+		Sound.create_sound_and_play(BALL_HITS_GLASS_SOUND, volume, body)
+		
+	if "Metal" in body.name:
+		var volume = min(-60 + 0.13 * prev_frame_velocity.length(), 0)
+		Sound.create_sound_and_play(BALL_HITS_METAL_SOUND, volume, body)
 
 func explosion(parent):
 	create_sound_and_play(RETRO_EXPLOSION_SHORT_15, -8, parent)
