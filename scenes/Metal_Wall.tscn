@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bejdhrbn12vox"]
+
+[ext_resource type="Texture2D" uid="uid://csyrp7epgcvts" path="res://images/sprites/Metal.png" id="1_t0chl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nof4j"]
+size = Vector2(10, 44)
+
+[node name="MetalWall" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+mass = 100000.0
+linear_damp = 4.0
+angular_damp = 10.0
+
+[node name="WallSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_t0chl")
+
+[node name="WallCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nof4j")

@@ -7,7 +7,7 @@ var balls_sinking = []
 const FADE_OUT_SPEED = 6
 const SHRINK_SPEED = 5
 const BALL_SPEED = 2
-const MIN_SINK_SPEED = 10
+const MIN_SINK_SPEED = 15
 
 
 func does_ball_need_to_move(ball):

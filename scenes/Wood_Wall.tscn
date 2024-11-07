@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt7iasmer7q0u"]
+
+[ext_resource type="Texture2D" uid="uid://b87hdo0btdj76" path="res://images/sprites/Wood.png" id="1_h7uww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nof4j"]
+size = Vector2(8, 42)
+
+[node name="WoodWall" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 7
+linear_damp = 4.0
+angular_damp = 10.0
+
+[node name="WallSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_h7uww")
+
+[node name="WallCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nof4j")

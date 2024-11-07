@@ -21,6 +21,7 @@ completedColumns:
 - [split-cue-ball](tasks/split-cue-ball.md)
 - [sound-for-balls-being-pocketed](tasks/sound-for-balls-being-pocketed.md)
 - [save-player-s-best-time](tasks/save-player-s-best-time.md)
+- [sand-on-the-felt](tasks/sand-on-the-felt.md)
 
 ## Todo
 
@@ -30,15 +31,15 @@ completedColumns:
 - [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
-- [textures-for-obstacles](tasks/textures-for-obstacles.md)
 - [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
 - [bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true](tasks/bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true.md)
-- [bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket](tasks/bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket.md)
+- [glass-shattering-animation](tasks/glass-shattering-animation.md)
 
 ## In Progress
 
 ## Done
 
+- [textures-for-obstacles](tasks/textures-for-obstacles.md)
 - [cue-ball-texture-shading](tasks/cue-ball-texture-shading.md)
 - [adding-new-levels-sucks](tasks/adding-new-levels-sucks.md)
 - [bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file](tasks/bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file.md)
@@ -48,6 +49,7 @@ completedColumns:
 - [bug-sound-gets-very-loud-with-lots-of-balls-clacking](tasks/bug-sound-gets-very-loud-with-lots-of-balls-clacking.md)
 - [bug-can-t-sink-multiple-balls-at-once](tasks/bug-can-t-sink-multiple-balls-at-once.md)
 - [bug-sometimes-new-ball-is-immediately-loaded-might-be-when-cue-ball-is-sunk](tasks/bug-sometimes-new-ball-is-immediately-loaded-might-be-when-cue-ball-is-sunk.md)
+- [bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket](tasks/bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket.md)
 - [bug-the-collision-on-the-table-is-pretty-awful](tasks/bug-the-collision-on-the-table-is-pretty-awful.md)
 - [bug-somehow-balls-still-not-getting-counted-correctly-on-destruction](tasks/bug-somehow-balls-still-not-getting-counted-correctly-on-destruction.md)
 - [bug-ball-respawns-too-fast-when-sunk](tasks/bug-ball-respawns-too-fast-when-sunk.md)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbb7poy54om4k"]
+
+[ext_resource type="Script" path="res://scripts/Glass.gd" id="1_vl7i4"]
+[ext_resource type="Texture2D" uid="uid://bwj6tojijrpep" path="res://images/sprites/Glass.png" id="2_loacv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ht6s"]
+size = Vector2(8, 42)
+
+[node name="GlassWall" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 5
+mass = 100000.0
+max_contacts_reported = 20
+contact_monitor = true
+script = ExtResource("1_vl7i4")
+
+[node name="GlassCollision" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource("RectangleShape2D_1ht6s")
+
+[node name="GlassSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_loacv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
