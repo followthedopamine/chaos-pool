@@ -17,7 +17,7 @@ var is_sinking = false
 var needs_respawn = false
 
 
-@onready var cue_ball_sprite = $CueBallSprite
+@onready var cue_ball_sprite = $CueBallMask/CueBallSprite
 @onready var explosion_sprite = $ExplosionSprite
 @onready var level = $".."
 @onready var cue_ball_type = level.cue_balls[0]

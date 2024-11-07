@@ -1,8 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://b36tv2qkejihp"]
+[gd_scene load_steps=32 format=3 uid="uid://b36tv2qkejihp"]
 
 [ext_resource type="Script" path="res://scripts/CueBall.gd" id="1_vfq5q"]
-[ext_resource type="Texture2D" uid="uid://bek0sinan74w6" path="res://images/sprites/Ball Lighting.png" id="2_gpo2q"]
+[ext_resource type="Texture2D" uid="uid://5mmlbk7cjusc" path="res://images/sprites/ball-mask.png" id="2_0avhr"]
+[ext_resource type="Texture2D" uid="uid://bo0va54ttiwkq" path="res://images/sprites/Cue-Ball.png" id="2_telu2"]
+[ext_resource type="Texture2D" uid="uid://dtuh6wm8kdfkm" path="res://images/sprites/Ball_Lighting_2.png" id="3_l8xpg"]
 [ext_resource type="Script" path="res://scripts/BallShading.gd" id="3_pw8rj"]
+[ext_resource type="Script" path="res://scripts/AnimateBallSprite.gd" id="3_s0yp8"]
 [ext_resource type="Texture2D" uid="uid://k8muokcpla5b" path="res://images/sprites/Ball Animations-Sheet.png" id="4_tlxmn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_300ds"]
@@ -277,21 +280,27 @@ contact_monitor = true
 linear_damp = 0.5
 script = ExtResource("1_vfq5q")
 
-[node name="CueBallSprite" type="Sprite2D" parent="."]
-texture = SubResource("CompressedTexture2D_ir13i")
+[node name="CueBallMask" type="Sprite2D" parent="."]
+clip_children = 1
+texture_filter = 1
+texture = ExtResource("2_0avhr")
+script = ExtResource("3_pw8rj")
+
+[node name="CueBallSprite" type="Sprite2D" parent="CueBallMask"]
+texture = ExtResource("2_telu2")
 hframes = 8
 vframes = 3
+script = ExtResource("3_s0yp8")
+
+[node name="BallShading" type="Sprite2D" parent="CueBallMask/CueBallSprite"]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("3_l8xpg")
+script = ExtResource("3_pw8rj")
 
 [node name="ExplosionSprite" type="Sprite2D" parent="."]
 visible = false
 texture = SubResource("CompressedTexture2D_ir13i")
-
-[node name="BallShading" type="Sprite2D" parent="."]
-visible = false
-z_index = 2
-texture_filter = 1
-texture = ExtResource("2_gpo2q")
-script = ExtResource("3_pw8rj")
 
 [node name="CueBallCollision" type="CollisionShape2D" parent="."]
 visible = false

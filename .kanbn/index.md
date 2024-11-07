@@ -26,19 +26,20 @@ completedColumns:
 
 - [levels-1-5](tasks/levels-1-5.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
-- [bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded](tasks/bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
-- [cue-ball-texture-shading](tasks/cue-ball-texture-shading.md)
 - [textures-for-obstacles](tasks/textures-for-obstacles.md)
-- [bug-somehow-balls-still-not-getting-counted-correctly-on-destruction](tasks/bug-somehow-balls-still-not-getting-counted-correctly-on-destruction.md)
+- [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
+- [bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true](tasks/bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true.md)
+- [bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket](tasks/bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket.md)
 
 ## In Progress
 
 ## Done
 
+- [cue-ball-texture-shading](tasks/cue-ball-texture-shading.md)
 - [adding-new-levels-sucks](tasks/adding-new-levels-sucks.md)
 - [bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file](tasks/bug-game-crashes-when-new-levels-are-added-because-number-of-stars-can-t-display-with-old-save-file.md)
 - [bug-shot-counter-doesn-t-always-increase](tasks/bug-shot-counter-doesn-t-always-increase.md)
@@ -48,9 +49,9 @@ completedColumns:
 - [bug-can-t-sink-multiple-balls-at-once](tasks/bug-can-t-sink-multiple-balls-at-once.md)
 - [bug-sometimes-new-ball-is-immediately-loaded-might-be-when-cue-ball-is-sunk](tasks/bug-sometimes-new-ball-is-immediately-loaded-might-be-when-cue-ball-is-sunk.md)
 - [bug-the-collision-on-the-table-is-pretty-awful](tasks/bug-the-collision-on-the-table-is-pretty-awful.md)
+- [bug-somehow-balls-still-not-getting-counted-correctly-on-destruction](tasks/bug-somehow-balls-still-not-getting-counted-correctly-on-destruction.md)
 - [bug-ball-respawns-too-fast-when-sunk](tasks/bug-ball-respawns-too-fast-when-sunk.md)
 - [bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls](tasks/bug-sometimes-ball-just-rolls-away-forever-pocket-related-possibly-due-to-not-being-able-to-sink-multiple-balls.md)
-- [bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket](tasks/bug-ball-can-sometimes-take-a-really-really-long-time-to-make-it-into-pocket.md)
 - [add-the-background](tasks/add-the-background.md)
 - [bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display](tasks/bug-sinking-a-cue-ball-doesn-t-remove-it-from-the-cue-ball-display.md)
 - [texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved](tasks/texture-should-scroll-while-ball-rolls-into-pocket-and-rotational-velocity-should-be-preserved.md)
