@@ -1,76 +1,45 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgujcky8havb7"]
+[gd_scene load_steps=7 format=3 uid="uid://dg2bxtwsw83on"]
 
 [ext_resource type="Script" path="res://scripts/Level.gd" id="1_66s1f"]
 [ext_resource type="PackedScene" uid="uid://dv22eaqmagwj8" path="res://scenes/Ball.tscn" id="2_ew51g"]
 [ext_resource type="PackedScene" uid="uid://bv3o2m1rpr8yt" path="res://scenes/Cue.tscn" id="3_bs16p"]
 [ext_resource type="PackedScene" uid="uid://b36tv2qkejihp" path="res://scenes/Cue_ball.tscn" id="4_x4ch4"]
 [ext_resource type="PackedScene" uid="uid://bguhci6hl27rj" path="res://scenes/Table.tscn" id="5_hre0k"]
-[ext_resource type="PackedScene" uid="uid://dt7iasmer7q0u" path="res://scenes/Wood_Wall.tscn" id="6_r2v7f"]
+[ext_resource type="PackedScene" uid="uid://bejdhrbn12vox" path="res://scenes/Metal_Wall.tscn" id="6_dqeut"]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource("1_66s1f")
-cue_balls = Array[int]([0, 3, 1, 2, 2, 0, 3, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 2, 3])
+cue_balls = Array[int]([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
 
 [node name="Ball" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(223, 210)
+position = Vector2(276, 179)
 
 [node name="Ball2" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(210, 217)
+position = Vector2(322, 164)
 
 [node name="Ball3" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(210, 203)
+position = Vector2(367, 179)
 
 [node name="Ball4" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(197, 196)
+position = Vector2(276, 221)
 
 [node name="Ball5" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(197, 210)
+position = Vector2(323, 234)
 
 [node name="Ball6" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(197, 224)
-
-[node name="Ball7" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(185, 189)
-
-[node name="Ball8" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(185, 203)
-
-[node name="Ball9" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(185, 217)
-
-[node name="Ball10" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(185, 231)
-
-[node name="Ball11" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(173, 182)
-
-[node name="Ball12" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(173, 196)
-
-[node name="Ball13" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(173, 210)
-
-[node name="Ball14" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(173, 224)
-
-[node name="Ball15" parent="." instance=ExtResource("2_ew51g")]
-position = Vector2(173, 238)
+position = Vector2(369, 220)
 
 [node name="Cue" parent="." instance=ExtResource("3_bs16p")]
 
 [node name="CueBall" parent="." instance=ExtResource("4_x4ch4")]
-position = Vector2(471, 209)
+position = Vector2(323, 199)
 
 [node name="Table" parent="." instance=ExtResource("5_hre0k")]
-metadata/_edit_lock_ = true
 
-[node name="WoodWall" parent="." instance=ExtResource("6_r2v7f")]
-position = Vector2(208, 187)
-rotation = -1.0206
+[node name="MetalWall" parent="." instance=ExtResource("6_dqeut")]
+position = Vector2(319, 269)
+rotation = -1.57079
 
-[node name="WoodWall2" parent="." instance=ExtResource("6_r2v7f")]
-position = Vector2(205, 234)
-rotation = -2.05439
-
-[node name="WoodWall3" parent="." instance=ExtResource("6_r2v7f")]
-position = Vector2(160, 211)
+[node name="MetalWall2" parent="." instance=ExtResource("6_dqeut")]
+position = Vector2(320, 133)
+rotation = -1.57079

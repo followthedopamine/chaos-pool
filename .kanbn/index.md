@@ -22,6 +22,7 @@ completedColumns:
 - [sound-for-balls-being-pocketed](tasks/sound-for-balls-being-pocketed.md)
 - [save-player-s-best-time](tasks/save-player-s-best-time.md)
 - [sand-on-the-felt](tasks/sand-on-the-felt.md)
+- [ghost-ball-that-passes-through-objects-and-makes-balls-it-touches-pass-through-objects-and-other-balls](tasks/ghost-ball-that-passes-through-objects-and-makes-balls-it-touches-pass-through-objects-and-other-balls.md)
 
 ## Todo
 
@@ -30,6 +31,8 @@ completedColumns:
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
 - [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
 - [bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true](tasks/bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true.md)
+- [pusher-ball-should-affect-obstacles](tasks/pusher-ball-should-affect-obstacles.md)
+- [bug-level-5-was-locked-after-beating-level-4](tasks/bug-level-5-was-locked-after-beating-level-4.md)
 
 ## In Progress
 
