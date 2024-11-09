@@ -17,6 +17,7 @@ const MINIMUM_TIME_BETWEEN_SHOTS = 0.2
 const TIME_TO_HIDE_SHOT_CHARGE = 0.5
 
 @onready var cue_ball = $"../CueBall"
+@onready var cue_ball_shape = $"../CueBall/CueBallCollision"
 @onready var level = $".."
 @onready var options_menu = $"../../OptionsMenu"
 @onready var level_menu_button = $"../../LevelMenuButton"
@@ -28,6 +29,8 @@ var power = 0
 
 var level_is_loading = true
 var last_shot = -1
+
+var hit_points
 
 signal shoot
 
@@ -46,6 +49,10 @@ func handle_input(delta):
 
 func get_player_target():
 	return get_global_mouse_position()
+	
+func get_player_target_direction():
+	var direction = (get_player_target() - global_position).normalized()
+	return direction
 		
 func update_charge_display():
 	if power != 0:
@@ -97,6 +104,46 @@ func check_if_player_is_pressing_menu():
 		return true
 	return false
 	
+func cast_line():
+	var extended_point = global_position + get_player_target_direction() * 1000
+	var space_state = get_world_2d().direct_space_state
+
+	var parameters = PhysicsShapeQueryParameters2D.new()
+	parameters.shape = cue_ball_shape.shape
+	parameters.transform = Transform2D(0, global_position)
+	parameters.motion = extended_point - global_position
+	parameters.exclude = [self, cue_ball]
+	
+	#var results = space_state.intersect_shape(parameters)
+	
+	var has_collision = space_state.collide_shape(parameters)
+	var closest_point = extended_point
+	var closest_distance = INF
+	hit_points = []
+	if has_collision:
+		for collision in has_collision:
+			#var distance = global_position.distance_to(collision)
+			#if distance < closest_distance:
+				#closest_distance = distance
+				#closest_point = collision
+		#hit_points = closest_point
+			hit_points.append(collision)
+	queue_redraw()
+	
+func cast_shape():
+	var extended_point = global_position + get_player_target_direction() * 1000
+	var shape_cast = ShapeCast2D.new()
+	shape_cast.shape = cue_ball_shape.shape
+	shape_cast.position = cue_ball.position
+	shape_cast.target_position = extended_point
+	#print(shape_cast.collision_result)
+	hit_points = extended_point
+	for i in range(0, shape_cast.get_collision_count()):
+		print(shape_cast.get_collision_point(i))
+		
+	queue_redraw()
+	
+	
 func can_handle_input() -> bool:
 	if last_shot == level.shot_counter:
 		return false
@@ -118,9 +165,17 @@ func can_handle_input() -> bool:
 
 func _physics_process(delta):
 	if can_handle_input():
+		#cast_line()
+		cast_shape()
 		position_cue()
 		angle_cue()
 		handle_input(delta)
 
 
-
+#func _draw():
+	#if hit_points != null:
+		#draw_line(to_local(global_position), to_local(hit_points), Color.WHITE, 1.0)
+	#if hit_points != null:
+		##draw_circle(to_local(hit_point), cue_ball_shape.shape.radius, Color(1, 0, 0, 0.3))
+		#for hit_point in hit_points:
+			#draw_line(to_local(global_position), to_local(hit_point), Color.WHITE, 1.0)
