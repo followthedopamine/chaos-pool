@@ -9,7 +9,8 @@ func destroy_wall():
 	
 	
 func _on_body_entered(_body):
-	glass_collision.disabled = true
+	set_deferred("glass_collision.disabled", true)
+	#glass_collision.disabled = true
 	glass_animation_player.play("shatter")
 	await get_tree().create_timer(0.8).timeout
 	destroy_wall()
