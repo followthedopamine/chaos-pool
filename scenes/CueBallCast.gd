@@ -1,6 +1,7 @@
 extends ShapeCast2D
 
 var hit_points
+@onready var cue = $".."
 @onready var cue_ball = $"../../CueBall"
 @onready var cue_ball_shape = $"../../CueBall/CueBallCollision"
 
@@ -42,10 +43,11 @@ func cast_shape():
 	queue_redraw()
 		
 func _draw():
-	if hit_points != null:
-		draw_line(to_local(global_position), to_local(hit_points), Color(1, 1, 1, 0.3), 1.5)
-		#draw_circle(to_local(hit_points), cue_ball_shape.shape.radius, Color(1, 0, 0, 0.3))
-		draw_arc(to_local(hit_points), cue_ball_shape.shape.radius, 0, TAU, 50, Color(1, 1, 1, 0.3), 1.5)
+	if cue.can_handle_input():
+		if hit_points != null:
+			draw_line(to_local(global_position), to_local(hit_points), Color(1, 1, 1, 0.3), 1.5)
+			#draw_circle(to_local(hit_points), cue_ball_shape.shape.radius, Color(1, 0, 0, 0.3))
+			draw_arc(to_local(hit_points), cue_ball_shape.shape.radius, 0, TAU, 50, Color(1, 1, 1, 0.3), 1.5)
 		
 func _physics_process(delta):
 	cast_shape()
