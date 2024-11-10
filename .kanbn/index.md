@@ -23,6 +23,7 @@ completedColumns:
 - [save-player-s-best-time](tasks/save-player-s-best-time.md)
 - [sand-on-the-felt](tasks/sand-on-the-felt.md)
 - [ghost-ball-that-passes-through-objects-and-makes-balls-it-touches-pass-through-objects-and-other-balls](tasks/ghost-ball-that-passes-through-objects-and-makes-balls-it-touches-pass-through-objects-and-other-balls.md)
+- [portrait-mode](tasks/portrait-mode.md)
 
 ## Todo
 
@@ -36,10 +37,11 @@ completedColumns:
 
 ## In Progress
 
-- [levels-1-5](tasks/levels-1-5.md)
+- [number-of-stars-might-not-be-working-correctly](tasks/number-of-stars-might-not-be-working-correctly.md)
 
 ## Done
 
+- [levels-1-5](tasks/levels-1-5.md)
 - [glass-shattering-animation](tasks/glass-shattering-animation.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)

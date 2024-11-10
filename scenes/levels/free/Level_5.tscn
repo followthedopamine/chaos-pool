@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dt7iasmer7q0u" path="res://scenes/Wood_Wall.tscn" id="6_nrl5d"]
 
 [node name="Level5" type="Node2D"]
-position = Vector2(-4, 3)
 script = ExtResource("1_e0wbm")
 cue_balls = Array[int]([0, 3, 1, 2, 2, 0, 3, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 1, 2, 3])
 
