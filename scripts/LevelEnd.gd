@@ -39,6 +39,7 @@ func show_win_screen(stars):
 	time_container.visible = true
 	static_time_display.time_elapsed = level_timer.time_elapsed
 	static_time_display.update_numbers()
+	next_level_button.disabled = false
 	
 func show_loss_screen():
 	print("Display loss screen")

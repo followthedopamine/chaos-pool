@@ -24,6 +24,7 @@ completedColumns:
 - [sand-on-the-felt](tasks/sand-on-the-felt.md)
 - [ghost-ball-that-passes-through-objects-and-makes-balls-it-touches-pass-through-objects-and-other-balls](tasks/ghost-ball-that-passes-through-objects-and-makes-balls-it-touches-pass-through-objects-and-other-balls.md)
 - [portrait-mode](tasks/portrait-mode.md)
+- [kill-streaks-for-balls-sunk](tasks/kill-streaks-for-balls-sunk.md)
 
 ## Todo
 
@@ -34,6 +35,11 @@ completedColumns:
 - [bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true](tasks/bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true.md)
 - [pusher-ball-should-affect-obstacles](tasks/pusher-ball-should-affect-obstacles.md)
 - [bug-level-5-was-locked-after-beating-level-4](tasks/bug-level-5-was-locked-after-beating-level-4.md)
+- [bug-lost-a-ball-after-a-wormhole-ball](tasks/bug-lost-a-ball-after-a-wormhole-ball.md)
+- [bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game](tasks/bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game.md)
+- [player-expects-more-impact-when-shooting-a-full-power-shot](tasks/player-expects-more-impact-when-shooting-a-full-power-shot.md)
+- [bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far](tasks/bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far.md)
+- [might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over](tasks/might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over.md)
 
 ## In Progress
 
@@ -53,6 +59,7 @@ completedColumns:
 - [bug-shot-counter-doesn-t-always-increase](tasks/bug-shot-counter-doesn-t-always-increase.md)
 - [bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity](tasks/bug-rolling-in-part-of-sinking-animation-should-depend-on-velocity.md)
 - [redo-shot-counter-balls-stopping-from-scratch](tasks/redo-shot-counter-balls-stopping-from-scratch.md)
+- [bug-next-level-button-not-working](tasks/bug-next-level-button-not-working.md)
 - [bug-sound-gets-very-loud-with-lots-of-balls-clacking](tasks/bug-sound-gets-very-loud-with-lots-of-balls-clacking.md)
 - [bug-can-t-sink-multiple-balls-at-once](tasks/bug-can-t-sink-multiple-balls-at-once.md)
 - [bug-sometimes-new-ball-is-immediately-loaded-might-be-when-cue-ball-is-sunk](tasks/bug-sometimes-new-ball-is-immediately-loaded-might-be-when-cue-ball-is-sunk.md)
