@@ -37,13 +37,15 @@ completedColumns:
 - [bug-level-5-was-locked-after-beating-level-4](tasks/bug-level-5-was-locked-after-beating-level-4.md)
 - [bug-lost-a-ball-after-a-wormhole-ball](tasks/bug-lost-a-ball-after-a-wormhole-ball.md)
 - [bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game](tasks/bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game.md)
-- [player-expects-more-impact-when-shooting-a-full-power-shot](tasks/player-expects-more-impact-when-shooting-a-full-power-shot.md)
-- [bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far](tasks/bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far.md)
-- [might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over](tasks/might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over.md)
+- [player-did-not-seem-to-recognise-the-restart-button](tasks/player-did-not-seem-to-recognise-the-restart-button.md)
 
 ## In Progress
 
 - [number-of-stars-might-not-be-working-correctly](tasks/number-of-stars-might-not-be-working-correctly.md)
+- [player-expects-more-impact-when-shooting-a-full-power-shot](tasks/player-expects-more-impact-when-shooting-a-full-power-shot.md)
+- [might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over](tasks/might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over.md)
+- [bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far](tasks/bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far.md)
+- [cue-ball-moves-further-than-you-would-expect-sometimes-could-be-collision-related-could-be-friction](tasks/cue-ball-moves-further-than-you-would-expect-sometimes-could-be-collision-related-could-be-friction.md)
 
 ## Done
 

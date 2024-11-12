@@ -1,8 +1,9 @@
 extends Sprite2D
 
-const POWER_INCREMENT = 0.075 # Speed the power charges at
+const POWER_INCREMENT = 0.5 # Speed the power charges at
 const MIN_POWER = POWER_INCREMENT
-const MAX_POWER = 20
+const MAX_POWER = 100
+const POWER_FACTOR = 20
 
 const MAX_SHOT_CHARGE_Y = 37
 const MIN_SHOT_CHARGE_Y = -35
@@ -80,7 +81,8 @@ func update_power(delta):
 		
 func shoot_cue_ball():
 	print("Fired shot " + str(level.shot_counter))
-	cue_ball.apply_central_impulse(power * (get_player_target() - global_position))
+	cue_ball.apply_central_impulse(POWER_FACTOR * power * (get_player_target() - global_position).normalized())
+	print("Shot power: %s" % power )
 	power = MIN_POWER
 	hide_shot_charge()
 	Sound.create_sound_and_play(SHOT_SOUND, SHOT_MIN_VOLUME + power,self)
