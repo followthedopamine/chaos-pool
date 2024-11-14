@@ -25,6 +25,7 @@ completedColumns:
 - [ghost-ball-that-passes-through-objects-and-makes-balls-it-touches-pass-through-objects-and-other-balls](tasks/ghost-ball-that-passes-through-objects-and-makes-balls-it-touches-pass-through-objects-and-other-balls.md)
 - [portrait-mode](tasks/portrait-mode.md)
 - [kill-streaks-for-balls-sunk](tasks/kill-streaks-for-balls-sunk.md)
+- [social-links-in-game](tasks/social-links-in-game.md)
 
 ## Todo
 
@@ -38,19 +39,24 @@ completedColumns:
 - [bug-lost-a-ball-after-a-wormhole-ball](tasks/bug-lost-a-ball-after-a-wormhole-ball.md)
 - [bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game](tasks/bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game.md)
 - [player-did-not-seem-to-recognise-the-restart-button](tasks/player-did-not-seem-to-recognise-the-restart-button.md)
+- [2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset](tasks/2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset.md)
+- [find-a-way-to-keep-the-crazy-wormhole-ball-effect-but-without-the-frame-reductions-good-luck](tasks/find-a-way-to-keep-the-crazy-wormhole-ball-effect-but-without-the-frame-reductions-good-luck.md)
+- [add-a-normal-line-to-the-guide-line](tasks/add-a-normal-line-to-the-guide-line.md)
+- [ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling](tasks/ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling.md)
+- [pause-menu-should-pause-the-game](tasks/pause-menu-should-pause-the-game.md)
 
 ## In Progress
 
 - [number-of-stars-might-not-be-working-correctly](tasks/number-of-stars-might-not-be-working-correctly.md)
 - [player-expects-more-impact-when-shooting-a-full-power-shot](tasks/player-expects-more-impact-when-shooting-a-full-power-shot.md)
-- [might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over](tasks/might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over.md)
-- [bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far](tasks/bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far.md)
-- [cue-ball-moves-further-than-you-would-expect-sometimes-could-be-collision-related-could-be-friction](tasks/cue-ball-moves-further-than-you-would-expect-sometimes-could-be-collision-related-could-be-friction.md)
 
 ## Done
 
 - [levels-1-5](tasks/levels-1-5.md)
 - [glass-shattering-animation](tasks/glass-shattering-animation.md)
+- [cue-ball-moves-further-than-you-would-expect-sometimes-could-be-collision-related-could-be-friction](tasks/cue-ball-moves-further-than-you-would-expect-sometimes-could-be-collision-related-could-be-friction.md)
+- [bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far](tasks/bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far.md)
+- [might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over](tasks/might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
 - [sounds-for-different-walls](tasks/sounds-for-different-walls.md)

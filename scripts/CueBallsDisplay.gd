@@ -1,6 +1,7 @@
 extends BoxContainer
 
-@onready var level = $".."
+@onready var level = $"../.."
+@onready var arrow_animation = $"../Arrow/AnimationPlayer"
 
 func create_ball_texture_rects():
 	var count = 0
@@ -17,6 +18,7 @@ func remove_first_ball():
 func _ready():
 	level.balls_stopped.connect(_on_balls_stopped)
 	create_ball_texture_rects()
+	arrow_animation.play("arrow_spin")
 
 func _on_balls_stopped():
 	remove_first_ball()
