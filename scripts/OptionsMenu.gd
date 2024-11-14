@@ -28,6 +28,7 @@ func show_from_level():
 	level_controls.visible = true
 	level_menu_button.visible = false
 	from_level = true
+	get_tree().paused = true
 
 func set_volume_sliders():
 	if !Sound.music_muted:
@@ -81,6 +82,7 @@ func hide_options_and_save():
 		level_menu_button.visible = true
 	self.visible = false
 	Config.save_options()
+	get_tree().paused = false
 
 func _on_level_menu_button_pressed():
 	show_from_level()

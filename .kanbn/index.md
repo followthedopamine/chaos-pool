@@ -26,6 +26,9 @@ completedColumns:
 - [portrait-mode](tasks/portrait-mode.md)
 - [kill-streaks-for-balls-sunk](tasks/kill-streaks-for-balls-sunk.md)
 - [social-links-in-game](tasks/social-links-in-game.md)
+- [progressive-narrative](tasks/progressive-narrative.md)
+- [possibly-try-and-reduce-time-between-shots](tasks/possibly-try-and-reduce-time-between-shots.md)
+- [there-s-probably-a-case-for-pausing-the-tree-during-the-end-level-screen](tasks/there-s-probably-a-case-for-pausing-the-tree-during-the-end-level-screen.md)
 
 ## Todo
 
@@ -43,15 +46,15 @@ completedColumns:
 - [find-a-way-to-keep-the-crazy-wormhole-ball-effect-but-without-the-frame-reductions-good-luck](tasks/find-a-way-to-keep-the-crazy-wormhole-ball-effect-but-without-the-frame-reductions-good-luck.md)
 - [add-a-normal-line-to-the-guide-line](tasks/add-a-normal-line-to-the-guide-line.md)
 - [ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling](tasks/ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling.md)
-- [pause-menu-should-pause-the-game](tasks/pause-menu-should-pause-the-game.md)
+- [wonky-collision-on-table-walls-sometimes](tasks/wonky-collision-on-table-walls-sometimes.md)
 
 ## In Progress
 
-- [number-of-stars-might-not-be-working-correctly](tasks/number-of-stars-might-not-be-working-correctly.md)
-- [player-expects-more-impact-when-shooting-a-full-power-shot](tasks/player-expects-more-impact-when-shooting-a-full-power-shot.md)
-
 ## Done
 
+- [number-of-stars-might-not-be-working-correctly](tasks/number-of-stars-might-not-be-working-correctly.md)
+- [pause-menu-should-pause-the-game](tasks/pause-menu-should-pause-the-game.md)
+- [player-expects-more-impact-when-shooting-a-full-power-shot](tasks/player-expects-more-impact-when-shooting-a-full-power-shot.md)
 - [levels-1-5](tasks/levels-1-5.md)
 - [glass-shattering-animation](tasks/glass-shattering-animation.md)
 - [cue-ball-moves-further-than-you-would-expect-sometimes-could-be-collision-related-could-be-friction](tasks/cue-ball-moves-further-than-you-would-expect-sometimes-could-be-collision-related-could-be-friction.md)
