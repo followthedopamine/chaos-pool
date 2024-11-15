@@ -39,7 +39,11 @@ func show_win_screen(stars):
 	time_container.visible = true
 	static_time_display.time_elapsed = level_timer.time_elapsed
 	static_time_display.update_numbers()
-	next_level_button.disabled = false
+	if Scene.current_level == Scene.LEVELS.size() - 1:
+		next_level_button.disabled = true
+	else:
+		next_level_button.disabled = false
+		
 	
 func show_loss_screen():
 	print("Display loss screen")
@@ -51,8 +55,7 @@ func show_loss_screen():
 										STARS_ATLAS.position.y,
 										STARS_ATLAS.size.x, 
 										STARS_ATLAS.size.y)
-	if is_next_level_locked(Scene.current_level):
-		next_level_button.disabled = true
+	next_level_button.disabled = is_next_level_locked(Scene.current_level)
 	
 func hide_end_screen():
 	self.visible = false

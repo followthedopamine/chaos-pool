@@ -38,7 +38,6 @@ completedColumns:
 - [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
 - [bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true](tasks/bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true.md)
 - [pusher-ball-should-affect-obstacles](tasks/pusher-ball-should-affect-obstacles.md)
-- [bug-level-5-was-locked-after-beating-level-4](tasks/bug-level-5-was-locked-after-beating-level-4.md)
 - [bug-lost-a-ball-after-a-wormhole-ball](tasks/bug-lost-a-ball-after-a-wormhole-ball.md)
 - [bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game](tasks/bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game.md)
 - [player-did-not-seem-to-recognise-the-restart-button](tasks/player-did-not-seem-to-recognise-the-restart-button.md)
@@ -47,6 +46,9 @@ completedColumns:
 - [add-a-normal-line-to-the-guide-line](tasks/add-a-normal-line-to-the-guide-line.md)
 - [ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling](tasks/ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling.md)
 - [wonky-collision-on-table-walls-sometimes](tasks/wonky-collision-on-table-walls-sometimes.md)
+- [bug-ball-lighting-sometimes-visible-during-sinking-animation](tasks/bug-ball-lighting-sometimes-visible-during-sinking-animation.md)
+- [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
+- [https-docs-godotengine-org-en-latest-classes-class-os-html-class-os-method-get-name](tasks/https-docs-godotengine-org-en-latest-classes-class-os-html-class-os-method-get-name.md)
 
 ## In Progress
 
@@ -59,6 +61,7 @@ completedColumns:
 - [glass-shattering-animation](tasks/glass-shattering-animation.md)
 - [cue-ball-moves-further-than-you-would-expect-sometimes-could-be-collision-related-could-be-friction](tasks/cue-ball-moves-further-than-you-would-expect-sometimes-could-be-collision-related-could-be-friction.md)
 - [bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far](tasks/bug-sometimes-ball-seems-to-move-at-an-unexpected-speed-for-player-off-shot-full-power-not-far-half-power-very-far.md)
+- [bug-level-5-was-locked-after-beating-level-4](tasks/bug-level-5-was-locked-after-beating-level-4.md)
 - [might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over](tasks/might-be-something-to-do-with-the-bar-moving-up-and-down-over-and-over.md)
 - [indestrucible-walls-that-can-t-be-pushed](tasks/indestrucible-walls-that-can-t-be-pushed.md)
 - [probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard](tasks/probably-reall-need-a-guide-line-for-where-the-shot-will-go-this-game-is-hard.md)
