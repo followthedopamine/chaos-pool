@@ -1,60 +1,68 @@
-[gd_scene load_steps=13 format=3 uid="uid://t5p7ngld6w1v"]
+[gd_scene load_steps=13 format=3 uid="uid://bg8mohibdt71p"]
 
-[ext_resource type="Texture2D" uid="uid://bm1w5n5mvk7c1" path="res://images/ui/main-menu/Main Menu Background.png" id="1_fpxib"]
-[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="2_sjrjt"]
-[ext_resource type="Texture2D" uid="uid://drmd1jmfded15" path="res://images/ui/main-menu/Main Menu Title Only.png" id="3_22tb3"]
-[ext_resource type="Texture2D" uid="uid://m8rrux7gnqoc" path="res://images/ui/main-menu/Main Menu Button Start.png" id="3_fsmtl"]
-[ext_resource type="Texture2D" uid="uid://bweyxygjapqh4" path="res://images/ui/main-menu/Main Menu Button Settings.png" id="4_ec3f0"]
-[ext_resource type="Texture2D" uid="uid://desvalmcd0dty" path="res://images/ui/main-menu/Main Menu Button Exit.png" id="5_6y0je"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_u57h2"]
+[ext_resource type="Texture2D" uid="uid://drmd1jmfded15" path="res://images/ui/main-menu/Main Menu Title Only.png" id="2_pd5km"]
+[ext_resource type="Texture2D" uid="uid://bm1w5n5mvk7c1" path="res://images/ui/main-menu/Main Menu Background.png" id="3_6d5st"]
+[ext_resource type="Texture2D" uid="uid://m8rrux7gnqoc" path="res://images/ui/main-menu/Main Menu Button Start.png" id="4_ngo5i"]
+[ext_resource type="Texture2D" uid="uid://bweyxygjapqh4" path="res://images/ui/main-menu/Main Menu Button Settings.png" id="5_rieyi"]
+[ext_resource type="Texture2D" uid="uid://desvalmcd0dty" path="res://images/ui/main-menu/Main Menu Button Exit.png" id="6_b3818"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aj84n"]
-atlas = ExtResource("3_fsmtl")
+atlas = ExtResource("4_ngo5i")
 region = Rect2(6, 25, 95, 49)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c163m"]
-atlas = ExtResource("3_fsmtl")
+atlas = ExtResource("4_ngo5i")
 region = Rect2(166, 25, 95, 49)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c5gdg"]
-atlas = ExtResource("4_ec3f0")
+atlas = ExtResource("5_rieyi")
 region = Rect2(6, 76, 136, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_axw0o"]
-atlas = ExtResource("4_ec3f0")
+atlas = ExtResource("5_rieyi")
 region = Rect2(166, 76, 136, 47)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bfybe"]
-atlas = ExtResource("5_6y0je")
+atlas = ExtResource("6_b3818")
 region = Rect2(6, 125, 77, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6jg44"]
-atlas = ExtResource("5_6y0je")
+atlas = ExtResource("6_b3818")
 region = Rect2(166, 125, 77, 48)
 
 [node name="MainMenu" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(360, 640)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("2_sjrjt")
+offset_right = 360.0
+offset_bottom = 640.0
+script = ExtResource("1_u57h2")
 
 [node name="MainMenuTitle" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
-texture = ExtResource("3_22tb3")
+texture = ExtResource("2_pd5km")
 
 [node name="MainMenuBackground" type="TextureRect" parent="."]
 z_index = -1
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_fpxib")
+offset_left = -682.0
+offset_top = -35.0
+offset_right = -42.0
+offset_bottom = 325.0
+scale = Vector2(1.965, 1.965)
+texture = ExtResource("3_6d5st")
 
 [node name="MainMenuButtons" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -39.0
+offset_top = -75.0
+offset_right = 1.0
+offset_bottom = -35.0
+scale = Vector2(1.28, 1.28)
 
 [node name="StartButton" type="TextureButton" parent="MainMenuButtons"]
 layout_mode = 0

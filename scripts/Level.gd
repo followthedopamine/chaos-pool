@@ -68,8 +68,13 @@ func instantiate_level_scenes():
 	var table_background = TABLE_BACKGROUND.instantiate()
 	add_child(table_background)
 	
+func handle_portrait_resolution():
+	if Resolution.display_mode == Resolution.PORTRAIT:
+		Resolution.adjust_level_components(self)
+	
 func setup_level():
 	instantiate_level_scenes()
+	handle_portrait_resolution()
 	active_balls.clear()  # Clear the tracking array
 	available_textures = BALL_TEXTURES.duplicate()  # Reset available textures
 	randomize()  # Initialize random number generator

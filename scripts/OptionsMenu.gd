@@ -86,3 +86,8 @@ func hide_options_and_save():
 
 func _on_level_menu_button_pressed():
 	show_from_level()
+
+func _on_resolution_dropdown_item_selected(index):
+	# index 0 for landscape, 1 for portrait
+	Resolution.set_game_to_portrait()
+	pass # Replace with function body.

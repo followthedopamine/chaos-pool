@@ -1,4 +1,4 @@
-extends TextureRect
+extends Control
 
 @onready var options_menu = $"../OptionsMenu"
 

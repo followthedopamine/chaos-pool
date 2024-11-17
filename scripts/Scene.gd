@@ -2,12 +2,15 @@ extends Node2D
 
 @onready var main_scene = $"../Main"
 @onready var level_menu_button = $"../Main/LevelMenuButton"
-
+@onready var options_menu = $"../Main/OptionsMenu"
 
 const PERMANENT_SCENES = ["Camera2D", "Music", "LevelEnd", "OptionsMenu", "LevelMenuButton"]
 
 const MAIN_MENU = preload("res://scenes/Main_Menu.tscn")
+const MAIN_MENU_PORTRAIT = preload("res://scenes/Main_Menu_Portrait.tscn")
+
 const LEVEL_SELECT = preload("res://scenes/Level_Select.tscn")
+const LEVEL_SELECT_PORTRAIT = preload("res://scenes/Level_Select_Portrait.tscn")
 
 const LEVELS = [preload("res://scenes/levels/free/Level_1.tscn"),
 				preload("res://scenes/levels/free/Level_2.tscn"),
@@ -24,18 +27,28 @@ func hide_level_menu_button():
 	
 func show_level_menu_button():
 	level_menu_button.visible = true
+	
+func restore_options_order():
+	var number_of_children = main_scene.get_child_count()
+	main_scene.move_child(options_menu, number_of_children)
 
 func load_main_menu():
 	unload_scenes()
 	hide_level_menu_button()
 	var scene_instance = MAIN_MENU.instantiate()
+	if Resolution.display_mode == Resolution.PORTRAIT:
+		print("Main menu loading in portrait mode")
+		scene_instance = MAIN_MENU_PORTRAIT.instantiate()
 	main_scene.add_child(scene_instance)
+	restore_options_order()
 	Sound.change_track(0)
 
 func load_level_select():
 	unload_scenes()
 	hide_level_menu_button()
 	var scene_instance = LEVEL_SELECT.instantiate()
+	if Resolution.display_mode == Resolution.PORTRAIT:
+		scene_instance = LEVEL_SELECT_PORTRAIT.instantiate()
 	main_scene.add_child(scene_instance)
 	
 func reload_current_level():
@@ -60,6 +73,8 @@ func load_level_by_index(index):
 	unload_scenes()
 	show_level_menu_button()
 	var scene_instance = LEVELS[index].instantiate()
+	if Resolution.display_mode == Resolution.PORTRAIT:
+		Resolution.rotate_level(scene_instance)
 	main_scene.add_child(scene_instance)
 	current_level = index
 	Sound.change_track(current_level + 1)

@@ -85,7 +85,7 @@ region = Rect2(177, 0, 177, 41)
 [node name="OptionsMenu" type="PanelContainer"]
 process_mode = 3
 offset_right = 640.0
-offset_bottom = 361.0
+offset_bottom = 360.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kly5a")
 script = ExtResource("1_0dwde")
 
@@ -163,6 +163,18 @@ theme_override_styles/slider = SubResource("StyleBoxFlat_xnd6o")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v5i2f")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mg0n2")
 
+[node name="ResolutionControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ResolutionDropdown" type="OptionButton" parent="HBoxContainer/VBoxContainer/ResolutionControls"]
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "Landscape"
+popup/item_0/id = 0
+popup/item_1/text = "Portrait"
+popup/item_1/id = 1
+
 [node name="LevelControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
@@ -181,5 +193,6 @@ texture_pressed = SubResource("AtlasTexture_fi7ff")
 [connection signal="value_changed" from="HBoxContainer/VBoxContainer/SFXControls/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="toggled" from="HBoxContainer/VBoxContainer/MusicControls/ToggleMusicButton" to="." method="_on_toggle_music_button_toggled"]
 [connection signal="value_changed" from="HBoxContainer/VBoxContainer/MusicControls/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="item_selected" from="HBoxContainer/VBoxContainer/ResolutionControls/ResolutionDropdown" to="." method="_on_resolution_dropdown_item_selected"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/LevelControls/HomeButton" to="." method="_on_home_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/LevelControls/RestartButton" to="." method="_on_restart_button_pressed"]

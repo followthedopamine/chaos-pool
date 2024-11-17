@@ -52,24 +52,28 @@ region = Rect2(10, 16, 325, 48)
 atlas = ExtResource("6_2rd6r")
 region = Rect2(362, 16, 325, 48)
 
-[node name="LevelEnd" type="Panel"]
+[node name="LevelEnd" type="PanelContainer"]
 z_index = 999
-offset_right = 675.0
-offset_bottom = 428.0
+offset_right = 640.0
+offset_bottom = 360.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cxrt2")
 script = ExtResource("1_o4t2j")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 124.0
-offset_top = 1.0
-offset_right = 510.0
-offset_bottom = 358.0
+layout_mode = 2
 alignment = 1
 
-[node name="LevelFinishTexture" type="TextureRect" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="LevelFinishTexture" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 texture = ExtResource("1_ura5o")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2

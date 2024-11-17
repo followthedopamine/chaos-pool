@@ -21,10 +21,6 @@ region = Rect2(128, 32, 32, 36)
 [node name="LevelEnd" parent="." instance=ExtResource("8_agxvw")]
 visible = false
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
-zoom = Vector2(1.8, 1.8)
-
 [node name="OptionsMenu" parent="." instance=ExtResource("3_mbaoq")]
 z_index = 1000
 

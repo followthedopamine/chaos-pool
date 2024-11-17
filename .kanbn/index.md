@@ -23,7 +23,6 @@ completedColumns:
 - [save-player-s-best-time](tasks/save-player-s-best-time.md)
 - [sand-on-the-felt](tasks/sand-on-the-felt.md)
 - [ghost-ball-that-passes-through-objects-and-makes-balls-it-touches-pass-through-objects-and-other-balls](tasks/ghost-ball-that-passes-through-objects-and-makes-balls-it-touches-pass-through-objects-and-other-balls.md)
-- [portrait-mode](tasks/portrait-mode.md)
 - [kill-streaks-for-balls-sunk](tasks/kill-streaks-for-balls-sunk.md)
 - [social-links-in-game](tasks/social-links-in-game.md)
 - [progressive-narrative](tasks/progressive-narrative.md)
@@ -49,8 +48,16 @@ completedColumns:
 - [bug-ball-lighting-sometimes-visible-during-sinking-animation](tasks/bug-ball-lighting-sometimes-visible-during-sinking-animation.md)
 - [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
 - [https-docs-godotengine-org-en-latest-classes-class-os-html-class-os-method-get-name](tasks/https-docs-godotengine-org-en-latest-classes-class-os-html-class-os-method-get-name.md)
+- [an-end-screen-for-winning](tasks/an-end-screen-for-winning.md)
+- [multiple-rows-of-levels-depending-on-portrait-mode](tasks/multiple-rows-of-levels-depending-on-portrait-mode.md)
+- [back-button-on-level-select](tasks/back-button-on-level-select.md)
 
 ## In Progress
+
+- [portrait-mode](tasks/portrait-mode.md)
+- [pause-button-missing-in-portrait](tasks/pause-button-missing-in-portrait.md)
+- [timer-positioned-incorrectly-in-portrait-mode](tasks/timer-positioned-incorrectly-in-portrait-mode.md)
+- [rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded](tasks/rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded.md)
 
 ## Done
 

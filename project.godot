@@ -23,10 +23,15 @@ Scene="*res://scripts/Scene.gd"
 Save="*res://scripts/Save.gd"
 Collisions="*res://scripts/Collisions.gd"
 Config="*res://scripts/Config.gd"
+Resolution="*res://scripts/Resolution.gd"
 
 [display]
 
-window/stretch/mode="viewport"
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=6
 
 [input]
 
