@@ -55,12 +55,12 @@ completedColumns:
 ## In Progress
 
 - [portrait-mode](tasks/portrait-mode.md)
-- [pause-button-missing-in-portrait](tasks/pause-button-missing-in-portrait.md)
-- [timer-positioned-incorrectly-in-portrait-mode](tasks/timer-positioned-incorrectly-in-portrait-mode.md)
 - [rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded](tasks/rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded.md)
 
 ## Done
 
+- [timer-positioned-incorrectly-in-portrait-mode](tasks/timer-positioned-incorrectly-in-portrait-mode.md)
+- [pause-button-missing-in-portrait](tasks/pause-button-missing-in-portrait.md)
 - [number-of-stars-might-not-be-working-correctly](tasks/number-of-stars-might-not-be-working-correctly.md)
 - [pause-menu-should-pause-the-game](tasks/pause-menu-should-pause-the-game.md)
 - [player-expects-more-impact-when-shooting-a-full-power-shot](tasks/player-expects-more-impact-when-shooting-a-full-power-shot.md)

@@ -24,6 +24,7 @@ func rotate_level(level):
 	
 func adjust_level_components(level):
 	level.time.rotation = deg_to_rad(270)
+	level.time.global_position.x = 10
 	
 func rotate_main_scene():
 	Scene.main_scene.rotation = deg_to_rad(90)
@@ -40,6 +41,10 @@ func adjust_level_end():
 	#main_menu.get_node("Main")
 	#pass
 	
+func adjust_pause_button():
+	var pause_button = Scene.main_scene.get_node("LevelMenuButton")
+	pause_button.position.x = get_viewport().size.x - pause_button.texture_normal.get_width()
+	
 # This function should contain all the adjustments that don't depend on
 # anything that is ever unloaded for any reason
 # Main
@@ -48,6 +53,7 @@ func adjust_level_end():
 func adjust_always_loaded_nodes():
 	adjust_options()
 	adjust_level_end()
+	adjust_pause_button()
 	#rotate_main_scene()
 	
 func _process(delta):
