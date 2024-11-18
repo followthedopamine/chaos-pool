@@ -39,6 +39,7 @@ func load_main_menu():
 	if Resolution.display_mode == Resolution.PORTRAIT:
 		print("Main menu loading in portrait mode")
 		scene_instance = MAIN_MENU_PORTRAIT.instantiate()
+	scene_instance.name = "MainMenu" + scene_instance.name
 	main_scene.add_child(scene_instance)
 	restore_options_order()
 	Sound.change_track(0)

@@ -17,26 +17,62 @@ func set_game_to_portrait():
 	if Scene.main_scene.get_node_or_null("MainMenu") != null:
 		print("Attempting to reload main menu")
 		Scene.load_main_menu()
+	else:
+		rotate_level(Scene.current_level_script)
+		adjust_level_components(Scene.current_level_script)
+		
+func set_game_to_landscape():
+	display_mode = LANDSCAPE
+	var width = 640
+	var height = 360
+	get_window().size = Vector2i(width, height)
+	get_window().content_scale_size = Vector2i(width, height)
+	adjust_always_loaded_nodes()
+	if Scene.main_scene.get_node_or_null("MainMenu") != null:
+		print("Attempting to reload main menu")
+		Scene.load_main_menu()
+	else:
+		rotate_level(Scene.current_level_script)
+		adjust_level_components(Scene.current_level_script)
 		
 func rotate_level(level):
-	level.rotation = deg_to_rad(90)
-	level.position.x = 360
+	if display_mode == PORTRAIT:
+		level.global_rotation = deg_to_rad(90)
+		level.global_position.x = 360
+	else:
+		level.global_rotation = deg_to_rad(0)
+		level.global_position.x = 0
+	for child in level.get_children():
+		child.global_position = child.global_position
 	
 func adjust_level_components(level):
-	level.time.rotation = deg_to_rad(270)
-	level.time.global_position.x = 10
-	
-func rotate_main_scene():
-	Scene.main_scene.rotation = deg_to_rad(90)
-	Scene.main_scene.position.x = 360
+	if display_mode == PORTRAIT:
+		level.time.rotation = deg_to_rad(270)
+		level.time.global_position.x = 0
+	else:
+		level.time.rotation = deg_to_rad(0)
+		level.time.global_position.x = 0
+		level.time.global_position.y = 0
+		
+		
+#func rotate_main_scene():
+	#Scene.main_scene.rotation = deg_to_rad(90)
+	#Scene.main_scene.position.x = 360
 	
 func adjust_options():
 	var options_menu = Scene.main_scene.get_node("OptionsMenu")
-	options_menu.size = Vector2(360,640)
+	if display_mode == PORTRAIT:
+		options_menu.size = Vector2(360,640)
+	else:
+		options_menu.size = Vector2(640,360)
+		
 	
 func adjust_level_end():
 	var level_end = Scene.main_scene.get_node("LevelEnd")
-	level_end.size = Vector2(360,640)
+	if display_mode == PORTRAIT:
+		level_end.size = Vector2(360,640)
+	else:
+		level_end.size = Vector2(640,360)
 #func adjust_main_menu(main_menu):
 	#main_menu.get_node("Main")
 	#pass

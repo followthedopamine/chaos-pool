@@ -89,5 +89,8 @@ func _on_level_menu_button_pressed():
 
 func _on_resolution_dropdown_item_selected(index):
 	# index 0 for landscape, 1 for portrait
-	Resolution.set_game_to_portrait()
+	if index == 0:
+		Resolution.set_game_to_landscape()
+	if index == 1:
+		Resolution.set_game_to_portrait()
 	pass # Replace with function body.

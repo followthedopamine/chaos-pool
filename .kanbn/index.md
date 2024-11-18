@@ -28,6 +28,7 @@ completedColumns:
 - [progressive-narrative](tasks/progressive-narrative.md)
 - [possibly-try-and-reduce-time-between-shots](tasks/possibly-try-and-reduce-time-between-shots.md)
 - [there-s-probably-a-case-for-pausing-the-tree-during-the-end-level-screen](tasks/there-s-probably-a-case-for-pausing-the-tree-during-the-end-level-screen.md)
+- [consider-an-option-to-switch-a-powered-ball-for-an-unpowered-ball](tasks/consider-an-option-to-switch-a-powered-ball-for-an-unpowered-ball.md)
 
 ## Todo
 
@@ -38,7 +39,6 @@ completedColumns:
 - [bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true](tasks/bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true.md)
 - [pusher-ball-should-affect-obstacles](tasks/pusher-ball-should-affect-obstacles.md)
 - [bug-lost-a-ball-after-a-wormhole-ball](tasks/bug-lost-a-ball-after-a-wormhole-ball.md)
-- [bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game](tasks/bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game.md)
 - [player-did-not-seem-to-recognise-the-restart-button](tasks/player-did-not-seem-to-recognise-the-restart-button.md)
 - [2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset](tasks/2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset.md)
 - [find-a-way-to-keep-the-crazy-wormhole-ball-effect-but-without-the-frame-reductions-good-luck](tasks/find-a-way-to-keep-the-crazy-wormhole-ball-effect-but-without-the-frame-reductions-good-luck.md)
@@ -49,20 +49,33 @@ completedColumns:
 - [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
 - [https-docs-godotengine-org-en-latest-classes-class-os-html-class-os-method-get-name](tasks/https-docs-godotengine-org-en-latest-classes-class-os-html-class-os-method-get-name.md)
 - [an-end-screen-for-winning](tasks/an-end-screen-for-winning.md)
-- [multiple-rows-of-levels-depending-on-portrait-mode](tasks/multiple-rows-of-levels-depending-on-portrait-mode.md)
 - [back-button-on-level-select](tasks/back-button-on-level-select.md)
+- [bug-pressing-r-takes-you-to-main-menu-should-reload-level](tasks/bug-pressing-r-takes-you-to-main-menu-should-reload-level.md)
+- [bug-i-closed-the-game-then-reopened-in-and-the-music-and-sound-didn-t-play-the-second-time](tasks/bug-i-closed-the-game-then-reopened-in-and-the-music-and-sound-didn-t-play-the-second-time.md)
+- [bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time](tasks/bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time.md)
+- [2-players-not-understanding-how-the-balls-are-loaded-onto-the-table](tasks/2-players-not-understanding-how-the-balls-are-loaded-onto-the-table.md)
+- [i-reached-a-point-where-i-couldn-t-progress-for-an-hour-and-got-stuck](tasks/i-reached-a-point-where-i-couldn-t-progress-for-an-hour-and-got-stuck.md)
+- [many-people-struggling-with-the-difficulty](tasks/many-people-struggling-with-the-difficulty.md)
+- [an-animation-for-the-balls-being-saved-displaying-the-stars](tasks/an-animation-for-the-balls-being-saved-displaying-the-stars.md)
+- [possibly-adjust-power-levels](tasks/possibly-adjust-power-levels.md)
+- [at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me](tasks/at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me.md)
+- [a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey](tasks/a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey.md)
+- [some-people-are-really-needing-some-instruction](tasks/some-people-are-really-needing-some-instruction.md)
 
 ## In Progress
 
 - [portrait-mode](tasks/portrait-mode.md)
-- [rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded](tasks/rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded.md)
+- [should-be-able-to-go-back-to-landscape-mode](tasks/should-be-able-to-go-back-to-landscape-mode.md)
 
 ## Done
 
+- [rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded](tasks/rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded.md)
+- [multiple-rows-of-levels-depending-on-portrait-mode](tasks/multiple-rows-of-levels-depending-on-portrait-mode.md)
 - [timer-positioned-incorrectly-in-portrait-mode](tasks/timer-positioned-incorrectly-in-portrait-mode.md)
 - [pause-button-missing-in-portrait](tasks/pause-button-missing-in-portrait.md)
 - [number-of-stars-might-not-be-working-correctly](tasks/number-of-stars-might-not-be-working-correctly.md)
 - [pause-menu-should-pause-the-game](tasks/pause-menu-should-pause-the-game.md)
+- [bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game](tasks/bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game.md)
 - [player-expects-more-impact-when-shooting-a-full-power-shot](tasks/player-expects-more-impact-when-shooting-a-full-power-shot.md)
 - [levels-1-5](tasks/levels-1-5.md)
 - [glass-shattering-animation](tasks/glass-shattering-animation.md)

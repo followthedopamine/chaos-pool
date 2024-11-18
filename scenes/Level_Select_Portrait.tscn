@@ -1,43 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bbv58d3d5rjba"]
 
+[ext_resource type="Script" path="res://scripts/Level_Select.gd" id="1_h6ik7"]
 [ext_resource type="Texture2D" uid="uid://dc8e2qebsigl7" path="res://images/ui/Level Select BG.png" id="1_sfy0l"]
 [ext_resource type="Texture2D" uid="uid://ccycrnff24khu" path="res://images/ui/Level Select Title.png" id="2_tglhy"]
-
-[sub_resource type="GDScript" id="GDScript_sqvaf"]
-script/source = "extends Control
-
-@onready var button_container = $Container/Panel/BoxContainer/BoxContainer
-signal button_disabled
-
-const LEVEL_BUTTON = preload(\"res://scenes/Level_Button.tscn\")
-@onready var horizontal_container = $Container/Panel/BoxContainer/BoxContainer
-
-func create_level_buttons():
-	for i in range(1, Scene.LEVELS.size() + 1):
-		var level_button = LEVEL_BUTTON.instantiate()
-		horizontal_container.add_child(level_button)
-		var level_button_text = level_button.get_child(0)
-		level_button_text.text = \"[center]%s[/center]\" % i
-
-func lock_levels():
-	var count = 0
-	for button in button_container.get_children():
-		if count == 0:
-			count += 1
-			continue
-		if Save.stars[count - 1] == 0:
-			button.disabled = true
-			button.get_child(2).visible = true #IMPORTANT: This is what displays the lock
-		count += 1
-		
-func _on_button_pressed():
-	Scene.load_level_1()
-
-func _ready():
-	Save.load_stars()
-	create_level_buttons()
-	lock_levels()
-"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52uoq"]
 bg_color = Color(0, 0, 0.141176, 0.807843)
@@ -52,7 +17,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 360.0
 offset_bottom = 640.0
-script = SubResource("GDScript_sqvaf")
+script = ExtResource("1_h6ik7")
 
 [node name="Container" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(360, 360)
@@ -77,12 +42,16 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_52uoq")
 
 [node name="BoxContainer" type="BoxContainer" parent="Container/Panel"]
 layout_mode = 0
-offset_right = 400.0
-offset_bottom = 201.0
+offset_right = 334.0
+offset_bottom = 398.0
 alignment = 1
 vertical = true
 
-[node name="BoxContainer" type="BoxContainer" parent="Container/Panel/BoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Container/Panel/BoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="BoxContainer" type="BoxContainer" parent="Container/Panel/BoxContainer/MarginContainer"]
 layout_mode = 2
 alignment = 1
 
