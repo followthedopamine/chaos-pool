@@ -64,11 +64,11 @@ completedColumns:
 
 ## In Progress
 
-- [portrait-mode](tasks/portrait-mode.md)
-- [should-be-able-to-go-back-to-landscape-mode](tasks/should-be-able-to-go-back-to-landscape-mode.md)
-
 ## Done
 
+- [portrait-mode](tasks/portrait-mode.md)
+- [should-be-able-to-go-back-to-landscape-mode](tasks/should-be-able-to-go-back-to-landscape-mode.md)
+- [bug-game-crashes-after-exiting-to-main-menu-and-then-rotating-resolution](tasks/bug-game-crashes-after-exiting-to-main-menu-and-then-rotating-resolution.md)
 - [rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded](tasks/rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded.md)
 - [multiple-rows-of-levels-depending-on-portrait-mode](tasks/multiple-rows-of-levels-depending-on-portrait-mode.md)
 - [timer-positioned-incorrectly-in-portrait-mode](tasks/timer-positioned-incorrectly-in-portrait-mode.md)

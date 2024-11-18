@@ -28,7 +28,7 @@ func set_game_to_landscape():
 	get_window().size = Vector2i(width, height)
 	get_window().content_scale_size = Vector2i(width, height)
 	adjust_always_loaded_nodes()
-	if Scene.main_scene.get_node_or_null("MainMenu") != null:
+	if Scene.current_level_script == null:
 		print("Attempting to reload main menu")
 		Scene.load_main_menu()
 	else:
