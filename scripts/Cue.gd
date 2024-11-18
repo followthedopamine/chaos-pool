@@ -39,10 +39,12 @@ func _ready():
 	# Don't start handling input immediately or shot will fire from menu click
 	await get_tree().create_timer(0.05).timeout
 	level_is_loading = false
+	
+func handle_unrestricted_input():
+	if Input.is_action_just_pressed("reset"):
+		Scene.reload_current_level()
 
 func handle_input(delta):
-	if Input.is_action_just_pressed("reset"):
-		get_tree().reload_current_scene()
 	if Input.is_action_pressed("shoot"):
 		update_power(delta)
 	if Input.is_action_just_released("shoot"):
@@ -166,6 +168,8 @@ func can_handle_input() -> bool:
 	return true
 
 func _physics_process(delta):
+	handle_unrestricted_input()
+	
 	if can_handle_input():
 		#cast_line()
 		cast_shape()

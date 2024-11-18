@@ -49,7 +49,6 @@ completedColumns:
 - [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
 - [https-docs-godotengine-org-en-latest-classes-class-os-html-class-os-method-get-name](tasks/https-docs-godotengine-org-en-latest-classes-class-os-html-class-os-method-get-name.md)
 - [an-end-screen-for-winning](tasks/an-end-screen-for-winning.md)
-- [bug-pressing-r-takes-you-to-main-menu-should-reload-level](tasks/bug-pressing-r-takes-you-to-main-menu-should-reload-level.md)
 - [bug-i-closed-the-game-then-reopened-in-and-the-music-and-sound-didn-t-play-the-second-time](tasks/bug-i-closed-the-game-then-reopened-in-and-the-music-and-sound-didn-t-play-the-second-time.md)
 - [bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time](tasks/bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time.md)
 - [2-players-not-understanding-how-the-balls-are-loaded-onto-the-table](tasks/2-players-not-understanding-how-the-balls-are-loaded-onto-the-table.md)
@@ -66,6 +65,7 @@ completedColumns:
 ## Done
 
 - [back-button-on-level-select](tasks/back-button-on-level-select.md)
+- [bug-pressing-r-takes-you-to-main-menu-should-reload-level](tasks/bug-pressing-r-takes-you-to-main-menu-should-reload-level.md)
 - [portrait-mode](tasks/portrait-mode.md)
 - [should-be-able-to-go-back-to-landscape-mode](tasks/should-be-able-to-go-back-to-landscape-mode.md)
 - [bug-game-crashes-after-exiting-to-main-menu-and-then-rotating-resolution](tasks/bug-game-crashes-after-exiting-to-main-menu-and-then-rotating-resolution.md)
