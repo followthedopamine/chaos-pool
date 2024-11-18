@@ -8,6 +8,8 @@ const LEVEL_BUTTON = preload("res://scenes/Level_Button.tscn")
 @onready var horizontal_container = $Container/Panel/BoxContainer/MarginContainer/BoxContainer
 @onready var margin_container = $Container/Panel/BoxContainer/MarginContainer
 
+@onready var return_button = $ReturnButton
+
 const LANDSCAPE_MAX_BUTTONS_PER_ROW = 5
 const PORTRAIT_MAX_BUTTONS_PER_ROW = 4
 
@@ -54,8 +56,12 @@ func lock_levels():
 		
 func _on_button_pressed():
 	Scene.load_level_1()
+	
+func _on_return_pressed():
+	Scene.load_main_menu()
 
 func _ready():
+	return_button.connect("pressed", _on_return_pressed)
 	Save.load_stars()
 	create_level_buttons()
 	lock_levels()
