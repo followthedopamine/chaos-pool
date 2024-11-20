@@ -64,10 +64,9 @@ completedColumns:
 
 ## In Progress
 
-- [at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me](tasks/at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me.md)
-
 ## Done
 
+- [at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me](tasks/at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me.md)
 - [back-button-on-level-select](tasks/back-button-on-level-select.md)
 - [bug-pressing-r-takes-you-to-main-menu-should-reload-level](tasks/bug-pressing-r-takes-you-to-main-menu-should-reload-level.md)
 - [portrait-mode](tasks/portrait-mode.md)
