@@ -33,7 +33,7 @@ const BALL_TEXTURES = [
 ]
 
 const BALL_LIGHTING_2 = preload("res://images/sprites/Ball_Lighting_2.png")
-const COOL_BALLS = [5,7,1,9,3,11,13]
+const COOL_BALLS = [1,3,5,8,10,12]
 
 const TIME = preload("res://scenes/Time.tscn")
 const CUE_BALLS_DISPLAY = preload("res://scenes/Cue_Balls_Display.tscn")

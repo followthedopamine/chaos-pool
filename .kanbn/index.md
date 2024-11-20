@@ -34,7 +34,6 @@ completedColumns:
 
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
-- [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
 - [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
 - [bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true](tasks/bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true.md)
 - [pusher-ball-should-affect-obstacles](tasks/pusher-ball-should-affect-obstacles.md)
@@ -61,11 +60,21 @@ completedColumns:
 - [hotkeys-for-ui-navigation](tasks/hotkeys-for-ui-navigation.md)
 - [bug-all-levels-unlocked](tasks/bug-all-levels-unlocked.md)
 - [option-to-aim-from-other-side-default-on-mobile](tasks/option-to-aim-from-other-side-default-on-mobile.md)
+- [sensor-portrait-landscape-mode-for-mobile](tasks/sensor-portrait-landscape-mode-for-mobile.md)
+- [nicer-background-for-unhandled-areas-or-just-fill-the-whole-window](tasks/nicer-background-for-unhandled-areas-or-just-fill-the-whole-window.md)
+- [add-resolution-options-to-config-menu](tasks/add-resolution-options-to-config-menu.md)
+- [add-a-display-option-to-show-black-bars-or-fill-the-screen](tasks/add-a-display-option-to-show-black-bars-or-fill-the-screen.md)
+- [level-end-screen-can-be-clicked-through-to-open-pause-menu](tasks/level-end-screen-can-be-clicked-through-to-open-pause-menu.md)
+- [levels-should-be-vertically-symmetrical](tasks/levels-should-be-vertically-symmetrical.md)
+- [balls-should-be-rotated-initially-if-loaded-in-portrait-mode](tasks/balls-should-be-rotated-initially-if-loaded-in-portrait-mode.md)
+- [mobile-performace-honestly-pretty-bad-on-my-ancient-tablet](tasks/mobile-performace-honestly-pretty-bad-on-my-ancient-tablet.md)
 
 ## In Progress
 
 ## Done
 
+- [bug-balls-after-8-now-have-wrong-outlines-after-removal-of-8-ball](tasks/bug-balls-after-8-now-have-wrong-outlines-after-removal-of-8-ball.md)
+- [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
 - [at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me](tasks/at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me.md)
 - [back-button-on-level-select](tasks/back-button-on-level-select.md)
 - [bug-pressing-r-takes-you-to-main-menu-should-reload-level](tasks/bug-pressing-r-takes-you-to-main-menu-should-reload-level.md)

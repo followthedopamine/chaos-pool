@@ -23,9 +23,6 @@ position = Vector2(210, 203)
 [node name="Ball4" parent="." instance=ExtResource("2_7p825")]
 position = Vector2(197, 196)
 
-[node name="Ball5" parent="." instance=ExtResource("2_7p825")]
-position = Vector2(197, 210)
-
 [node name="Ball6" parent="." instance=ExtResource("2_7p825")]
 position = Vector2(197, 224)
 
