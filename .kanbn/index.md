@@ -56,11 +56,15 @@ completedColumns:
 - [many-people-struggling-with-the-difficulty](tasks/many-people-struggling-with-the-difficulty.md)
 - [an-animation-for-the-balls-being-saved-displaying-the-stars](tasks/an-animation-for-the-balls-being-saved-displaying-the-stars.md)
 - [possibly-adjust-power-levels](tasks/possibly-adjust-power-levels.md)
-- [at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me](tasks/at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me.md)
 - [a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey](tasks/a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey.md)
 - [some-people-are-really-needing-some-instruction](tasks/some-people-are-really-needing-some-instruction.md)
+- [hotkeys-for-ui-navigation](tasks/hotkeys-for-ui-navigation.md)
+- [bug-all-levels-unlocked](tasks/bug-all-levels-unlocked.md)
+- [option-to-aim-from-other-side-default-on-mobile](tasks/option-to-aim-from-other-side-default-on-mobile.md)
 
 ## In Progress
+
+- [at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me](tasks/at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me.md)
 
 ## Done
 

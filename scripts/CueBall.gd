@@ -166,7 +166,3 @@ func _physics_process(_delta):
 	if level.cue_ball_active:
 		check_cue_ball_still_moving()
 		trigger_constant_effects()
-
-
-
-

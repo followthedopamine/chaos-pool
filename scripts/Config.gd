@@ -26,4 +26,3 @@ func load_options():
 		Sound.sfx_muted = muteds[1]
 	else:
 		print("No config saved")
-

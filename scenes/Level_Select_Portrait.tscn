@@ -65,6 +65,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="ReturnButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 328.0
 offset_right = 360.0
 offset_bottom = 34.0

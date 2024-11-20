@@ -19,7 +19,3 @@ func _on_button_down():
 
 func _on_pressed():
 	Scene.load_level_by_index(int(level_button_text.text) - 1)
-
-
-
-

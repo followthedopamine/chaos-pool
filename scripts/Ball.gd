@@ -21,4 +21,3 @@ func _on_body_entered(body):
 
 func _physics_process(_delta):
 	prev_frame_velocity = linear_velocity
-

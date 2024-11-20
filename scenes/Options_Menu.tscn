@@ -168,10 +168,9 @@ layout_mode = 2
 
 [node name="ResolutionDropdown" type="OptionButton" parent="HBoxContainer/VBoxContainer/ResolutionControls"]
 layout_mode = 2
-item_count = 2
 selected = 0
+item_count = 2
 popup/item_0/text = "Landscape"
-popup/item_0/id = 0
 popup/item_1/text = "Portrait"
 popup/item_1/id = 1
 

@@ -51,4 +51,3 @@ func _draw():
 		
 func _physics_process(delta):
 	cast_shape()
-
