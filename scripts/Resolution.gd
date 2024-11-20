@@ -43,6 +43,8 @@ func rotate_level(level):
 		level.global_rotation = deg_to_rad(0)
 		level.global_position.x = 0
 	for child in level.get_children():
+		if child.is_in_group("balls"):
+			child.rotation += deg_to_rad(270)
 		child.global_position = child.global_position
 	
 func adjust_level_components(level):

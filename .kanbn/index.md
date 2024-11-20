@@ -66,13 +66,14 @@ completedColumns:
 - [add-a-display-option-to-show-black-bars-or-fill-the-screen](tasks/add-a-display-option-to-show-black-bars-or-fill-the-screen.md)
 - [level-end-screen-can-be-clicked-through-to-open-pause-menu](tasks/level-end-screen-can-be-clicked-through-to-open-pause-menu.md)
 - [levels-should-be-vertically-symmetrical](tasks/levels-should-be-vertically-symmetrical.md)
-- [balls-should-be-rotated-initially-if-loaded-in-portrait-mode](tasks/balls-should-be-rotated-initially-if-loaded-in-portrait-mode.md)
 - [mobile-performace-honestly-pretty-bad-on-my-ancient-tablet](tasks/mobile-performace-honestly-pretty-bad-on-my-ancient-tablet.md)
+- [add-an-option-for-the-guide-line](tasks/add-an-option-for-the-guide-line.md)
 
 ## In Progress
 
 ## Done
 
+- [balls-should-be-rotated-initially-if-loaded-in-portrait-mode](tasks/balls-should-be-rotated-initially-if-loaded-in-portrait-mode.md)
 - [bug-balls-after-8-now-have-wrong-outlines-after-removal-of-8-ball](tasks/bug-balls-after-8-now-have-wrong-outlines-after-removal-of-8-ball.md)
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
 - [at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me](tasks/at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me.md)
