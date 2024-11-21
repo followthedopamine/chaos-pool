@@ -93,4 +93,10 @@ func _on_resolution_dropdown_item_selected(index):
 		Resolution.set_game_to_landscape()
 	if index == 1:
 		Resolution.set_game_to_portrait()
-	pass # Replace with function body.
+
+func _on_difficulty_dropdown_item_selected(index: int) -> void:
+	match(index):
+		0: Config.guide_line = Config.AMATEUR
+		1: Config.guide_line = Config.PROFESSIONAL
+		2: Config.guide_line = Config.MASTER
+		

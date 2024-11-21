@@ -41,7 +41,6 @@ completedColumns:
 - [player-did-not-seem-to-recognise-the-restart-button](tasks/player-did-not-seem-to-recognise-the-restart-button.md)
 - [2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset](tasks/2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset.md)
 - [find-a-way-to-keep-the-crazy-wormhole-ball-effect-but-without-the-frame-reductions-good-luck](tasks/find-a-way-to-keep-the-crazy-wormhole-ball-effect-but-without-the-frame-reductions-good-luck.md)
-- [add-a-normal-line-to-the-guide-line](tasks/add-a-normal-line-to-the-guide-line.md)
 - [ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling](tasks/ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling.md)
 - [wonky-collision-on-table-walls-sometimes](tasks/wonky-collision-on-table-walls-sometimes.md)
 - [bug-ball-lighting-sometimes-visible-during-sinking-animation](tasks/bug-ball-lighting-sometimes-visible-during-sinking-animation.md)
@@ -51,7 +50,6 @@ completedColumns:
 - [bug-i-closed-the-game-then-reopened-in-and-the-music-and-sound-didn-t-play-the-second-time](tasks/bug-i-closed-the-game-then-reopened-in-and-the-music-and-sound-didn-t-play-the-second-time.md)
 - [bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time](tasks/bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time.md)
 - [2-players-not-understanding-how-the-balls-are-loaded-onto-the-table](tasks/2-players-not-understanding-how-the-balls-are-loaded-onto-the-table.md)
-- [i-reached-a-point-where-i-couldn-t-progress-for-an-hour-and-got-stuck](tasks/i-reached-a-point-where-i-couldn-t-progress-for-an-hour-and-got-stuck.md)
 - [many-people-struggling-with-the-difficulty](tasks/many-people-struggling-with-the-difficulty.md)
 - [an-animation-for-the-balls-being-saved-displaying-the-stars](tasks/an-animation-for-the-balls-being-saved-displaying-the-stars.md)
 - [possibly-adjust-power-levels](tasks/possibly-adjust-power-levels.md)
@@ -68,11 +66,14 @@ completedColumns:
 - [levels-should-be-vertically-symmetrical](tasks/levels-should-be-vertically-symmetrical.md)
 - [mobile-performace-honestly-pretty-bad-on-my-ancient-tablet](tasks/mobile-performace-honestly-pretty-bad-on-my-ancient-tablet.md)
 - [add-an-option-for-the-guide-line](tasks/add-an-option-for-the-guide-line.md)
+- [bug-portrait-mode-is-completely-broken-on-web-export](tasks/bug-portrait-mode-is-completely-broken-on-web-export.md)
+- [might-want-to-move-the-power-bar-to-off-the-table-so-it-s-always-visible](tasks/might-want-to-move-the-power-bar-to-off-the-table-so-it-s-always-visible.md)
 
 ## In Progress
 
 ## Done
 
+- [add-a-normal-line-to-the-guide-line](tasks/add-a-normal-line-to-the-guide-line.md)
 - [balls-should-be-rotated-initially-if-loaded-in-portrait-mode](tasks/balls-should-be-rotated-initially-if-loaded-in-portrait-mode.md)
 - [bug-balls-after-8-now-have-wrong-outlines-after-removal-of-8-ball](tasks/bug-balls-after-8-now-have-wrong-outlines-after-removal-of-8-ball.md)
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
@@ -83,6 +84,7 @@ completedColumns:
 - [should-be-able-to-go-back-to-landscape-mode](tasks/should-be-able-to-go-back-to-landscape-mode.md)
 - [bug-game-crashes-after-exiting-to-main-menu-and-then-rotating-resolution](tasks/bug-game-crashes-after-exiting-to-main-menu-and-then-rotating-resolution.md)
 - [rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded](tasks/rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded.md)
+- [i-reached-a-point-where-i-couldn-t-progress-for-an-hour-and-got-stuck](tasks/i-reached-a-point-where-i-couldn-t-progress-for-an-hour-and-got-stuck.md)
 - [multiple-rows-of-levels-depending-on-portrait-mode](tasks/multiple-rows-of-levels-depending-on-portrait-mode.md)
 - [timer-positioned-incorrectly-in-portrait-mode](tasks/timer-positioned-incorrectly-in-portrait-mode.md)
 - [pause-button-missing-in-portrait](tasks/pause-button-missing-in-portrait.md)

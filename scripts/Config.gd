@@ -4,6 +4,12 @@ var config_path = "user://config.cfg"
 
 var volumes = [75,75]  # [Music, SFX]
 var muteds = [false, false] # [Music, SFX]
+enum {
+	AMATEUR,
+	PROFESSIONAL,
+	MASTER
+}
+var guide_line = PROFESSIONAL
 
 func _ready():
 	load_options()
