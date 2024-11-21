@@ -5,6 +5,10 @@ extends PanelContainer
 @onready var sfx_slider = $HBoxContainer/VBoxContainer/SFXControls/SFXSlider
 @onready var toggle_sfx_button = $HBoxContainer/VBoxContainer/SFXControls/ToggleSFXButton
 @onready var toggle_music_button = $HBoxContainer/VBoxContainer/MusicControls/ToggleMusicButton
+@onready var difficulty_dropdown: OptionButton = $HBoxContainer/VBoxContainer/DifficultyControls/DifficultyDropdown
+@onready var resolution_dropdown: OptionButton = $HBoxContainer/VBoxContainer/ResolutionControls/ResolutionDropdown
+
+
 
 @onready var level_menu_button = $"../LevelMenuButton"
 
@@ -17,11 +21,14 @@ var sfx_volume = 75
 func _ready():
 	self.visible = false
 	set_volume_sliders()
+	set_difficulty_dropdown()
+	set_resolution_dropdown()
 	
 func show_from_main_menu():
 	self.visible = true
 	level_controls.visible = false
 	from_level = false
+	
 	
 func show_from_level():
 	self.visible = true
@@ -41,6 +48,12 @@ func set_volume_sliders():
 	else:
 		sfx_slider.set_value_no_signal(0)
 		toggle_sfx_button.button_pressed = true
+		
+func set_difficulty_dropdown():
+	difficulty_dropdown.select(Config.guide_line)
+	
+func set_resolution_dropdown():
+	resolution_dropdown.select(Resolution.display_mode)
 	
 func _on_toggle_sfx_button_toggled(toggled_on):
 	Sound.set_sfx_muted(toggled_on)

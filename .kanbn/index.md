@@ -36,7 +36,6 @@ completedColumns:
 - [bug-you-can-get-to-the-pause-menu-when-the-level-ends](tasks/bug-you-can-get-to-the-pause-menu-when-the-level-ends.md)
 - [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
 - [bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true](tasks/bug-if-cue-ball-is-bumped-before-shot-taken-then-new-ball-is-loaded-not-sure-if-this-is-true.md)
-- [pusher-ball-should-affect-obstacles](tasks/pusher-ball-should-affect-obstacles.md)
 - [bug-lost-a-ball-after-a-wormhole-ball](tasks/bug-lost-a-ball-after-a-wormhole-ball.md)
 - [player-did-not-seem-to-recognise-the-restart-button](tasks/player-did-not-seem-to-recognise-the-restart-button.md)
 - [2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset](tasks/2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset.md)
@@ -60,20 +59,20 @@ completedColumns:
 - [option-to-aim-from-other-side-default-on-mobile](tasks/option-to-aim-from-other-side-default-on-mobile.md)
 - [sensor-portrait-landscape-mode-for-mobile](tasks/sensor-portrait-landscape-mode-for-mobile.md)
 - [nicer-background-for-unhandled-areas-or-just-fill-the-whole-window](tasks/nicer-background-for-unhandled-areas-or-just-fill-the-whole-window.md)
-- [add-resolution-options-to-config-menu](tasks/add-resolution-options-to-config-menu.md)
 - [add-a-display-option-to-show-black-bars-or-fill-the-screen](tasks/add-a-display-option-to-show-black-bars-or-fill-the-screen.md)
 - [level-end-screen-can-be-clicked-through-to-open-pause-menu](tasks/level-end-screen-can-be-clicked-through-to-open-pause-menu.md)
 - [levels-should-be-vertically-symmetrical](tasks/levels-should-be-vertically-symmetrical.md)
 - [mobile-performace-honestly-pretty-bad-on-my-ancient-tablet](tasks/mobile-performace-honestly-pretty-bad-on-my-ancient-tablet.md)
-- [add-an-option-for-the-guide-line](tasks/add-an-option-for-the-guide-line.md)
 - [bug-portrait-mode-is-completely-broken-on-web-export](tasks/bug-portrait-mode-is-completely-broken-on-web-export.md)
 - [might-want-to-move-the-power-bar-to-off-the-table-so-it-s-always-visible](tasks/might-want-to-move-the-power-bar-to-off-the-table-so-it-s-always-visible.md)
+- [bug-glass-just-smashes-arbitrarily](tasks/bug-glass-just-smashes-arbitrarily.md)
 
 ## In Progress
 
 ## Done
 
 - [add-a-normal-line-to-the-guide-line](tasks/add-a-normal-line-to-the-guide-line.md)
+- [pusher-ball-should-affect-obstacles](tasks/pusher-ball-should-affect-obstacles.md)
 - [balls-should-be-rotated-initially-if-loaded-in-portrait-mode](tasks/balls-should-be-rotated-initially-if-loaded-in-portrait-mode.md)
 - [bug-balls-after-8-now-have-wrong-outlines-after-removal-of-8-ball](tasks/bug-balls-after-8-now-have-wrong-outlines-after-removal-of-8-ball.md)
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
@@ -86,9 +85,11 @@ completedColumns:
 - [rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded](tasks/rotating-level-doesn-t-work-in-portrait-mode-when-level-is-already-loaded.md)
 - [i-reached-a-point-where-i-couldn-t-progress-for-an-hour-and-got-stuck](tasks/i-reached-a-point-where-i-couldn-t-progress-for-an-hour-and-got-stuck.md)
 - [multiple-rows-of-levels-depending-on-portrait-mode](tasks/multiple-rows-of-levels-depending-on-portrait-mode.md)
+- [add-resolution-options-to-config-menu](tasks/add-resolution-options-to-config-menu.md)
 - [timer-positioned-incorrectly-in-portrait-mode](tasks/timer-positioned-incorrectly-in-portrait-mode.md)
 - [pause-button-missing-in-portrait](tasks/pause-button-missing-in-portrait.md)
 - [number-of-stars-might-not-be-working-correctly](tasks/number-of-stars-might-not-be-working-correctly.md)
+- [add-an-option-for-the-guide-line](tasks/add-an-option-for-the-guide-line.md)
 - [pause-menu-should-pause-the-game](tasks/pause-menu-should-pause-the-game.md)
 - [bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game](tasks/bug-trying-to-go-to-next-level-on-the-last-level-crashes-the-game.md)
 - [player-expects-more-impact-when-shooting-a-full-power-shot](tasks/player-expects-more-impact-when-shooting-a-full-power-shot.md)
