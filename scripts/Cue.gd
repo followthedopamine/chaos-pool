@@ -51,6 +51,11 @@ func handle_input(delta):
 		shoot_cue_ball()
 
 func get_player_target():
+	if Config.reverse_aim:
+		return global_position * 2 - get_global_mouse_position()
+	return get_global_mouse_position()
+	
+func get_player_press_location():
 	return get_global_mouse_position()
 	
 func get_player_target_direction():
@@ -104,7 +109,7 @@ func position_cue():
 	
 func check_if_player_is_pressing_menu():
 	var rect = level_menu_button.get_global_rect()
-	if rect.has_point(get_player_target()):
+	if rect.has_point(get_player_press_location()):
 		return true
 	return false
 	

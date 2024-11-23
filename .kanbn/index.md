@@ -56,7 +56,6 @@ completedColumns:
 - [some-people-are-really-needing-some-instruction](tasks/some-people-are-really-needing-some-instruction.md)
 - [hotkeys-for-ui-navigation](tasks/hotkeys-for-ui-navigation.md)
 - [bug-all-levels-unlocked](tasks/bug-all-levels-unlocked.md)
-- [option-to-aim-from-other-side-default-on-mobile](tasks/option-to-aim-from-other-side-default-on-mobile.md)
 - [sensor-portrait-landscape-mode-for-mobile](tasks/sensor-portrait-landscape-mode-for-mobile.md)
 - [nicer-background-for-unhandled-areas-or-just-fill-the-whole-window](tasks/nicer-background-for-unhandled-areas-or-just-fill-the-whole-window.md)
 - [add-a-display-option-to-show-black-bars-or-fill-the-screen](tasks/add-a-display-option-to-show-black-bars-or-fill-the-screen.md)
@@ -68,6 +67,8 @@ completedColumns:
 - [bug-glass-just-smashes-arbitrarily](tasks/bug-glass-just-smashes-arbitrarily.md)
 
 ## In Progress
+
+- [option-to-aim-from-other-side-default-on-mobile](tasks/option-to-aim-from-other-side-default-on-mobile.md)
 
 ## Done
 

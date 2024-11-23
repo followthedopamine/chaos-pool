@@ -6,6 +6,7 @@ var volumes = [75,75]  # [Music, SFX]
 var muteds = [false, false] # [Music, SFX]
 var window_resolution = Vector2.ZERO
 var window_position = Vector2.ZERO
+var reverse_aim = false
 
 enum {
 	AMATEUR,
@@ -34,6 +35,7 @@ func save_options():
 	file.store_var(window_resolution)
 	file.store_var(window_position)
 	file.store_var(guide_line)
+	file.store_var(reverse_aim)
 	
 func load_options():
 	if FileAccess.file_exists(config_path):
@@ -54,6 +56,12 @@ func load_options():
 		guide_line = file.get_var()
 		if guide_line == null:
 			guide_line = PROFESSIONAL
+		reverse_aim = file.get_var()
+		if reverse_aim == null:
+			if OS.get_name() == "Android" or OS.get_name() == "iOS":
+				reverse_aim = true
+			else:
+				reverse_aim = false
 		Sound.change_volume("Music", volumes[0])
 		Sound.change_volume("SFX", volumes[1])
 		Sound.music_muted = muteds[0]

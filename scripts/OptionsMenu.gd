@@ -7,6 +7,7 @@ extends PanelContainer
 @onready var toggle_music_button = $HBoxContainer/VBoxContainer/MusicControls/ToggleMusicButton
 @onready var difficulty_dropdown: OptionButton = $HBoxContainer/VBoxContainer/DifficultyControls/DifficultyDropdown
 @onready var resolution_dropdown: OptionButton = $HBoxContainer/VBoxContainer/ResolutionControls/ResolutionDropdown
+@onready var reverse_check_box: CheckBox = $HBoxContainer/VBoxContainer/ReverseControls/ReverseCheckBox
 
 
 
@@ -23,6 +24,7 @@ func _ready():
 	set_volume_sliders()
 	set_difficulty_dropdown()
 	set_resolution_dropdown()
+	set_reverse_aim_checkbox()
 	
 func show_from_main_menu():
 	self.visible = true
@@ -54,6 +56,10 @@ func set_difficulty_dropdown():
 	
 func set_resolution_dropdown():
 	resolution_dropdown.select(Resolution.display_mode)
+	
+func set_reverse_aim_checkbox():
+	if Config.reverse_aim:
+		reverse_check_box.button_pressed = true
 	
 func _on_toggle_sfx_button_toggled(toggled_on):
 	Sound.set_sfx_muted(toggled_on)
@@ -112,4 +118,6 @@ func _on_difficulty_dropdown_item_selected(index: int) -> void:
 		0: Config.guide_line = Config.AMATEUR
 		1: Config.guide_line = Config.PROFESSIONAL
 		2: Config.guide_line = Config.MASTER
-		
+
+func _on_reverse_check_box_toggled(toggled_on: bool) -> void:
+	Config.reverse_aim = toggled_on
