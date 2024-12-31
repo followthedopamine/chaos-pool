@@ -35,7 +35,6 @@ completedColumns:
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
 - [2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset](tasks/2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset.md)
-- [ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling](tasks/ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling.md)
 - [bug-ball-lighting-sometimes-visible-during-sinking-animation](tasks/bug-ball-lighting-sometimes-visible-during-sinking-animation.md)
 - [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
 - [bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time](tasks/bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time.md)
@@ -60,6 +59,7 @@ completedColumns:
 
 ## Done
 
+- [ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling](tasks/ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling.md)
 - [bug-level-end-screen-can-be-clicked-through-to-open-pause-menu](tasks/bug-level-end-screen-can-be-clicked-through-to-open-pause-menu.md)
 - [option-to-aim-from-other-side-default-on-mobile](tasks/option-to-aim-from-other-side-default-on-mobile.md)
 - [add-a-normal-line-to-the-guide-line](tasks/add-a-normal-line-to-the-guide-line.md)
