@@ -18,19 +18,19 @@ region = Rect2(128, 32, 32, 36)
 
 [node name="MainMenu" parent="." instance=ExtResource("1_kkx2b")]
 
+[node name="LevelMenuButton" type="TextureButton" parent="."]
+visible = false
+offset_left = 607.0
+offset_right = 639.0
+offset_bottom = 36.0
+texture_normal = SubResource("AtlasTexture_d4e1a")
+texture_pressed = SubResource("AtlasTexture_34hnb")
+
 [node name="LevelEnd" parent="." instance=ExtResource("8_agxvw")]
 visible = false
 
 [node name="OptionsMenu" parent="." instance=ExtResource("3_mbaoq")]
 z_index = 1000
-
-[node name="LevelMenuButton" type="TextureButton" parent="."]
-visible = false
-offset_left = 607.0
-offset_right = 639.0
-offset_bottom = 35.0
-texture_normal = SubResource("AtlasTexture_d4e1a")
-texture_pressed = SubResource("AtlasTexture_34hnb")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 process_mode = 3

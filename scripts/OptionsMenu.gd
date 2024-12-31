@@ -8,6 +8,7 @@ extends PanelContainer
 @onready var difficulty_dropdown: OptionButton = $HBoxContainer/VBoxContainer/DifficultyControls/DifficultyDropdown
 @onready var resolution_dropdown: OptionButton = $HBoxContainer/VBoxContainer/ResolutionControls/ResolutionDropdown
 @onready var reverse_check_box: CheckBox = $HBoxContainer/VBoxContainer/ReverseControls/ReverseCheckBox
+@onready var level_end: PanelContainer = $"../LevelEnd"
 
 
 
@@ -104,7 +105,8 @@ func hide_options_and_save():
 	get_tree().paused = false
 
 func _on_level_menu_button_pressed():
-	show_from_level()
+	if !level_end.visible:
+		show_from_level()
 
 func _on_resolution_dropdown_item_selected(index):
 	# index 0 for landscape, 1 for portrait

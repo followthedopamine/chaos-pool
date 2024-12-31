@@ -58,10 +58,9 @@ completedColumns:
 
 ## In Progress
 
-- [bug-level-end-screen-can-be-clicked-through-to-open-pause-menu](tasks/bug-level-end-screen-can-be-clicked-through-to-open-pause-menu.md)
-
 ## Done
 
+- [bug-level-end-screen-can-be-clicked-through-to-open-pause-menu](tasks/bug-level-end-screen-can-be-clicked-through-to-open-pause-menu.md)
 - [option-to-aim-from-other-side-default-on-mobile](tasks/option-to-aim-from-other-side-default-on-mobile.md)
 - [add-a-normal-line-to-the-guide-line](tasks/add-a-normal-line-to-the-guide-line.md)
 - [pusher-ball-should-affect-obstacles](tasks/pusher-ball-should-affect-obstacles.md)
