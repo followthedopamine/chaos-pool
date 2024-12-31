@@ -4,6 +4,7 @@ updated: 2024-11-20T02:30:22.122Z
 assigned: ""
 progress: 0
 tags: []
+column: Todo
 ---
 
 # Mobile performace honestly pretty bad on my ancient tablet

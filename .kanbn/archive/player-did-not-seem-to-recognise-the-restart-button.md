@@ -4,6 +4,7 @@ updated: 2024-11-12T01:00:19.894Z
 assigned: ""
 progress: 0
 tags: []
+column: Todo
 ---
 
 # Player did not seem to recognise the restart button
