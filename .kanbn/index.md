@@ -33,14 +33,12 @@ completedColumns:
 ## Todo
 
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
+- [an-animation-for-the-balls-being-saved-displaying-the-stars](tasks/an-animation-for-the-balls-being-saved-displaying-the-stars.md)
 - [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
 - [2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset](tasks/2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset.md)
-- [bug-ball-lighting-sometimes-visible-during-sinking-animation](tasks/bug-ball-lighting-sometimes-visible-during-sinking-animation.md)
 - [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
 - [bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time](tasks/bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time.md)
-- [2-players-not-understanding-how-the-balls-are-loaded-onto-the-table](tasks/2-players-not-understanding-how-the-balls-are-loaded-onto-the-table.md)
 - [many-people-struggling-with-the-difficulty](tasks/many-people-struggling-with-the-difficulty.md)
-- [an-animation-for-the-balls-being-saved-displaying-the-stars](tasks/an-animation-for-the-balls-being-saved-displaying-the-stars.md)
 - [possibly-adjust-power-levels](tasks/possibly-adjust-power-levels.md)
 - [a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey](tasks/a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey.md)
 - [some-people-are-really-needing-some-instruction](tasks/some-people-are-really-needing-some-instruction.md)
@@ -57,8 +55,14 @@ completedColumns:
 
 ## In Progress
 
+- [an-animation-for-the-balls-being-loaded-onto-the-table](tasks/an-animation-for-the-balls-being-loaded-onto-the-table.md)
+- [ball-fall-out-of-cue-ball-display](tasks/ball-fall-out-of-cue-ball-display.md)
+- [ball-drop-onto-table](tasks/ball-drop-onto-table.md)
+- [balls-roll-to-front-of-cue-ball-container](tasks/balls-roll-to-front-of-cue-ball-container.md)
+
 ## Done
 
+- [bug-ball-lighting-sometimes-visible-during-sinking-animation](tasks/bug-ball-lighting-sometimes-visible-during-sinking-animation.md)
 - [ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling](tasks/ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling.md)
 - [bug-level-end-screen-can-be-clicked-through-to-open-pause-menu](tasks/bug-level-end-screen-can-be-clicked-through-to-open-pause-menu.md)
 - [option-to-aim-from-other-side-default-on-mobile](tasks/option-to-aim-from-other-side-default-on-mobile.md)

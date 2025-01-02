@@ -275,8 +275,8 @@ position = Vector2(386, 199)
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_300ds")
 continuous_cd = 1
-max_contacts_reported = 20
 contact_monitor = true
+max_contacts_reported = 20
 linear_damp = 0.5
 script = ExtResource("1_vfq5q")
 
