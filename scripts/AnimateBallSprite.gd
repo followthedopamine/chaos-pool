@@ -32,14 +32,17 @@ func roll_texture():
 	elif offset.y < -height / 2:
 		offset.y += height
 
-	if vel == Vector2.ZERO:
-		# Update offset based on movement
-		var movement = last_position - ball.position
-		offset += Vector2(movement.x * MOVEMENT_ROLL_SPEED, movement.y * MOVEMENT_ROLL_SPEED)
-		pass
-	else:
-		# Update the offset based on velocity
-		offset += Vector2(vel.x * ROLL_SPEED, vel.y * ROLL_SPEED)
+	#### This code breaks the offset on ball respawning, need to find a better way
+	#### Maybe check if it's currently sinking since that's the only time it's relevant
+	#if vel == Vector2.ZERO:
+		## Update offset based on movement
+		#var movement = last_position - ball.position
+		#offset += Vector2(movement.x * MOVEMENT_ROLL_SPEED, movement.y * MOVEMENT_ROLL_SPEED)
+		#pass
+	#else:
+		## Update the offset based on velocity
+	####
+	offset += Vector2(vel.x * ROLL_SPEED, vel.y * ROLL_SPEED)
 	
 func reset_offset():
 	offset = Vector2.ZERO

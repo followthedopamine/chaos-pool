@@ -124,6 +124,7 @@ func reset_cue_ball():
 	cue_ball_sprite.vframes = 1
 	cue_ball_sprite.frame = 0
 	cue_ball_sprite.scale = Vector2.ONE
+	cue_ball_sprite.offset = Vector2.ZERO
 	modulate.a = initial_alpha
 	angular_velocity = 0
 	load_standard_ball_physics()

@@ -60,16 +60,16 @@ completedColumns:
 
 ## In Progress
 
-- [an-animation-for-the-balls-being-loaded-onto-the-table](tasks/an-animation-for-the-balls-being-loaded-onto-the-table.md)
-- [ball-fall-out-of-cue-ball-display](tasks/ball-fall-out-of-cue-ball-display.md)
-- [ball-drop-onto-table](tasks/ball-drop-onto-table.md)
-- [balls-roll-to-front-of-cue-ball-container](tasks/balls-roll-to-front-of-cue-ball-container.md)
-- [speed-up-reloading-animation](tasks/speed-up-reloading-animation.md)
 - [bug-reloading-animation-is-weird-after-pocketing-cue-ball](tasks/bug-reloading-animation-is-weird-after-pocketing-cue-ball.md)
 - [bug-no-respawn-after-ball-explosion](tasks/bug-no-respawn-after-ball-explosion.md)
 
 ## Done
 
+- [speed-up-reloading-animation](tasks/speed-up-reloading-animation.md)
+- [balls-roll-to-front-of-cue-ball-container](tasks/balls-roll-to-front-of-cue-ball-container.md)
+- [ball-drop-onto-table](tasks/ball-drop-onto-table.md)
+- [ball-fall-out-of-cue-ball-display](tasks/ball-fall-out-of-cue-ball-display.md)
+- [an-animation-for-the-balls-being-loaded-onto-the-table](tasks/an-animation-for-the-balls-being-loaded-onto-the-table.md)
 - [bug-ball-lighting-sometimes-visible-during-sinking-animation](tasks/bug-ball-lighting-sometimes-visible-during-sinking-animation.md)
 - [ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling](tasks/ball-rolling-in-to-pocket-could-appear-more-natural-with-texture-scrolling.md)
 - [bug-level-end-screen-can-be-clicked-through-to-open-pause-menu](tasks/bug-level-end-screen-can-be-clicked-through-to-open-pause-menu.md)
