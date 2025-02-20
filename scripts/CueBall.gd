@@ -27,6 +27,12 @@ var needs_respawn = false
 @onready var cue_ball_animations = $CueBallAnimations
 @onready var wormhole_animated_sprite = $WormholeAnimatedSprite
 @onready var pusher_animated_sprite = $PusherAnimatedSprite
+@onready var cue_ball_mask: Sprite2D = $CueBallMask
+
+var cue_balls_display
+
+var need_new_cue_ball = false
+
 
 @onready var initial_alpha = modulate.a
 
@@ -34,6 +40,7 @@ var needs_respawn = false
 
 func _ready():
 	level.balls_stopped.connect(_on_balls_stopped)
+	level.level_loaded.connect(_on_level_loaded)
 	initial_position = global_position
 	load_cue_ball()
 
@@ -41,7 +48,7 @@ func respawn_cue_ball():
 	print("Respawning cue ball")
 	linear_velocity = Vector2.ZERO
 	global_position = initial_position
-	needs_respawn = false 
+	needs_respawn = false
 
 func hide_ball():
 	explosion_sprite.visible = false
@@ -121,10 +128,12 @@ func reset_cue_ball():
 	angular_velocity = 0
 	load_standard_ball_physics()
 	cue_ball_sprite.visible = true
+	cue_ball_mask.scale = Vector2.ONE
 	cue_ball_collision.disabled = false
 	wormhole_animated_sprite.visible = false
 	pusher_animated_sprite.visible = false
 	Sound.end_all_loops()
+	
 
 func load_cue_ball():
 	print("New cue ball loaded")
@@ -136,6 +145,7 @@ func load_cue_ball():
 	match cue_ball_type:
 		Global.CUE_BALL_TYPES.INFINITE:
 			load_infinite_ball_physics()
+			
 		
 			
 func trigger_cue_ball_end_effects():
@@ -158,6 +168,37 @@ func check_cue_ball_still_moving():
 func _on_balls_stopped():
 	#load_cue_ball()
 	pass
+	
+func _on_level_loaded():
+	cue_balls_display = level.cue_balls_display.get_child(0)
+	
+	
+func animate_ball_spawn(delta):
+	if cue_ball_mask.scale.length() < 1:
+		cue_ball_mask.scale += Vector2(3, 3) * delta
+	else:
+		cue_ball_mask.scale = Vector2.ONE
+	cue_ball_mask.rotation -= 0.1
+	
+func animate_ball_despawn(delta):
+	if cue_ball_mask.scale.length() > 0.1:
+		cue_ball_mask.scale -= Vector2(3, 3) * delta
+	else:
+		cue_ball_mask.scale = Vector2.ZERO
+	cue_ball_mask.rotation += 0.1
+	
+func _process(delta):
+	if cue_balls_display.animation_state == cue_balls_display.TABLE_BALL_DESPAWN:
+		if cue_ball_sprite.visible:
+			animate_ball_despawn(delta)
+		else:
+			cue_balls_display.animation_state = cue_balls_display.TABLE_BALL_SPAWN
+	if cue_balls_display.animation_state == cue_balls_display.TABLE_BALL_SPAWN:
+		animate_ball_spawn(delta)
+	if need_new_cue_ball and cue_balls_display.animation_state == cue_balls_display.TABLE_BALL_SPAWN:
+		print("Loading new cue ball")
+		need_new_cue_ball = false
+		load_cue_ball()
 			
 func _physics_process(_delta):
 	#print(level.cue_ball_active)

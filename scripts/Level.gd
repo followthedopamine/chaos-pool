@@ -54,6 +54,8 @@ var active_balls = []  # Track currently active balls
 var level_ended = false
 var level_reset = false
 var available_textures = []  # Track available textures
+var cue_balls_display
+signal level_loaded
 
 func _ready():
 	Scene.current_level_script = self
@@ -63,7 +65,7 @@ func instantiate_level_scenes():
 	time = TIME.instantiate()
 	add_child(time)
 	level_end.level_timer = time
-	var cue_balls_display = CUE_BALLS_DISPLAY.instantiate()
+	cue_balls_display = CUE_BALLS_DISPLAY.instantiate()
 	add_child(cue_balls_display)
 	var table_background = TABLE_BACKGROUND.instantiate()
 	add_child(table_background)
@@ -97,6 +99,7 @@ func setup_level():
 					available_textures.remove_at(random_index)
 	
 	print("Initial ball count: ", active_balls.size())
+	level_loaded.emit()
 
 func ball_destroyed(ball: RigidBody2D):
 	var ball_index = active_balls.find(ball)
@@ -160,7 +163,7 @@ func handle_balls_stopped():
 		fail_level()
 	else:
 		shot_counter += 1
-		cue_ball.load_cue_ball()
+		cue_ball.need_new_cue_ball = true
 		balls_stopped.emit()
 		print("Balls stopped. Remaining balls: ", active_balls.size())
 

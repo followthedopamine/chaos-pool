@@ -17,6 +17,8 @@ const SHOT_MIN_VOLUME = 3
 const MINIMUM_TIME_BETWEEN_SHOTS = 0.2
 const TIME_TO_HIDE_SHOT_CHARGE = 0.5
 
+var cue_balls_display
+
 @onready var cue_ball = $"../CueBall"
 @onready var cue_ball_shape = $"../CueBall/CueBallCollision"
 @onready var level = $".."
@@ -37,8 +39,12 @@ signal shoot
 
 func _ready():
 	# Don't start handling input immediately or shot will fire from menu click
+	level.level_loaded.connect(_on_level_loaded)
 	await get_tree().create_timer(0.05).timeout
 	level_is_loading = false
+	
+func _on_level_loaded():
+	cue_balls_display = level.cue_balls_display.get_child(0)
 	
 func handle_unrestricted_input():
 	if Input.is_action_just_pressed("reset"):
@@ -154,6 +160,8 @@ func cast_shape():
 	
 	
 func can_handle_input() -> bool:
+	if cue_balls_display.animation_state != cue_balls_display.NONE:
+		return false
 	if last_shot == level.shot_counter:
 		return false
 	if level_is_loading:

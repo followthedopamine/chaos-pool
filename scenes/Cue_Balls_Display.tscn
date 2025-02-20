@@ -54,12 +54,12 @@ offset_bottom = 16.0
 [node name="CueBallsDisplayBox" type="BoxContainer" parent="."]
 clip_children = 1
 clip_contents = true
-layout_direction = 3
+layout_direction = 2
 layout_mode = 0
-offset_left = -568.0
-offset_top = 48.0
-offset_right = -313.0
-offset_bottom = 64.0
+offset_left = 75.0
+offset_top = 49.0
+offset_right = 271.0
+offset_bottom = 65.0
 theme_override_constants/separation = 4
 script = ExtResource("1_gem3a")
 
@@ -83,7 +83,28 @@ texture = ExtResource("2_yhsy3")
 layout_mode = 2
 texture = ExtResource("2_yhsy3")
 
+[node name="TextureRect11" type="TextureRect" parent="CueBallsDisplayBox"]
+layout_mode = 2
+texture = ExtResource("2_yhsy3")
+
+[node name="TextureRect7" type="TextureRect" parent="CueBallsDisplayBox"]
+layout_mode = 2
+texture = ExtResource("2_yhsy3")
+
+[node name="TextureRect10" type="TextureRect" parent="CueBallsDisplayBox"]
+layout_mode = 2
+texture = ExtResource("2_yhsy3")
+
+[node name="TextureRect8" type="TextureRect" parent="CueBallsDisplayBox"]
+layout_mode = 2
+texture = ExtResource("2_yhsy3")
+
+[node name="TextureRect9" type="TextureRect" parent="CueBallsDisplayBox"]
+layout_mode = 2
+texture = ExtResource("2_yhsy3")
+
 [node name="Arrow" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 540.0
 offset_top = 13.0

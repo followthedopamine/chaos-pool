@@ -18,7 +18,6 @@ completedColumns:
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
 - [achievements](tasks/achievements.md)
 - [ball-that-follows-the-player-s-cursor-finger](tasks/ball-that-follows-the-player-s-cursor-finger.md)
-- [split-cue-ball](tasks/split-cue-ball.md)
 - [sound-for-balls-being-pocketed](tasks/sound-for-balls-being-pocketed.md)
 - [save-player-s-best-time](tasks/save-player-s-best-time.md)
 - [sand-on-the-felt](tasks/sand-on-the-felt.md)
@@ -29,6 +28,9 @@ completedColumns:
 - [possibly-try-and-reduce-time-between-shots](tasks/possibly-try-and-reduce-time-between-shots.md)
 - [there-s-probably-a-case-for-pausing-the-tree-during-the-end-level-screen](tasks/there-s-probably-a-case-for-pausing-the-tree-during-the-end-level-screen.md)
 - [consider-an-option-to-switch-a-powered-ball-for-an-unpowered-ball](tasks/consider-an-option-to-switch-a-powered-ball-for-an-unpowered-ball.md)
+- [split-cue-ball-shoots-balls-at-every-other-ball-at-max-velocity](tasks/split-cue-ball-shoots-balls-at-every-other-ball-at-max-velocity.md)
+- [max-velocity-bounce-ball](tasks/max-velocity-bounce-ball.md)
+- [bumper-obstacle-like-a-pinball-table](tasks/bumper-obstacle-like-a-pinball-table.md)
 
 ## Todo
 
@@ -52,6 +54,9 @@ completedColumns:
 - [bug-glass-just-smashes-arbitrarily](tasks/bug-glass-just-smashes-arbitrarily.md)
 - [bug-wood-is-immune-to-bombs](tasks/bug-wood-is-immune-to-bombs.md)
 - [someone-complained-push-and-pull-ball-icons-too-visually-similar](tasks/someone-complained-push-and-pull-ball-icons-too-visually-similar.md)
+- [bug-ball-shadow-visible-over-top-of-cue](tasks/bug-ball-shadow-visible-over-top-of-cue.md)
+- [seriously-people-are-struggling-with-the-difficulty](tasks/seriously-people-are-struggling-with-the-difficulty.md)
+- [balls-need-a-more-gradual-introduction-for-players-to-learn](tasks/balls-need-a-more-gradual-introduction-for-players-to-learn.md)
 
 ## In Progress
 
@@ -59,6 +64,9 @@ completedColumns:
 - [ball-fall-out-of-cue-ball-display](tasks/ball-fall-out-of-cue-ball-display.md)
 - [ball-drop-onto-table](tasks/ball-drop-onto-table.md)
 - [balls-roll-to-front-of-cue-ball-container](tasks/balls-roll-to-front-of-cue-ball-container.md)
+- [speed-up-reloading-animation](tasks/speed-up-reloading-animation.md)
+- [bug-reloading-animation-is-weird-after-pocketing-cue-ball](tasks/bug-reloading-animation-is-weird-after-pocketing-cue-ball.md)
+- [bug-no-respawn-after-ball-explosion](tasks/bug-no-respawn-after-ball-explosion.md)
 
 ## Done
 
