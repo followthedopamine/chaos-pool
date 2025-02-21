@@ -60,11 +60,14 @@ completedColumns:
 
 ## In Progress
 
-- [bug-reloading-animation-is-weird-after-pocketing-cue-ball](tasks/bug-reloading-animation-is-weird-after-pocketing-cue-ball.md)
-- [bug-no-respawn-after-ball-explosion](tasks/bug-no-respawn-after-ball-explosion.md)
+- [bug-balls-don-t-roll-to-the-correct-place](tasks/bug-balls-don-t-roll-to-the-correct-place.md)
 
 ## Done
 
+- [bug-you-can-see-a-little-bit-of-the-ball-after-it-s-sized-down](tasks/bug-you-can-see-a-little-bit-of-the-ball-after-it-s-sized-down.md)
+- [bug-no-respawn-after-ball-explosion](tasks/bug-no-respawn-after-ball-explosion.md)
+- [bug-reloading-animation-is-weird-after-pocketing-cue-ball](tasks/bug-reloading-animation-is-weird-after-pocketing-cue-ball.md)
+- [animate-ball-spawn-in](tasks/animate-ball-spawn-in.md)
 - [speed-up-reloading-animation](tasks/speed-up-reloading-animation.md)
 - [balls-roll-to-front-of-cue-ball-container](tasks/balls-roll-to-front-of-cue-ball-container.md)
 - [ball-drop-onto-table](tasks/ball-drop-onto-table.md)

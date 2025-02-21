@@ -200,6 +200,8 @@ func _process(delta):
 		print("Loading new cue ball")
 		need_new_cue_ball = false
 		load_cue_ball()
+		cue_ball_mask.scale = Vector2.ZERO
+		animate_ball_spawn(delta)
 			
 func _physics_process(_delta):
 	#print(level.cue_ball_active)
