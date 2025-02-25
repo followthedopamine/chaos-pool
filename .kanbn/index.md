@@ -60,10 +60,9 @@ completedColumns:
 
 ## In Progress
 
-- [bug-balls-don-t-roll-to-the-correct-place](tasks/bug-balls-don-t-roll-to-the-correct-place.md)
-
 ## Done
 
+- [bug-balls-don-t-roll-to-the-correct-place](tasks/bug-balls-don-t-roll-to-the-correct-place.md)
 - [bug-you-can-see-a-little-bit-of-the-ball-after-it-s-sized-down](tasks/bug-you-can-see-a-little-bit-of-the-ball-after-it-s-sized-down.md)
 - [bug-no-respawn-after-ball-explosion](tasks/bug-no-respawn-after-ball-explosion.md)
 - [bug-reloading-animation-is-weird-after-pocketing-cue-ball](tasks/bug-reloading-animation-is-weird-after-pocketing-cue-ball.md)

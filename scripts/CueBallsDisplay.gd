@@ -18,10 +18,10 @@ const DROP_SPEED = 200
 
 const ROLL_SPEED = 200
 
-var target_position
+var target_x
 
 @onready var initial_position = position
-@onready var ball_width = get_child(0).get_rect().size.x
+@onready var ball_width = 20
 
 var separation = self["theme_override_constants/separation"]
 
@@ -40,10 +40,6 @@ func remove_first_ball():
 	animation_state = TABLE_BALL_DESPAWN
 	await get_tree().create_timer(animation_timers[0]).timeout
 	animation_state = TABLE_BALL_SPAWN
-	#await get_tree().create_timer(animation_timers[1]).timeout
-	target_position = Vector2(initial_position.x - (ball_width + separation), position.y)
-	#Debug.draw_dot(target_position)
-	#animation_state = BALLS_ROLLING
 	
 func animate_ball_drop_out_of_display(delta):
 	var first_ball = get_child(0)
@@ -57,22 +53,20 @@ func animate_ball_spiral_out(delta):
 		print("Ball is fully spiraled out")
 		first_ball.scale = Vector2.ZERO
 		first_ball.visible = false
+		get_child(0).queue_free()
+		position.x += ball_width
 		animation_state = BALLS_ROLLING
 	#first_ball.rotation += 0.1
 	
 func animate_balls_rolling(delta):
-	print("Position: " + str(position.x - target_position.x))
-	if position.x - target_position.x < 0:
-		get_child(0).queue_free()
+	var distance_to_roll = ROLL_SPEED * delta
+	#print("Position: " + str(position.x - initial_position.x))
+	# Check if we'll reach or pass the target position in this frame
+	if position.x - distance_to_roll <= initial_position.x:
 		position.x = initial_position.x
 		animation_state = NONE
 	else:
 		position.x -= ROLL_SPEED * delta
-		Debug.draw_dot(position)
-		#var balls = get_children()
-		#for ball in balls:
-			## Add ball rotation here possibly
-			#pass
 	
 func remove_display_balls():
 	for i in get_children():
@@ -89,7 +83,6 @@ func _on_balls_stopped():
 	
 func _process(delta):
 	if animation_state == TABLE_BALL_SPAWN:
-		#animate_ball_drop_out_of_display(delta)
 		animate_ball_spiral_out(delta)
 	if animation_state == BALLS_ROLLING:
 		animate_balls_rolling(delta)
