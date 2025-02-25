@@ -54,7 +54,6 @@ completedColumns:
 - [bug-glass-just-smashes-arbitrarily](tasks/bug-glass-just-smashes-arbitrarily.md)
 - [bug-wood-is-immune-to-bombs](tasks/bug-wood-is-immune-to-bombs.md)
 - [someone-complained-push-and-pull-ball-icons-too-visually-similar](tasks/someone-complained-push-and-pull-ball-icons-too-visually-similar.md)
-- [bug-ball-shadow-visible-over-top-of-cue](tasks/bug-ball-shadow-visible-over-top-of-cue.md)
 - [seriously-people-are-struggling-with-the-difficulty](tasks/seriously-people-are-struggling-with-the-difficulty.md)
 - [balls-need-a-more-gradual-introduction-for-players-to-learn](tasks/balls-need-a-more-gradual-introduction-for-players-to-learn.md)
 
@@ -82,6 +81,7 @@ completedColumns:
 - [bug-balls-after-8-now-have-wrong-outlines-after-removal-of-8-ball](tasks/bug-balls-after-8-now-have-wrong-outlines-after-removal-of-8-ball.md)
 - [an-end-screen-for-winning](tasks/an-end-screen-for-winning.md)
 - [bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class](tasks/bug-invalid-type-in-function-ball-destroyed-in-base-node2-d-level-gd-the-object-derived-class-of-argument-1-previously-freed-is-not-a-subclass-of-the-expected-argument-class.md)
+- [bug-ball-shadow-visible-over-top-of-cue](tasks/bug-ball-shadow-visible-over-top-of-cue.md)
 - [at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me](tasks/at-first-i-thought-you-should-get-the-8ball-last-like-usual-but-the-ball-kept-changing-so-it-confused-me.md)
 - [back-button-on-level-select](tasks/back-button-on-level-select.md)
 - [bug-pressing-r-takes-you-to-main-menu-should-reload-level](tasks/bug-pressing-r-takes-you-to-main-menu-should-reload-level.md)

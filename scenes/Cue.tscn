@@ -8,6 +8,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_psvc5"]
 
 [node name="Cue" type="Sprite2D"]
+z_index = 20
 position = Vector2(158, 262)
 texture = ExtResource("1_g5s8c")
 offset = Vector2(-126, 0)
