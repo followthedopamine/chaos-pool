@@ -9,6 +9,7 @@ completedColumns:
 
 ## Backlog
 
+- [an-animation-for-the-balls-being-saved-displaying-the-stars](tasks/an-animation-for-the-balls-being-saved-displaying-the-stars.md)
 - [rewarded-ads](tasks/rewarded-ads.md)
 - [create-balls-from-scene](tasks/create-balls-from-scene.md)
 - [mtx](tasks/mtx.md)
@@ -35,7 +36,6 @@ completedColumns:
 ## Todo
 
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
-- [an-animation-for-the-balls-being-saved-displaying-the-stars](tasks/an-animation-for-the-balls-being-saved-displaying-the-stars.md)
 - [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
 - [2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset](tasks/2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset.md)
 - [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
@@ -56,11 +56,22 @@ completedColumns:
 - [someone-complained-push-and-pull-ball-icons-too-visually-similar](tasks/someone-complained-push-and-pull-ball-icons-too-visually-similar.md)
 - [seriously-people-are-struggling-with-the-difficulty](tasks/seriously-people-are-struggling-with-the-difficulty.md)
 - [balls-need-a-more-gradual-introduction-for-players-to-learn](tasks/balls-need-a-more-gradual-introduction-for-players-to-learn.md)
+- [possible-bug-sometimes-2-balls-disappear-from-cue-ball-display-causing-crash-on-last-ball-used](tasks/possible-bug-sometimes-2-balls-disappear-from-cue-ball-display-causing-crash-on-last-ball-used.md)
+- [display-time-pb-somewhere-and-have-personal-best-times](tasks/display-time-pb-somewhere-and-have-personal-best-times.md)
+- [author-gold-times](tasks/author-gold-times.md)
+- [different-coloured-stars-for-different-modes](tasks/different-coloured-stars-for-different-modes.md)
+- [bigger-pockets-for-easiest-game-mode](tasks/bigger-pockets-for-easiest-game-mode.md)
 
 ## In Progress
 
+- [ability-to-reset-game-data](tasks/ability-to-reset-game-data.md)
+- [make-pause-menu-clearer-with-labels](tasks/make-pause-menu-clearer-with-labels.md)
+- [remove-from-level-orphaned-code-after-removal-of-pause-menu-level-controls](tasks/remove-from-level-orphaned-code-after-removal-of-pause-menu-level-controls.md)
+
 ## Done
 
+- [add-new-buttons-to-pause-menu](tasks/add-new-buttons-to-pause-menu.md)
+- [move-level-buttons-out-of-menu-onto-level](tasks/move-level-buttons-out-of-menu-onto-level.md)
 - [bug-balls-don-t-roll-to-the-correct-place](tasks/bug-balls-don-t-roll-to-the-correct-place.md)
 - [bug-you-can-see-a-little-bit-of-the-ball-after-it-s-sized-down](tasks/bug-you-can-see-a-little-bit-of-the-ball-after-it-s-sized-down.md)
 - [bug-no-respawn-after-ball-explosion](tasks/bug-no-respawn-after-ball-explosion.md)

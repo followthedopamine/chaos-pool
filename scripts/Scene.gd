@@ -1,10 +1,10 @@
 extends Node2D
 
 @onready var main_scene = $"../Main"
-@onready var level_menu_button = $"../Main/LevelMenuButton"
+@onready var level_menu_buttons = $"../Main/LevelButtons"
 @onready var options_menu = $"../Main/OptionsMenu"
 
-const PERMANENT_SCENES = ["Camera2D", "Music", "LevelEnd", "OptionsMenu", "LevelMenuButton"]
+const PERMANENT_SCENES = ["Camera2D", "Music", "LevelEnd", "OptionsMenu", "LevelButtons"]
 
 const MAIN_MENU = preload("res://scenes/Main_Menu.tscn")
 const MAIN_MENU_PORTRAIT = preload("res://scenes/Main_Menu_Portrait.tscn")
@@ -23,10 +23,10 @@ var current_level = 0
 var current_level_script
 
 func hide_level_menu_button():
-	level_menu_button.visible = false
+	level_menu_buttons.visible = false
 	
 func show_level_menu_button():
-	level_menu_button.visible = true
+	level_menu_buttons.visible = true
 	
 func restore_options_order():
 	var number_of_children = main_scene.get_child_count()

@@ -1,10 +1,28 @@
-[gd_scene load_steps=8 format=3 uid="uid://da1uht6nbhxv3"]
+[gd_scene load_steps=14 format=3 uid="uid://da1uht6nbhxv3"]
 
 [ext_resource type="PackedScene" uid="uid://t5p7ngld6w1v" path="res://scenes/Main_Menu.tscn" id="1_kkx2b"]
 [ext_resource type="PackedScene" uid="uid://b1cgybdlf1n4o" path="res://scenes/Options_Menu.tscn" id="3_mbaoq"]
 [ext_resource type="Texture2D" uid="uid://ktm46s7jjvlq" path="res://images/ui/pause-menu/Pause Button-Sheet.png" id="4_opeua"]
 [ext_resource type="AudioStream" uid="uid://dfipmsj6xdru3" path="res://sounds/music/Electro_Breaks_Loop.mp3" id="5_ckj5h"]
+[ext_resource type="Texture2D" uid="uid://d2nfn51p6faas" path="res://images/ui/level-buttons/Menu-Button-Sheet-Circle.png" id="5_hda7i"]
+[ext_resource type="Texture2D" uid="uid://ct5ot7unv8qtu" path="res://images/ui/level-buttons/Replay-Button-Sheet-Circle.png" id="6_5ajiy"]
 [ext_resource type="PackedScene" uid="uid://dwam8qve7q2or" path="res://scenes/Level_end.tscn" id="8_agxvw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ryu"]
+atlas = ExtResource("5_hda7i")
+region = Rect2(32, 32, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x68sq"]
+atlas = ExtResource("5_hda7i")
+region = Rect2(128, 32, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwo16"]
+atlas = ExtResource("6_5ajiy")
+region = Rect2(32, 32, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0bfd"]
+atlas = ExtResource("6_5ajiy")
+region = Rect2(128, 32, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4e1a"]
 atlas = ExtResource("4_opeua")
@@ -18,18 +36,11 @@ region = Rect2(128, 32, 32, 36)
 
 [node name="MainMenu" parent="." instance=ExtResource("1_kkx2b")]
 
-[node name="LevelMenuButton" type="TextureButton" parent="."]
-visible = false
-offset_left = 607.0
-offset_right = 639.0
-offset_bottom = 36.0
-texture_normal = SubResource("AtlasTexture_d4e1a")
-texture_pressed = SubResource("AtlasTexture_34hnb")
-
 [node name="LevelEnd" parent="." instance=ExtResource("8_agxvw")]
 visible = false
 
 [node name="OptionsMenu" parent="." instance=ExtResource("3_mbaoq")]
+visible = false
 z_index = 1000
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
@@ -39,4 +50,27 @@ volume_db = -12.0
 autoplay = true
 bus = &"Music"
 
-[connection signal="pressed" from="LevelMenuButton" to="OptionsMenu" method="_on_level_menu_button_pressed"]
+[node name="LevelButtons" type="HBoxContainer" parent="."]
+visible = false
+offset_left = 536.0
+offset_right = 640.0
+offset_bottom = 40.0
+
+[node name="LevelHomeButton" type="TextureButton" parent="LevelButtons"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_m0ryu")
+texture_pressed = SubResource("AtlasTexture_x68sq")
+
+[node name="LevelResetButton" type="TextureButton" parent="LevelButtons"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_mwo16")
+texture_pressed = SubResource("AtlasTexture_v0bfd")
+
+[node name="LevelMenuButton" type="TextureButton" parent="LevelButtons"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_d4e1a")
+texture_pressed = SubResource("AtlasTexture_34hnb")
+
+[connection signal="pressed" from="LevelButtons/LevelHomeButton" to="OptionsMenu" method="_on_level_home_button_pressed"]
+[connection signal="pressed" from="LevelButtons/LevelResetButton" to="OptionsMenu" method="_on_level_reset_button_pressed"]
+[connection signal="pressed" from="LevelButtons/LevelMenuButton" to="OptionsMenu" method="_on_level_menu_button_pressed"]

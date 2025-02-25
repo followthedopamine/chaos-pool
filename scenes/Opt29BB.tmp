@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://b1cgybdlf1n4o"]
+[gd_scene load_steps=29 format=3 uid="uid://b1cgybdlf1n4o"]
 
 [ext_resource type="Script" path="res://scripts/OptionsMenu.gd" id="1_0dwde"]
 [ext_resource type="Texture2D" uid="uid://crawhyyk28vy7" path="res://images/ui/pause-menu/Return Button-Sheet.png" id="2_50pxg"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://6780mfff6cy" path="res://images/ui/pause-menu/Sound Slider Knob.png" id="5_5cpmr"]
 [ext_resource type="Texture2D" uid="uid://c7747vfnnggod" path="res://images/ui/pause-menu/Mute Music-Sheet.png" id="6_atved"]
 [ext_resource type="Texture2D" uid="uid://c0o7fo7njvn7j" path="res://images/ui/pause-menu/Music Slider Knob.png" id="7_5crbw"]
+[ext_resource type="Texture2D" uid="uid://b14hypmwtcb31" path="res://images/ui/pause-menu/Home Button-Sheet.png" id="7_ax65y"]
 [ext_resource type="Texture2D" uid="uid://bkx0uxj1dc2hm" path="res://images/ui/pause-menu/Options Menu Extras-Sheet.png" id="7_exnir"]
+[ext_resource type="Texture2D" uid="uid://40o7x582tynt" path="res://images/ui/pause-menu/Restart Button-Sheet.png" id="8_bjgem"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kly5a"]
 bg_color = Color(0, 0, 0, 0.854902)
@@ -69,71 +71,31 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecmbn"]
 atlas = ExtResource("7_exnir")
-region = Rect2(416, 32, 108, 32)
+region = Rect2(32, 32, 108, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6yxn"]
 atlas = ExtResource("7_exnir")
-region = Rect2(32, 32, 107, 32)
+region = Rect2(416, 32, 107, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ttpxp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfb57"]
+atlas = ExtResource("8_bjgem")
+region = Rect2(0, 0, 177, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi7ff"]
+atlas = ExtResource("8_bjgem")
+region = Rect2(177, 0, 177, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20f0t"]
 atlas = ExtResource("7_exnir")
-region = Rect2(544, 32, 86, 32)
+region = Rect2(32, 32.6621, 107.433, 31.6551)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_odb52"]
-atlas = ExtResource("7_exnir")
-region = Rect2(160, 32, 86, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_s51s4"]
+atlas = SubResource("AtlasTexture_20f0t")
+region = Rect2(0, 0, 97, 41)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tmlfo"]
-atlas = ExtResource("7_exnir")
-region = Rect2(640, 32, 109, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_83546"]
-atlas = ExtResource("7_exnir")
-region = Rect2(256, 32, 109, 32)
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_67pmr"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eva8v"]
-atlas = ExtResource("7_exnir")
-region = Rect2(416, 96, 88, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ojfd"]
-atlas = ExtResource("7_exnir")
-region = Rect2(32, 96, 88, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fwjuq"]
-atlas = ExtResource("7_exnir")
-region = Rect2(512, 96, 120, 38)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j5dei"]
-atlas = ExtResource("7_exnir")
-region = Rect2(128, 96, 120, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sujuy"]
-atlas = ExtResource("7_exnir")
-region = Rect2(640, 96, 76, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7eetl"]
-atlas = ExtResource("7_exnir")
-region = Rect2(256, 96, 76, 32)
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_l8rgh"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0rqau"]
-atlas = ExtResource("7_exnir")
-region = Rect2(416, 160, 132, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_enfow"]
-atlas = ExtResource("7_exnir")
-region = Rect2(32, 162, 132, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g4kxb"]
-atlas = ExtResource("7_exnir")
-region = Rect2(576, 162, 120, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wunfk"]
-atlas = ExtResource("7_exnir")
-region = Rect2(192, 160, 120, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_03qle"]
+atlas = ExtResource("7_ax65y")
+region = Rect2(177, 0, 97, 41)
 
 [node name="OptionsMenu" type="PanelContainer"]
 process_mode = 3
@@ -281,15 +243,15 @@ texture_pressed = SubResource("AtlasTexture_e6yxn")
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_lk1ew")
-texture_normal = SubResource("AtlasTexture_ttpxp")
-texture_pressed = SubResource("AtlasTexture_odb52")
+texture_normal = SubResource("AtlasTexture_hfb57")
+texture_pressed = SubResource("AtlasTexture_fi7ff")
 
 [node name="AutoDetectButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/ResolutionControls"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_lk1ew")
-texture_normal = SubResource("AtlasTexture_tmlfo")
-texture_pressed = SubResource("AtlasTexture_83546")
+texture_normal = SubResource("AtlasTexture_hfb57")
+texture_pressed = SubResource("AtlasTexture_fi7ff")
 
 [node name="DifficultyControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -297,24 +259,18 @@ alignment = 1
 
 [node name="AmateurButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/DifficultyControls"]
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_67pmr")
-texture_normal = SubResource("AtlasTexture_eva8v")
-texture_pressed = SubResource("AtlasTexture_6ojfd")
+texture_normal = SubResource("AtlasTexture_s51s4")
+texture_pressed = SubResource("AtlasTexture_03qle")
 
 [node name="ProfessionalButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/DifficultyControls"]
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_67pmr")
-texture_normal = SubResource("AtlasTexture_fwjuq")
-texture_pressed = SubResource("AtlasTexture_j5dei")
+texture_normal = SubResource("AtlasTexture_hfb57")
+texture_pressed = SubResource("AtlasTexture_fi7ff")
 
 [node name="MasterButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/DifficultyControls"]
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_67pmr")
-texture_normal = SubResource("AtlasTexture_sujuy")
-texture_pressed = SubResource("AtlasTexture_7eetl")
+texture_normal = SubResource("AtlasTexture_hfb57")
+texture_pressed = SubResource("AtlasTexture_fi7ff")
 
 [node name="AimControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -322,17 +278,27 @@ alignment = 1
 
 [node name="StandardButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/AimControls"]
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_l8rgh")
-texture_normal = SubResource("AtlasTexture_0rqau")
-texture_pressed = SubResource("AtlasTexture_enfow")
+texture_normal = SubResource("AtlasTexture_s51s4")
+texture_pressed = SubResource("AtlasTexture_03qle")
 
 [node name="ReverseButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/AimControls"]
 layout_mode = 2
-toggle_mode = true
-button_group = SubResource("ButtonGroup_l8rgh")
-texture_normal = SubResource("AtlasTexture_g4kxb")
-texture_pressed = SubResource("AtlasTexture_wunfk")
+texture_normal = SubResource("AtlasTexture_hfb57")
+texture_pressed = SubResource("AtlasTexture_fi7ff")
+
+[node name="LevelControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="HomeButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/LevelControls"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_s51s4")
+texture_pressed = SubResource("AtlasTexture_03qle")
+
+[node name="RestartButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/LevelControls"]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_hfb57")
+texture_pressed = SubResource("AtlasTexture_fi7ff")
 
 [connection signal="pressed" from="CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
 [connection signal="item_selected" from="HBoxContainer/VBoxContainer/Old Buttons/ResolutionControls/ResolutionDropdown" to="." method="_on_resolution_dropdown_item_selected"]
@@ -342,11 +308,5 @@ texture_pressed = SubResource("AtlasTexture_wunfk")
 [connection signal="value_changed" from="HBoxContainer/VBoxContainer/SFXControls/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="toggled" from="HBoxContainer/VBoxContainer/MusicControls/ToggleMusicButton" to="." method="_on_toggle_music_button_toggled"]
 [connection signal="value_changed" from="HBoxContainer/VBoxContainer/MusicControls/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResolutionControls/LandscapeButton" to="." method="_on_landscape_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResolutionControls/PortraitButton" to="." method="_on_portrait_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResolutionControls/AutoDetectButton" to="." method="_on_auto_detect_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/DifficultyControls/AmateurButton" to="." method="_on_amateur_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/DifficultyControls/ProfessionalButton" to="." method="_on_professional_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/DifficultyControls/MasterButton" to="." method="_on_master_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/AimControls/StandardButton" to="." method="_on_standard_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/AimControls/ReverseButton" to="." method="_on_reverse_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LevelControls/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/LevelControls/RestartButton" to="." method="_on_restart_button_pressed"]

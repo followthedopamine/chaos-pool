@@ -80,8 +80,8 @@ func adjust_level_end():
 	#pass
 	
 func adjust_pause_button():
-	var pause_button = Scene.main_scene.get_node("LevelMenuButton")
-	pause_button.position.x = get_viewport().size.x - pause_button.texture_normal.get_width()
+	var pause_button = Scene.main_scene.get_node("LevelButtons")
+	pause_button.position.x = get_viewport().size.x - pause_button.get_global_rect().size.x
 	
 # This function should contain all the adjustments that don't depend on
 # anything that is ever unloaded for any reason

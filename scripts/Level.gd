@@ -136,8 +136,6 @@ func set_cue_ball_inactive():
 func on_cue_ball_stopped():
 	call_deferred("set_cue_ball_inactive")
 
-
-
 func check_if_balls_are_moving():
 	if cue_ball_active:
 		return true

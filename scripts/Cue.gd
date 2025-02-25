@@ -23,7 +23,7 @@ var cue_balls_display
 @onready var cue_ball_shape = $"../CueBall/CueBallCollision"
 @onready var level = $".."
 @onready var options_menu = $"../../OptionsMenu"
-@onready var level_menu_button = $"../../LevelMenuButton"
+@onready var level_menu_button = $"../../LevelButtons"
 @onready var shot_charge = $ShotChargeMask/ShotCharge
 @onready var shot_charge_mask = $ShotChargeMask
 
