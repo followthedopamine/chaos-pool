@@ -45,7 +45,7 @@ func create_level_buttons():
 
 func lock_levels():
 	var count = 0
-	for button in button_container.get_children():
+	for button in margin_container.get_children():
 		if count == 0:
 			count += 1
 			continue

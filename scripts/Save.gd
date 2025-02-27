@@ -28,3 +28,9 @@ func load_stars():
 		print("Stars saved on file: " + str(stars))
 	else:
 		print("No data saved")
+
+func reset_stars():
+	for star in stars:
+		star = 0
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(stars)

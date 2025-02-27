@@ -11,6 +11,10 @@ extends PanelContainer
 @onready var difficulty_controls: HBoxContainer = $HBoxContainer/VBoxContainer/DifficultyControls
 @onready var aim_controls: HBoxContainer = $HBoxContainer/VBoxContainer/AimControls
 
+@onready var reset_level_confirmation_container: PanelContainer = $ResetLevelConfirmationContainer
+@onready var reset_settings_confirmation_container: PanelContainer = $ResetSettingsConfirmationContainer
+@onready var reset_times_confirmation_container: PanelContainer = $ResetTimesConfirmationContainer
+
 
 #@onready var reverse_check_box: CheckBox = $HBoxContainer/VBoxContainer/ReverseControls/ReverseCheckBox
 @onready var level_end: PanelContainer = $"../LevelEnd"
@@ -156,3 +160,28 @@ func _on_level_reset_button_pressed() -> void:
 
 func _on_level_home_button_pressed() -> void:
 	Scene.load_main_menu()
+
+
+func _on_reset_levels_button_pressed() -> void:
+	reset_level_confirmation_container.visible = true
+
+func _on_reset_settings_button_pressed() -> void:
+	reset_settings_confirmation_container.visible = true
+
+func _on_reset_times_button_pressed() -> void:
+	reset_times_confirmation_container.visible = true
+
+func _on_reset_level_confirm_button_pressed() -> void:
+	Save.reset_stars()
+	reset_level_confirmation_container.visible = false
+
+func _on_reset_settings_confirm_button_pressed() -> void:
+	reset_settings_confirmation_container.visible = false
+
+func _on_reset_times_confirm_button_pressed() -> void:
+	reset_times_confirmation_container.visible = false
+
+func _on_reset_cancel_button_pressed() -> void:
+	reset_times_confirmation_container.visible = false
+	reset_settings_confirmation_container.visible = false
+	reset_level_confirmation_container.visible = false
