@@ -42,17 +42,19 @@ func create_level_buttons():
 		current_row.add_child(level_button)
 		var level_button_text = level_button.get_child(0)
 		level_button_text.text = "[center]%s[/center]" % i
-
-func lock_levels():
-	var count = 0
-	for button in margin_container.get_children():
-		if count == 0:
-			count += 1
+		if i == 1:
 			continue
-		if Save.stars[count - 1] == 0:
-			button.disabled = true
-			button.get_child(2).visible = true #IMPORTANT: This is what displays the lock
-		count += 1
+		if Save.stars[i - 2] == 0:
+			level_button.disabled = true
+			level_button.get_child(2).visible = true
+
+#func lock_levels():
+	#var count = 1
+	#for button in horizontal_container.get_children():
+		#if Save.stars[count - 1] == 0:
+			#button.disabled = true
+			#button.get_child(2).visible = true #IMPORTANT: This is what displays the lock
+		#count += 1
 		
 func _on_button_pressed():
 	Scene.load_level_1()
@@ -64,4 +66,4 @@ func _ready():
 	return_button.connect("pressed", _on_return_pressed)
 	Save.load_stars()
 	create_level_buttons()
-	lock_levels()
+	#lock_levels()

@@ -45,7 +45,6 @@ completedColumns:
 - [a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey](tasks/a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey.md)
 - [some-people-are-really-needing-some-instruction](tasks/some-people-are-really-needing-some-instruction.md)
 - [hotkeys-for-ui-navigation](tasks/hotkeys-for-ui-navigation.md)
-- [bug-all-levels-unlocked](tasks/bug-all-levels-unlocked.md)
 - [sensor-portrait-landscape-mode-for-mobile](tasks/sensor-portrait-landscape-mode-for-mobile.md)
 - [add-a-display-option-to-show-black-bars-or-fill-the-screen](tasks/add-a-display-option-to-show-black-bars-or-fill-the-screen.md)
 - [levels-should-be-vertically-symmetrical](tasks/levels-should-be-vertically-symmetrical.md)
@@ -61,6 +60,10 @@ completedColumns:
 - [author-gold-times](tasks/author-gold-times.md)
 - [different-coloured-stars-for-different-modes](tasks/different-coloured-stars-for-different-modes.md)
 - [bigger-pockets-for-easiest-game-mode](tasks/bigger-pockets-for-easiest-game-mode.md)
+- [art-golden-timer-icon](tasks/art-golden-timer-icon.md)
+- [art-reset-buttons](tasks/art-reset-buttons.md)
+- [juice](tasks/juice.md)
+- [idle-animations](tasks/idle-animations.md)
 
 ## In Progress
 
@@ -70,6 +73,7 @@ completedColumns:
 
 ## Done
 
+- [bug-all-levels-unlocked](tasks/bug-all-levels-unlocked.md)
 - [add-new-buttons-to-pause-menu](tasks/add-new-buttons-to-pause-menu.md)
 - [move-level-buttons-out-of-menu-onto-level](tasks/move-level-buttons-out-of-menu-onto-level.md)
 - [bug-balls-don-t-roll-to-the-correct-place](tasks/bug-balls-don-t-roll-to-the-correct-place.md)
