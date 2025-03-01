@@ -40,7 +40,7 @@ completedColumns:
 
 ## Todo
 
-- [make-pause-menu-clearer-with-labels](tasks/make-pause-menu-clearer-with-labels.md)
+- [bug-game-crashed-trying-to-rotate-to-portrait-from-main-menu](tasks/bug-game-crashed-trying-to-rotate-to-portrait-from-main-menu.md)
 - [bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time](tasks/bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time.md)
 - [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
 - [possibly-adjust-power-levels](tasks/possibly-adjust-power-levels.md)
@@ -67,6 +67,7 @@ completedColumns:
 
 ## Done
 
+- [make-pause-menu-clearer-with-labels](tasks/make-pause-menu-clearer-with-labels.md)
 - [add-a-display-option-to-show-black-bars-or-fill-the-screen](tasks/add-a-display-option-to-show-black-bars-or-fill-the-screen.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [bug-wood-is-immune-to-bombs](tasks/bug-wood-is-immune-to-bombs.md)

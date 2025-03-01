@@ -158,84 +158,56 @@ layout_mode = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ScrollContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_top = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 9
 alignment = 1
 
-[node name="Old Buttons" type="Control" parent="HBoxContainer/VBoxContainer"]
-visible = false
-layout_mode = 2
-
-[node name="ResolutionControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Old Buttons"]
-layout_mode = 2
-offset_top = 146.0
-offset_right = 278.0
-offset_bottom = 177.0
-
-[node name="ResolutionDropdown" type="OptionButton" parent="HBoxContainer/VBoxContainer/Old Buttons/ResolutionControls"]
-layout_mode = 2
-selected = 0
-item_count = 2
-popup/item_0/text = "Landscape"
-popup/item_1/text = "Portrait"
-popup/item_1/id = 1
-
-[node name="DifficultyControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Old Buttons"]
-layout_mode = 2
-offset_top = 181.0
-offset_right = 278.0
-offset_bottom = 212.0
-
-[node name="DifficultyDropdown" type="OptionButton" parent="HBoxContainer/VBoxContainer/Old Buttons/DifficultyControls"]
-layout_mode = 2
-selected = 0
-item_count = 3
-popup/item_0/text = "Amateur"
-popup/item_1/text = "Professional"
-popup/item_1/id = 1
-popup/item_2/text = "Master"
-popup/item_2/id = 2
-
-[node name="ReverseControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer/Old Buttons"]
-layout_mode = 2
-offset_top = 216.0
-offset_right = 278.0
-offset_bottom = 240.0
-
-[node name="ReverseLabel" type="Label" parent="HBoxContainer/VBoxContainer/Old Buttons/ReverseControls"]
-layout_mode = 2
-text = "Reverse Aim"
-
-[node name="ReverseCheckBox" type="CheckBox" parent="HBoxContainer/VBoxContainer/Old Buttons/ReverseControls"]
-layout_mode = 2
-
-[node name="Header" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
-visible = false
+[node name="Header" type="RichTextLabel" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(62.865, 23.355)
 layout_mode = 2
 mouse_filter = 1
-text = "Options"
+bbcode_enabled = true
+text = "[center]Options[/center]"
 
-[node name="SFXControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="SFXVBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SFX Label" type="Label" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Sound effects"
+horizontal_alignment = 1
+
+[node name="SFXControls" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="SFXLabel" type="Label" parent="HBoxContainer/VBoxContainer/SFXControls"]
+[node name="SFXLabel" type="Label" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer/SFXControls"]
 visible = false
 custom_minimum_size = Vector2(62.865, 23.355)
 layout_mode = 2
 text = "SFX"
 
-[node name="ToggleSFXButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/SFXControls"]
+[node name="ToggleSFXButton" type="TextureButton" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer/SFXControls"]
 layout_mode = 2
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_wi51l")
 texture_pressed = SubResource("AtlasTexture_eifuc")
 
-[node name="SFXSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/SFXControls"]
+[node name="SFXSlider" type="HSlider" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer/SFXControls"]
 custom_minimum_size = Vector2(245, 0)
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("5_5cpmr")
@@ -244,25 +216,35 @@ theme_override_styles/slider = SubResource("StyleBoxFlat_xnd6o")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v5i2f")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_rdk3s")
 
-[node name="MusicControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="MusicVBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Music Label" type="Label" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Music"
+horizontal_alignment = 1
+
+[node name="MusicControls" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="MusicLabel" type="Label" parent="HBoxContainer/VBoxContainer/MusicControls"]
+[node name="MusicLabel" type="Label" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVBoxContainer/MusicControls"]
 visible = false
 custom_minimum_size = Vector2(62.865, 23.355)
 layout_mode = 2
 text = "Music
 "
 
-[node name="ToggleMusicButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/MusicControls"]
+[node name="ToggleMusicButton" type="TextureButton" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVBoxContainer/MusicControls"]
 layout_mode = 2
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_swa5t")
 texture_pressed = SubResource("AtlasTexture_et4nd")
 
-[node name="MusicSlider" type="HSlider" parent="HBoxContainer/VBoxContainer/MusicControls"]
+[node name="MusicSlider" type="HSlider" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVBoxContainer/MusicControls"]
 custom_minimum_size = Vector2(245, 0)
 layout_mode = 2
 theme_override_icons/grabber = ExtResource("7_5crbw")
@@ -271,104 +253,154 @@ theme_override_styles/slider = SubResource("StyleBoxFlat_xnd6o")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v5i2f")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_mg0n2")
 
-[node name="ResolutionControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="ResolutionVBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Resolution Label" type="Label" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResolutionVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Resolution"
+horizontal_alignment = 1
+
+[node name="ResolutionControls" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResolutionVBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="LandscapeButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/ResolutionControls"]
+[node name="LandscapeButton" type="TextureButton" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResolutionVBoxContainer/ResolutionControls"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_lk1ew")
 texture_normal = SubResource("AtlasTexture_ecmbn")
 texture_pressed = SubResource("AtlasTexture_e6yxn")
 
-[node name="PortraitButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/ResolutionControls"]
+[node name="PortraitButton" type="TextureButton" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResolutionVBoxContainer/ResolutionControls"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_lk1ew")
 texture_normal = SubResource("AtlasTexture_ttpxp")
 texture_pressed = SubResource("AtlasTexture_odb52")
 
-[node name="AutoDetectButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/ResolutionControls"]
+[node name="AutoDetectButton" type="TextureButton" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResolutionVBoxContainer/ResolutionControls"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_lk1ew")
 texture_normal = SubResource("AtlasTexture_tmlfo")
 texture_pressed = SubResource("AtlasTexture_83546")
 
-[node name="DifficultyControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="DifficultyVBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Difficulty Label" type="Label" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DifficultyVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Difficulty"
+horizontal_alignment = 1
+
+[node name="DifficultyControls" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DifficultyVBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="AmateurButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/DifficultyControls"]
+[node name="AmateurButton" type="TextureButton" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DifficultyVBoxContainer/DifficultyControls"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_67pmr")
 texture_normal = SubResource("AtlasTexture_eva8v")
 texture_pressed = SubResource("AtlasTexture_6ojfd")
 
-[node name="ProfessionalButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/DifficultyControls"]
+[node name="ProfessionalButton" type="TextureButton" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DifficultyVBoxContainer/DifficultyControls"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_67pmr")
 texture_normal = SubResource("AtlasTexture_fwjuq")
 texture_pressed = SubResource("AtlasTexture_j5dei")
 
-[node name="MasterButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/DifficultyControls"]
+[node name="MasterButton" type="TextureButton" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DifficultyVBoxContainer/DifficultyControls"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_67pmr")
 texture_normal = SubResource("AtlasTexture_sujuy")
 texture_pressed = SubResource("AtlasTexture_7eetl")
 
-[node name="AimControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="AimVBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Aim Label" type="Label" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AimVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Aim type"
+horizontal_alignment = 1
+
+[node name="AimControls" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AimVBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="StandardButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/AimControls"]
+[node name="StandardButton" type="TextureButton" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AimVBoxContainer/AimControls"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_l8rgh")
 texture_normal = SubResource("AtlasTexture_0rqau")
 texture_pressed = SubResource("AtlasTexture_enfow")
 
-[node name="ReverseButton" type="TextureButton" parent="HBoxContainer/VBoxContainer/AimControls"]
+[node name="ReverseButton" type="TextureButton" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AimVBoxContainer/AimControls"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_l8rgh")
 texture_normal = SubResource("AtlasTexture_g4kxb")
 texture_pressed = SubResource("AtlasTexture_wunfk")
 
-[node name="FillScreenControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="FillScreenVBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="FillScreen Label" type="Label" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FillScreenVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Stretch mode"
+horizontal_alignment = 1
+
+[node name="FillScreenControls" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FillScreenVBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="FillScreenButton" type="Button" parent="HBoxContainer/VBoxContainer/FillScreenControls"]
+[node name="FillScreenButton" type="Button" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FillScreenVBoxContainer/FillScreenControls"]
 layout_mode = 2
 toggle_mode = true
 button_pressed = true
 button_group = SubResource("ButtonGroup_yq5s7")
 text = "Fill Screen"
 
-[node name="BlackBarsButton" type="Button" parent="HBoxContainer/VBoxContainer/FillScreenControls"]
+[node name="BlackBarsButton" type="Button" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FillScreenVBoxContainer/FillScreenControls"]
 layout_mode = 2
 toggle_mode = true
 button_group = SubResource("ButtonGroup_yq5s7")
 text = "Black Bars"
 
-[node name="ResetControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+[node name="ResetVBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Reset Label" type="Label" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResetVBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Reset data"
+horizontal_alignment = 1
+
+[node name="ResetControls" type="HBoxContainer" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResetVBoxContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="ResetLevelsButton" type="Button" parent="HBoxContainer/VBoxContainer/ResetControls"]
+[node name="ResetLevelsButton" type="Button" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResetVBoxContainer/ResetControls"]
 layout_mode = 2
 text = "Reset Levels"
 
-[node name="ResetTimesButton" type="Button" parent="HBoxContainer/VBoxContainer/ResetControls"]
+[node name="ResetTimesButton" type="Button" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResetVBoxContainer/ResetControls"]
 layout_mode = 2
 text = "Reset Times"
 
-[node name="ResetSettingsButton" type="Button" parent="HBoxContainer/VBoxContainer/ResetControls"]
+[node name="ResetSettingsButton" type="Button" parent="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResetVBoxContainer/ResetControls"]
 layout_mode = 2
 text = "Reset Settings"
 
@@ -463,26 +495,23 @@ layout_mode = 2
 text = "Cancel"
 
 [connection signal="pressed" from="CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
-[connection signal="item_selected" from="HBoxContainer/VBoxContainer/Old Buttons/ResolutionControls/ResolutionDropdown" to="." method="_on_resolution_dropdown_item_selected"]
-[connection signal="item_selected" from="HBoxContainer/VBoxContainer/Old Buttons/DifficultyControls/DifficultyDropdown" to="." method="_on_difficulty_dropdown_item_selected"]
-[connection signal="toggled" from="HBoxContainer/VBoxContainer/Old Buttons/ReverseControls/ReverseCheckBox" to="." method="_on_reverse_check_box_toggled"]
-[connection signal="toggled" from="HBoxContainer/VBoxContainer/SFXControls/ToggleSFXButton" to="." method="_on_toggle_sfx_button_toggled"]
-[connection signal="value_changed" from="HBoxContainer/VBoxContainer/SFXControls/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="toggled" from="HBoxContainer/VBoxContainer/MusicControls/ToggleMusicButton" to="." method="_on_toggle_music_button_toggled"]
-[connection signal="value_changed" from="HBoxContainer/VBoxContainer/MusicControls/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResolutionControls/LandscapeButton" to="." method="_on_landscape_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResolutionControls/PortraitButton" to="." method="_on_portrait_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResolutionControls/AutoDetectButton" to="." method="_on_auto_detect_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/DifficultyControls/AmateurButton" to="." method="_on_amateur_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/DifficultyControls/ProfessionalButton" to="." method="_on_professional_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/DifficultyControls/MasterButton" to="." method="_on_master_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/AimControls/StandardButton" to="." method="_on_standard_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/AimControls/ReverseButton" to="." method="_on_reverse_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/FillScreenControls/FillScreenButton" to="." method="_on_fill_screen_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/FillScreenControls/BlackBarsButton" to="." method="_on_black_bars_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResetControls/ResetLevelsButton" to="." method="_on_reset_levels_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResetControls/ResetTimesButton" to="." method="_on_reset_times_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResetControls/ResetSettingsButton" to="." method="_on_reset_settings_button_pressed"]
+[connection signal="toggled" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer/SFXControls/ToggleSFXButton" to="." method="_on_toggle_sfx_button_toggled"]
+[connection signal="value_changed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer/SFXControls/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVBoxContainer/MusicControls/ToggleMusicButton" to="." method="_on_toggle_music_button_toggled"]
+[connection signal="value_changed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVBoxContainer/MusicControls/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResolutionVBoxContainer/ResolutionControls/LandscapeButton" to="." method="_on_landscape_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResolutionVBoxContainer/ResolutionControls/PortraitButton" to="." method="_on_portrait_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResolutionVBoxContainer/ResolutionControls/AutoDetectButton" to="." method="_on_auto_detect_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DifficultyVBoxContainer/DifficultyControls/AmateurButton" to="." method="_on_amateur_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DifficultyVBoxContainer/DifficultyControls/ProfessionalButton" to="." method="_on_professional_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DifficultyVBoxContainer/DifficultyControls/MasterButton" to="." method="_on_master_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AimVBoxContainer/AimControls/StandardButton" to="." method="_on_standard_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AimVBoxContainer/AimControls/ReverseButton" to="." method="_on_reverse_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FillScreenVBoxContainer/FillScreenControls/FillScreenButton" to="." method="_on_fill_screen_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FillScreenVBoxContainer/FillScreenControls/BlackBarsButton" to="." method="_on_black_bars_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResetVBoxContainer/ResetControls/ResetLevelsButton" to="." method="_on_reset_levels_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResetVBoxContainer/ResetControls/ResetTimesButton" to="." method="_on_reset_times_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResetVBoxContainer/ResetControls/ResetSettingsButton" to="." method="_on_reset_settings_button_pressed"]
 [connection signal="pressed" from="ResetLevelConfirmationContainer/HBoxContainer/VBoxContainer/HBoxContainer/ResetLevelConfirmButton" to="." method="_on_reset_level_confirm_button_pressed"]
 [connection signal="pressed" from="ResetLevelConfirmationContainer/HBoxContainer/VBoxContainer/HBoxContainer/ResetLevelCancelButton" to="." method="_on_reset_cancel_button_pressed"]
 [connection signal="pressed" from="ResetSettingsConfirmationContainer/HBoxContainer/VBoxContainer/HBoxContainer/ResetSettingsConfirmButton" to="." method="_on_reset_settings_confirm_button_pressed"]

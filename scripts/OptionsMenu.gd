@@ -1,16 +1,15 @@
 extends PanelContainer
 
-#@onready var level_controls = $HBoxContainer/VBoxContainer/LevelControls
-@onready var music_slider = $HBoxContainer/VBoxContainer/MusicControls/MusicSlider
-@onready var sfx_slider = $HBoxContainer/VBoxContainer/SFXControls/SFXSlider
-@onready var toggle_sfx_button = $HBoxContainer/VBoxContainer/SFXControls/ToggleSFXButton
-@onready var toggle_music_button = $HBoxContainer/VBoxContainer/MusicControls/ToggleMusicButton
-#@onready var difficulty_dropdown: OptionButton = $HBoxContainer/VBoxContainer/DifficultyControls/DifficultyDropdown
-#@onready var resolution_dropdown: OptionButton = $HBoxContainer/VBoxContainer/ResolutionControls/ResolutionDropdown
-@onready var resolution_controls: HBoxContainer = $HBoxContainer/VBoxContainer/ResolutionControls
-@onready var difficulty_controls: HBoxContainer = $HBoxContainer/VBoxContainer/DifficultyControls
-@onready var aim_controls: HBoxContainer = $HBoxContainer/VBoxContainer/AimControls
-@onready var fill_screen_controls: HBoxContainer = $HBoxContainer/VBoxContainer/FillScreenControls
+@onready var music_slider = $HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVBoxContainer/MusicControls/MusicSlider
+@onready var sfx_slider = $HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer/SFXControls/SFXSlider
+@onready var toggle_sfx_button = $HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer/SFXControls/ToggleSFXButton
+@onready var toggle_music_button = $HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVBoxContainer/MusicControls/ToggleMusicButton
+@onready var resolution_controls: HBoxContainer = $HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResolutionVBoxContainer/ResolutionControls
+@onready var difficulty_controls: HBoxContainer = $HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DifficultyVBoxContainer/DifficultyControls
+@onready var aim_controls: HBoxContainer = $HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AimVBoxContainer/AimControls
+@onready var fill_screen_controls: HBoxContainer = $HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FillScreenVBoxContainer/FillScreenControls
+@onready var reset_controls: HBoxContainer = $HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ResetVBoxContainer/ResetControls
+
 
 
 @onready var reset_level_confirmation_container: PanelContainer = $ResetLevelConfirmationContainer
@@ -18,11 +17,7 @@ extends PanelContainer
 @onready var reset_times_confirmation_container: PanelContainer = $ResetTimesConfirmationContainer
 
 
-#@onready var reverse_check_box: CheckBox = $HBoxContainer/VBoxContainer/ReverseControls/ReverseCheckBox
 @onready var level_end: PanelContainer = $"../LevelEnd"
-
-
-
 @onready var level_menu_button = $"../LevelButtons"
 
 var from_level = false
