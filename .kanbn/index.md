@@ -9,7 +9,9 @@ completedColumns:
 
 ## Backlog
 
+- [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
 - [an-animation-for-the-balls-being-saved-displaying-the-stars](tasks/an-animation-for-the-balls-being-saved-displaying-the-stars.md)
+- [many-people-struggling-with-the-difficulty](tasks/many-people-struggling-with-the-difficulty.md)
 - [rewarded-ads](tasks/rewarded-ads.md)
 - [create-balls-from-scene](tasks/create-balls-from-scene.md)
 - [mtx](tasks/mtx.md)
@@ -17,6 +19,7 @@ completedColumns:
 - [lucky-ball](tasks/lucky-ball.md)
 - [moving-pockets](tasks/moving-pockets.md)
 - [infinite-momentum-ball](tasks/infinite-momentum-ball.md)
+- [levels-should-be-vertically-symmetrical](tasks/levels-should-be-vertically-symmetrical.md)
 - [achievements](tasks/achievements.md)
 - [ball-that-follows-the-player-s-cursor-finger](tasks/ball-that-follows-the-player-s-cursor-finger.md)
 - [sound-for-balls-being-pocketed](tasks/sound-for-balls-being-pocketed.md)
@@ -35,23 +38,18 @@ completedColumns:
 
 ## Todo
 
-- [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
-- [look-into-flocking-algorithms-for-wormhole-ball](tasks/look-into-flocking-algorithms-for-wormhole-ball.md)
-- [2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset](tasks/2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset.md)
-- [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
+- [make-pause-menu-clearer-with-labels](tasks/make-pause-menu-clearer-with-labels.md)
 - [bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time](tasks/bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time.md)
-- [many-people-struggling-with-the-difficulty](tasks/many-people-struggling-with-the-difficulty.md)
+- [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
 - [possibly-adjust-power-levels](tasks/possibly-adjust-power-levels.md)
 - [a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey](tasks/a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey.md)
 - [some-people-are-really-needing-some-instruction](tasks/some-people-are-really-needing-some-instruction.md)
 - [hotkeys-for-ui-navigation](tasks/hotkeys-for-ui-navigation.md)
 - [sensor-portrait-landscape-mode-for-mobile](tasks/sensor-portrait-landscape-mode-for-mobile.md)
 - [add-a-display-option-to-show-black-bars-or-fill-the-screen](tasks/add-a-display-option-to-show-black-bars-or-fill-the-screen.md)
-- [levels-should-be-vertically-symmetrical](tasks/levels-should-be-vertically-symmetrical.md)
 - [bug-portrait-mode-is-completely-broken-on-web-export](tasks/bug-portrait-mode-is-completely-broken-on-web-export.md)
 - [might-want-to-move-the-power-bar-to-off-the-table-so-it-s-always-visible](tasks/might-want-to-move-the-power-bar-to-off-the-table-so-it-s-always-visible.md)
 - [bug-glass-just-smashes-arbitrarily](tasks/bug-glass-just-smashes-arbitrarily.md)
-- [bug-wood-is-immune-to-bombs](tasks/bug-wood-is-immune-to-bombs.md)
 - [someone-complained-push-and-pull-ball-icons-too-visually-similar](tasks/someone-complained-push-and-pull-ball-icons-too-visually-similar.md)
 - [seriously-people-are-struggling-with-the-difficulty](tasks/seriously-people-are-struggling-with-the-difficulty.md)
 - [balls-need-a-more-gradual-introduction-for-players-to-learn](tasks/balls-need-a-more-gradual-introduction-for-players-to-learn.md)
@@ -64,15 +62,17 @@ completedColumns:
 - [art-reset-buttons](tasks/art-reset-buttons.md)
 - [juice](tasks/juice.md)
 - [idle-animations](tasks/idle-animations.md)
+- [reset-settings-and-reset-times](tasks/reset-settings-and-reset-times.md)
 
 ## In Progress
 
-- [ability-to-reset-game-data](tasks/ability-to-reset-game-data.md)
-- [make-pause-menu-clearer-with-labels](tasks/make-pause-menu-clearer-with-labels.md)
-- [remove-from-level-orphaned-code-after-removal-of-pause-menu-level-controls](tasks/remove-from-level-orphaned-code-after-removal-of-pause-menu-level-controls.md)
-
 ## Done
 
+- [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
+- [bug-wood-is-immune-to-bombs](tasks/bug-wood-is-immune-to-bombs.md)
+- [remove-from-level-orphaned-code-after-removal-of-pause-menu-level-controls](tasks/remove-from-level-orphaned-code-after-removal-of-pause-menu-level-controls.md)
+- [ability-to-reset-game-data](tasks/ability-to-reset-game-data.md)
+- [2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset](tasks/2-2-testers-have-either-not-found-the-reset-button-in-the-pause-menu-or-they-want-a-faster-way-to-reset.md)
 - [bug-all-levels-unlocked](tasks/bug-all-levels-unlocked.md)
 - [add-new-buttons-to-pause-menu](tasks/add-new-buttons-to-pause-menu.md)
 - [move-level-buttons-out-of-menu-onto-level](tasks/move-level-buttons-out-of-menu-onto-level.md)

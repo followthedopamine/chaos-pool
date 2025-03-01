@@ -27,6 +27,8 @@ var cue_balls_display
 @onready var shot_charge = $ShotChargeMask/ShotCharge
 @onready var shot_charge_mask = $ShotChargeMask
 
+@onready var initial_x_offset = offset.x
+
 var power_is_increasing = true
 var power = 0
 
@@ -77,6 +79,10 @@ func update_charge_display():
 func hide_shot_charge():
 	await get_tree().create_timer(TIME_TO_HIDE_SHOT_CHARGE).timeout
 	shot_charge_mask.visible = false
+	
+func animate_cue(delta):
+	const CUE_ANIMATION_DISTANCE = 0.6 
+	offset.x = initial_x_offset - (power * CUE_ANIMATION_DISTANCE)
 		
 func update_power(delta):
 	if power >= MAX_POWER:
@@ -91,7 +97,7 @@ func update_power(delta):
 		if power > MIN_POWER:
 			power = power - POWER_INCREMENT + delta
 	update_charge_display()
-		
+
 func shoot_cue_ball():
 	print("Fired shot " + str(level.shot_counter))
 	cue_ball.apply_central_impulse(POWER_FACTOR * power * (get_player_target() - global_position).normalized())
@@ -189,6 +195,8 @@ func _physics_process(delta):
 		position_cue()
 		angle_cue()
 		handle_input(delta)
+		animate_cue(delta)
+		
 
 
 #func _draw():

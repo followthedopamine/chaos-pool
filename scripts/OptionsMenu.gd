@@ -38,15 +38,12 @@ func _ready():
 	
 func show_from_main_menu():
 	self.visible = true
-	#level_controls.visible = false
 	from_level = false
 	
 	
 func show_from_level():
 	self.visible = true
-	#level_controls.visible = true
 	level_menu_button.visible = false
-	from_level = true
 	get_tree().paused = true
 
 func set_volume_sliders():
