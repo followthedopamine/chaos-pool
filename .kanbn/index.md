@@ -40,8 +40,6 @@ completedColumns:
 
 ## Todo
 
-- [bug-game-crashed-trying-to-rotate-to-portrait-from-main-menu](tasks/bug-game-crashed-trying-to-rotate-to-portrait-from-main-menu.md)
-- [bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time](tasks/bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time.md)
 - [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
 - [possibly-adjust-power-levels](tasks/possibly-adjust-power-levels.md)
 - [a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey](tasks/a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey.md)
@@ -62,6 +60,8 @@ completedColumns:
 - [juice](tasks/juice.md)
 - [idle-animations](tasks/idle-animations.md)
 - [reset-settings-and-reset-times](tasks/reset-settings-and-reset-times.md)
+- [bug-game-crashed-trying-to-rotate-to-portrait-from-main-menu](tasks/bug-game-crashed-trying-to-rotate-to-portrait-from-main-menu.md)
+- [bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time](tasks/bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time.md)
 
 ## In Progress
 
