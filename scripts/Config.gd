@@ -7,6 +7,7 @@ var muteds = [false, false] # [Music, SFX]
 var window_resolution = Vector2.ZERO
 var window_position = Vector2.ZERO
 var reverse_aim = false
+var fill_screen = true
 
 enum {
 	AMATEUR,
@@ -36,6 +37,7 @@ func save_options():
 	file.store_var(window_position)
 	file.store_var(guide_line)
 	file.store_var(reverse_aim)
+	file.store_var(fill_screen)
 	
 func load_options():
 	if FileAccess.file_exists(config_path):
@@ -62,6 +64,17 @@ func load_options():
 				reverse_aim = true
 			else:
 				reverse_aim = false
+		fill_screen = file.get_var()
+		if fill_screen == null:
+			# This should be whatever we have the default set in godot to
+			print("Fill screen is null")
+			fill_screen = true 
+			get_tree().root.set_content_scale_aspect(Window.CONTENT_SCALE_ASPECT_IGNORE)
+		else:
+			if fill_screen:
+				get_tree().root.set_content_scale_aspect(Window.CONTENT_SCALE_ASPECT_IGNORE)
+			else:
+				get_tree().root.set_content_scale_aspect(Window.CONTENT_SCALE_ASPECT_KEEP)
 		Sound.change_volume("Music", volumes[0])
 		Sound.change_volume("SFX", volumes[1])
 		Sound.music_muted = muteds[0]

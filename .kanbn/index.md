@@ -15,6 +15,8 @@ completedColumns:
 - [rewarded-ads](tasks/rewarded-ads.md)
 - [create-balls-from-scene](tasks/create-balls-from-scene.md)
 - [mtx](tasks/mtx.md)
+- [some-people-are-really-needing-some-instruction](tasks/some-people-are-really-needing-some-instruction.md)
+- [hotkeys-for-ui-navigation](tasks/hotkeys-for-ui-navigation.md)
 - [ball-that-creates-a-pocket](tasks/ball-that-creates-a-pocket.md)
 - [lucky-ball](tasks/lucky-ball.md)
 - [moving-pockets](tasks/moving-pockets.md)
@@ -43,10 +45,7 @@ completedColumns:
 - [autobuild-windows-android-and-ios-versions](tasks/autobuild-windows-android-and-ios-versions.md)
 - [possibly-adjust-power-levels](tasks/possibly-adjust-power-levels.md)
 - [a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey](tasks/a-balls-sunk-counter-a-little-1-when-a-ball-is-sunk-a-quick-level-restart-hotkey.md)
-- [some-people-are-really-needing-some-instruction](tasks/some-people-are-really-needing-some-instruction.md)
-- [hotkeys-for-ui-navigation](tasks/hotkeys-for-ui-navigation.md)
 - [sensor-portrait-landscape-mode-for-mobile](tasks/sensor-portrait-landscape-mode-for-mobile.md)
-- [add-a-display-option-to-show-black-bars-or-fill-the-screen](tasks/add-a-display-option-to-show-black-bars-or-fill-the-screen.md)
 - [bug-portrait-mode-is-completely-broken-on-web-export](tasks/bug-portrait-mode-is-completely-broken-on-web-export.md)
 - [might-want-to-move-the-power-bar-to-off-the-table-so-it-s-always-visible](tasks/might-want-to-move-the-power-bar-to-off-the-table-so-it-s-always-visible.md)
 - [bug-glass-just-smashes-arbitrarily](tasks/bug-glass-just-smashes-arbitrarily.md)
@@ -68,6 +67,7 @@ completedColumns:
 
 ## Done
 
+- [add-a-display-option-to-show-black-bars-or-fill-the-screen](tasks/add-a-display-option-to-show-black-bars-or-fill-the-screen.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)
 - [bug-wood-is-immune-to-bombs](tasks/bug-wood-is-immune-to-bombs.md)
 - [remove-from-level-orphaned-code-after-removal-of-pause-menu-level-controls](tasks/remove-from-level-orphaned-code-after-removal-of-pause-menu-level-controls.md)

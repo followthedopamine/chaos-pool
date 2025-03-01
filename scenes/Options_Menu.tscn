@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b1cgybdlf1n4o"]
+[gd_scene load_steps=40 format=3 uid="uid://b1cgybdlf1n4o"]
 
 [ext_resource type="Script" path="res://scripts/OptionsMenu.gd" id="1_0dwde"]
 [ext_resource type="Texture2D" uid="uid://crawhyyk28vy7" path="res://images/ui/pause-menu/Return Button-Sheet.png" id="2_50pxg"]
@@ -134,6 +134,8 @@ region = Rect2(576, 160, 120, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wunfk"]
 atlas = ExtResource("7_exnir")
 region = Rect2(192, 160, 120, 32)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_yq5s7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hyln"]
 bg_color = Color(0.054902, 0.054902, 0.054902, 0.866667)
@@ -337,24 +339,38 @@ button_group = SubResource("ButtonGroup_l8rgh")
 texture_normal = SubResource("AtlasTexture_g4kxb")
 texture_pressed = SubResource("AtlasTexture_wunfk")
 
+[node name="FillScreenControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="FillScreenButton" type="Button" parent="HBoxContainer/VBoxContainer/FillScreenControls"]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_yq5s7")
+text = "Fill Screen"
+
+[node name="BlackBarsButton" type="Button" parent="HBoxContainer/VBoxContainer/FillScreenControls"]
+layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_yq5s7")
+text = "Black Bars"
+
 [node name="ResetControls" type="HBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 1
 
 [node name="ResetLevelsButton" type="Button" parent="HBoxContainer/VBoxContainer/ResetControls"]
 layout_mode = 2
-toggle_mode = true
-text = "Reset levels"
-
-[node name="ResetSettingsButton" type="Button" parent="HBoxContainer/VBoxContainer/ResetControls"]
-layout_mode = 2
-toggle_mode = true
-text = "Reset Settings"
+text = "Reset Levels"
 
 [node name="ResetTimesButton" type="Button" parent="HBoxContainer/VBoxContainer/ResetControls"]
 layout_mode = 2
-toggle_mode = true
 text = "Reset Times"
+
+[node name="ResetSettingsButton" type="Button" parent="HBoxContainer/VBoxContainer/ResetControls"]
+layout_mode = 2
+text = "Reset Settings"
 
 [node name="ResetLevelConfirmationContainer" type="PanelContainer" parent="."]
 visible = false
@@ -462,9 +478,11 @@ text = "Cancel"
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/DifficultyControls/MasterButton" to="." method="_on_master_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/AimControls/StandardButton" to="." method="_on_standard_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/AimControls/ReverseButton" to="." method="_on_reverse_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/FillScreenControls/FillScreenButton" to="." method="_on_fill_screen_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/FillScreenControls/BlackBarsButton" to="." method="_on_black_bars_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ResetControls/ResetLevelsButton" to="." method="_on_reset_levels_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResetControls/ResetSettingsButton" to="." method="_on_reset_settings_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ResetControls/ResetTimesButton" to="." method="_on_reset_times_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/ResetControls/ResetSettingsButton" to="." method="_on_reset_settings_button_pressed"]
 [connection signal="pressed" from="ResetLevelConfirmationContainer/HBoxContainer/VBoxContainer/HBoxContainer/ResetLevelConfirmButton" to="." method="_on_reset_level_confirm_button_pressed"]
 [connection signal="pressed" from="ResetLevelConfirmationContainer/HBoxContainer/VBoxContainer/HBoxContainer/ResetLevelCancelButton" to="." method="_on_reset_cancel_button_pressed"]
 [connection signal="pressed" from="ResetSettingsConfirmationContainer/HBoxContainer/VBoxContainer/HBoxContainer/ResetSettingsConfirmButton" to="." method="_on_reset_settings_confirm_button_pressed"]

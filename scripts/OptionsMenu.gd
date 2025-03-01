@@ -10,6 +10,8 @@ extends PanelContainer
 @onready var resolution_controls: HBoxContainer = $HBoxContainer/VBoxContainer/ResolutionControls
 @onready var difficulty_controls: HBoxContainer = $HBoxContainer/VBoxContainer/DifficultyControls
 @onready var aim_controls: HBoxContainer = $HBoxContainer/VBoxContainer/AimControls
+@onready var fill_screen_controls: HBoxContainer = $HBoxContainer/VBoxContainer/FillScreenControls
+
 
 @onready var reset_level_confirmation_container: PanelContainer = $ResetLevelConfirmationContainer
 @onready var reset_settings_confirmation_container: PanelContainer = $ResetSettingsConfirmationContainer
@@ -35,6 +37,7 @@ func _ready():
 	set_difficulty_toggle()
 	set_resolution_toggle()
 	set_reverse_aim_toggle()
+	set_fill_screen_toggle()
 	
 func show_from_main_menu():
 	self.visible = true
@@ -79,7 +82,10 @@ func set_reverse_aim_toggle():
 	# Child 1 Reverse button
 	aim_controls.get_child(Config.reverse_aim).button_pressed = true
 
-		
+func set_fill_screen_toggle():
+	# Child 0 Fill screen button
+	# Child 1 Black bars button
+	fill_screen_controls.get_child(!Config.fill_screen).button_pressed = true
 	
 func _on_toggle_sfx_button_toggled(toggled_on):
 	Sound.set_sfx_muted(toggled_on)
@@ -182,3 +188,13 @@ func _on_reset_cancel_button_pressed() -> void:
 	reset_times_confirmation_container.visible = false
 	reset_settings_confirmation_container.visible = false
 	reset_level_confirmation_container.visible = false
+
+
+func _on_fill_screen_button_pressed() -> void:
+	Config.fill_screen = true
+	get_tree().root.set_content_scale_aspect(Window.CONTENT_SCALE_ASPECT_IGNORE)
+
+
+func _on_black_bars_button_pressed() -> void:
+	Config.fill_screen = false
+	get_tree().root.set_content_scale_aspect(Window.CONTENT_SCALE_ASPECT_KEEP)
