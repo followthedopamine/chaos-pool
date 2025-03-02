@@ -144,10 +144,12 @@ func _on_master_button_pressed() -> void:
 	Config.guide_line = Config.MASTER
 
 func _on_landscape_button_pressed() -> void:
-	Resolution.set_game_to_landscape()
+	if Resolution.display_mode != Resolution.LANDSCAPE:
+		Resolution.set_game_to_landscape()
 
 func _on_portrait_button_pressed() -> void:
-	Resolution.set_game_to_portrait()
+	if Resolution.display_mode != Resolution.PORTRAIT:
+		Resolution.set_game_to_portrait()
 
 func _on_auto_detect_button_pressed() -> void:
 	# TODO: Implement auto-detect

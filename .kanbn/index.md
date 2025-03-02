@@ -60,13 +60,16 @@ completedColumns:
 - [juice](tasks/juice.md)
 - [idle-animations](tasks/idle-animations.md)
 - [reset-settings-and-reset-times](tasks/reset-settings-and-reset-times.md)
-- [bug-game-crashed-trying-to-rotate-to-portrait-from-main-menu](tasks/bug-game-crashed-trying-to-rotate-to-portrait-from-main-menu.md)
 - [bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time](tasks/bug-i-noticed-at-one-point-when-a-new-turn-occured-the-line-which-shows-which-direction-the-white-ball-would-go-before-you-hit-it-did-not-show-up-one-time.md)
 
 ## In Progress
 
+- [web-build-needs-to-refresh-the-play-area-or-something-on-changing-display-mode-because-old-mode-appears-in-background](tasks/web-build-needs-to-refresh-the-play-area-or-something-on-changing-display-mode-because-old-mode-appears-in-background.md)
+
 ## Done
 
+- [bug-close-settings-button-doesn-t-work-on-web-build](tasks/bug-close-settings-button-doesn-t-work-on-web-build.md)
+- [bug-game-crashed-trying-to-rotate-to-portrait-from-main-menu](tasks/bug-game-crashed-trying-to-rotate-to-portrait-from-main-menu.md)
 - [make-pause-menu-clearer-with-labels](tasks/make-pause-menu-clearer-with-labels.md)
 - [add-a-display-option-to-show-black-bars-or-fill-the-screen](tasks/add-a-display-option-to-show-black-bars-or-fill-the-screen.md)
 - [make-cue-go-backward-on-shot-charge](tasks/make-cue-go-backward-on-shot-charge.md)

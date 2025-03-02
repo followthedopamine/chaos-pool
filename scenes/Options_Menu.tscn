@@ -11,14 +11,6 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kly5a"]
 bg_color = Color(0, 0, 0, 0.854902)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4sp3"]
-atlas = ExtResource("2_50pxg")
-region = Rect2(32, 32, 32, 35)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_18a4i"]
-atlas = ExtResource("2_50pxg")
-region = Rect2(128, 34, 32, 35)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_wi51l"]
 atlas = ExtResource("3_wnh5e")
 region = Rect2(3, 0, 26, 32)
@@ -140,18 +132,20 @@ region = Rect2(192, 160, 120, 32)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hyln"]
 bg_color = Color(0.054902, 0.054902, 0.054902, 0.866667)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4sp3"]
+atlas = ExtResource("2_50pxg")
+region = Rect2(32, 32, 32, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18a4i"]
+atlas = ExtResource("2_50pxg")
+region = Rect2(128, 34, 32, 35)
+
 [node name="OptionsMenu" type="PanelContainer"]
 process_mode = 3
 offset_right = 640.0
 offset_bottom = 360.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kly5a")
 script = ExtResource("1_0dwde")
-
-[node name="CloseOptionsButton" type="TextureButton" parent="."]
-layout_mode = 2
-size_flags_horizontal = 8
-texture_normal = SubResource("AtlasTexture_m4sp3")
-texture_pressed = SubResource("AtlasTexture_18a4i")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -494,7 +488,12 @@ text = "Reset"
 layout_mode = 2
 text = "Cancel"
 
-[connection signal="pressed" from="CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
+[node name="CloseOptionsButton" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = SubResource("AtlasTexture_m4sp3")
+texture_pressed = SubResource("AtlasTexture_18a4i")
+
 [connection signal="toggled" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer/SFXControls/ToggleSFXButton" to="." method="_on_toggle_sfx_button_toggled"]
 [connection signal="value_changed" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SFXVBoxContainer/SFXControls/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="toggled" from="HBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/MusicVBoxContainer/MusicControls/ToggleMusicButton" to="." method="_on_toggle_music_button_toggled"]
@@ -518,3 +517,4 @@ text = "Cancel"
 [connection signal="pressed" from="ResetSettingsConfirmationContainer/HBoxContainer/VBoxContainer/HBoxContainer/ResetSettingsCancelButton" to="." method="_on_reset_cancel_button_pressed"]
 [connection signal="pressed" from="ResetTimesConfirmationContainer/HBoxContainer/VBoxContainer/HBoxContainer/ResetTimesConfirmButton" to="." method="_on_reset_times_confirm_button_pressed"]
 [connection signal="pressed" from="ResetTimesConfirmationContainer/HBoxContainer/VBoxContainer/HBoxContainer/ResetTimesCancelButton" to="." method="_on_reset_cancel_button_pressed"]
+[connection signal="pressed" from="CloseOptionsButton" to="." method="_on_close_options_button_pressed"]
